@@ -1,1 +1,4 @@
-# Evidence for an information seeking account: American Sign Language comprehension {#sol}
+# Real-time American Sign Language comprehension {#sol}
+
+```{r child = 'chapter_child_rmds/SOL/sol_chapter.Rmd'}
+```

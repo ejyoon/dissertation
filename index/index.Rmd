@@ -1,5 +1,5 @@
 ---
-title: 'Visual information seeking during language comprehension and word learning'
+title: "Children's flexible information seeking during language comprehension and word learning"
 author: 'Kyle MacDonald'
 date: 'November 2018'
 advisor: 'Michael C. Frank'
@@ -39,8 +39,11 @@ lof: true
 #space_between_paragraphs: true
 # Delete the # at the beginning of the previous line if you'd like
 # to have a blank new line between each paragraph
-#header-includes:
-#- \usepackage{tikz}
+header-includes:
+- \usepackage{array}
+- \usepackage{float}
+- \usepackage{tabularx}
+- \usepackage{longtable}
 ---
 
 <!--

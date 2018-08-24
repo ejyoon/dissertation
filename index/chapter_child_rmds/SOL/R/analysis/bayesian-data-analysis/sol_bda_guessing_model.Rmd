@@ -1,0 +1,150 @@
+---
+title: "SOL BDA Extra Simulations"
+author: "Kyle MacDonald"
+output: html_document
+---
+
+In this document, we present a brief analysis and visualization of the latent mixture component of our bayesian data analysis model. Specifically, we show posterior distributions over the indicator variable assigning each participant to the "guessing" or the "knowledge" group.
+
+```{r chunk options, echo = F}
+rm(list=ls()) # clear workspcace
+knitr::opts_chunk$set(fig.height=4, fig.width=7, cache = T, warning=F, message=F, 
+                      results = "hide")
+
+source("../../helper_functions/useful.R")
+
+library(langcog); library(knitr); library(R2jags);
+library(polspline); library(magrittr);
+library(tidyverse)
+
+theme_set(theme_classic())
+```
+
+Load data.
+
+```{r load data}
+d <- read.csv("../../../data/processed_data/summary_tables/sol_ss_dage_models.csv", 
+              stringsAsFactors = F)
+
+d_voc <- read.csv("../../../data/processed_data/summary_tables/sol_ss_dvoc_models.csv", 
+                  stringsAsFactors = F)
+```
+
+Subset data by each analysis window.
+
+```{r subset data by analysis window}
+d_2200 <- dplyr::filter(d, window == "600_2200")
+d_2500 <- dplyr::filter(d, window == "600_2500")
+d_2800 <- dplyr::filter(d, window == "600_2800")
+d_voc_2200 <- dplyr::filter(d_voc, window == "600_2200")
+d_voc_2500 <- dplyr::filter(d_voc, window == "600_2500")
+d_voc_2800 <- dplyr::filter(d_voc, window == "600_2800")
+```
+
+```{r}
+# make list of  data frames to loop over
+dfs <- list(d_2200, d_2500, d_2800)
+dfs_voc <- list(d_voc_2200, d_voc_2500, d_voc_2800)
+
+# set path to model files
+model_path <- "models/"
+```
+
+
+```{r}
+adaptSteps = 500  # Number of steps to "tune" the samplers
+nChains = 3 
+thinSteps = 1
+numSavedSteps = 21000
+nIter = ceiling( ( numSavedSteps * thinSteps ) / nChains )
+burnInSteps = nIter / 2
+parameters = c( "zbeta0" , "zbeta1", "zbeta1_prior", "zbeta0_prior")
+```
+
+### RT and age no latent mixture
+
+Draw samples from all three analysis windows.
+
+```{r}
+slope_priors <- c(.1, .5, 1, 2)
+df_rt_age_final <- window_simulations_fun_no_mix(list_of_dfs = dfs_voc, 
+                                          predictor = "age.s", outcome = "rt.s", 
+                                          model = "rt_no_mix",
+                                          prior_list = slope_priors,
+                                          path = model_path)
+
+
+df_rt_voc_final <- window_simulations_fun_no_mix(list_of_dfs = dfs_voc, 
+                                           predictor = "voc.s", outcome = "rt.s", 
+                                           model = "rt_no_mix",
+                                          prior_list = slope_priors,
+                                          path = model_path)
+```
+
+Get means and 95% HDIs.
+
+```{r}
+df_rt_age_final %>% 
+    group_by(window, slope_prior) %>% 
+    summarise(mean = mean(beta1),
+              lower = HDIofMCMC(beta1)[1],
+              upper = HDIofMCMC(beta1)[2])
+
+df_rt_voc_final %>% 
+    group_by(window, slope_prior) %>% 
+    summarise(mean = mean(beta1),
+              lower = HDIofMCMC(beta1)[1],
+              upper = HDIofMCMC(beta1)[2])
+```
+
+### Output of latent mixture models inferring guessing probability
+
+```{r}
+dataList_lat_mix = list(
+    n_correct = d_2500$C_T_count,
+    n_trials = d_2500$total_trials_shifting,
+    Ntotal = length(d_2500$acc.s)
+)
+
+myinits <-  list(list(phi = 0.75, z = round(runif(length(d_2500$total_trials_shifting)))))
+
+parameters <- c("z")
+
+samples_post <- jags(data = dataList_lat_mix, parameters.to.save = parameters,
+                model.file = paste(model_path, "latent_mixture.txt", sep = ""), 
+                n.chains=1, inits = myinits,
+                n.iter=nIter, n.burnin = burnInSteps,
+                n.thin=1, DIC=T)
+
+df_latent_mix <- data.frame(z = samples_post$BUGSoutput$sims.list$z)
+
+# grab subject numbers and add to data frame
+colnames(df_latent_mix)[which(names(df_latent_mix)=="z.1"):which(names(df_latent_mix)=="z.29")] <- as.character(unique(d_voc$Sub.Num))
+
+# melt data frame
+df_melt <- reshape::melt.data.frame(df_latent_mix[,2:length(df_latent_mix)], variable.name = "Sub.Num", value.name = "group_membership")
+
+# change factor label
+df_melt %<>% mutate(group_membership_factor = factor(df_melt$value, 
+                                                     labels = c("G", "K")),
+                    model = "latent_mix") 
+```
+
+```{r plot posterior on guessing}
+## summarise
+ms <- df_melt %>% 
+  group_by(variable) %>% 
+  summarise(prop_guessing = (length(value) - sum(value)) / length(value)) %>% 
+  mutate(prop_guessing_convert = prop_guessing * .1,
+         subid = as.character(variable))
+
+ggplot(data=ms, aes(x=reorder(subid, prop_guessing), y = prop_guessing)) +
+  geom_bar(stat="identity") +
+  guides(fill=F) +
+  langcog::scale_fill_solarized() +
+  ylim(0,1) +
+  xlab('Participant ID#') +
+  ylab("Posterior Prob. Guessing") +
+  ggtitle("Output of Latent Mixture (\"Guessing\") Model") +
+  theme(axis.text.x = element_text(angle=90, vjust = 1))
+```

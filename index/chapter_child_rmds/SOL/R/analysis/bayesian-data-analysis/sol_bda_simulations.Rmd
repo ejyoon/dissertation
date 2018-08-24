@@ -1,0 +1,291 @@
+---
+title: "SOL BDA Window Selection Analysis & Simulations"
+author: "Kyle MacDonald"
+date: "April 14, 2016"
+output: html_document
+---
+
+In this document, you will find the details of our simulations for the analysis models in the paper, "Real-time Language Comprehension in American Sign Language." Specifically, we fit our models to three different analysis windows to show that our parameter estimates of the association between age/vocab and accuracy/RT are robust to this decision. 
+
+Input: tidy data summarizing mean accuracy and RT scores for each participant
+Output: tidy data with posterior samples from 4 models each fit to 3 different analysis windows with 3 different specifications for the width of the prior distribution on the slope parameter
+
+## Load packages, data, and some helpful functions
+
+```{r, echo = F}
+rm(list=ls()) # clear workspace
+knitr::opts_chunk$set(fig.height=4, fig.width=7, cache = T, warning=F, message=F, 
+                      results = "hide")
+
+source("../../helper_functions/useful.R")
+
+library(langcog); library(knitr); 
+library(polspline); library(rethinking); 
+library(R2jags); library(rjags); 
+library(magrittr); library(tidyverse); 
+library(car)
+```
+
+Set the seed so we can reproduce the exact simulations.
+
+```{r}
+set.seed(13412)
+```
+
+
+```{r load data}
+# Load data
+d_2200 <- read.csv("../../../data/processed_data/summary_tables/sol_ss_all_600_2200.csv")
+d_2500 <- read.csv("../../../data/processed_data/summary_tables/sol_ss_all_600_2500.csv")
+d_2800 <- read.csv("../../../data/processed_data/summary_tables/sol_ss_all_600_2800.csv")
+
+d_2200$window <- "600_2200"
+d_2500$window <- "600_2500"
+d_2800$window <- "600_2800"
+
+# Merge data from different analysis windows
+d <- bind_rows(d_2200, d_2500, d_2800)
+```
+
+```{r}
+d %>% 
+  filter(age_group_collapsed == "Kids") %>% 
+  select(Sub.Num) %>% 
+  unique() %>% 
+  nrow()
+```
+
+Following Barr (2008), we use a logit transform to convert the accuracy scores which are on a proportion scale to a log odds scale to be more suitable for the linear model.
+
+```{r}
+d %<>% mutate(logit_acc = car::logit(mean_prop_looking_TD))
+```
+
+
+Standardize the data
+
+```{r}
+d %<>% mutate(C_D_count = ifelse(is.na(C_D_count), 0, C_D_count),
+              total_trials_shifting = C_T_count + C_D_count,
+              Sub.Num = as.character(Sub.Num)) %>% 
+  dplyr::select(Sub.Num, age_peek_months, age_group, signs_produced, 
+                C_T_count,total_trials_shifting,
+                median_rt = median_ct_rt, 
+                C_T_prop, logit_acc, mean_prop_looking_TD,
+                value_cat, age_group_collapsed, hearing_status_participant, window)
+
+d_all <- d %>% filter(value_cat == "Target" | value_cat == "Distractor")    
+```
+
+```{r}
+d %<>% filter(age_group_collapsed == "Kids", value_cat == "Target")  %>% 
+  mutate(age.s = (age_peek_months - mean(age_peek_months, na.rm=T)) / sd(age_peek_months, na.rm=T),
+         acc.s.logit = (logit_acc - mean(logit_acc)) / sd(logit_acc),
+         acc.s = (logit_acc - mean(logit_acc)) / sd(logit_acc),
+         rt.s = (median_rt - mean(median_rt)) / sd(median_rt),
+         voc.s = (signs_produced - mean(signs_produced)) / sd(signs_produced),
+         hearing_status_dummy = ifelse(hearing_status_participant == "deaf", 1, 0))
+```
+
+```{r}
+d_voc <- d %>% 
+  filter(is.na(signs_produced) == F) %>% 
+  mutate(age.s = (age_peek_months - mean(age_peek_months, na.rm=T)) / sd(age_peek_months, na.rm=T),
+         acc.s.logit = (logit_acc - mean(logit_acc)) / sd(logit_acc),
+         acc.s = (mean_prop_looking_TD - mean(mean_prop_looking_TD)) / sd(mean_prop_looking_TD),
+         rt.s = (median_rt - mean(median_rt)) / sd(median_rt),
+         voc.s = (signs_produced - mean(signs_produced, na.rm = T)) / sd(signs_produced, na.rm = T),
+         hearing_status_dummy = ifelse(hearing_status_participant == "deaf", 1, 0))
+```
+
+```{r}
+d %>% 
+  filter(age_group_collapsed == "Kids") %>% 
+  select(Sub.Num) %>% 
+  unique() %>% 
+  nrow()
+```
+
+Save output.
+
+```{r, eval = F}
+write.csv(d, file = "../../../data/processed_data/summary_tables/sol_ss_dage_models.csv", row.names = F)
+write.csv(d_voc, file = "../../../data/processed_data/summary_tables/sol_ss_dvoc_models.csv", row.names = F)
+```
+
+Subset data by each analysis window.
+
+```{r subset data by analysis window}
+d_2200 <- filter(d, window == "600_2200")
+d_2500 <- filter(d, window == "600_2500")
+d_2800 <- filter(d, window == "600_2800")
+d_voc_2200 <- filter(d_voc, window == "600_2200")
+d_voc_2500 <- filter(d_voc, window == "600_2500")
+d_voc_2800 <- filter(d_voc, window == "600_2800")
+```
+
+All models fit using JAGS [@plummer2003jags] and based on models from Ch. 17 in @kruschke2014doing. 
+
+First, we need to set the parameters for the MCMC simulations. This will be the same 
+across all models. The key parameter of interest is the standardized slope: zbeta1.
+This encodes the strength of the linear relationship between the predictor variable
+and the outcome.
+
+# Analysis 1: Accuracy Model and simulations
+
+```{r set parameters for accuracy model}
+adaptSteps = 500  # Number of steps to "tune" the samplers
+nChains = 3 
+thinSteps = 1
+numSavedSteps = 21000
+nIter = ceiling( ( numSavedSteps * thinSteps ) / nChains )
+burnInSteps = nIter / 2
+parameters = c( "zbeta0" , "zbeta1" , "zsigma" , "zbeta1_prior" , "zbeta0_prior" )
+```
+
+```{r}
+# make list of  data frames to loop over
+dfs <- list(d_2200, d_2500, d_2800)
+dfs_voc <- list(d_voc_2200, d_voc_2500, d_voc_2800)
+```
+
+```{r age_acc simulations}
+slope_priors <- c(.1, .5, 1, 2)
+
+df_acc_age_final <- window_simulations_fun(list_of_dfs = dfs_voc, 
+                                           predictor = "age.s", outcome = "acc.s.logit", 
+                                           model_type = "accuracy",
+                                           prior_list = slope_priors)
+
+df_acc_voc_final <- window_simulations_fun(list_of_dfs = dfs_voc, 
+                                           predictor = "voc.s", outcome = "acc.s", 
+                                           model = "accuracy",
+                                           prior_list = slope_priors)
+```
+
+Inspect chains for convergence and see any differences across windows.
+
+```{r}
+a <- df_acc_age_final %>% 
+  sample_n(., size = 2000) %>% 
+  ggplot(aes(x=iteration, y=beta1), data = .) + 
+  geom_line() +
+  ggtitle("Trace of Slope Parameter for Accuracy ~ Age") +
+  facet_grid(slope_prior~window)  +
+  scale_color_solarized() +
+  xlab("Iteration Number") +
+  guides(color = F)
+
+b <- df_acc_voc_final %>% 
+  sample_n(., size = 2000) %>%
+  ggplot(aes(x=iteration, y=beta1), data = .) + 
+  geom_line() +
+  ggtitle("Trace of Slope Parameter for Accuracy ~ Vocab") +
+  facet_grid(slope_prior~window)  +
+  scale_color_solarized() +
+  xlab("Iteration Number") +
+  guides(color = F)
+
+gridExtra::grid.arrange(a, b, ncol = 2)
+```
+
+Get means and 95% HDIs.
+
+```{r}
+df_acc_age_final %>% 
+  group_by(window, slope_prior) %>% 
+  summarise(mean = mean(beta1),
+            lower = HDIofMCMC(beta1)[1],
+            upper = HDIofMCMC(beta1)[2])
+
+df_acc_voc_final %>% 
+  group_by(window, slope_prior) %>% 
+  summarise(mean = mean(beta1),
+            lower = HDIofMCMC(beta1)[1],
+            upper = HDIofMCMC(beta1)[2])
+```
+
+Save data frames with posterior samples for all three analysis windows for later analysis.
+
+```{r, eval = F}
+write.csv(x = df_acc_age_final, "simulations/diff_windows/sol_acc_age_mcmc.csv", row.names = F)
+write.csv(x = df_acc_voc_final, "simulations/diff_windows/sol_acc_voc_mcmc.csv", row.names = F)
+```
+
+# Analysis 2: RT Model and simulations
+
+Set parameters to monitor and initial values for each RT model.
+
+```{r set params for rt model}
+parameters = c( "true_beta0" , "true_beta1", "true_beta0_prior", "true_beta1_prior", "z")
+myinits <-  list(
+  list(phi = 0.75, z = round(runif(length(d_2200$age.s)))),
+  list(phi = 0.5, z = round(runif(length(d_2200$age.s)))),
+  list(phi = 0.99, z = round(runif(length(d_2200$age.s))))
+)
+```
+
+Draw samples from all three analysis windows.
+
+```{r}
+slope_priors <- c(.1, .5, 1, 2)
+df_rt_age_final <- window_simulations_fun(list_of_dfs = dfs_voc, 
+                                          predictor = "age.s", outcome = "rt.s", 
+                                          model = "rt",
+                                          prior_list = slope_priors)
+
+
+df_rt_voc_final <- window_simulations_fun(list_of_dfs = dfs_voc, 
+                                          predictor = "voc.s", outcome = "rt.s", 
+                                          model = "rt",
+                                          prior_list = slope_priors)
+```
+
+Inspect chains for convergence and see any differences across windows and priors.
+
+```{r}
+a <- df_rt_age_final %>% 
+  sample_n(., size = 2000) %>% 
+  ggplot(aes(x=iteration, y=beta1), data = .) + 
+  geom_line() +
+  ggtitle("Trace of Slope Parameter for RT ~ Age") +
+  facet_grid(slope_prior~window)  +
+  scale_color_solarized() +
+  xlab("Iteration Number") +
+  guides(color = F)
+
+b <- df_rt_voc_final %>% 
+  sample_n(., size = 2000) %>% 
+  ggplot(aes(x=iteration, y=beta1), data = .) + 
+  geom_line() +
+  ggtitle("Trace of Slope Parameter for RT ~ Vocab") +
+  facet_grid(slope_prior~window)  +
+  scale_color_solarized() +
+  xlab("Iteration Number") +
+  guides(color = F)
+
+gridExtra::grid.arrange(a, b, ncol = 2)
+```
+
+Get means and 95% HDIs.
+
+```{r}
+df_rt_age_final %>% 
+  group_by(window, slope_prior) %>% 
+  summarise(mean = mean(beta1),
+            lower = HDIofMCMC(beta1)[1],
+            upper = HDIofMCMC(beta1)[2])
+
+df_rt_voc_final %>% 
+  group_by(window, slope_prior) %>% 
+  summarise(mean = mean(beta1),
+            lower = HDIofMCMC(beta1)[1],
+            upper = HDIofMCMC(beta1)[2])
+```
+
+Save MCMC output.
+
+```{r}
+write.csv(x = df_rt_age_final, "simulations/sol_rt_age_mcmc.csv", row.names = F)
+write.csv(x = df_rt_voc_final, "simulations/sol_rt_voc_mcmc.csv", row.names = F)
+```

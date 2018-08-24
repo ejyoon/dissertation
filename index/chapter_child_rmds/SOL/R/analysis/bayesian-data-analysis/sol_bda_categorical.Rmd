@@ -1,0 +1,204 @@
+---
+title: "SOL BDA Categorical Models"
+author: "Kyle MacDonald"
+output: html_document
+bibliography: bda.bib
+---
+
+In this document, you will find the details of our Bayesian categorical models for the paper, "Real-time Language Comprehension in American Sign Language." 
+
+## Load packages and data
+
+```{r, echo = F}
+rm(list=ls()) # clear workspcace
+knitr::opts_chunk$set(fig.height=4, fig.width=7, cache = T,warning=F, message=F, results = "hide")
+
+source("../../helper_functions/useful.R")
+
+library(langcog); library(knitr); library(forcats);
+library(polspline); library(rethinking); 
+library(magrittr); library(tidyverse)
+theme_set(ggthemes::theme_few())
+```
+
+Load data
+
+```{r}
+d <- read_csv("../../../data/processed_data/summary_tables/sol_ss_all_600_2500.csv")
+```
+
+Set seed to reproduce exact simulation values.
+
+```{r}
+set.seed(123)
+```
+
+## Age as categorical variable
+
+All categorical models were fit using STAN [@rstan], and are based on code adapted from @mcelreath2016statistical.  
+
+First we need to create dummy variables for the relevant group comparisons.
+
+```{r dummy vars}
+d_model <- d %>% 
+  filter(value_cat == "Target") %>% 
+  select(Sub.Num, age_group_collapsed, hearing_status_participant, 
+         mean_prop_looking_TD, median_ct_rt) %>% 
+  rename(median_rt = median_ct_rt,
+         age_group_string = age_group_collapsed) %>% 
+  mutate(age_group = ifelse(age_group_string == "Adults", 1, 0),
+         hearing_group = ifelse(hearing_status_participant == "hearing", 1, 0),
+         logit_acc = car::logit(mean_prop_looking_TD)) 
+```
+
+### CODA vs. Deaf
+
+Compare accuracy for deaf and hearing kids. All priors are vague since we are just concerned with parameter estimation. 
+
+```{r hearing_status acc}
+acc_hearing_stat_cat_targ.m <- map2stan(
+  alist(
+    logit_acc ~ dnorm(mu, sigma),
+    mu <- Intercept + b_Hearing*hearing_group,
+    Intercept ~ dnorm(0, 10), 
+    b_Hearing ~ dnorm(0, 1),
+    sigma ~ dunif(0, 10)
+  ),
+  data = data.frame(select(filter(d_model, age_group_string == "Kids"),
+                logit_acc, hearing_group)))
+
+# get samples
+post_hearing_stat.acc <- extract.samples(acc_hearing_stat_cat_targ.m)
+hearing <- post_hearing_stat.acc$Intercept
+deaf <- post_hearing_stat.acc$b_Hearing + post_hearing_stat.acc$Intercept
+
+post_df_hearing_stat.acc <- data.frame(hearing, deaf) %>% 
+  gather(key = hearing_status, value = posterior_sample) %>% 
+  mutate(age_group = "kids",
+         measure = "accuracy",
+         prob_acc_sample = logit2prob(posterior_sample))
+
+
+post_df_hearing_stat.acc %>% 
+  group_by(hearing_status) %>% 
+  summarise(m = round(mean(prob_acc_sample), 2))
+
+# test contrast
+diff.deaf.hearing <- logit2prob(hearing) - logit2prob(deaf)
+round(quantile(diff.deaf.hearing, probs = c(0.025, 0.5, 0.975)), 2)
+```
+
+Compare RT for deaf and hearing kids.
+
+```{r hearing_status rt}
+rt_hearing_stat.m <- map2stan(
+  alist(
+    median_rt ~ dnorm(mu, sigma),
+    mu <- Intercept + b_Hearing*hearing_group,
+    Intercept ~ dnorm(1300, 100), 
+    b_Hearing ~ dnorm(0, 500),
+    sigma ~ dunif(0, 500)
+  ),
+  data = data.frame(select(filter(d_model, age_group_string == "Kids"), 
+                median_rt, hearing_group))
+)
+
+# extract samples
+post_hearing_stat.rt <- extract.samples(rt_hearing_stat.m)
+hearing <- as.numeric(post_hearing_stat.rt$Intercept)
+deaf <- as.numeric(post_hearing_stat.rt$b_Hearing + post_hearing_stat.rt$Intercept)
+
+post_df_hearing_stat.rt <- data.frame(hearing, deaf) %>% 
+  gather(key = hearing_status, value = posterior_sample) %>% 
+  mutate(age_group = "kids",
+         measure = "rt")
+
+post_df_hearing_stat.rt %>% 
+  group_by(hearing_status) %>% 
+  summarise(m = round(mean(posterior_sample), 2))
+
+# test contrast
+diff.deaf.hearing.rt <- hearing - deaf
+round(quantile(diff.deaf.hearing.rt, probs = c(0.025, 0.5, 0.975)), 2)
+```
+
+### Accuracy and RT for kids compared to adults
+
+Accuracy comparison
+
+```{r age_groups_adults acc}
+acc_age_cat_targ.m.collapsed <- map2stan(
+  alist(
+    logit_acc ~ dnorm(mu, sigma),
+    mu <- Intercept + b_Adults*age_group,
+    Intercept ~ dnorm(0, 10), 
+    b_Adults ~ dnorm(0, 1),
+    sigma ~ dunif(0, 10)
+  ),
+  data = data.frame(select(d_model, logit_acc, age_group))
+)
+
+post_ages.acc_collapsed <- extract.samples(acc_age_cat_targ.m.collapsed)
+
+kids <- post_ages.acc_collapsed$Intercept
+adults <- post_ages.acc_collapsed$b_Adults + post_ages.acc_collapsed$Intercept
+
+# get samples
+post_df.acc.collapsed <- data.frame(kids, adults) %>% 
+  gather(key = age_group, value = posterior_sample) %>% 
+  mutate(hearing_status = "deaf", 
+         measure = "accuracy",
+         prob_acc_sample = logit2prob(posterior_sample))
+
+# summarize
+post_df.acc.collapsed %>% 
+  group_by(age_group) %>% 
+  summarise(m = round(mean(prob_acc_sample), 2))
+
+diff.acc.kids.adults <- logit2prob(adults) - logit2prob(kids)
+round(quantile(diff.acc.kids.adults, probs = c(0.025, 0.5, 0.975)), 2)
+```
+
+RT comparison
+
+```{r age_group_adults rt}
+rt_age_cat_collapsed.m <- map2stan(
+  alist(
+    median_rt ~ dnorm(mu, sigma),
+    mu <- Intercept + b_Adults*age_group,
+    Intercept ~ dnorm(1300, 100), 
+    b_Adults ~ dnorm(0, 500),
+    sigma ~ dunif(0, 500)
+  ),
+  data = data.frame(select(d_model, median_rt, age_group))
+)
+
+post_ages.rt_collapsed <- extract.samples(rt_age_cat_collapsed.m)
+
+kids <- as.numeric(post_ages.rt_collapsed$Intercept)
+adults <- as.numeric(post_ages.rt_collapsed$b_Adults + post_ages.rt_collapsed$Intercept)
+
+post_df.rt.collapsed <- data.frame(kids, adults) %>% 
+  gather(key = age_group, value = posterior_sample) %>% 
+  mutate(hearing_status = "deaf", 
+         measure = "rt")
+
+post_df.rt.collapsed %>% 
+  group_by(age_group) %>% 
+  summarise(m = round(mean(posterior_sample), 2))
+
+
+diff.old.young.rt.collapsed <- adults - kids
+round(quantile(diff.old.young.rt.collapsed, probs = c(0.025, 0.5, 0.975)), 2)
+```
+
+### Merge model output for ACC/RT coda-deaf comparisons to be used in the plotting script.
+
+```{r}
+model_output <- bind_rows(post_df_hearing_stat.acc, post_df_hearing_stat.rt,
+                          post_df.acc.collapsed, post_df.rt.collapsed)
+
+write_csv(model_output, "simulations/group_means_acc_rt.csv")
+```
+
+## References

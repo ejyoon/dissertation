@@ -1,0 +1,1 @@
+Model specification	Bayes Factor	Mean Beta	95% HDIAccuracy ~ Age	12.8	0.007	"[0.002, 0.012]"Accuracy ~ Vocab	6.8	0.003	"[0.001, 0.005]"RT ~ Age	14.4	-11.2 ms	"[-19.3 ms, -3.6 ms]"RT ~ Vocab	18.7	-6.6 ms	"[-10.5 ms, -2.5 ms]"
