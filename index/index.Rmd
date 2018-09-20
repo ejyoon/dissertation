@@ -1,5 +1,5 @@
 ---
-title: "Children's flexible information seeking during language comprehension and word learning"
+title: "Seeking social information during early language comprehension and word learning"
 author: 'Kyle MacDonald'
 date: 'November 2018'
 advisor: 'Michael C. Frank'
@@ -24,12 +24,9 @@ abstract: |
 # like below, use a command like that for the abstract above.  Note that a tab is 
 # needed on the line after the |.
 acknowledgements: |
-  I want to thank a few people.
+  I am grateful to the California School for the Deaf (Fremont, CA) and the families who participated in this research. Thanks to Karina Pedersen, Lisalee Egbert, Laura Petersen, Michele Berke, and Sean Virnig for help with recruitment; to Pearlene Utley and Rosa Lee Timm for help with creating stimuli; to MH Tessler for help with analysis; and to Shane Blau, Kat Adams, Melanie Ashland for helpful discussion. I am grateful to Rose Schneider for helping record stimuli and to the members of the Language and Cognition Lab for their feedback on this project. 
 dedication: |
-  You can have a dedication here if you wish. 
-preface: |
-  This is an example of a thesis setup to use the reed thesis document class
-  (for LaTeX) and the R bookdown package, in general.
+  I dedicate this thesis to Sheila Paget.
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl
@@ -78,6 +75,6 @@ and 00-abstract.Rmd since they are handled in the YAML above differently for the
 on chapters.
 -->
 
-# Introduction {.unnumbered}
+# Introduction {#intro}
 
 Language learning is remarkable.

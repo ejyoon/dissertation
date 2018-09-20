@@ -1,0 +1,5 @@
+Model specification	Mean Beta value	std. error	t-statistic	p-value
+logit(accuracy) ~ age + hearing status	0.003	0.012	2.59	0.008
+logit(accuracy) ~ vocabulary + hearing status	0.002	0.006	2.27	0.015
+RT ~ age + hearing status	-10.05	4.62	-2.17	0.019
+RT ~ vocabulary + hearing status	-6.34	2.18	-2.91	0.003

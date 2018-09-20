@@ -1,11 +1,10 @@
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F, cache = F,warning=F, message=F, 
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F, 
                       fig.width=4, fig.asp = 0.618, out.width = "95%", 
-                      fig.align = 'center', fig.pos = 't',
-                      cache = T)
+                      fig.align = 'center', fig.pos = 't')
 
-data_code_path <- "index/chapter_child_rmds/SOL"
+data_code_path_sol <- "index/chapter_child_rmds/SOL"
 source(here::here("index/disseration_helpers.R"))
 
 # need to load kableExtra in the env
@@ -51,7 +50,7 @@ Participants were 29 native, deaf and hearing ASL-learning children (17 females,
 Our final sample size was determined by our success over a two-year funding period in recruiting and testing children who met our strict inclusion criteria – receiving primarily ASL language input. It is important to note that native ASL-learners are a small population. The incidence of deafness at birth in the US is less than .003%, and only 10% of the 2-3 per 1000 children born with hearing loss have a deaf parent who is likely to be fluent in ASL (Mitchell & Karchmer,  2004).  In addition to the 29 child participants who met our inclusion criteria and contributed adequate data, we also recruited and tested 17 more ASL-learning children who were not included in the analyses, either because it was later determined that they did not meet our stringent criterion of exposure to ASL from birth (n = 12), or because they did not complete the real-time language assessment due to inattentiveness or parental interference (n = 5). 
 
 ```{r sol-demo-table, results = 'asis'}
-d_2500 <- read_csv(here::here(data_code_path, "data/processed_data/summary_tables/sol_ss_all_600_2500.csv"))
+d_2500 <- read_csv(here::here(data_code_path_sol, "data/processed_data/summary_tables/sol_ss_all_600_2500.csv"))
 
 all_children <- d_2500 %>% 
   filter(age_group_collapsed == "Kids", include == "yes") %>% 
@@ -110,7 +109,7 @@ Coding and Reliability. Participants' gaze patterns were video recorded and late
 \noindent Each participant saw one stimulus set which consisted of one ASL question structure, with roughly an even distribution of children across the two stimulus sets (16 saw sentence-initial wh-phrase structure; 13 saw the sentence-final wh-phrase structure).
 
 ```{r sol-asl-lex-table, results = 'asis'}
-d_asl_lex <- read_csv(here::here(data_code_path, "data/processed_data/sol_asl_lex_summary.csv"))
+d_asl_lex <- read_csv(here::here(data_code_path_sol, "data/processed_data/sol_asl_lex_summary.csv"))
 
 d_asl_lex %>% 
   kable("latex", 
@@ -128,8 +127,8 @@ To prepare the stimuli, two female native ASL users recorded several tokens of e
 
 *Visual stimuli.*  The visual stimuli consisted of colorful digitized pictures of objects corresponding to the target nouns presented in four fixed pairs (cat—bird, car—book, bear—doll, ball—shoe). See Table 2 for information about the degree of phonological overlap in each item-pair and the degree of iconicity for each sign (values were taken from ASL-LEX [Caselli et al., 2017]) ^[We did not find evidence that these features were related to the speed or accuracy of participants' eye movements in our task. However, this study was not designed to vary these features systematically. See Appendix XX for the analysis.]. Images were digitized pictures presented in fixed pairs, matched for visual salience with 3–4 tokens of each object type. Each object served as target four times and as distracter four times for a total of 32 trials. Side of target picture was counterbalanced across trials.
 
-```{r sol-trial-fig, fig.cap="Configuration of visual stimuli (1A) and trial structure (1B) for one question type (sentence final wh-phrase) shown in the central video on the VLP task.", fig.scap="Stimuli in the Visual Language Processing Task"}
-include_graphics(path = here::here(data_code_path, "figures/figure1.jpg"))
+```{r sol-trial-fig, fig.cap="Configuration of visual stimuli (1A) and trial structure (1B) for one question type (sentence final wh-phrase) shown in the central video on the VLP task.", fig.scap="Stimuli in the Visual Language Processing Task used in Experiment 1.1"}
+include_graphics(path = here::here(data_code_path_sol, "figures/figure1.jpg"))
 ```
 
 ### Trial Structure
@@ -160,7 +159,7 @@ The results are presented in five sections addressing the following central ques
 
 ```{r sol-tc-figure, fig.cap="The time course of looking behavior for ASL-proficient adults (2A) and young ASL-learners (2C). The curves show mean proportion looking to the signer (dark grey), the target image (black), and the distracter image (light grey). The grey shaded region marks the analysis window (600-2500ms); error bars represent +/- 95\\% CI computed by non-parametric bootstrap. The mean proportion of each target sign length (see the Methods section for details on how sign length was defined) processed prior to shifting visual attention away from the language source to a named object for adults (2B) and children (2D). The diamond indicates the mean estimate for all signs. The dashed vertical line corresponds to a median proportion of 1.0. Error bars represent 95\\% Highest Density Intervals.", fig.scap="Time course looking behavior for ASL-proficient adults and young ASL-learners"}
 
-include_graphics(path = here::here(data_code_path, "figures/figure2.jpg"))
+include_graphics(path = here::here(data_code_path_sol, "figures/figure2.jpg"))
 ```
 
 ### Overview of looking behavior during real-time ASL comprehension
@@ -177,7 +176,7 @@ These results suggest that young signers as well as adults process signs increme
 
 ```{r sol-tc-coda-figure, fig.cap="The time course of looking behavior for young deaf and hearing ASL-learners (3A). Filled circles represent deaf signers, while open circles represent hearing signers; All other plotting conventions are the same as in Figure 2. Panels B and C show full posterior distributions over model estimates for mean Accuracy (3B) and Reaction Time (3C) for children and adults. Fill (white/black) represents children's hearing status. (Note that there were no hearing adult signers in our sample).", fig.scap="The time course of looking behavior for young deaf and hearing ASL-learners"}
 
-include_graphics(path = here::here(data_code_path, "figures/figure3.jpg"))
+include_graphics(path = here::here(data_code_path_sol, "figures/figure3.jpg"))
 ```
 
 ### Real-time ASL comprehension in deaf and hearing children and deaf adults
@@ -190,7 +189,7 @@ Returning to the overview of looking behavior shown in Figure 2, we see that adu
 
 ```{r sol-corr-figure, out.width="80%",fig.cap="Scatterplots of relations between children's age and vocabulary and measures of their mean accuracy (4A) and mean RT (4B) in the VLP procedure. Shape represents children's hearing status. The solid black line is the maximum a posteriori model estimate for the mean accuracy at each age point. The shaded gray regions represent the 95\\% Highest Density Interval (range of plausible values) around the regression line.", fig.scap="Scatterplots of relations between children's age and vocabulary and ASL processing"}
 
-include_graphics(path = here::here(data_code_path, "figures/figure4.jpg"))
+include_graphics(path = here::here(data_code_path_sol, "figures/figure4.jpg"))
 ```
 
 Next, we compared real-time processing efficiency in ASL-learners and adult signers. Returning to the overview of looking behavior shown in Figure 2, we see that adults tended to shift to the target picture sooner in the sentence than did children, and well before the average offset of the target sign. Moreover, adults rarely looked to the distractor image at any point in the trial. To quantify these differences we computed the full posterior distribution for children and adults' mean Accuracy (Figure 3B) and RT (Figure 3C). Overall, adults were more accurate (M_adults= 0.85, M_(children)= 0.68, β_diff = 0.17, 95% HDI for the difference in means [0.11, 0.24]) and faster to shift to the target image compared to children (M_adults= 861.98 ms, M_(children)= 1229.95 ms; β_diff = -367.76 ms, 95% HDI for the difference in means [-503.42 ms, -223.85 ms]). This age-related difference parallels findings in spoken language (Fernald et. al., 2006) and shows that young ASL learners are still making progress towards adult-levels of ASL processing efficiency.
@@ -202,7 +201,7 @@ The fourth question of interest was whether young ASL-learners show age-related 
 Together, the accuracy and RT analyses showed that young ASL learners reliably looked away from the central signer to shift to the named target image in the VLP task. Importantly, children varied in their response times and accuracy, and this variation was meaningfully linked to age. Thus, like children learning spoken language, ASL learners improve their real-time language processing skills over the second and third years of life as they make progress towards adult levels of language fluency.
 
 ```{r sol-bf-table, results = 'asis'}
-d_bf <- read_delim(here::here(data_code_path, "data/processed_data/sol_bf_table_vals.txt"), delim = '\t')
+d_bf <- read_delim(here::here(data_code_path_sol, "data/processed_data/sol_bf_table_vals.txt"), delim = '\t')
 
 d_bf %>% 
   kable("latex", booktabs = T, longtable = T,
