@@ -1,4 +1,0 @@
-# Social information and word learning {#soc-xsit}
-
-```{r child = 'chapter_child_rmds/SOC-XSIT/soc_xsit_chapter.Rmd'}
-```

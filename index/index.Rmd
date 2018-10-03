@@ -24,9 +24,9 @@ abstract: |
 # like below, use a command like that for the abstract above.  Note that a tab is 
 # needed on the line after the |.
 acknowledgements: |
-  I am grateful to the California School for the Deaf (Fremont, CA) and the families who participated in this research. Thanks to Karina Pedersen, Lisalee Egbert, Laura Petersen, Michele Berke, and Sean Virnig for help with recruitment; to Pearlene Utley and Rosa Lee Timm for help with creating stimuli; to MH Tessler for help with analysis; and to Shane Blau, Kat Adams, Melanie Ashland for helpful discussion. I am grateful to Rose Schneider for helping record stimuli and to the members of the Language and Cognition Lab for their feedback on this project. 
+  This dissertation would not have been possible without the support of the Deaf community. I am immensely grateful to the California School for the Deaf in Fremont, CA and to the families who participated in this research. Thanks to Karina Pedersen, Lisalee Egbert, Laura Petersen, Michele Berke, Sean Virnig, Pearlene Utley, and Rosa Lee Timm. I thank the developmental community, my labmates, and my friends Kara Weisman, MH Tessler, Erica Yoon. I thank Shane Blau, Kat Adams, Melanie Ashland for helpful discussion. I am grateful to the members of the Language and Cognition Lab. I thank my parents, Morag and Richard, for their unconditional love and support and for their contributions to several key ideas in my disseration. I thank my sister, Kaitlin, for being there when I needed to someone to talk to. Finally, I thank my partner, Ellika, for everything -- my days begin and end with you and for this I couldn't be more grateful. 
 dedication: |
-  I dedicate this thesis to Sheila Paget.
+  This dissertation is dedicated to the memory of my Grammy, Sheila Paget. Thank you for being my greatest supporter and for always encouraging me to ask questions.
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl
@@ -41,6 +41,7 @@ header-includes:
 - \usepackage{float}
 - \usepackage{tabularx}
 - \usepackage{longtable}
+- \usepackage{afterpage}
 ---
 
 <!--
@@ -75,6 +76,7 @@ and 00-abstract.Rmd since they are handled in the YAML above differently for the
 on chapters.
 -->
 
-# Introduction {#intro}
+# Introduction {-#intro}
 
-Language learning is remarkable.
+```{r child = 'chapter_child_rmds/Intro/intro.Rmd'}
+```

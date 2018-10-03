@@ -11,3 +11,4 @@ data_code_path <- "index/chapter_child_rmds/SPEED-ACC-FAM"
 source(here::here("index/disseration_helpers.R"))
 ```
 
+## Introduction ^[Parts of this chapter were published as @macdonald2017info An information-seeking account of eye movements during spoken and signed language comprehension and @macdonald2018noise Adults and preschoolers seek visual information to support language comprehension in noisy environments. Proceedings of the 39th and 40th Annual Meetings of the Cognitive Science Society.]

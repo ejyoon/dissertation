@@ -1,0 +1,4 @@
+# Information seeking eye movements during language comprehension {#speed-fam}
+
+```{r child = 'chapter_child_rmds/SPEED-ACC-FAM/saf_chapter.Rmd'}
+```

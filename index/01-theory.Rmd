@@ -1,0 +1,4 @@
+# Active learning within social contexts
+
+```{r child = 'chapter_child_rmds/Active-social/active_social_theory.Rmd'}
+```
