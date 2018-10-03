@@ -8,9 +8,23 @@ fig_path_intro <- "index/chapter_child_rmds/Intro/figs"
 source(here::here("index/disseration_helpers.R"))
 ```
 
-Overview of the argument here.
+Language learning is hard.
 
-```{r schematic-overview, fig.cap = "The upper panel shows a schematic overview of the components of an integrative framemwork of active learning within social contexts. The lower panels show the different case studies and pieces of the general model that correspond to each chapter of the disseration.", fig.scap="Schematic overview of the disseration content."}
+Social learning.
+
+Statistical learning.
+
+Active learning. 
+
+Integrative framework of active learning within social contexts. Decision-making motivated by utility of action for learning goal. Using this framework, we can ask how social and statisical information selectively affect different underlying components of information selection. 
+
+Eye movements as particularly intresting query to study if interested in the confluence of social, statistical, and active learning. Children can control this behavior early in development and linking visual and linguistic information via eye movements as been proposed as one the primary tasks in early language comprehension and word learning.
+
+Overview of the argument: Why integrate these frameworks? 
+
+Overview of the case studies and the contents of each chapter in the dissertation. 
+
+```{r schematic-overview, fig.cap = "The upper panel shows a schematic overview of the components of an integrative framemwork of active language learning within social contexts. The lower panels show the different case studies and pieces of the general model that correspond to each chapter of the disseration.", fig.scap="Schematic overview of the disseration content."}
 
 include_graphics(path = here::here(fig_path_intro, "schematic_overview.png"))
 ```
