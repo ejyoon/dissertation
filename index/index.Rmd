@@ -1,5 +1,5 @@
 ---
-title: "Seeking social information during early language comprehension and word learning"
+title: "Integrating social and stastical information during early language comprehension and word learning"
 author: 'Kyle MacDonald'
 date: 'November 2018'
 advisor: 'Michael C. Frank'
