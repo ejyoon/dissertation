@@ -12,6 +12,129 @@ knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F,
                       fig.align = 'center', fig.pos = 't')
 ```
 
+# Supplementary materials for Chapter 1
+
+## Mathematical details of Optimal Experiment Design
+
+This supplement contains the mathematical details of the OED approach as described in @coenen2017asking. The goal is to provide a concrete foundation for the conceptual analysis of how social learning contexts can influence different components of active learning. 
+
+The OED model quantifies the *expected utility* of different information seeking actions. Formally, the set of queries is defined as $Q_1, Q_2,..., Q_n = \{Q\}$. The expected utility of each query ($EU(Q)$) is a function of two factors: (1) the probability of obtaining a specific answer $P(a)$ weighted by (2) the usefulness of that answer for achieving the learning goal $U(a)$.
+
+$$EU(Q) = \sum_{a\in q}{P(a)U(a)}$$
+\noindent
+There are a variety of ways to define the usefulness function to score each answer. An exhaustive review is beyond the scope of this paper (for a detailed analysis of different approaches, see @nelson2005finding). One standard method is to use *information gain*, which is defined as the change in the learner's overall uncertainty (difference in entoropy) before and after receiving an answer.
+
+$$U(a) = ent(H) - ent(H|a)$$
+
+\noindent
+Where $ent(H)$ is defined using Shannon entropy ^[Shannon entropy is a measure of unpredictability or amount of uncertainty in the learner's probability distribution over hypotheses. Intuitively, higher entropy distributions are more uncertain and harder to predict. For example, if the learner believes that all hypotheses are equally likely, then they are in a state of high uncertainty/entropy. In contrast, if the learner firmly believes in one hypothesis, then uncertainty/entropy is low.] [@mackay2003information], which provides a measure of the overall amount of uncertainty in the learner's beliefs about the candidate hypotheses. 
+
+$$ent(H) = -\sum_{a\in A}{P(h)log_2P(h)}$$
+\noindent
+The conditional entropy computation is the same, but takes into account the change in the learner's beliefs after seeing an answer.
+
+$$ ent(H|a) = -\sum_{h\in H}{P(h|a)logP(h|a)} $$
+\noindent
+To calculate the change in the learner's belief in a hypothesis $P(h|a)$, we use Bayes rule. 
+
+$$ P(h|a) = \frac{P(h)P(a|h)}{P(a)} $$ 
+
+\noindent
+If the researcher defines all these parts of the OED model (hypotheses, questions, answers, and the usefulness function), then selecting the optimal query is straightforward. The learner performs the expected utility computation for each query in the set of possible queries and picks the one that maximizes utility. In practice, the learner considers each possible answer, scores the answer with the usefulness function, and weights the score using the probability of getting that answer. 
+
+Before reviewing the behavioral evidence for OED-like reasoning in adults and children, I will present a worked example of how to compute the expected utility of a single query. The goal is to provide simple calculations that illustrate how reasoning about hypotheses, questions, and answers can lead to selecting useful actions. This example is slightly modified from @nelson2005finding. ^[In the [appendix](#app), I include example code for instantiating the OED calculations as functions in the R programming language.] 
+
+Imagine that you are a biologist, and you come across a new animal that you think belongs to one of two species: "glom" or "fizo." You cannot directly query the category identity, but you can gather information about the presence or absence of two features (eats meat? or is nocturnal?) that you know from prior research are more or less likely for each of the species. The following probabilities summarise this prior knowledge:
+
+  * $P(eatsMeat \mid glom) = 0.1$  
+  * $P(eatsMeat \mid fizo) = 0.9$
+  * $P(nocturnal \mid glom) = 0.3$  
+  * $P(nocturnal \mid fizo) = 0.5$ 
+
+\noindent  
+You also know from previous research that the probability of seeing a glom or a fizo in the wild is:
+
+  * $P(glom) = 0.7$ 
+  * $P(fizo) = 0.3$ 
+
+\noindent  
+Which feature should you test: eats meat? or sleeps at night? Intuitively, it seems better to test whether the creature eats meat because an answer to this question provides good evidence about whether the animal is a fizo since $P(eatsMeat \mid fizo) = 0.9$. However, the OED computation allows the biologist to go beyond this intuition and compute precisely how much better it is to ask the "eats meat?" question. All the scientist has to do is pass her knowledge about the hypotheses and features through the expected utility computation. 
+
+Here are the steps of the OED computation for calculating the utility of the "eats meat?" question. First, we use Bayes rule to calculate how much our beliefs would change if we received a "yes" or a "no" answer. ^[Note that the $P(eatsMeat)$ term is computed by taking $P(eatsMeat) = [P(eatsMeat \mid glom) \ times P(glom)] + [P(eatsMeat \mid fizo) \times P(fizo)] = (0.1 \times 0.7) + (0.9 \times 0.3) = 0.34$]
+
+$$ P(glom \mid eatsMeat) = \frac{P(eatsMeat \mid glom) \times P(glom)}{P(eatsMeat)} = \frac{0.1 \times 0.7}{0.34} = 0.21 $$ 
+
+\noindent
+Next, we calculate the uncertainty over the Species hypothesis before doing any experiment. We do this by computing the prior entropy.
+
+$$
+\begin{aligned}
+ent(Species) &= -\sum_{h\in H}{P(h) \times log_2P(h)} \\
+ &= [-P(glom) \times log_2P(glom)]+[-P(fizo) \times log_2P(fizo)]\\
+ &= [-(0.7 \times log_2(0.7)] + [-(0.3 \times log_2(0.3)]\\
+ &= 0.88
+\end{aligned}
+$$
+
+\noindent
+To calculate information gain, we also need to compute our uncertainty over hypotheses conditional on seeing each answer, or the posterior entropy. First, for the "yes" answer:
+
+$$
+\begin{aligned}
+ent(Species|eatsMeat = yes) &= -\sum_{a\in A}P(Species \mid eatsMeat = yes) \times log_2P(species \mid eatsMeat = yes) \\
+&= [0.21 \times log_2(0.21)] + [0.79 \times log_2(0.79)]\\
+&=  0.73
+\end{aligned}
+$$
+
+\noindent
+We use the difference between the prior and posterior entropy to compute the utility of the "yes" answer.
+
+$$
+\begin{aligned}
+U(a = yes) &= ent(Species) - ent(Species \mid eatsMeat = yes)\\
+&= 0.88 - 0.73 \\
+&= 0.15
+\end{aligned}
+$$
+
+\noindent
+Next, we do the same process for the "no" answer. First, we calculate the posterior entropy.
+
+$$ 
+\begin{aligned}
+ent(Species|eatsMeat = no) &= -\sum_{a\in A}{P(Species \mid eatsMeat = no) \times log_2P(species \mid eatsMeat = no)}\\
+&= [0.95 \times log_2(0.95)] + [0.05 \times log_2(0.05)]\\
+&=  0.27
+\end{aligned}
+$$
+
+\noindent
+Again, we use the difference between the prior and posterior entropy to compute the utility of the "no" answer.
+
+$$ 
+\begin{aligned}
+U(a = no) &= ent(Species) - ent(Species \mid eatsMeat = no)\\
+&= 0.88 - 0.27 \\
+&= 0.61
+\end{aligned}
+$$
+
+\noindent
+Note that the $U(a = no) > U(a = yes)$. This captures the intuition that learning that the animal does not eat meat would provide strong evidence against the "fizo" hypothesis since $P(eatsMeat \mid fizo) = 0.9$. Finally, to compute the overall expected information gain for the **"eats meat?" question**, we weight the utility of each answer by its probability:
+
+$$
+\begin{aligned}
+EU(Q = eatsMeat) &= \sum_{a\in A}{P(a)U(a)} \\
+&= [P(eatsMeat = yes) \times U(eatsMeat = yes)] + \\& \qquad \qquad \qquad [P(eatsMeat = no) \times U(eatsMeat = no)]\\
+&= [0.34 \times 0.15] + [0.66 \times 0.61]\\
+&= 0.46
+\end{aligned}
+$$
+
+If we performed the same steps to calculate the expected utility of the "sleeps at night?" question, we get $EU(Q = sleepsNight) = 0.026$. So if the biologist wants to maximize the chance of gaining useful information, she should select the "eats meat?" experiment since $EU(Q = eatsMeat) > EU(Q = sleepsNight)$.
+
+
 # Supplementary materials for Chapter 2
 
 In this appendix, we present four pieces of supplemental information. First, we provide details about the Bayesian models used to analyze the data. Second, we present a sensitivity analysis that provides evidence that the estimates of the associations between age/vocabulary and accuracy/reaction time (RT) are robust to different parameterizations of the prior distribution and different cutoffs for the analysis window. Third, we present the results of a parallel set of analyses using a non-Bayesian approach to show that these results are consistent regardless of choice of analytic framework. And fourth, we present two exploratory analyses measuring the effects of phonological overlap and iconicity on RT and accuracy. In both analyses, we did not see evidence that these factors changed the dynamics of eye movements during ASL processing
@@ -112,6 +235,10 @@ Next, we performed a parallel analysis, exploring whether the iconicity of our s
 
 # Supplementary materials for Chapter 4
 
+## Analytic model specifications and output
+
+### Experiment 1
+
 \captionsetup[table]{labelformat=empty}
 
 \section*{Table A1. Length of inspection times on exposure trials in Experiment 1 as a function of gaze, interval, and number of referents}
@@ -182,6 +309,9 @@ print(xtable(e1.tab.inspect.acc,
 ```
 
 \newpage
+
+### Experiment 2
+
 \section*{Table A3. Length of inspection times on exposure trials in Experiment 2 as a function of gaze and interval}
 \texttt{Log(Inspection time) $\sim$ Gaze * Log(Interval) + (1 | subject)}
 
@@ -245,6 +375,9 @@ print(xtable(e2.tab.inspect.acc,
 ```
 
 \newpage
+
+### Experiment 3
+
 \section*{Table A5. Accuracy on exposure trials in Experiment 3 as a function of reliability condition and participants' subjective reliability judgments}
 \texttt{Correct-Exposure $\sim$ Reliability Condition * Subjective Reliability + \\  offset(logit($^1/_{Referents}$)) + (1 | subject)}
 
@@ -425,6 +558,9 @@ print(xtable(e3.tab.acc.inspection,
 ```
 
 \newpage
+
+### Experiment 4
+
 \section*{Table A11. Accuracy on test trials in Experiment 4 as a function of gaze and interval}
 \texttt{Correct $\sim$ (Trial Type + Gaze + Log(Interval))$^2$ + offset(logit($^1/_{Referents}$)) + \\ (Trial Type | subject)}
 
@@ -454,3 +590,5 @@ print(xtable(e4.tab.acc,
       table.placement = "h",
       comment = F)
 ```
+
+

@@ -20,6 +20,10 @@ df_expt3 <- read_csv(here::here(data_code_path_soc_xsit, "data/soc-xsit-expt3-fi
 df_expt4 <- read_csv(here::here(data_code_path_soc_xsit, "data/soc-xsit-expt4-finalData.csv"))
 ```
 
+```{r schematic-soc-xsit, fig.cap="A schematic showing the components of the OED model captured by the case studies in Chapter 4."}
+include_graphics(path = here::here(data_code_path_soc_xsit, "figures/soc_xsit.jpeg"))
+```
+
 ## Introduction ^[This chapter is published in @macdonald2017social. Social cues modulate the representations underlying cross-situational learning. *Cognitive Psychology *, 94, 67-84.]
 
 Learning the meaning of a new word should be hard. Consider that even concrete nouns are often used in complex contexts with multiple possible referents, which in turn have many conceptually natural properties that a speaker could talk about. This ambiguity creates the potential for an (in principle) unlimited amount of referential uncertainty in the learning task.^[This problem is a simplified version of Quine's \textit{indeterminacy of reference} [@quine19600]: That there are many possible meanings for a word ("Gavigai") that include the referent ("Rabbit") in their extension, e.g., "white," "rabbit," "dinner." Quine's broader philosophical point was that different meanings ("rabbit" and "undetached rabbit parts") could actually be extensionally identical and thus impossible to tease apart.] Remarkably, word learning proceeds despite this uncertainty, with estimates of adult vocabularies ranging between 50,000 to 100,000 distinct words [@bloom2002children]. How do learners infer and retain such a large variety of word meanings from data with this kind of ambiguity?
@@ -780,11 +784,6 @@ Across Experiments 1-3, learners tended to store fewer word-object links in unam
 
 In Experiment 4, we asked whether a reduction in visual inspection time in the gaze condition could completely explain the effect of social cues on learners' reduced memory for alternative word-object links. To answer this question, we modified our paradigm and made the length of exposure trials equivalent across the Gaze and No-Gaze conditions. In this version of the task, participants were shown the objects for a fixed amount of time regardless of whether gaze was present. We also included two different exposure trial lengths in order to test whether gaze would have a differential effect at shorter vs. longer inspection times. If the presence of gaze reduces learners' memory for multiple word-object links, then this provides evidence that referential cues affected the underlying representations over and above a reduction in inspection time.
 
-```{r expt4-plot, width = "65%", fig.cap = "Experiment 4.4 results. Accuracy on test trials in Experiment 4 collapsed across the Long and Short inspection time conditions. The dashed line represents chance performance. Color and line type indicate whether there was gaze present on exposure trials. Error bars indicate 95\\% confidence intervals computed by non-parametric bootstrap.", fig.scap = "Experiment 4.4 results"}
-
-include_graphics(path = here::here(data_code_path_soc_xsit, "figures/expt4_collapsed.png"))
-```
-
 ### Method
 
 #### Participants
@@ -833,6 +832,11 @@ Procedures were identical to those of Experiment 1-3. The design was identical t
 The major design change was to make the length of exposure trials equivalent across the Gaze and No-Gaze conditions. We randomly assigned participants to one of two inspection time conditions: Short or Long. Initially, the length of the inspection times was based on participants' self-paced inspection times in the Gaze and No-Gaze conditions in Experiment 2 (Short = 3 seconds; Long = 6 seconds). However, after pilot testing, we added three seconds to each condition to ensure that participants had enough time to respond before the experiment advanced (Short = 6 seconds; Long = 9 seconds). If participants did not respond in the allotted time, an error message appeared informing participants that time had run out and encouraged them to respond within the time window on subsequent trials. 
 
 ### Results and Discussion
+
+```{r expt4-plot, fig.cap = "Experiment 4.4 results. Accuracy on test trials in Experiment 4 collapsed across the Long and Short inspection time conditions. The dashed line represents chance performance. Color and line type indicate whether there was gaze present on exposure trials. Error bars indicate 95\\% confidence intervals computed by non-parametric bootstrap.", fig.scap = "Experiment 4.4 results"}
+
+include_graphics(path = here::here(data_code_path_soc_xsit, "figures/expt4_collapsed.png"))
+```
 
 ```{r e4 timed out}
 e4_timed_out_df <- df_expt4 %>% 

@@ -1,5 +1,5 @@
 ---
-title: "Integrating social and stastical information during early language comprehension and word learning"
+title: "Seeking visual information during signed and spoken language comprehension and word learning"
 author: 'Kyle MacDonald'
 date: 'November 2018'
 advisor: 'Michael C. Frank'
@@ -24,9 +24,9 @@ abstract: |
 # like below, use a command like that for the abstract above.  Note that a tab is 
 # needed on the line after the |.
 acknowledgements: |
-  This dissertation would not have been possible without the support of the Deaf community. I am immensely grateful to the California School for the Deaf in Fremont, CA and to the families who participated in this research. Thanks to Karina Pedersen, Lisalee Egbert, Laura Petersen, Michele Berke, Sean Virnig, Pearlene Utley, and Rosa Lee Timm. I thank the developmental community, my labmates, and my friends Kara Weisman, MH Tessler, Erica Yoon. I thank Shane Blau, Kat Adams, Melanie Ashland for helpful discussion. I am grateful to the members of the Language and Cognition, Language Learning,and Social Cognition labs. I thank my parents, Morag and Richard, for their unconditional love and support and for their contributions to several key ideas in my disseration. I thank my sister, Kaitlin, for being there when I needed to someone to talk to. Finally, I thank my partner, Ellika, for everything -- my days begin and end with you and for this I couldn't be more grateful. 
+  This dissertation would not have been possible without the support of the Deaf community. I am immensely grateful to the California School for the Deaf in Fremont, CA and to the families who participated in this research. Thanks to Karina Pedersen, Lisalee Egbert, Laura Petersen, Michele Berke, Sean Virnig, Pearlene Utley, and Rosa Lee Timm. I thank Shane Blau, Kat Adams, Melanie Ashland, and Janet Bang for helpful discussion. I also want to thank the developmental community at Stanford. I feel very fortunate to have had the opportunity to work amongst a wonderful group of developmental scientists for the past five years. This research was improved tremendously thanks to the feedback from my cohort, my labmates in the Language and Cognition Lab, and the members of the Language Learning and Social Cognition labs. I am also deeply grateful to have gained some wonderful friends along the way. Kara Weisman, MH Tessler, and Erica Yoon, I'm glad we went on this journey together. I could not imagine it another way. None of what I have accomplished would be possible without the unconditional love and support from my parents, Morag and Richard MacDonald. I thank my sister, Kaitlin, for always being there when I needed to someone to talk to. Finally, I thank my partner, Ellika, for everything -- my days begin and end with you and for this I couldn't be more grateful. 
 dedication: |
-  This dissertation is dedicated to the memory of my Grammy, Sheila Paget. Thank you for being my greatest supporter and for always encouraging me to ask questions.
+  I dedicate this dissertation to the memory of my grandmother, Sheila Paget. Thank you for being my greatest supporter and for always encouraging me to ask questions.
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl

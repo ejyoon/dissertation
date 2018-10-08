@@ -1,4 +1,4 @@
-# Real-time American Sign Language comprehension {#sol}
+# Eye movements during American Sign Language comprehension {#sol}
 
 ```{r child = 'chapter_child_rmds/SOL/sol_chapter.Rmd'}
 ```

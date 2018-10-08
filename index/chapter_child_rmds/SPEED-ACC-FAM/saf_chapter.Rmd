@@ -7,8 +7,12 @@ knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F,
 options(kableExtra.latex.load_packages = TRUE)
 library(kableExtra)
 
-data_code_path <- "index/chapter_child_rmds/SPEED-ACC-FAM"
+data_code_path_saf <- "index/chapter_child_rmds/SPEED-ACC-FAM"
 source(here::here("index/disseration_helpers.R"))
+```
+
+```{r schematic-speed-fam, fig.cap="A schematic showing the components of the OED model captured by the case studies in Chapter 3."}
+include_graphics(path = here::here(data_code_path_saf, "figures/speed_familiar.jpeg"))
 ```
 
 ## Introduction ^[Parts of this chapter were published as @macdonald2017info An information-seeking account of eye movements during spoken and signed language comprehension and @macdonald2018noise Adults and preschoolers seek visual information to support language comprehension in noisy environments. Proceedings of the 39th and 40th Annual Meetings of the Cognitive Science Society.]
