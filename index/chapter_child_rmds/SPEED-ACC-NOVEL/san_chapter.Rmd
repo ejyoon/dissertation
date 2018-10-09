@@ -11,9 +11,8 @@ data_code_path_san <- "index/chapter_child_rmds/SPEED-ACC-NOVEL"
 source(here::here("index/disseration_helpers.R"))
 ```
 
+## Introduction
+
 ```{r schematic-speed-novel, fig.cap="A schematic showing the components of the OED model captured by the case studies in Chapter 5."}
 include_graphics(path = here::here(data_code_path_san, "figures/speed_novel.jpeg"))
 ```
-
-## Introduction
-
