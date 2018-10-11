@@ -337,13 +337,13 @@ contexts}\label{active-learning-within-social-contexts}
 
 \section{Introduction}\label{introduction}
 
-The rate of children's early lexical development is remarkable. Consider
-that children, despite limitations on their processing capabilities and
-ambiguity in the input, rapdily acquire new lexical concepts, eventually
-reaching an adult vocabulary ranging from 50,000 to 100,000 words (P.
-Bloom, 2002). And they accomplish this all while also developing motor
-skills, learning social norms, and building causal knowledge. How can we
-explain children's prodigious learning abilities?
+The rate of children's early cognitive development is remarkable.
+Consider that children, despite limitations on their processing
+capabilities and ambiguity in the input, rapdily acquire new lexical
+concepts, eventually reaching an adult vocabulary ranging from 50,000 to
+100,000 words (P. Bloom, 2002). And they accomplish this all while also
+developing motor skills, learning social norms, and building causal
+knowledge. How can we explain children's prodigious learning abilities?
 
 Social learning accounts point out that children do not solve these
 problems on their own. Instead, they are typically surrounded by
@@ -437,8 +437,8 @@ accounts, which present a way forward for empirical work that could shed
 light on how children's active learning processes operate over
 fundamentally social input.
 
-\hypertarget{scope}{\section{Part I: Learning on your own and from
-others}\label{scope}}
+\hypertarget{scope}{\section{Part I: Learning on your own and learning
+from others}\label{scope}}
 
 A diverse set of scholars, theories, and empirical work has considered
 the contributions of active and social processes to children's learning.
@@ -753,52 +753,42 @@ Here, {[}\(HHHH\){]} is more informative because both the bias and the
 fair coin models make the same predictions for the {[}\(HTHT\){]}
 experiment, meaning we would not learn much from this test.
 
-An applied example comes from Nelson, McKenzie, Cottrell, \& Sejnowski
-(2010) where they used an OED model to differentiate competing theories
-of information seeking during adults' category learning. They created an
-OED model of their task, which included the design choices (what
-combination of features to show participants) and the relevant
+\afterpage{
+\begin{figure}[t]
+
+{\centering \includegraphics[width=0.95\linewidth]{macdonald_dissertation_files/figure-latex/word-learn-schematic-1} 
+
+}
+
+\caption[Schematic of an active word learning context.]{Schematic of an active word learning context using the decomposition of Optimal Experiment Design. Social input (hearing a novel word) triggers an inquiry goal. Then the learner considers potential hypotheses for the candidate word-object links, weighting each hypothesis by its prior probability. In this case, the learner thinks that the new word is less likely to refer to the familiar object BALL. Next, he considers possible queries (actions) and the potential outcomes of those actions. In the word learning context, the child must direct queries towards a social partner, which provides the learner with more possible queries: both verbal (questions) and nonverbal (eye gaze; pointing). Note that the social partner must interpret the goal of the child's nonverbal queries. If the learner selects the action to maximize expected utility, then he would ask the most informative question, which removes all uncertainty for the meaning of 'dax' -- 'What's that called?' If he does select the relatively less informative action of asking about a single object, he would be unlikely to ask about the familiar object BALL since there is less information to be gained from this query based on his prior beliefs.}\label{fig:word-learn-schematic}
+\end{figure}
+\clearpage
+}
+
+Nelson, McKenzie, Cottrell, \& Sejnowski (2010) demonstrate the
+usefulness of taking an OED approach for differentiating competing
+theories of information seeking in adults' category learning. They
+created an OED model of their task, which included the design choices
+(what combination of features to show participants) and the relevant
 behavioral hypotheses (the different theories of category learning).
 They used the model to simulate the outcomes of using different stimulus
 sets, allowing them to choose stimuli for which the competing theories
 made very different predictions, speeding the rate of discovery.
 
-\afterpage{
-\begin{figure}[t]
-
-{\centering \includegraphics[width=0.95\linewidth]{macdonald_dissertation_files/figure-latex/unnamed-chunk-16-1} 
-
-}
-
-\caption[Schematic of an active causal learning context.]{Schematic of an active causal learning context using the decomposition of Optimal Experiment Design. The learner generates an inquiry goal to learn how the toy works. She then considers hypotheses, including her subjective belief in each, placing stronger belief in the simpler, disjunctive hypotheses: only Button A or Button B. Next, she considers her possible queries (actions) and the potential outcomes if she took those actions. Together, these components quantify the expected usefulness of each action. If the learner chooses optimally, she picks the action that maximizes this expected utility. In this case, she chooses to press either Button A or B, but does not press both buttons since this action would produce confounded evidence and fail to reduce her uncertainty.}\label{fig:unnamed-chunk-16}
-\end{figure}
-\clearpage
-}
-
 Coenen, Nelson, \& Gureckis (2017) provide a thorough review of the OED
 framework and its links to human information seeking. They outline the
-four critical parts of an OED model: (1) a set of hypotheses, (2) a set
-of queries (i.e., actions) to learn about the hypotheses, (3) a way to
-model the types of answers that each query could elicit, and (4) a way
-to score each answer with respect to the learning goal. They also
-highlight the importance of understanding learners' inquiry goals (what
-do people want to learn?) for engaging OED-like reasoning. The critical
-point is that without a clear learning goal, it becomes challenging to
-instantiate the hypotheses, questions, and answers that a learner should
-consider.\footnote{See Appendix A for the mathematical details of the
-  OED model.}
-
-\afterpage{
-\begin{figure}[t]
-
-{\centering \includegraphics[width=0.95\linewidth]{macdonald_dissertation_files/figure-latex/unnamed-chunk-17-1} 
-
-}
-
-\caption[Schematic of an active word learning context.]{Schematic of an active word learning context using the decomposition of Optimal Experiment Design. Social input (hearing a novel word) triggers an inquiry goal. Then the learner considers potential hypotheses for the candidate word-object links, weighting each hypothesis by its prior probability. In this case, the learner thinks that the new word is less likely to refer to the familiar object BALL. Next, he considers possible queries (actions) and the potential outcomes of those actions. Note that in the word learning context, the child must direct queries towards a social partner, which provides the learner with more possible queries: both verbal (questions) and nonverbal (eye gaze; pointing). Note that the social partner must interpret the goal of the child's nonverbal queries. If the learner selects the action to maximize expected utility, then he would ask the most informative question, which removes all uncertainty for the meaning of 'dax' -- 'What's that called?' If he does select the relatively less informative action of asking about a single object, he would be unlikely to ask about the familiar object BALL since there is less information to be gained from this query based on his prior beliefs.}\label{fig:unnamed-chunk-17}
-\end{figure}
-\clearpage
-}
+four critical parts of an OED model that are necessary to compute the
+expected value of an information seeking action: (1) a set of
+hypotheses, (2) a set of queries (i.e., actions) to learn about the
+hypotheses, (3) a generative model of the types of answers that each
+query could elicit, and (4) a way to score each answer with respect to
+the learning goal.\footnote{See Appendix A for the mathematical details
+  of the OED model.} There are also two components that are external to
+the utility computation but important for an account of human inquiry.
+First, having a goal to learn, which instantiates the hypotheses,
+questions, and answers that a learner considers. And second, having a
+stopping rule, which refers to a threshold that causes people to stop
+seeking information and generate a response.
 
 \subsection{Evidence of OED-like reasoning in human
 behavior}\label{evidence-of-oed-like-reasoning-in-human-behavior}
@@ -862,25 +852,23 @@ hypothesis (Mills, Legare, Bills, \& Mejias, 2010; Mills, Legare, Grant,
 \& Landrum, 2011).
 
 Another developmental example comes from C. Cook et al. (2011) study of
-causal learning.\footnote{See Figure 1 for a schematic overview of the
-  active causal learning context according the OED decomposition.} They
-showed preschoolers a device that played music when beads were placed on
-top of it and manipulated the usefulness of different actions that
-children could take to test the device. Half of the children saw
-evidence that all types of beads could make the machine work, while the
-other half learned that only specific types of beads (defined by color)
-could make it go. Next, children could choose one of two sets of beads
-to test the machine. In one set the beads were stuck together, in the
-other, they could be separated. Children who learned that only some of
-the beads worked were twice as likely to select the separable beads.
-This finding suggests that children were reasoning about the amount of
-information they could gain by choosing the detachable beads since this
-choice would allow them to test each bead independently. In contrast,
-the children who believed that all beads worked had less to gain by
-picking the separable set. This result is compelling because it provides
-evidence that children's were reasoning about a decision (separable
-vs.~stuck together beads) that would influence a future opportunity to
-generate useful information.
+causal learning . They showed preschoolers a device that played music
+when beads were placed on top of it and manipulated the usefulness of
+different actions that children could take to test the device. Half of
+the children saw evidence that all types of beads could make the machine
+work, while the other half learned that only specific types of beads
+(defined by color) could make it go. Next, children could choose one of
+two sets of beads to test the machine. In one set the beads were stuck
+together, in the other, they could be separated. Children who learned
+that only some of the beads worked were twice as likely to select the
+separable beads. This finding suggests that children were reasoning
+about the amount of information they could gain by choosing the
+detachable beads since this choice would allow them to test each bead
+independently. In contrast, the children who believed that all beads
+worked had less to gain by picking the separable set. This result is
+compelling because it provides evidence that children's were reasoning
+about a decision (separable vs.~stuck together beads) that would
+influence a future opportunity to generate useful information.
 
 Although the OED approach has provided a formal account of seemingly
 unconstrained information seeking behaviors, there are several ways in
@@ -894,29 +882,28 @@ sufficient cognitive capacities to carry out the calculations.
 
 In the next section, I argue that limitations of the OED approach can be
 productively reconstrued as opportunities for understanding how learning
-from other people could scaffold active learning. I focus on integrating
-research and theory on social learning with five key components of the
-OED model: inquiry goals, hypotheses, questions, answers, and stopping
-rules (see Figures 1 and 2 for an overview). The proposal is that
-learning from more knowledgeable others provides the building blocks for
-children to engage in effective self-directed learning.
+from other people could scaffold children's active learning. I focus on
+integrating research and theory on social learning with five key
+components of the OED model: goals, hypotheses, questions, answers, and
+stopping rules (see Figure \ref{integrative-schematic} for a schematic
+overview of the account).
 
 \hypertarget{active_social}{\section{Part III: Active learning within
 social contexts}\label{active_social}}
 
-Why is it important to integrate social contexts with active learning?
-First, children do not re-invent knowledge of the world, and while they
-can learn a tremendous amount from their behaviors, much of their
-generalization and abstraction is shaped by input from other people.
-Also, social learning can sometimes be the only way to learn something.
-Finally, children are often surrounded by parents, other adults, and
-older peers -- all of whom may know more about the world than they do,
-creating contexts where the opportunity for social learning is
-ubiquitous.
+Why should we situate active learning within research on the effect of
+social learning contexts? First, children do not re-invent knowledge of
+the world, and while they can learn a tremendous amount from their own
+actions, much of their generalization and abstraction is shaped by input
+from other people. Moreover, social learning can be the only way to
+learn something (e.g., first language acquisition). Finally, children
+are often surrounded by parents, other adults, and older peers -- all of
+whom may know more about the world than they do, creating contexts where
+the opportunity for social learning is ubiquitous.
 
 Second, there is a body of empirical work showing that active learning
 can be biased and ineffective in systematic ways. For example, work by
-Klahr \& Nigam (2004) showed that elementary school-aged children were
+Klahr \& Nigam (2004) found that elementary school-aged children were
 less effective at discovering the principles of well-controlled
 experiments from their self-directed learning, but were capable of
 learning these principles from direct instruction. D. B. Markant \&
@@ -930,11 +917,12 @@ interventions.
 
 In a comprehensive review of the self-directed learning literature,
 Gureckis \& Markant (2012) point out that the quality of active
-exploration is linked to aspects of the learner's understanding of the
-task: if the representation is weak, then self-directed learning will be
-biased and ineffective. Coenen et al. (2017) go one step further and
-propose specific challenges for research on active learning. Here is a
-sampling of those open questions that are most relevant to this chapter:
+exploration is linked to the learner's understanding of the task: if the
+representation is poor, then self-directed learning will be biased and
+ineffective. Coenen et al. (2017) continue this line of argument and
+propose a series of specific challenges for research on active learning.
+Here is a sample of those open questions that are most relevant to the
+integrative account proposed in this chapter:
 \begin{itemize}
 \tightlist
 \item
@@ -952,42 +940,40 @@ sampling of those open questions that are most relevant to this chapter:
   change?
 \end{itemize}
 \noindent
-In the next section, I propose that theories of social learning accounts
-can start to address these challenges. I start from the OED model
-outlined in Coenen et al. (2017), and use it to integrate social and
-active learning. The benefit of this formalization is that it makes the
+In the rest of this chapter, I argue that ideas from research on social
+learning can address these challenges. I start from the OED model, and
+use it as a conceptual tool to integrate social contexts and active
+learning. The contribution of this formalization is that it makes the
 different components of active learning explicit, highlighting the
 aspects that might be particularly challenging for young learners.
-Moreover, I think that we can reconstrue these ``challenges'' to the OED
-account as opportunities for understanding the role of other people in
-children's active learning. In each sub-section, I define the challenge
-of active learning, discuss how social contexts could address each
-challenge, and highlight prior research that connects the active and
-social learning accounts. See Figure 3 for a schematic overview of the
-proposal.
+Moreover, the ``challenges'' to the OED account can be reconstrued as
+opportunities for understanding the benefits of learning from other
+people. In each of the following sub-sections, I first define a
+challenge for active learning. Then, I discuss how social contexts could
+address each challenge, highlighting prior empirical work that connects
+active and social learning accounts (see \ref{integrative-schematic} for
+an overview).
 
 \afterpage{
 \begin{figure}[t]
 
-{\centering \includegraphics[width=0.95\linewidth]{macdonald_dissertation_files/figure-latex/unnamed-chunk-18-1} 
+{\centering \includegraphics[width=0.95\linewidth]{macdonald_dissertation_files/figure-latex/integrative-schematic-1} 
 
 }
 
-\caption[Schematic of the integrative account of active learning within a social context.]{Schematic of active learning within a social context. Each panel shows how social information could influence a different component of the active learning process. These social effects occur in-the-moment of learning or over developmental time. Also, the cause of the social effect varies from the mere presence of another person to triggering a sophisticated psychological reasoning process about others' goal-directed behaviors. Note that the panels correspond to the different sub-sections in Part IV of the text.}\label{fig:unnamed-chunk-18}
+\caption[Schematic of the integrative account of active learning within a social context.]{Schematic of active learning within a social context. Each panel shows how social information could influence a different component of the active learning process. These social effects occur in-the-moment of learning or over developmental time. Also, the cause of the social effect varies from the mere presence of another person to triggering a sophisticated psychological reasoning process about others' goal-directed behaviors. Note that the panels correspond to the different sub-sections in Part IV of the text.}\label{fig:integrative-schematic}
 \end{figure}
 \clearpage
 }
 
 \subsection{Goals}\label{goals}
 
-An inquiry goal refers to the underlying motivation for people's
-information seeking behaviors. Often this is defined as a search for the
-correct hypothesis amongst a set of candidate hypotheses. Some examples
-of plausible inquiry goals that children might hold are:
+In the OED framework, an inquiry goal refers to the underlying
+motivation for information seeking. This is often operationalized as a
+search for the target hypothesis amongst a set of candidate hypotheses.
+Some examples of inquiry goals that children might hold are:
 \begin{itemize}
 \tightlist
-\item
-  Is this person a reliable source of information? (selective learning)
 \item
   What is this speaker referring to? (word learning)
 \item
@@ -995,329 +981,127 @@ of plausible inquiry goals that children might hold are:
 \item
   How does this toy work? (causal learning)
 \item
-  Where should I look next? (allocation of visual attention)
+  Is this person reliable? (selective learning)
 \end{itemize}
 \noindent
-The importance of an explicit inquiry goal is that without a goal, it
-becomes difficult for the active learner to compare the utilities of
-different behaviors. That is, the learner cannot evaluate whether an
-action will lead to learning progress. Coenen et al. (2017) illustrate
-this point,
+Learning goals are important since without them the learner will
+struggle to evaluate whether an action leads to learning progress.
+Coenen et al. (2017) illustrate this point by saying,
 \begin{quote}
 The importance of such goals is made clear by the fact that in
 experiments designed to evaluate OED principles, participants are
 usually instructed on the goal of a task and are often incentivized by
-some monetary reward tied to achieving participants that goal.
-Similarly, in developmental studies, children are often explicitly asked
-to answer certain questions, solve a particular problem, or choose
-between a set of actions. (p.~32-33)
+some monetary reward tied to achieving that goal. Similarly, in
+developmental studies, children are often explicitly asked to answer
+certain questions, solve a particular problem, or choose between a set
+of actions. (p.~32-33)
 \end{quote}
 \noindent
-Thus, a prerequisite for understanding children's self-directed learning
-is a way to characterize children's goals. However, this is not trivial
-since children could consider a range of goals at any moment and there
-is no guarantee that learning progress be one of them. In fact, one line
-of theorizing about the OED hypothesis as a model of human inquiry
-argues that we should only expect to see effective information seeking
-in contexts where there are precise tasks and learning goals. For
-example, when a parent gives their child a new toy with several buttons
-on it and says, ``Let's figure out how this toy works!'' In this case,
-it becomes possible to ask whether the child approaches the task
-efficiently by selecting actions that provide useful information about
-the toy's causal structure.
+Characterizing children's goals is not trivial they could consider a
+range of goals at any moment with no guarantee that learning progress be
+one of them. In fact, one line of theorizing about the OED hypothesis
+argues that effective information seeking should only occur in the
+presence of precise tasks and goals. Consider the situation where a
+parent gives their child a new toy with several buttons on it and says,
+``Let's figure out how this toy works!'' In this case, it becomes
+possible to ask whether the child selects actions that are more or less
+useful with respect to understanding the toy's causal structure.
 
-This example illustrates how children's interactions with other people
-could play a role in triggering inquiry behavior. Both adults and older
-peers can construct contexts with clear learning goals to support
-children's information seeking. This connection draws on influential
-ideas in cognitive development that frame social learning as a form of
-scaffolding (Zone of Proximal Development (Vygotsky, 1987), Guided
-Participation (Rogoff et al., 1993), and Guided Play (Weisberg,
-Hirsh-Pasek, \& Golinkoff, 2013)). Under these accounts, adults place
-children in contexts that present something new to be learned but
-importantly contain learning goals that are achievable given children's
-current capabilities.
+This scenario illustrates how interactions with other people can trigger
+learning goals and information seeking. Empirical work shows how the
+actions of a social partner can increase children's tendency to detect
+their own uncertainty (see Lyons \& Ghetti (2010) for a review). The
+upshot of this research is that children's ability to realize when they
+do not know something is relatively slow to develop. For example,
+Markman (1979) showed that elementary school-aged children were unable
+to detect obvious inconsistencies in written paragraphs (e.g., ``fish
+can't see without light, and there's no light at the bottom of the
+ocean, but some fish at the bottom of the ocean only know their food by
+its color.''). Interestingly, if the experimenter gave children an
+explicit warning or challenge to find a problem with the essay, then
+they were more likely to monitor uncertainty and asked more clarifying
+questions. This finding can be reconstrued as the social context
+shifting children's expectations, highlighting the learning goal, and
+facilitating their information seeking actions. Converging evidence
+comes Kim, Paulus, Sodian, \& Proust (2016), which showed that in an
+``opt-out'' task, 3- to 4-year-olds who were told they woulid have to
+teach another person about the contents of a opaque box showed higher
+rates of uncertainty monitoring compared to children who were not
+expecting to interact with anyone else (see also Lombrozo (2006)).
 
-One example comes from Weisberg et al. (2013) ``guided play'' proposal.
-They define guided play as an intermediate learning context, falling
-between unstructured free play and constrained direct instruction. The
-precise boundaries between these contexts are challenging to define, but
-the critical dimension is the level of control that the adult has over
-the interaction. Weisberg et al. (2013) present the following example to
-highlight the difference between guided play and direct instruction:
-\begin{quote}
-For example, a teacher with the goal of teaching new vocabulary words
-could take a direct instruction approach, by telling children the
-meanings of the new words they encounter in a storybook or by showing
-examples: ``This is a helmet. A helmet goes on your head to stop your
-head from getting hurt if you fall off your bike.'' Or, she could take a
-guided-play approach, introducing the new words in the context of a
-child's play episode while encouraging children to think broadly about
-the word's meaning: ``She's got a helmet on while riding her bike. What
-do you think would happen if she fell off her bike and wasn't wearing
-her helmet? (p.~106)
-\end{quote}
-\noindent
-While these contexts appear to be quite similar, the key difference is
-whether the child initiated the activity. In free play, the child drives
-the interaction; whereas, in direct instruction, the more knowledgeable
-person explicitly tells the learner what to do, asks questions, and
-demonstrates new concepts. Weisberg et al. (2013) propose the guided
-play provides the right combination of structure and opportunity for
-exploration, leading to better learning.
+In addition to triggering inquiry goals, social partners can communicate
+the \emph{value} of learning goals relative to other goals that children
+may pursue. This connection draws on theoretical and empirical work
+exploring how children's environments can shape their intuitive
+frameworks for processing information and generating goals (i.e.,
+intuitive theories) (Dweck \& Leggett, 1988). These accounts propose
+that if children believe that abilities are malleable, they will want to
+increase their competence (prioritize learning goala) as opposed to
+demonstrate their fixed abilities (prioritize performance goals).
+Empirical work shows that when adults emphasize a learning goal (e.g.,
+``If you pick the task in this box, you'll probably learn a lot of new
+things.'' vs. ``If you pick this box, although you won't learn new
+things, it will really show me what kids can do.''), children tend to
+seek out the more difficult task {[}elliott1988goals{]}. Moreover, both
+lab-based experiments and observational work provide evidence that the
+language adults use when praising children influences their tendency
+adopt inquiry goals (Cimpian, Arce, Markman, \& Dweck, 2007; Gunderson
+et al., 2013).
 
-One less-emphasized feature of the guided play proposal is the adult's
-role in establishing a clear learning goal. In the previous example, in
-the absence of a social partner, it is unclear what goals the child
-would pursue when playing with the storybook. However, if there is an
-adult who has knowledge about the book and communicates that she wants
-to talk about it, then the child can begin to seek information. In the
-language of the OED framework, the adult creates a context that triggers
-inquiry goals, which scaffolds children's active learning. See the
-``goals'' panel in Figure 3 for another example of how a social partner
-could communicate an inquiry goal in a causal learning context.
+While social interactions can emphasize learning, they can also engage
+psychological reasoning about others' mental states and elicit social
+goals that take priority over learning goals. Consider the ``goals''
+panel of the schematic active-social learning context shown in
+\ref{integrative-schematic}. If the learner is worried about what his
+social partner thinks of him, then he might prioritize actions that
+reduce the chance of making mistakes and may not even ask for a novel
+label. Moreover, he could seek out easy tasks that demonstrate his
+competence at the expense of selecting actions that help him learn. The
+OED framework typically focuses on informational goals with progress
+measured as reduction in uncertainty. However, recent empirical and
+modeling work has begun to move beyond informations-specific utiilty
+functions to include other goals learners may have (e.g., saving time,
+money, or cognitive resources) {[}meder2012information{]}.
 
-In addition to communicating goals, the mere presence of other people
-changes children's tendency to detect whether they understand something.
-This capacity for monitoring one's uncertainty is a sub-component of
-metacognition (thinking about thinking) and has been the focus of much
-developmental research (see Lyons \& Ghetti (2010) for a review). The
-upshot of this research is that while children might be capable of
-showing behaviors that are sensitive to uncertainty (e.g., selectively
-exploring an object with ambiguous causal structure), the ability to
-explicitly access the underlying representation of uncertainty is slower
-develop.
+Recent work modeling pragmatic communication\footnote{Rational Speech
+  Act (RSA) framework for pragmatic reasoning. The RSA approach models
+  language comprehension and production as, ``a process of recursive
+  reasoning about what speakers would have said, given a set of
+  communicative goals'' (p.819) (Goodman \& Frank, 2016)} provides a way
+to integrate social goals within the OED framework. For example, T. Yoon
+Erica J \& Frank (2017) model speakers' decisions to use polite speech
+as opposed to direct speech (e.g., indirect language such as ``I don't
+think that dress looks phenomenal on you'' as opposed to ``It looks
+terrible'') as a tradeoff between maximizing informational and social
+goals, showing that speakers are in fact balancing these two goals when
+deciding what to say.
 
-The primary evidence for this slow developmental trajectory is
-children's failures to monitor and verbally report their uncertainty,
-even when it should be obvious. For example, Markman (1979) had
-elementary school aged children read paragraphs containing inconsistent
-information (e.g., ``fish can't see without light, and there's no light
-at the bottom of the ocean, but some fish at the bottom of the ocean
-only know their food by its color.''). After reading the paragraph,
-children answered a series of ten questions that gave them the
-opportunity to ask for clarification about the inconsistencies in the
-text. Overall, children performed poorly, as Markman (1979) put it,
-``even highly motivated children'' were unable to detect inconsistencies
-in the incoming information. However, if the experimenter gave children
-a warning or a challenge to find a problem with the essay, then they
-were able to generate more questions, suggesting that they more likely
-to monitor uncertainty while reading.
+In both OED and RSA, people are assumed to select actions that maximize
+utility, but the politeness model allows social information in the
+utility computation. An intriguing possibility for future research would
+be to adapt the utility-theoretic approach used by T. Yoon Erica J \&
+Frank (2017) to model information seeking behaviors in social contexts
+that vary how much they emphasize learning goals. The presence of
+another person could be modeled as an increase in the weight that
+children place on maximizing social goals, leading children to select
+easier tasks where they can appear competent(see E. J. Yoon, MacDonald,
+Asaba, Gweon, \& Frank (2018) for an example of this approach in causal
+learning). Moreover, this builds on the goal-orienting accounts reviewed
+above (Dweck \& Leggett, 1988) since behavior is modeled as an output of
+a mixture of goals as opposed to chlidren holding either a performance
+or a learning goal.
 
-While not discussed in these terms, the ``warning'' manipulation can be
-reconstrued as an intervention of the social context on children's
-expectations about incoming information. Perhaps children approached
-Markman (1979)'s task with the default expectation that the adult would
-provide complete and helpful information, making it less important to
-allocate resources to uncertainty monitoring. In fact, the assumption
-that other people will be helpful is a critical feature of social
-learning theories, and the empirical work on children's pedagogical
-sampling assumptions reviewed in \protect\hyperlink{p1}{Part I} provides
-empirical support. However, when the social context shifts these
-expections, then children might be more likely to monitor the input for
-inconsistencies, and in turn, be more likely to generate inquiry goals.
-
-Converging evidence comes a study by Kim, Paulus, Sodian, \& Proust
-(2016) where they measured 3- to 4-year-olds' uncertainty monitoring in
-contexts where children either did or did not expect to communicate with
-another person. In the task, children were either knowledgeable or
-ignorant about which toys an experimenter hid in a box. In the
-``informing'' condition, children had to tell another person about the
-contents of the box, but they were given the opportunity to ``opt-out''
-of responding if they were unsure (``Max wants to know what's inside the
-box. Can you help him? If you do not want to tell him, it's okay. I can
-tell him.''). In the ``explicit'' condition, children only reported on
-their uncertainty. Interestingly, the children who had the potential to
-inform another person showed higher rates of uncertainty monitoring,
-opting-out more often when they did not know what was inside the box.
-Similar to the Markman (1979) study, the social context shifted
-children's expectations, making them more likely to detect lack of
-knowledge. These results also connect with work showing that the process
-of generating explanations for other people can reveal inconsistencies
-in understanding (Lombrozo, 2006).
-
-Another interesting effect of social contexts on children's goals comes
-from work exploring how social input can shape children's implicit
-theories of intelligence (Dweck \& Leggett, 1988). Implicit theories of
-intelligence refer to children's internal working models of the world
-and provide general frameworks for processing information and generating
-predictions about behavior. Dweck \& Leggett (1988) propose a cognitive
-model where holding different implicit theories of intelligence leads
-children to adopt different goal orientations, which manifest in
-different choice behavior during learning. For example, if a child holds
-the belief that intelligence is malleable (an incremental theory), they
-will want to increase competence (select a learning goal) and therefore
-be more likely to choose tasks that facilitate learning.
-
-Empirical work shows that social partners can directly intervene on
-children's learning vs.~performance goals. For example, Elliott \& Dweck
-(1988) manipulated elementary school-aged children's goals by presenting
-them with a choice between one of two tasks described in the following
-ways:
-\begin{itemize}
-\tightlist
-\item
-  \emph{Performance task}. In this box we have problems of different
-  levels. Some are hard, some are easier. If you pick this box, although
-  you won't learn new things, it will really show me what kids can do.
-\item
-  \emph{Learning task}. If you pick the task in this box, you'll
-  probably learn a lot of new things. But you'll probably make a bunch
-  of mistakes, get a little confused, maybe feel a little dumb at times
-  --- but eventually you'll learn some useful things.
-\end{itemize}
-\noindent
-Elliott \& Dweck (1988) found that when the social partener oriented
-children's towards learning goals, they tended to choose the more
-difficult task despite being morewere likely to make mistakes and appear
-incompetent. In another study, Dweck \& Leggett (1988) showed that
-children who already held performance goals viewed effort on a task as
-an index of ability, whereas children with learning goals viewed effort
-as a means for improvement. Moreover, both lab-based experiments and
-observational work provide evidence that the language adults use when
-praising children can influence whether children adopt an incremental
-theory, which lead to more inquiry goals (Cimpian, Arce, Markman, \&
-Dweck, 2007; Gunderson et al., 2013).
-
-Taken together, the research on implicit theories suggests that social
-contexts can also communicate the \emph{value} of learning goals
-relative to other goals that children may pursue. The Elliott \& Dweck
-(1988) finding -- that children oriented toward learning goals selected
-more challenging tasks -- maps onto behaviors that the OED framework
-aims to characterize. That is, the goal manipulation encouraged children
-to select actions to make progress on learning.
-
-Interactions with other people can also introduce other ``social'' goals
-that influence children's information seeking. The OED framework only
-includes informational goals such that the utility of a behavior is
-determined by whether it results in a reduction of uncertainty. However,
-empirical and modeling work in other domains has extended the basic
-information-seeking account to include \emph{situation-specific utility
-functions} that include goals such as saving time, money, or cognitive
-resources. For example, Meder \& Nelson (2012) designed a series of
-experiments where ``pure'' information seeking goals (e.g., maximizing
-accuracy) were placed at odds with the reward structure of the task. The
-critical manipulation was the addition of asymmetric rewards for correct
-and incorrect categorization decisions in a binary classification task.
-Asymmetric rewards forced the learner to choose the less likely category
-to earn the highest reward (i.e., they must be willing to forego the
-goal of being accurate and make mistakes to get the highest score). When
-these goals were put in conflict, participants' behavior was mixed.
-Participants only reduced their preference for information seeking and
-improving accuracy when the asymmetric reward structure was made
-explicit via task instructions. However, Meder \& Nelson (2012) take
-their results as evidence that people were considered goals other than
-pure information gain or reward maximization, suggesting the need to
-consider additional factors when trying to understand what behaviors
-people think are useful.
-
-One important feature of social contexts is that they engage a process
-of psychological reasoning about others' mental lives. And once the
-learner starts thinking about the other person, they could begin to
-consider an additional set of ``social'' goals that may conflict with or
-support their learning goals. Consider the ``goals'' panel of the
-schematic active-social learning context shown in Figure 3. If the
-learner is worried about whether his social partner thinks he is smart,
-then he might prioritize actions that minimize the chance of making a
-mistake and perhaps not even attempt to make the toy work.
-Alternatively, the learner might seek out easy tasks to demonstrate his
-competence at the expense of choosing actions that help him learn about
-the world. On the other hand, the child's social partner could
-explicitly communicate the learning goal using natural language, e.g.,
-``Let's learn how this toy works!''
-
-Recent advances in modeling pragmatic communication\footnote{Rational
-  Speech Act (RSA) framework for pragmatic reasoning. The RSA approach
-  models language comprehension and production as, ``a process of
-  recursive reasoning about what speakers would have said, given a set
-  of communicative goals'' (p.819) (Goodman \& Frank, 2016)} provide an
-interesting connection with the situation-specific-utility functions in
-the OED framework. For example, T. Yoon Erica J \& Frank (2017) model
-speakers' decisions to use polite speech as opposed to direct speech
-(e.g., indirect language such as ``I don't think that dress looks
-phenomenal on you'' as opposed to ``It looks terrible'') as a tradeoff
-between maximizing informational and social goals. In their model,
-speakers reason about whether their utterance will communicate
-information faithfully with as little effort as possible (information
-goal) and/or cause harm to one's own or another's self-image (social
-goal). T. Yoon Erica J \& Frank (2017)'s empirical results suggest that
-speakers are in fact balancing social and epistemic goals, suggesting
-that both are necessary to account for polite speech.
-
-We can make a direct connection between the politeness model and the OED
-account. Both assume that people produce actions to maximize utility,
-but the politeness model expands the type of information that people use
-to compute the usefulness of an action. An intriguing possibility for
-future research is to adapt the utility-theoretic approach used by T.
-Yoon Erica J \& Frank (2017) to model children's information seeking
-behaviors such as asking questions in different social contexts. These
-ideas also connect to the effects of task framing (performance
-vs.~learning oriented) on children's decisions to attempt more
-challenging tasks (Dweck \& Leggett, 1988). The presence of another
-person could be modeled as an increase in the weight that children place
-on maximizing social goals, leading children to select easier tasks
-where they can appear competent. This is a reconstrual of the
-goal-orienting account reviewed above since it characterizes the
-behavior as an output from a mixture of goals as opposed to the social
-context triggering either a performance or a learning goal.
-
-One significant gap in research on children's inquiry goals is an
-estimate of how often children experience contexts with clear learning
-goals in their daily lives. That is, we do not yet have a theory of the
-kinds of environments that would lead children to generate learning
-goals. However, research on \emph{guided participation} across cultures
-provides an interesting counter-example (Rogoff et al., 1993). Rogoff et
-al. (1993) provided parents and their toddlers with a set of novel
-objects and coded the amount of ``caregiver orienting'' behavior. The
-study was conducted in four different cultural communities (a Mayan
-Indian town in Guatemala, a middle-class urban group in the United
-States, a tribal village in India, and a middle-class urban neighborhood
-in Turkey) that varied in how separated children were from adult
-activities and whether formal schooling was emphasized. Caregiver
-orienting behavior was defined as,
-\begin{quote}
-Caregiver orients child involved introducing new information or
-structure to the child (at any point in the episode) regarding the
-overall goals or a key part of the event or what was expected in the
-situation. Orienting framed a major goal, not just specific little
-directives for particular actions. (p.~43)
-\end{quote}
-\noindent
-Parents in all four communities produced high rates of structuring and
-orienting behaviors (with the lowest rate of structuring being 81\% of
-play episodes). Thus, when placed in a structured activity, adults make
-sure children are aware of the goal (e.g., learning the function of the
-novel toy). However, the communities differed in how often children were
-directly involved with adult activities in day-to-day life, with the
-children raised in rural villages often having early access to adult
-economic and social events. An open question is whether older peers and
-adults need to be directly engaged with the child to trigger inquiry
-goals. Perhaps increased access to observing adult goal-directed
-behaviors could facilitate children to generate learning goals since
-children would see lots of adult activities that they do not understand
-but are motivated to learn about (e.g., cooking, shopping, working).
-
-In sum, understanding children's goals represent a critical step in
-characterizing the relative contribution active learning to cognitive
-development. Social contexts have the power to trigger inquiry goals,
-but they also introduce social goals that might be at odds with
-children's information seeking. One direction for future research is to
-quantify the prevelance of different goals in children's everyday
-experience. It would be useful to know how much of children's daily
-activities involve settings where there is a clear learning goal and
-whether the goal was generated independently or communicated by older
-peers and adults. It would also be useful to know how the distribution
-of these goals change as a function of development, especially as
-children enter school and across different cultural contexts where
-children have differential access to structured (e.g., lessons and
-sports) vs.~unstructured activies (e.g., free play). Moving beyond the
-lab-based studies of OED-like reasoning is not trivial and will require
-leveraging recent advances in large-scale observational data collection
-about children's daily experiences. However, it is important to ask
-whether the efficient information-seeking behaviors that children
-produce in the lab would ``scale up'' to the complexity of real world
-learning environments, especially if we want to use the OED model as an
-account of cognitive development.
+Another open question for research on children's learning goals is how
+often children experience contexts where learning goals are apparent or
+emphasized in their everyday experience. We do not yet have an estimate
+of the prevalence of situations that would lead children to generate
+learning goals. One exception, however, is research on \emph{guided
+participation} by Rogoff et al. (1993) provides evidence that parents
+from a diverse set of cultural backbgrounds produce high rates of
+structuring and goal-orienting behaviors during activities such as
+cooking, shopping, working, etc. It is interesting to consider whether
+variability in children's exposure to goal-orienting behaviors could
+influence children's tendency to spontaneously generate learning goals.
 
 \subsection{Hypotheses}\label{hypotheses}
 
@@ -5302,11 +5086,6 @@ Eaves Jr, B. S., Feldman, N. H., Griffiths, T. L., \& Shafto, P. (2016).
 Infant-directed speech is consistent with teaching. \emph{Psychological
 Review}, \emph{123}(6), 758.
 
-\hypertarget{ref-elliott1988goals}{}
-Elliott, E. S., \& Dweck, C. S. (1988). Goals: An approach to motivation
-and achievement. \emph{Journal of Personality and Social Psychology},
-\emph{54}(1), 5.
-
 \hypertarget{ref-emery1998optimal}{}
 Emery, A., \& Nenarokomov, A. V. (1998). Optimal experiment design.
 \emph{Measurement Science and Technology}, \emph{9}(6), 864.
@@ -5639,11 +5418,6 @@ McMurray, B., Horst, J. S., \& Samuelson, L. K. (2012). Word learning
 emerges from the interaction of online referent selection and slow
 associative learning. \emph{Psychological Review}, \emph{119}(4), 831.
 
-\hypertarget{ref-meder2012information}{}
-Meder, B., \& Nelson, J. D. (2012). Information search with
-situation-specific reward functions. \emph{Judgment and Decision
-Making}, \emph{7}(2), 119.
-
 \hypertarget{ref-medina2011words}{}
 Medina, T. N., Snedeker, J., Trueswell, J. C., \& Gleitman, L. R.
 (2011). How words can and cannot be learned by observation.
@@ -5936,11 +5710,6 @@ Vygotsky, L. (1987). Zone of proximal development. \emph{Mind in
 Society: The Development of Higher Psychological Processes},
 \emph{5291}, 157.
 
-\hypertarget{ref-weisberg2013guided}{}
-Weisberg, D. S., Hirsh-Pasek, K., \& Golinkoff, R. M. (2013). Guided
-play: Where curricular goals meet a playful pedagogy. \emph{Mind, Brain,
-and Education}, \emph{7}(2), 104--112.
-
 \hypertarget{ref-woodard2016two}{}
 Woodard, K., Gleitman, L. R., \& Trueswell, J. C. (2016). Two-and
 three-year-olds track a single meaning during word learning: Evidence
@@ -5965,6 +5734,12 @@ word learning. \emph{Developmental Science}, \emph{10}(3), 288--297.
 \hypertarget{ref-xu2007word}{}
 Xu, F., \& Tenenbaum, J. B. (2007b). Word learning as bayesian
 inference. \emph{Psychological Review}, \emph{114}(2), 245.
+
+\hypertarget{ref-yoon2018balancing}{}
+Yoon, E. J., MacDonald, K., Asaba, M., Gweon, H., \& Frank, M. C.
+(2018). Balancing informational and social goals in active learning. In
+\emph{Proceedings of the 40th annual conference of the cognitive science
+society}.
 
 \hypertarget{ref-yoon2008communication}{}
 Yoon, J. M., Johnson, M. H., \& Csibra, G. (2008). Communication-induced
