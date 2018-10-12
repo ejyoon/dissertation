@@ -1305,82 +1305,64 @@ to a noisy recording).
 
 \subsection{Answers}\label{answers}
 
-In the OED framework, answers refer to possible states of the world
-after the learner generates a query. An answer is useful if it results
-in a substantial decrease in uncertainty about the actual state of the
-world. The challenge for the active learner can be separated roughly
-into two parts: (1) figure out what which answers are likely and (2)
-decide how much you should learn from an answer after seeing it. The
-social context plays a role in each component and is the focus of the
-current section.
+OED defines answers as the possible states of the world after the
+learner generates a query. An answer is useful if it decreases
+uncertainty about the learners' hypotheses. The challenge for the child
+as active learner can be separated into two parts: (1) figure out what
+which answers (outcomes) are likely for each query (action) and (2)
+decide how much to update beliefs after seeing each answer. In this
+section, I discuss the ways that social contexts can affect each
+component of the answer evaluation process.
 
-Defining the specific features of a ``good'' answer is challenging.
-Intuitively, a good answer gives the learner information that they did
-not already know, that they were interested in learning, and that is
-likely to be useful beyond the current context (i.e., to generalize).
-Even within the formal OED framework, there have been a variety of ways
-to instantiate the utility function (e.g., information gain, probability
-gain, and Kullback-Leibler divergence) to compute the value of an answer
-(see Nelson (2005)). All of these information-theoretic utility
-functions take into account the learner's prior beliefs represented as
-probability distributions over hypotheses and calculate the impact that
-an answer would have on the learner's beliefs represented as conditional
-probability distributions.
+Defining a ``good'' answer is challenging. Intuitively, a good answer
+provides the learner with information that they did not already know,
+that they were interested in learning, and that is likely to be useful
+beyond the current context. Even within the formal OED framework, there
+have been a variety of ways to instantiate this utility function (e.g.,
+information gain, probability gain, and Kullback-Leibler divergence)
+(Nelson, 2005). These information-theoretic utility functions take into
+account the learner's prior beliefs, which are represented as
+probability distributions over hypotheses and compute the effect of each
+answer on the learner's beliefs, which is represented as a conditional
+probability distribution.
 
-Several social learning accounts argue that a key function of social
-information is to provide useful answers. For example, evolutionary
-models of cultural learning argue that the human capacity for
-efficiently transferring knowledge between individuals allows for the
-gradual accumulation of small improvements that eventually lead to
-complex tools, beliefs, and practices that would be difficult, if not
-impossible, for any individual to discover on their own (Kline, 2015).
-Boyd et al. (2011) provide the following example,
-\begin{quote}
-For example, a rare chance observation might allow a hunter to associate
-a particular spoor with a wounded polar bear, or to link the color and
-texture of ice with its stability on windy days just after a thaw. Such
-rare cues allow accurate low-cost inferences about the environment.
-However, most individuals will not observe these cues, and thus making
-the same inference will be much more difficult for them. Organisms that
-cannot imitate must rely on individual learning, even when it is
-difficult and error-prone. They are stuck with whatever information that
-nature offers. (p.~10921)
-\end{quote}
-\noindent
-The fundamental idea is that communicating useful and difficult to
-acquire information enhanced evolutionary fitness. Thus, there is an a
-priori reason to expect that information from other people will be
-useful.
+Social learning theories often start from the idea that interactions
+with other people increase the probability of getting good information.
+For example, evolutionary models argue that knowledge transfer between
+generations allows for the gradual accumulation of small improvements
+that eventually led to complex tools, beliefs, and practices that would
+be difficult, if not impossible, for any individual to discover on their
+own (Kline, 2015). Boyd et al. (2011) provide the example of a hunter
+stumbling across the link between the color/texture of ice and its
+stability, saying that this type of rare information would be much
+harder for individuals to re-discover on their own. But social
+transmission allows humans to pass these discoveries down to subsrequent
+enerations, allowing humans to move beyond the information that the
+world is likely to provide.
 
-This concept is critical to Csibra \& Gergely (2009)`s theory of
-``Natural Pedagogy'' reviewed in \protect\hyperlink{p1}{Part I}.
-Specifically, they argue that an assumption of \emph{generalizability}
-is a fundamental component of adults' communication with children. Their
-account has three elements: adults transmit generic information, adults
-provide ostensive cues to signal generalizable knowledge, and children
-show sensitivity to these cues, treating information differently when
-they are present. Evidence for a bias towards generalizability comes
-from a set of empirical studies showing that infants will generalize
-more often when learning information accompanied by ostensive
-communicative cues such as eye gaze or child-directed speech. For
-example, infants are more likely to generalize the positive vs.~negative
-valence associated with a specific object-person pairing to a new person
-if the valence was demonstrated with pedagogical cues (Gergely, Egyed,
-\& Király, 2007). Also, infants are more likely to encode the stable
-features of an object, as opposed to its location in space, if a
-communicative signal such as a point guided their attention (J. M. Yoon
-et al., 2008).
+Csibra \& Gergely (2009)'s theory of ``Natural Pedagogy'' argues that an
+assumption of \emph{generalizability} is a fundamental component of the
+answers that children get when they interact with adults. Under their
+account, when adults provide ostensive cues (eye gaze or child-directed
+speech) to signal generalizable knowledge children update their beliefs
+differently. Empirical work shows that infants are more likely to
+generalize the valence of an object to a new person if this information
+was learned in the presence of an ostensive, pedagogical cue (Gergely,
+Egyed, \& Király, 2007). Moreover, infants are more likely to encode the
+stable features of an object, as opposed to its location in space, if a
+communicative signal such as a point guided their attention to that
+object (J. M. Yoon et al., 2008).
 
-Even if learning occurs in a social context with a default assumption of
-useful and generalizable information, not all answers are equally
-informative. Thus, the second challenge for information seekers is to
-evaluate possible responses to a query to figure out how much they would
-update beliefs. This challenge is perhaps one of the more developed
-connections between the formal social and active learning accounts.
-Researchers have made progress in modeling the influence of different
-assumptions that a learner could make about the generative process of
-answers. For example, Shafto et al. (2012b) lay out a continuum of
-sampling assumptions:
+In addition to to increasing the chance of seeing generalizable
+information, features of the social context can also modulate the way
+active learners evaluate possible answers. This link is one of the more
+developed connections between the OED and social learning accounts. That
+is, researchers have made progress in modeling the influence of
+different assumptions that a learner could make about the process
+through which other people generate answers. Shafto et al. (2012b)
+describe these different sampling assumptions, placing them along a
+continuum that varies in terms of how much a learner should update their
+beliefs:
 \begin{itemize}
 \tightlist
 \item
@@ -1396,158 +1378,86 @@ sampling assumptions:
   hypothesis and consider alternative hypotheses)
 \end{itemize}
 \noindent
-Critically, if the learner assumes strong or pedagogical sampling, then
-they can make stronger inferences that speed learning. For example, if
-we see someone press two buttons to activate a device, we are more
-likely to think that both buttons were necessary if that person knew how
-the machine worked and wanted to communicate to us how it worked.
-Otherwise, if one of the buttons would have been sufficient, then it
-would not make sense for them to perform the less efficient action of
-pressing both buttons. The effects of these sampling assumptions are
-fundamentally psychological. They require the learner to reason about
-others' goals and to reason about whether other people are thinking
-about their goals. See the ``Answers'' panel of Figure 3 for a visual
-illustration of this recursive psychological reasoning process within
-the active learning context.
+If the learner assumes strong or pedagogical sampling, then they can
+make stronger inferences that speed learning. For example, if we see
+someone press two buttons to activate a device, we are more likely to
+think that both buttons were necessary if that person knew how the
+machine worked and wanted to communicate to us how it worked. Otherwise,
+if one of the buttons would have been sufficient, then it would not make
+sense for them to perform the less efficient action of pressing both
+buttons. The effects of these sampling assumptions are fundamentally
+psychological. They require the learner to reason about others' goals
+and to reason about whether other people are thinking about their
+goals.\footnote{See the ``Answers'' panel of Figure XXX for an
+  illustration of this recursive reasoning process within an active
+  learning context.}
 
 Empirical support for the pedagogical sampling account comes from a
 range of domains/tasks, including word learning (Frank et al., 2009),
 pragmatic inference (Frank \& Goodman, 2012), and causal reasoning
-(Bonawitz et al., 2011) (see the section on inferences and
-generalization in social learning Part I). We can also revisit these
-findings and connect them directly to specific components of the OED
-model of human inquiry. Consider Xu \& Tenenbaum (2007a) finding: that
-learners are ``sensitive'' to the sampling process that generated the
-examples. When a knowledgeable teacher selected the examples, learners
-assumed the examples indicated the true word meaning. And if this were
-the case, then it would be surprising to see three examples drawn from
-the smaller subordinate category. Formally, they modeled sensitivity to
-sampling assumptions by changing the learner's belief in the probability
-of hearing a particular label (\(l_i\)) given a specific object
-(\(o_i\)) and word meaning (\(m\)), modifying the likelihood function in
-their Bayesian cognitive model:
-\(p(x_i \mid m) \propto p(l_i \mid o_i, m)\). In this case, the
-likelihood function for the teacher-driven condition was designed to
-capture the idea that learners should prefer ``smaller'' or more
+(Bonawitz et al., 2011). These empirical findings connect directly to
+the OED model, Consider Xu \& Tenenbaum (2007a) finding that when a
+knowledgeable teacher generates object labels, learners assumed the
+examples indicated the true word meaning, making it more likely that
+three examples would be drawn from the larger, basic category (as
+opposed to the smaller subordinate category). This effect was modeled by
+modifiying the likelihood function in a Bayesian cognitive model. In
+this case, the likelihood function for the teacher-driven condition was
+designed to capture the idea that learners should prefer more
 restrictive hypotheses if they are confident that the teacher generated
-labels based on the actual word meaning.
+labels based on the actual word meaning. This formalization makes direct
+contact with the OED model of human inquiry since learners consider how
+much answers will update their beliefrs, capturing the idea that
+responses generated to help us learn carry more information.
 
-This formalization provides a direct connection with the OED model of
-human inquiry. Specifically, when a learner simulates the possible
-answers, she considers how much each answer will update her beliefs.
-This reasoning process is modeled by computing the difference between
-the learner's prior and posterior uncertainty (i.e., entropy):
-\(U(a) = ent(H) - ent(H|a)\). The learners' sampling assumptions
-naturally enter the information seeking calculus through the posterior
-entropy term \(ent(H|a) = -\sum_{h\in H}{P(h|a)logP(h|a)}\).
-Intuitively, this part of the model captures the idea that not all
-answers are equally useful, and answers that are generated to help us
-learn are more informative and should lead to a stronger change in the
-learner's beliefs.
+Another line of empirical work has focused on children's decisions about
+whom to learn from. Even young infants are capable of \emph{selective}
+learning, rejecting answers that conflict with their knowledge (Pea,
+1982) and seeking information from people who tend to provide good
+information in the past (Koenig, Clement, \& Harris, 2004). For example,
+Chow, Poulin-Dubois, \& Lewis (2008) found that 14-month-olds are less
+likely to follow the gaze of a person who had consistently directed gaze
+towards an empty location. Moreover, children prefer to learn from
+familiar over unfamiliar adults (Corriveau \& Harris, 2009), adults over
+peers (Rakoczy, Hamann, Warneken, \& Tomasello, 2010), and ingroup over
+outgroup members (MacDonald, Schug, Chase, \& Barth, 2013). In fact,
+Gweon, Pelton, Konopka, \& Schulz (2014) found that 14-month-olds
+explore objects more after interacting with a teacher who had been
+under-informative in their previous demonstrations, providing evidence
+of an early ability to link the quality of answers to active learning
+decisions.
 
-The approach of building more sophisticated likelihood functions has
-also been used to capture another aspect of evaluating the utility of an
-answer: that not all social partners are equally reliable sources of
-information. When learning from the testimony of others, there is always
-a possibility that the information could be inaccurate or misleading.
-This reasoning process might be especially important for young learners
-who acquire much of their information via interactions with others. A
-growing body of evidence suggests that even very young infants are
-capable of \emph{selective} learning, rejecting answers that conflict
-with their knowledge (Pea, 1982) and seeking information from people who
-tend to provide good answers in the past (Koenig, Clement, \& Harris,
-2004).
+Interestingly, the outcome measures in these studies of selective
+learning -- whom to direct questions towards or how long to explore a
+novel toy -- are information-gathering decisions. While this is an
+implicit link to the OED account, selective learning phenomena have also
+been formally modeled as modifications to the likelihood function in
+Bayesian cognitive models. For example, Shafto et al. (2012a) developed
+a model in which children reason about both the helpfulness and
+knowledgeability of speakers when deciding whom to learn from and were
+able to capture several qualitative findings from the selective trust
+literature. This approach parallels the word learning and pedagogical
+sampling models reviewed above. It is interesting tha same modeling
+approach can account for children's behavior in different domain,
+suggesting that social reasoning effects should be considered when
+chracterizing the utility of answers from other people.
 
-For example, empirical work shows that preschoolers track and integrate
-a speaker's prior instances of accuracy to figure out if they are
-trustworthy and will use this information to guide subsequent learning
-from that speaker's future claims (Koenig et al., 2004). In these
-studies, children evaluate a speaker's current testimony after the
-speaker establishes a record of reliability or unreliability by labeling
-or mislabeling familiar objects. Across these studies, preschoolers are
-consistently less likely to direct questions towards and learn from a
-previously unreliable person. Moreover, Chow, Poulin-Dubois, \& Lewis
-(2008) found that 14-month-olds are less likely to follow the gaze of a
-person who had been unreliable in the past, i.e., someone who had
-consistently directed gaze towards an empty location in space. Finally,
-children's selective learning appears sensitive to external cues,
-preferring to learn familiar over unfamiliar teachers (Corriveau \&
-Harris, 2009), adults over peers (Rakoczy, Hamann, Warneken, \&
-Tomasello, 2010), and ingroup over outgroup members (MacDonald, Schug,
-Chase, \& Barth, 2013).
-
-Converging evidence comes from Gweon, Pelton, Konopka, \& Schulz (2014)
-work on children's exploration behavior after seeing pedagogical
-demonstrations of varying quality. In this study, children played with
-toys that either had a single or multiple functions (e.g., spinning
-globe or flashing light) until they independently discovered the correct
-number of functions. Then, depending on condition assignment, they saw a
-puppet either teach all of the functions (informative teacher) or a
-subset of the functions (under-informative teacher). Finally, the puppet
-teacher introduced a new toy to the participant and demonstrated a
-single novel function. Critically, when the puppet teacher had been
-under-informative in their previous teaching, children spent more time
-exploring the object functions that the teacher did not demonstrate.
-That is, children did not make the stronger inference that there were no
-other functions to discover.
-
-The upshot of the selective learning literature is that children are not
-entirely credulous when they encounter information. Instead, they
-actively reason about features such as expertise and helpfulness
-avoiding people that they think are unreliable. Interestingly, the
-typical outcome measures in studies of selective learning are children's
-information-gathering decisions: whom to direct questions towards and
-how long to explore a novel toy. These behaviors map directly onto the
-decisions in the OED model of human inquiry and suggest that children
-consider the expected utility of others' answers when deciding to gather
-information.
-
-Similar to the pedagogical reasoning effects, the selective learning
-phenomena have also been modeled by modifying the likelihood function in
-a Bayesian cognitive model. For example, Shafto et al. (2012a) proposed
-that selective learning in object labeling scenarios can be explained as
-children reasoning about both the helpfulness and knowledgeability of
-speakers when they produce a given label, \(l\). Here the child's goal
-is to select a speaker that increases the chance that they get good
-information that matches the true state of the world
-(\(label=correct\)). Formally, they specify this likelihood function as:
-
-\[P(l \mid s,k,h) = \sum_b P(l \mid b,h)P(b \mid k,s)\]
-
-\noindent
-This function captures the idea that the probability of a label depends
-on the true state of the world and features of the speaker: their
-knowledge (\(k\)) and helpfulness (\(h\)). This is decomposed into two
-parts: (1) the speaker's belief (\(b\)) about the label \(P(b|k,s)\),
-which depend on their knowledge (\(k\)) and the true label (\(s\)), and
-(2) the speaker's probability of producing a label that matches their
-belief, which depends on their helpfulness (\(h\)). Using this model,
-Shafto et al. (2012a) captured several qualitative findings from the
-selective trust literature, including children's demonstrated preference
-for accurate over inaccurate speakers. While the precise mathematical
-details of the model are less important, the key takeaway is that the
-same modeling approach can account for children's behavior in different
-domains. This parallel suggests that children reason about the utility
-of answers before deciding to seek information from a social partner and
-after having received information from another person.
-
-One consequence of the ideas discussed in this section is that features
-of the individuals who are present in a social learning context can
-change whether information seeking occurs at all. If a child is in a
-setting that is unlikely to provide useful answers, then generating an
-information-seeking behavior, even if the action has the potential to
-return useful information, becomes less valuable. Thus, a challenge for
-the self-directed learner is to figure out whether helpful answers are
-likely to occur. However, this is a less-developed area of research, and
-more work is needed to understand whether the expected usefulness of
-answers within a \emph{context} might reduce information seeking because
-the costs in mental energy or time are too high. The dual consideration
-of costs and benefits in active learning has been the focus of recent
-advances in machine learning (Haertel, Seppi, Ringger, \& Carroll, 2008)
-and children's developing social cognition (Jara-Ettinger, Gweon,
-Tenenbaum, \& Schulz, 2015). It would be interesting to merge these
-cost-based approaches with ideas from social learning theory to ask how
-social contexts modify the costs of different behaviors.
+One candidate for future research is to ask how social contexts change
+children's decisions about whether to initiate information seeking
+behaviors in the first place. That is, if their social partners are
+unlikely to provide useful answers, then active learning (even if
+children are capable of selecting informative actions) becomes less
+valuable. The dual consideration of costs and benefits in active
+learning has been the focus of much research in machine learning, which
+tries to select the set of questions to ask taking into account how long
+it will take a human to respond (Haertel, Seppi, Ringger, \& Carroll,
+2008). Moreover, recent lab-based studies and theorizing in social
+cognition suggest that children are capable of ``intuitive utility
+maximization'' reasoning that others take actions to increase rewards
+while minimizing costs in terms of time, effort, etc (Jara-Ettinger,
+Gweon, Tenenbaum, \& Schulz, 2015). It would be interesting to bring
+these cost-based approaches to bear on questions about how social
+contexts modify children's active learning.
 
 \subsection{Stopping rules}\label{stopping-rules}
 
