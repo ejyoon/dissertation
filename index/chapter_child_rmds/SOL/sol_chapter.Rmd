@@ -12,11 +12,7 @@ options(kableExtra.latex.load_packages = TRUE)
 library(kableExtra)
 ```
 
-```{r schematic-sol, fig.cap="A schematic showing the components of the OED model captured by the case studies in Chapter 2."}
-include_graphics(path = here::here(data_code_path_sol, "figures/sol.jpeg"))
-```
-
-## Introduction ^[This chapter is published in @macdonald2018real. Real-time lexical comprehension in young children learning American Sign Language. *Developmental science*, e12672.]
+## Introduction 
 
 Finding meaning in a spoken or a signed language requires learning to establish reference during real-time interaction – relying on audition to interpret spoken words, or on vision to interpret manual signs.  Starting in infancy, children learning spoken language make dramatic gains in their efficiency in linking acoustic signals representing lexical forms to objects in the visual world.  Studies of spoken language comprehension using the looking-while-listening (LWL) procedure have tracked developmental gains in language processing efficiency by measuring the timing and accuracy of young children's gaze shifts as they look at familiar objects and listen to simple sentences (e.g., "Where's the ball?") naming one of the objects (Fernald, Zangl, Portillo, & Marchman, 2008; Law & Edwards, 2014; Venker, Eernisse, Saffran, & Ellis Weismer, 2013).  Such research finds that eye movements to named objects occur soon after the auditory information is sufficient to enable referent identification, and often prior to the offset of the spoken word (Allopenna, Magnuson, & Tanenhaus, 1998). Moreover, individual differences in the speed and accuracy of eye movements in response to familiar words predict vocabulary growth and later language and cognitive outcomes (Fernald, Perfors & Marchman, 2006; Marchman & Fernald, 2008).  Together, these results suggest that gaze shifts to objects in response to spoken language reflect a rapid integration of linguistic and visual information, and that variability in the timing of these gaze shifts provides researchers a way to measure the efficiency of the underlying integration process. 
 

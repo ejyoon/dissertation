@@ -1,2 +1,13 @@
-# Seeking social and statisical information during word learning {#speed-nov}
+# Seeking social and statisical information
 
+In this chapter, we present three studies of eye movements in the presence of a social gaze cue during language comprehension and word learning. Within our broader active-social framework, these studies ask how the value of information gained from querying a social partner interacts with children's developing knowledge of word meanings. This approach brings together elements of all three pieces of the integrative account -- social, statistical, and active -- presented in Chapter 1. 
+
+We measured how children's decisions about whether to look at a social target (a speaker's face) or at objects changed as a function of their word knowledge. First, both children and adults showed parallel gaze dynamics when comprehending familiar words in the presence of a social cue (eye gaze). Second, in a cross-situational word learning task, adults showed stronger memory for word-object mappings learned via a social cue. Finally, in contrast to the familiar words in Experiment 1, both children and adults gathered more visual information from a speaker's face when she provided a useful gaze cue in the context novel object labeling. This differential looking to a social partner increased over the course of the experiment, as learners were exposed to more word-object co-occurrence information. Together, these results provide evidence that learners will look more to a social partner when it supports their current task, and estimating this value involves an integration of prior knowledge of word-object mappings with the availability of social information in the learning context.
+
+```{r schematic-speed-novel, fig.cap="A schematic showing the components of the OED model captured by the case studies in Chapter 5.", fig.scap="Overview of Chapter 5."}
+data_code_path_san <- "index/chapter_child_rmds/SPEED-ACC-NOVEL"
+include_graphics(path = here::here(data_code_path_san, "figures/speed_novel.jpeg"))
+```
+
+```{r child = 'chapter_child_rmds/SPEED-ACC-NOVEL/san_chapter.Rmd'}
+```
