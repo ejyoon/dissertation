@@ -1,5 +1,5 @@
 ---
-title: "Seeking visual information during signed and spoken language comprehension and word learning"
+title: "Children's visual information seeking during signed and spoken language processing"
 author: 'Kyle MacDonald'
 date: 'November 2018'
 advisor: 'Michael C. Frank'
