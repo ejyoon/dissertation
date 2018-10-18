@@ -1,5 +1,5 @@
 ---
-title: "Children's visual information seeking during signed and spoken language processing"
+title: "Children's information seeking during signed and spoken language processing"
 author: 'Kyle MacDonald'
 date: 'November 2018'
 advisor: 'Michael C. Frank'
@@ -50,6 +50,7 @@ header-includes:
 - \usepackage{tabularx}
 - \usepackage{longtable}
 - \usepackage{afterpage}
+- \usepackage{threeparttable}
 ---
 
 <!--
@@ -88,3 +89,4 @@ on chapters.
 
 ```{r child = 'chapter_child_rmds/Intro/intro.Rmd'}
 ```
+
