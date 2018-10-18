@@ -1,4 +1,4 @@
-# Social information and word learning ^[This chapter is published in @macdonald2017social. Social cues modulate the representations underlying cross-situational learning. *Cognitive Psychology *, 94, 67-84.]
+# Social information shapes word learning ^[This chapter is published in @macdonald2017social. Social cues modulate the representations underlying cross-situational learning. *Cognitive Psychology *, 94, 67-84.]
 
 In this chapter, we present a series of studies exploring adults' word learning in the presence of social cues to word meanings. Within our broader active-social framework, these experiments investigate how social information can constrain the strength and the number of word-object hypotheses that learners store, which, in turn, could shape subsequent information seeking behaviors. Overall, this line of work brings together social and statistical accounts of word learning to ask how statistical learning mechanisms operate over social input. 
 
