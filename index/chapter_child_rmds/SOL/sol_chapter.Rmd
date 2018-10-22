@@ -5,11 +5,7 @@ knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F,
                       fig.align = 'center', fig.pos = 't')
 
 data_code_path_sol <- "index/chapter_child_rmds/SOL"
-source(here::here("index/disseration_helpers.R"))
-
-# need to load kableExtra in the env
-options(kableExtra.latex.load_packages = TRUE)
-library(kableExtra)
+#source(here::here("index/disseration_helpers.R"))
 ```
 
 ## Introduction 

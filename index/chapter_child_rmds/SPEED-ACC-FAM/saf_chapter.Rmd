@@ -4,8 +4,8 @@ knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F,
                       fig.align = 'center', fig.pos = '!t')
 
 # need to load kableExtra in the env
-options(kableExtra.latex.load_packages = TRUE)
-library(kableExtra)
+# options(kableExtra.latex.load_packages = TRUE)
+# library(kableExtra)
 
 # relevant paths
 project_path <- "/Users/kylemacdonald/Documents/Projects/speed-acc"
@@ -17,8 +17,8 @@ image_path <- "writing/journal_submission/figures/figs_output"
 data_code_path_saf <- "index/chapter_child_rmds/SPEED-ACC-FAM"
 
 ## load other packages
-source(here::here("index/disseration_helpers.R"))
-source(file.path(project_path, "R/helper_functions/paper_helpers.R"))
+# source(here::here("index/disseration_helpers.R"))
+# source(file.path(project_path, "R/helper_functions/paper_helpers.R"))
 source(file.path(project_path, "R/helper_functions/ewma_helper_funs.R"))
 
 # analysis globals
@@ -138,7 +138,7 @@ In Experiment 1, we compared eye movements of children learning American Sign La
 
 ```{r trio get participant info}
 trio_n <- df_trio %>% 
-  select(Sub.Num, stimuli, age_code) %>% 
+  dplyr::select(Sub.Num, stimuli, age_code) %>% 
   unique() %>% 
   mutate(`Center Stimulus` = stimuli) %>% 
   group_by(`Center Stimulus`, age_code) %>%
@@ -148,7 +148,7 @@ trio_n <- df_trio %>%
 ```{r trio make participants table, results="asis"}
 trio_tab <- df_trio %>% 
   filter(age_code == "child") %>% 
-  select(Sub.Num, stimuli, Months) %>% 
+  dplyr::select(Sub.Num, stimuli, Months) %>% 
   mutate(`Center Stimulus` = stimuli) %>% 
   unique() %>% 
   group_by(`Center Stimulus`) %>% 
@@ -157,7 +157,7 @@ trio_tab <- df_trio %>%
             Max = max(Months)) %>% 
   left_join(., filter(trio_n, age_code == "child")) %>% 
   mutate_if(is.numeric, round, digits = 1) %>% 
-  select(-age_code)
+  dplyr::select(-age_code)
 
 trio_tab[, -1] <- printnum(trio_tab[, -1])
 
@@ -170,7 +170,7 @@ apa_table(
 ```{r trio get kid sample sizes}
 kids_n <- df_trio %>% 
   filter(age_code == "child") %>% 
-  select(Sub.Num, stimuli, Months, hearing_status_participant) %>% 
+  dplyr::select(Sub.Num, stimuli, Months, hearing_status_participant) %>% 
   unique() %>% 
   group_by(stimuli, hearing_status_participant) %>% 
   summarise(n = n())
@@ -260,7 +260,7 @@ knitr::include_graphics(file.path(project_path, image_path, "fig1_trio_behav.png
 
 ```{r trio summarize model output}
 ms_acc_trio <- d_models_trio$acc_trio_contin %>% 
-  select(sample_id, contains("prob")) %>% 
+  dplyr::select(sample_id, contains("prob")) %>% 
   gather(key = condition, value = acc_prob_scale, asl_prob:bullseye_prob) %>% 
   mutate(condition = str_replace(condition, "_prob", "")) %>% 
   group_by(condition) %>% 
@@ -270,7 +270,7 @@ ms_acc_trio <- d_models_trio$acc_trio_contin %>%
   mutate_if(.predicate = is.numeric, .funs = round, digits = 2)
 
 ms_rt_trio <- d_models_trio$rt_trio_contin %>% 
-  select(sample_id, contains("rt_scale")) %>% 
+  dplyr::select(sample_id, contains("rt_scale")) %>% 
   gather(key = condition, value = rt_ms_scale, asl_rt_scale:bullseye_rt_scale) %>% 
   mutate(condition = str_replace(condition, "_rt_scale", "")) %>% 
   group_by(condition) %>% 
@@ -282,13 +282,13 @@ ms_rt_trio <- d_models_trio$rt_trio_contin %>%
 
 ```{r trio test contrasts accuracy}
 trio_contrasts_acc <- d_models_trio$acc_trio_contin %>% 
-  select(sample_id, contains("prob"), -age_beta_prob) %>% 
+  dplyr::select(sample_id, contains("prob"), -age_beta_prob) %>% 
   mutate(asl_face = asl_prob - face_prob,
          face_object_bullseye = face_prob - mean(c(object_prob, bullseye_prob)),
          asl_noasl = asl_prob - mean(c(face_prob, object_prob, bullseye_prob)),
          object_chance = object_prob - 0.5,
          bullseye_chance = bullseye_prob - 0.5) %>% 
-  select(sample_id, asl_face:bullseye_chance) %>% 
+  dplyr::select(sample_id, asl_face:bullseye_chance) %>% 
   gather(key = contrast, value = param_est, -sample_id)
 
 ms_contrasts_trio_acc <- trio_contrasts_acc %>% 
@@ -301,11 +301,11 @@ ms_contrasts_trio_acc <- trio_contrasts_acc %>%
 
 ```{r trio test contrasts rt}
 trio_contrasts_rt <- d_models_trio$rt_trio_contin %>% 
-  select(sample_id, contains("rt_scale")) %>% 
+  dplyr::select(sample_id, contains("rt_scale")) %>% 
   mutate(asl_face = asl_rt_scale - face_rt_scale,
          face_object_bullseye = face_rt_scale - mean(c(object_rt_scale, bullseye_rt_scale)),
          asl_noasl = asl_rt_scale - mean(c(face_rt_scale, object_rt_scale, bullseye_rt_scale))) %>% 
-  select(sample_id, asl_face:asl_noasl) %>% 
+  dplyr::select(sample_id, asl_face:asl_noasl) %>% 
   gather(key = contrast, value = param_est, -sample_id)
 
 ms_contrasts_trio_rt <- trio_contrasts_rt %>% 
@@ -353,7 +353,7 @@ ms_cuts_trio_contrast <- d_models_trio$ewma_cuts_trio %>%
 ms_guess_trio <- d_models_trio$ewma_guess_trio %>%
   mutate(asl_kids = asl - age_beta,
          face_kids = face - age_beta) %>% 
-  select(asl_kids, face_kids) %>% 
+  dplyr::select(asl_kids, face_kids) %>% 
   rename(ASL = asl_kids, Face = face_kids) %>% 
   gather(key = condition, value = param_estimate) %>% 
   mutate(param_est_prob = logit_to_prob(param_estimate)) %>% 
@@ -424,7 +424,7 @@ noise_ewma_files <- c("speed_acc_kids_noise_ewma_results.csv", "speed_acc_adult_
 d_ewma_noise <- noise_ewma_files %>% purrr::map_df(read_ewma, path = file.path(project_path, ewma_path))
 
 # clean datasets for merge
-d_adults %<>% select(-age)
+d_adults %<>% dplyr::select(-age)
 
 d_kids_noise %<>% mutate(gaze_condition = ifelse(gaze_condition == "no_gaze", 
                                                  "straight_ahead", 
@@ -439,7 +439,7 @@ d_kids_gaze %<>% mutate(noise_condition = ifelse(noise_condition == "no_noise",
 d <- bind_rows(mutate(d_kids_noise, experiment = "kids_noise", age_category = "children"),
                mutate(d_kids_gaze, experiment = "kids_gaze", age_category = "children"),
                mutate(d_adults, experiment = "adults_ng", age_category = "adults")) %>% 
-  select(-resp_onset_type_fact, -subid_short) %>% 
+  dplyr::select(-resp_onset_type_fact, -subid_short) %>% 
   mutate(age_category = factor(age_category) %>% fct_rev()) 
 
 # test that we have the right number of rows after the merge (result should be TRUE)
@@ -476,28 +476,28 @@ d_noise <- d %>%
 ```{r noise participants}
 noise_adults <- d_noise %>% 
   filter(age_category == "adults") %>% 
-  select(subid, gender) %>% 
+  dplyr::select(subid, gender) %>% 
   unique() %>%
   group_by(gender) %>% 
   tally()
 
 noise_kids <- d_noise %>% 
   filter(age_category == "children") %>% 
-  select(subid, age, gender) %>% 
+  dplyr::select(subid, age, gender) %>% 
   unique() %>% 
   group_by(gender) %>% 
   tally()
 
 n_adults_run <- d %>% 
   filter(age_category == "adults") %>% 
-  select(subid) %>% 
+  dplyr::select(subid) %>% 
   unique() %>%
   tally() %>% 
   pull(n)
 
 n_kids_run <- d %>% 
   filter(age_category == "children", experiment == "kids_noise") %>% 
-  select(subid) %>% 
+  dplyr::select(subid) %>% 
   unique() %>%
   tally() %>% 
   pull(n)
@@ -513,7 +513,7 @@ Participants were native, monolingual English-learning children ($n=$ `r sum(noi
 ```{r linguistic stimuli length}
 d_word_lengths <- d_stim %>% 
   filter(!is.na(noun)) %>% 
-  select(noun, carrier, noun_onset_sec:noun_offset_frames) %>% 
+  dplyr::select(noun, carrier, noun_onset_sec:noun_offset_frames) %>% 
   unique() %>% 
   mutate_at(vars(starts_with("noun_")), as.numeric) %>% 
   mutate(
@@ -570,16 +570,16 @@ ms_rt_noise <- d_models_noise$rt_noise %>%
 
 ```{r noise create contrasts}
 noise_contrast <- d_models_noise$acc_noise %>% 
-  select(sample_id:acc_prob_scale, -param_est) %>% 
+  dplyr::select(sample_id:acc_prob_scale, -param_est) %>% 
   spread(noise_condition, acc_prob_scale) %>% 
   mutate(noise_contrast = noise - clear) %>% 
-  select(sample_id, noise_contrast, age_category)
+  dplyr::select(sample_id, noise_contrast, age_category)
 
 noise_contrast_rt <- d_models_noise$rt_noise %>% 
-  select(sample_id:rt_ms_scale, -param_est) %>% 
+  dplyr::select(sample_id:rt_ms_scale, -param_est) %>% 
   spread(noise_condition, rt_ms_scale) %>% 
   mutate(noise_contrast = noise - clear) %>% 
-  select(sample_id, noise_contrast, age_category)
+  dplyr::select(sample_id, noise_contrast, age_category)
 ```
 
 ```{r noise-acc-rt-plot, fig.env='figure', fig.cap = "Behavioral results for children and adults in Experiment 2. Panel A shows the overall looking to the center, target, and distracter stimulus for each processing condition and age group. Panel B shows the distribution of RTs for each participant and the pairwise contrast between the noise and clear conditions. The square point represents the mean value for each mesure. The vertical dashed line represents the null model of zero condition difference. The width each point represents the 95\\% HDI. Panel C shows the same information but for first shift accuracy."}
@@ -627,7 +627,7 @@ prob_diff0 <- noise_contrast %>%
 #             hdi_upper = quantile(param_est, probs = 0.975)) %>% 
 #   mutate_if(.predicate = is.numeric, .funs = round, digits = 2) %>% 
 #   mutate(model = "EWMA", parameter = "cut point") %>% 
-#   select(model, parameter, everything())
+#   dplyr::select(model, parameter, everything())
 
 # summarise group means for prop guessing parameter
 
@@ -638,7 +638,7 @@ ms_guess_noise <- d_models_noise$ewma_guess_noise %>%
             hdi_upper = quantile(param_est, probs = 0.975)) %>% 
   mutate(model = "EWMA", parameter = "prob. guessing") %>% 
   mutate_if(.predicate = is.numeric, .funs = round, digits = 2) %>% 
-  select(model, parameter, everything())
+  dplyr::select(model, parameter, everything())
 
 ms_guess_noise_age <- d_models_noise$ewma_guess_noise %>% 
   group_by(age_category) %>% 
@@ -647,10 +647,10 @@ ms_guess_noise_age <- d_models_noise$ewma_guess_noise %>%
             hdi_upper = quantile(param_est, probs = 0.975)) %>% 
   mutate(model = "EWMA", parameter = "prob. guessing") %>% 
   mutate_if(.predicate = is.numeric, .funs = round, digits = 2) %>% 
-  select(model, parameter, everything())
+  dplyr::select(model, parameter, everything())
 
 ms_cond_diff_guessing_m <- d_models_noise$ewma_guess_noise %>% 
-  select(sample_id, noise_beta, age_beta) %>%
+  dplyr::select(sample_id, noise_beta, age_beta) %>%
   mutate(age_beta = age_beta * -1) %>% 
   rename(`adults-children` = age_beta, 
          `noise-clear` = noise_beta) %>% 
@@ -693,7 +693,7 @@ hddm_table_contrast <- d_hddm %>%
   mutate(condition = ifelse(str_detect(condition, "noise"), "noise", "clear")) %>% 
   filter(param_name == "boundary", age_code == "children") %>% 
   group_by(condition) %>% 
-  select(param_value, condition, sample_id) %>% 
+  dplyr::select(param_value, condition, sample_id) %>% 
   tidyr::spread(condition, param_value) %>%
   mutate(cond_diff = noise - clear) %>% 
   summarise(MAP = mean(cond_diff),
