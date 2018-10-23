@@ -189,7 +189,7 @@ Table 1 contains details about the age distributions of children in all four sam
 
 #### Stimuli 
 
-```{r trio-stim, fig.env = "figure", fig.cap = "Stimuli for Experiments 1 and 2. Panel A shows the timecourse of the linguistic stimuli for a single trial for children learning American Sign Language. Panel B shows the layout of the fixation locations for all tasks: the center stimulus, the target, and the distracter. Panel C shows the four center stimulus items: a static geometric shape (Bullseye), a static image of a familiar object (Object), a person speaking (Face), a person signing (ASL)."}
+```{r trio-stim, fig.env = "figure", fig.cap = "Stimuli for Experiments 1 and 2. Panel A shows the timecourse of the linguistic stimuli for a single trial for children learning American Sign Language. Panel B shows the layout of the fixation locations for all tasks: the center stimulus, the target, and the distracter. Panel C shows the four center stimulus items: a static geometric shape (Bullseye), a static image of a familiar object (Object), a person speaking (Face), a person signing (ASL).", fig.scap="Stimuli for Experiments 3.1 and 3.2."}
 
 knitr::include_graphics(file.path(project_path, image_path, "trio_stimuli.png"), dpi = 300)
 ```
@@ -251,7 +251,7 @@ ss_prop <- df_trio %>%
   left_join(ss_prop)
 ```
 
-```{r speed-acc-trio-plot, fig.env = 'figure', fig.cap = "Timecourse looking, first shift Reaction Time (RT), and Accuracy results for children in Experiment 1. Panel A shows the overall looking to the center, target, and distracter stimulus for each context. Panel B shows the distribution of RTs for each participant. Each point represents a participant's average RT. The black squares represent the group means. And the error bars represent 95\\% Highest Density Intervals around the group means. Panel C shows the same information but for participants' first shift accuracy."}
+```{r speed-acc-trio-plot, fig.env = 'figure', fig.cap = "Timecourse looking, first shift Reaction Time (RT), and Accuracy results for children in Experiment 1. Panel A shows the overall looking to the center, target, and distracter stimulus for each context. Panel B shows the distribution of RTs for each participant. Each point represents a participant's average RT. The black squares represent the group means. And the error bars represent 95\\% Highest Density Intervals around the group means. Panel C shows the same information but for participants' first shift accuracy.", fig.scap="Behavioral results for Experiment 3.1."}
 
 knitr::include_graphics(file.path(project_path, image_path, "fig1_trio_behav.png"), dpi = 300)
 ```
@@ -328,7 +328,7 @@ Based on a nonparametric cluster-based permutation analysis, the center-looking 
 
 #### Model-based analyses
 
-```{r trio-model-plot, fig.env = 'figure', fig.cap = "Results for the model-based analyses in Experiment 1. Panel A shows a control chart representing the timecourse of the EWMA statistic. The black curve represents the evolution of the control statistic (CS) as a function of reaction time. The grey curve represents the upper control limit (UCL) or the pre-defined upper limit on random responding. The vertical dashed line is the median cutoff value (point in the RT distribution when children's gaze shifts were no longer random). The grey shaded area represents the 95\\% Highest Density Interval around the estimate of the median cutoff point, and the shaded ribbons represent the classification of responses as guesses (red, below the UCL) and language-driven (green, above the UCL). Panel B shows a summary of the proportion of shifts that were categorized as language-driven for the Face and ASL processing contexts. Panel C shows the point estimate and 95\\% Highest Density Intervals for the boundary and drift rate parameters for the Face and ASL contexts."}
+```{r trio-model-plot, fig.env = 'figure', fig.cap = "Results for the model-based analyses in Experiment 1. Panel A shows a control chart representing the timecourse of the EWMA statistic. The black curve represents the evolution of the control statistic (CS) as a function of reaction time. The grey curve represents the upper control limit (UCL) or the pre-defined upper limit on random responding. The vertical dashed line is the median cutoff value (point in the RT distribution when children's gaze shifts were no longer random). The grey shaded area represents the 95\\% Highest Density Interval around the estimate of the median cutoff point, and the shaded ribbons represent the classification of responses as guesses (red, below the UCL) and language-driven (green, above the UCL). Panel B shows a summary of the proportion of shifts that were categorized as language-driven for the Face and ASL processing contexts. Panel C shows the point estimate and 95\\% Highest Density Intervals for the boundary and drift rate parameters for the Face and ASL contexts.", fig.scap="Results for the model-based analyses in Experiment 3.1."}
 
 knitr::include_graphics(file.path(project_path, image_path, "fig2_trio_models.png"), dpi = 300)
 ```
@@ -582,7 +582,7 @@ noise_contrast_rt <- d_models_noise$rt_noise %>%
   dplyr::select(sample_id, noise_contrast, age_category)
 ```
 
-```{r noise-acc-rt-plot, fig.env='figure', fig.cap = "Behavioral results for children and adults in Experiment 2. Panel A shows the overall looking to the center, target, and distracter stimulus for each processing condition and age group. Panel B shows the distribution of RTs for each participant and the pairwise contrast between the noise and clear conditions. The square point represents the mean value for each mesure. The vertical dashed line represents the null model of zero condition difference. The width each point represents the 95\\% HDI. Panel C shows the same information but for first shift accuracy."}
+```{r noise-acc-rt-plot, fig.env='figure', fig.cap = "Behavioral results for children and adults in Experiment 2. Panel A shows the overall looking to the center, target, and distracter stimulus for each processing condition and age group. Panel B shows the distribution of RTs for each participant and the pairwise contrast between the noise and clear conditions. The square point represents the mean value for each mesure. The vertical dashed line represents the null model of zero condition difference. The width each point represents the 95\\% HDI. Panel C shows the same information but for first shift accuracy.", fig.scap="Behavioral results for children and adults in Experiment 3.2."}
 
 knitr::include_graphics(file.path(project_path, image_path, "fig5_noise_behav.png"), dpi = 300)
 ```
@@ -716,7 +716,7 @@ Visual inspection of the center looking curves suggests a difference in looking 
 
 #### Model-based analyses
 
-```{r noise-model-plots, fig.env='figure', fig.cap = "Results for the model-based analyses for Experiment 2. The plotting conventions are the same as Figure 3."}
+```{r noise-model-plots, fig.env='figure', fig.cap = "Results for the model-based analyses for Experiment 2. The plotting conventions are the same as Figure 3.", fig.scap="Results for the model-based analyses for Experiment 3.2."}
 knitr::include_graphics(file.path(project_path, image_path, "fig6_noise_models.png"), dpi = 300)
 ```
 

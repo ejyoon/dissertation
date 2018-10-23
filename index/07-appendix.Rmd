@@ -145,7 +145,7 @@ Our key analyses use Bayesian linear models to test our hypotheses of interest a
 
 ### Accuracy
 
-```{r, fig.cap = "Graphical model representation of the linear regression used to predict accuracy. The shaded nodes represent observed data (i.e., each participant's age, vocabulary, and mean accuracy). Unshaded nodes represent latent parameters (i.e., the intercept and slope of the linear model).", fig.scap="Graphical representation of the accuracy model."}
+```{r, fig.cap = "Graphical model representation of the linear regression used to predict accuracy. The shaded nodes represent observed data (i.e., each participant's age, vocabulary, and mean accuracy). Unshaded nodes represent latent parameters (i.e., the intercept and slope of the linear model).", fig.scap="Graphical representation of the accuracy model in Experiment 1.1."}
 
 include_graphics(path = here::here(data_code_path_sol, "figures/acc_model.png"))
 ```
@@ -157,7 +157,7 @@ For $\alpha$ and $\sigma$, we use vague priors on a standardized scale, allowing
 
 ### Reaction Time
 
-```{r, fig.cap = "Graphical model representation of the linear regression plus latent mixture model (i.e., guessing model). The model assumes that each individual participant's first shift is either the result of guessing or knowledge. And the latent indicator $z_i$ determines whether that participant is included in the linear regression estimating the association between age/vocabulary and RT.", fig.scap="Graphical representation of the RT model."}
+```{r, fig.cap = "Graphical model representation of the linear regression plus latent mixture model (i.e., guessing model). The model assumes that each individual participant's first shift is either the result of guessing or knowledge. And the latent indicator $z_i$ determines whether that participant is included in the linear regression estimating the association between age/vocabulary and RT.", fig.scap="Graphical representation of the RT model in Experiment 1.1."}
 
 include_graphics(path = here::here(data_code_path_sol, "figures/rt_model.png"))
 ```
@@ -200,7 +200,7 @@ First, we compare Accuracy and RT of native hearing and deaf signers using a Wel
 
 Second, we test whether children and adults tend to generate saccades away from the central signer prior to the offset of the target sign. To do this, we use a One Sample t-test with a null hypothesis that the true mean is not equal to 1, and we find evidence against this null (Children: M = 0.88, t(28) = -2.92, p = 0.007, 95% CI [0.79, 0.96]; Adults: M = 0.51, t(15) = -6.87, p < 0.001, 95% CI [0.35, 0.65])
 
-Third, we fit the four linear models using MLE to estimate the relations between the processing measures on the VLP task (Accuracy/RT) and age/vocabulary. We follow recommendations from Barr (2008) and use a logistic transform to convert the proportion accuracy scores to a scale more suitable for the linear model. Table XXX shows the results. 
+Third, we fit the four linear models using MLE to estimate the relations between the processing measures on the VLP task (Accuracy/RT) and age/vocabulary. We follow recommendations from Barr (2008) and use a logistic transform to convert the proportion accuracy scores to a scale more suitable for the linear model. 
 
 ```{r}
 d_lm <- read_delim(here::here(data_code_path_sol, "data/processed_data/sol_supp_freq_table.txt"), delim = "\t")
@@ -218,14 +218,14 @@ d_lm %>%
 
 ## Analyses of phonological overlap and iconicity
 
-```{r, fig.cap = "Scatterplot of the association between degree of phonological overlap and RT (top row) and accuracy (bottom row) for both adults (left column) and children (right column). The blue line represents a linear model fit.", fig.scap="association between degree of phonological overlap and RT/Accuracy."}
+```{r, fig.cap = "Scatterplot of the association between degree of phonological overlap and RT (top row) and accuracy (bottom row) for both adults (left column) and children (right column). The blue line represents a linear model fit.", fig.scap="Association between degree of phonological overlap and RT/Accuracy in Experiment 1.1."}
 
 include_graphics(path = here::here(data_code_path_sol, "figures/phonological_overlap.png"))
 ```
 
 First, we analyzed whether phonological overlap of our item-pairs might have influenced adults and children’s RTs and accuracy. Signs that are higher in phonological overlap might have been more difficult to process because they are more confusable. Here, phonological overlap is quantified as the number of features (e.g., Selected Fingers, Major Location, Movement, Sign Type) that both signs shared. Values were taken from a recently created database (ASL-LEX) of lexical and phonological properties of nearly 1,000 signs of American Sign Language (Caselli et al., 2017). Our item-pairs varied in degree of overlap from 1-4 features.  We did not see evidence that degree of phonological overlap influenced either processing measure in the VLP task.
 
-```{r, fig.cap = "Scatterplot of the association between degree of iconicity and RT (top row) and accuracy (bottom row) for both adults (left column) and children (right column). The blue line represents a linear model fit.", fig.scap="association between degree of iconicity and RT/Accuracy."}
+```{r, fig.cap = "Scatterplot of the association between degree of iconicity and RT (top row) and accuracy (bottom row) for both adults (left column) and children (right column). The blue line represents a linear model fit.", fig.scap="Association between degree of iconicity and RT/Accuracy in Experiment 1.1"}
 
 include_graphics(path = here::here(data_code_path_sol, "figures/iconicity.png"))
 ```
@@ -590,5 +590,3 @@ print(xtable(e4.tab.acc,
       table.placement = "h",
       comment = F)
 ```
-
-

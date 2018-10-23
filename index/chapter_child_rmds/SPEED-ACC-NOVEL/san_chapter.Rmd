@@ -261,7 +261,7 @@ ms_gaze_length <- d_gaze_length %>%
 
 #### Procedure
 
-```{r gaze-stimuli, fig.cap = "Stimuli for Experiments 1, 2, and 3. Panel A shows the structure of the linguistic stimuli for a single trial. Panel B shows the layout of the fixation locations for all tasks: the center stimulus, the target, and the distracter. Panel C shows a sample of the images used as novel objects in Experiment 3. Panel D shows an example of the social gaze manipulation."}
+```{r gaze-stimuli, fig.cap = "Stimuli for Experiments 1, 2, and 3. Panel A shows the structure of the linguistic stimuli for a single trial. Panel B shows the layout of the fixation locations for all tasks: the center stimulus, the target, and the distracter. Panel C shows a sample of the images used as novel objects in Experiment 3. Panel D shows an example of the social gaze manipulation.", fig.scap="Stimuli for Experiments 5.1, 5.2, and 5.3."}
 
 knitr::include_graphics(file.path(project_path_san, image_path, "gaze_stimuli.jpeg"))
 ```
@@ -272,7 +272,7 @@ Participants viewed the task on a screen while their gaze was tracked using an S
 
 *Timecourse looking.* We first analyzed how the presence of gaze influenced listeners' distribution of attention across the three fixation locations while processing familiar words. At target-noun onset, listeners tended to look more at the speaker than the objects. As the target noun unfolded, the mean proportion looking to the center decreased as participants shifted their gaze to the images. Proportion looking to the target increased sooner and reached a higher asymptote compared to proportion looking to the distracter for both gaze conditions with adults spending more time looking at the target compared to children. After looking to the named referent, listeners tended to shift their gaze back to the speaker's face. 
 
-```{r speed-acc-gaze-results, out.width="95%", fig.cap = "Timecourse looking, first shift Reaction Time (RT), and Accuracy results for children and adults in Experiment 1. Panel A shows the overall looking to the center, target, and distracter stimulus for each gaze condition and age group. Panel B shows the distribution of pairwise contrasts between each participant's RT in the gaze and no-gaze conditions. The square point represents the group means. The vertical dashed line represents the null model of zero condition difference. Error bars represent the 95\\% HDI. Panel C shows the same information but for first shift accuracy."}
+```{r speed-acc-gaze-results, out.width="95%", fig.cap = "Timecourse looking, first shift Reaction Time (RT), and Accuracy results for children and adults in Experiment 1. Panel A shows the overall looking to the center, target, and distracter stimulus for each gaze condition and age group. Panel B shows the distribution of pairwise contrasts between each participant's RT in the gaze and no-gaze conditions. The square point represents the group means. The vertical dashed line represents the null model of zero condition difference. Error bars represent the 95\\% HDI. Panel C shows the same information but for first shift accuracy.", fig.scap="Behavioral results for children and adults in Experiment 5.1."}
 
 knitr::include_graphics(file.path(project_path_san, image_path, "speed_acc_fam_behav.jpeg"))
 ```
@@ -357,7 +357,7 @@ The experiment featured sixteen pseudo-words recorded by an AT&T Natural VoicesT
 
 We tracked adults' eye movements while they watched a series of ambiguous word-learning events (16 novel words) organized into pairs of exposure and test trials (32 trials total). All trials consisted of a set of two novel objects and one novel word. Participants were randomly assigned to either the Gaze condition in which a speaker looked at one of the objects on exposure trials or the No-Gaze condition in which a speaker looked straight on exposure trials. Every exposure trial was followed by a test trial, where participants heard the same novel word paired with a new set of two novel objects. One of the objects in the set had appeared in the exposure trial ("target" object), while the other object had not previously appeared in the experiment ("distracter" object). 
 
-```{r gaze-xsit-tc-plot, fig.width=3, out.width="100%", fig.cap = "Overview of adults' looking to the three fixation targets (Face, Target, Distracter) over the course of the trial. Panel A shows proportion looking to the speaker's face for exposure and test trials. Color and line type represent gaze condition. Panel B shows the same information but for proportion looking to the target and distracter images."}
+```{r gaze-xsit-tc-plot, fig.width=3, out.width="100%", fig.cap = "Overview of adults' looking to the three fixation targets (Face, Target, Distracter) over the course of the trial. Panel A shows proportion looking to the speaker's face for exposure and test trials. Color and line type represent gaze condition. Panel B shows the same information but for proportion looking to the target and distracter images.", fig.scap="Overview of looking patterns in Experiment 5.2."}
 
 knitr::include_graphics(file.path(project_path_san, image_path, "gaze_xsit_tc.jpeg"))
 ```
@@ -373,7 +373,7 @@ There were several qualitative differences in looking behavior across the differ
 
 These looking patterns provide evidence that the presence of a gaze cue caused adults to spend more time gathering visual information from the speaker's face, which, in turn, changed how they distributed fixations across the target and distracter objects during subsequent labeling events. We next ask how the presence of gaze modulated learning, which we operationalized as the relationship between proportion looking to the target object on exposure and test trials.
 
-```{r gaze-xsit-prop-looking-plot, fig.cap = "Panel A shows participants’ tendency to look at the object that was the target of the speaker’s gaze on exposure trials. The vertical, dashed line represents the mean proportion of time looking to the gaze target across all trials. Panel B shows the relationship between adults' looking behavior on exposure and test trials for the gaze and no-gaze conditions. The lines represent linear model fits."}
+```{r gaze-xsit-prop-looking-plot, fig.cap = "Panel A shows participants’ tendency to look at the object that was the target of the speaker’s gaze on exposure trials. The vertical, dashed line represents the mean proportion of time looking to the gaze target across all trials. Panel B shows the relationship between adults' looking behavior on exposure and test trials for the gaze and no-gaze conditions. The lines represent linear model fits.", fig.scap="Relationship between attention on exposure and recall for word-object links in Experiment 5.2."}
 
 knitr::include_graphics(file.path(project_path_san, image_path, "gaze_xsit_prop_looking.jpeg"))
 ```
@@ -537,7 +537,7 @@ Each word was learned in a block of four exposure-test pairs for a total of eigh
 
 #### Timecourse looking
 
-```{r san-tc-plot, fig.width=3, out.width="100%", fig.cap = "Overview of children and adults' looking to the three fixation targets (Speaker, Target, Distracter) over the course of exposure and test trials. Panel A shows proportion looking to the speaker's face with color indicating gaze condition and line type indicating age group. Panel B shows the same information but for proportion looking to the target and distracter images."}
+```{r san-tc-plot, fig.width=3, out.width="100%", fig.cap = "Overview of children and adults' looking to the three fixation targets (Speaker, Target, Distracter) over the course of exposure and test trials. Panel A shows proportion looking to the speaker's face with color indicating gaze condition and line type indicating age group. Panel B shows the same information but for proportion looking to the target and distracter images.", fig.scap="Overview of children and adults' looking behavior in Experiment 5.3."}
 
 knitr::include_graphics(file.path(project_path_san, image_path, "speed_acc_novel_tc.jpeg"))
 ```
@@ -677,7 +677,7 @@ ss_novel_obj %>%
 
 *Learning effects.* Both children ($M_{gaze}$ = `r printnum(coefs_chance_nov$m[2])`, $M_{no-gaze}$ = `r printnum(coefs_chance_nov$m[4])`) and adults ($M_{gaze}$ = `r printnum(coefs_chance_nov$m[1])`, $M_{no-gaze}$ = `r printnum(coefs_chance_nov$m[3])`) showed evidence of learning the novel word-object links, with the null value of 0.5 falling below the lower bound of the lowest credible interval for children's target looking in the No-gaze context (95% HDI [`r printnum(coefs_chance_nov$ci_lower[4])`, `r printnum(coefs_chance_nov$ci_upper[4])`]). Our primary question of interest was how exposure to multiple co-occurrences of word-object pairs would change learners' distribution of attention between the speaker and objects. Figure \ \ref{fig:san-prop-looking-plot}) shows proportion looking to the speaker (\ \ref{fig:san-prop-looking-plot}A) and the target and distracter objects (\ \ref{fig:san-prop-looking-plot}B) as a function of trial number within a word learning block. Both children and adults were more likely to fixate on the speaker when she provided a gaze cue ($\beta_{gaze}$ = `r printnum(coefs_proplook_face_nov$Estimate[2] * -1)`, 95% HDI [`r printnum(coefs_proplook_face_nov$Q2.5[2] * -1)`, `r printnum(coefs_proplook_face_nov$Q97.5[2] * -1)`]). Moreover, there was a developmental difference such that children, but not adults, were more likely to increase their fixations to the speaker over the course of the learning block ($\beta_{age:tr.num}$ = `r printnum(coefs_proplook_face_nov$Estimate[7])`, 95% HDI [`r printnum(coefs_proplook_face_nov$Q2.5[7])`, `r printnum(coefs_proplook_face_nov$Q97.5[7])`]). 
 
-```{r san-prop-looking-plot, out.width="100%", fig.cap = "Panel A shows participants’ tendency to look at the speaker on exposure and test trials as a function of the trial number within a learning block. The horizontal, dashed line represents the tendency to distribute attention equally across the three AOIs. Color indicates gaze condition and error bars represent 95\\% credible intervals. Panel B shows the same information but for target and distracter looking across the learning block (left) and aggregated over all trials (right)."}
+```{r san-prop-looking-plot, out.width="100%", fig.cap = "Panel A shows participants’ tendency to look at the speaker on exposure and test trials as a function of the trial number within a learning block. The horizontal, dashed line represents the tendency to distribute attention equally across the three AOIs. Color indicates gaze condition and error bars represent 95\\% credible intervals. Panel B shows the same information but for target and distracter looking across the learning block (left) and aggregated over all trials (right).", fig.scap="Learning effects in Experiment 5.3."}
 
 knitr::include_graphics(file.path(project_path_san, image_path, "speed_acc_novel_proplook.jpeg"))
 ```
@@ -738,7 +738,7 @@ Together, the time course and the proportion looking analyses suggest that the p
 
 #### First shift RT and Accuracy
 
-```{r speed-acc-novel-shifts, out.width="80%", fig.cap = "First shift Reaction Time (RT), and Accuracy results for children and adults in Experiment 3. Panel A shows the distribution of pairwise contrasts between RTs in the gaze and no-gaze conditions. The square point represents the mean value for each measure. The vertical dashed line represents the null model of zero condition difference. The width each point represents the 95\\% HDI. Panel B shows the same information but for participants' first shift accuracy."}
+```{r speed-acc-novel-shifts, out.width="80%", fig.cap = "First shift Reaction Time (RT), and Accuracy results for children and adults in Experiment 3. Panel A shows the distribution of pairwise contrasts between RTs in the gaze and no-gaze conditions. The square point represents the mean value for each measure. The vertical dashed line represents the null model of zero condition difference. The width each point represents the 95\\% HDI. Panel B shows the same information but for participants' first shift accuracy.", fig.scap="The effect of gaze on first shift reaction time and accuracy in Experiment 5.3."}
 
 knitr::include_graphics(file.path(project_path_san, image_path, "speed_acc_novel_fstshifts.jpeg"))
 ```

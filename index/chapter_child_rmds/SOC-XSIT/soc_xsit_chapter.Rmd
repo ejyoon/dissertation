@@ -609,7 +609,7 @@ Participants reliably chose the referent that was the target of gaze at rates gr
 
 #### Test trials
 
-```{r e3-plot, fig.cap = "Primary analyses of test trial performance in Experiment 3. Panel A shows performance as a function of reliability condition. Panel B shows performance as a function of reliability condition and whether participants chose to follow gaze on exposure trials. The horizontal dashed lines represent chance performance, and error bars indicate 95\\% confidence intervals computed by non-parametric bootstrap.", fig.scap = "Primary analyses of test trial performance in Experiment 3.3"}
+```{r e3-plot, fig.cap = "Primary analyses of test trial performance in Experiment 3. Panel A shows performance as a function of reliability condition. Panel B shows performance as a function of reliability condition and whether participants chose to follow gaze on exposure trials. The horizontal dashed lines represent chance performance, and error bars indicate 95\\% confidence intervals computed by non-parametric bootstrap.", fig.scap = "Primary analyses of test trial performance in Experiment 4.3"}
 
 include_graphics(path = here::here(data_code_path_soc_xsit, "figures/expt3_main_plot.png"))
 ```
@@ -626,7 +626,7 @@ e3.chance.tests <- test.chance(data = filter(df_expt3, trial_category == "test",
 
 Next, we tested whether the reliability manipulation altered the strength of participants' memory for alternative word-object links in the second block of test trials that followed the initial familiarization phase. Across all conditions, participants selected the correct referent at rates greater than chance (smallest $\beta$ = `r round(sort(e3.chance.tests$betas)[1], 2)`, z = `r round(sort(e3.chance.tests$zs)[1], 2)`, $p$ < .001). Our primary prediction was an interaction between reliability and test trial type, with higher levels of reliability leading to worse performance on Switch trials (i.e., less memory allocated to alternative word-object links). To explore this prediction, we performed four complementary analyses: our primary analysis, which tested the effect of the reliability manipulation, and three secondary analyses, which explored the effects of participants' (a) use of the gaze cue, (b) subjective reliability assessments, and (c) inspection time on exposure trials. 
 
-```{r expt3-sub-plots, fig.cap = "Secondary analyses of test trial performance in Experiment 3. Panel A shows accuracy as a function of the number of exposure trials on which participants chose to use the gaze cue. Panel B shows accuracy as a function of participants' subjective reliability judgments. The horizontal dashed lines represent chance performance, and error bars indicate 95\\% confidence intervals computed by non-parametric bootstrap.", fig.scap = "Secondary analyses of test trial performance in Experiment 3.3"}
+```{r expt3-sub-plots, fig.cap = "Secondary analyses of test trial performance in Experiment 3. Panel A shows accuracy as a function of the number of exposure trials on which participants chose to use the gaze cue. Panel B shows accuracy as a function of participants' subjective reliability judgments. The horizontal dashed lines represent chance performance, and error bars indicate 95\\% confidence intervals computed by non-parametric bootstrap.", fig.scap = "Secondary analyses of test trial performance in Experiment 4.3"}
 
 include_graphics(path = here::here(data_code_path_soc_xsit, "figures/expt3_sub_plot.png"))
 ```
