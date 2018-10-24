@@ -1,4 +1,6 @@
-# Seeking information during sign language processing ^[This chapter is published in @macdonald2018real. Real-time lexical comprehension in young children learning American Sign Language. *Developmental science*, e12672.]
+# Children's distribution of visual attention during real-time American Sign Language comprehension ^[This chapter is published in @macdonald2018real. Real-time lexical comprehension in young children learning American Sign Language. *Developmental science*, e12672.]
+
+\chaptermark{Information seeking during ASL processing} 
 
 This chapter presents a study of eye movements in a visual-manual language (American Sign Language: ASL). ASL is an interesting case because visual information about the referents and the linguistic signal are gathered through the same mechanism: visual fixations. In contrast, children learning spoken language can look away from their social partners while gathering more linguistic information. Within our broader active-social framework, this study asks whether ASL-learners' visual information seeking (i.e., queries) would look dramatically different given the constraints of processing a visual language in real time or by having differential access to auditory information in day-to-day life.
 

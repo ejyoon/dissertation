@@ -1,4 +1,6 @@
-# Information seeking within social contexts
+# Children's information seeking within social learning contexts
+
+\chaptermark{Information seeking within social contexts} 
 
 ```{r child = 'chapter_child_rmds/Active-social/active_social_theory.Rmd'}
 ```
