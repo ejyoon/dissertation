@@ -24,17 +24,17 @@ abstract: |
 # like below, use a command like that for the abstract above.  Note that a tab is 
 # needed on the line after the |.
 acknowledgements: |
-  This dissertation would not have been possible without the support of the Deaf community. I am especially grateful to the California School for the Deaf in Fremont, CA and to the families who participated in this research. A special thank you to Karina Pedersen, Lisalee Egbert, Laura Petersen, Michele Berke, Sean Virnig, Pearlene Utley, and Rosa Lee Timm.
+ This dissertation would not have been possible without the support of the Deaf community. I am especially grateful to the California School for the Deaf in Fremont, CA and to the families who participated in this research. A special thank you to Karina Pedersen, Lisalee Egbert, Laura Petersen, Michele Berke, Sean Virnig, Pearlene Utley, and Rosa Lee Timm.
   
-  I am also thankful for the developmental community at Stanford. This research was improved thanks to the feedback from my cohort, my labmates in the Language and Cognition Lab, and the members of the Language Learning and Social Cognition labs. 
+  I am also thankful to the developmental community at Stanford. This research was improved thanks to the feedback from my cohort, my labmates in the Language and Cognition Lab, and the members of the Language Learning and Social Cognition labs. 
 
-  I have been fortunate to work with incredible mentors throughout graduate school. Thank you to Anne Fernald, Virginia Marchman, and Hyo Gweon for your support and for spending many hours providing feedback on the ideas in this dissertation. I am especially grateful to my advisor, Michael Frank, who has been my greatest advocate. Thank you for your patience, kindness, and for showing me how to think clearly.
+  I have been fortunate to work with incredible mentors throughout graduate school. Thank you to Anne Fernald, Virginia Marchman, and Hyo Gweon for your support and for spending hours providing feedback on the ideas in this dissertation. I am especially grateful to my advisor, Michael Frank, who has been my greatest advocate. Thank you for your patience, kindness, and for showing me how to think clearly.
 
-  I am grateful to have made some lifelong friends while completing this research. Kara Weisman, MH Tessler, and Erica Yoon, I'm so glad we went through this experience together, and your support throughout has meant the world to me.
+  I am grateful to have made some incredible friends while completing this research. Kara Weisman, MH Tessler, and Erica Yoon, I'm glad we went through this experience together, and your support throughout has meant the world to me.
 
-  None of what I have accomplished would be possible without the unconditional love and support of my parents, Morag and Richard MacDonald. I also thank my younger sister, Kaitlin, for always being there when I needed to someone to talk to. Finally, thank you to my love, Ellika. My days begin and end with you, and for this, I couldn't be more grateful. 
+  None of what I have accomplished would be possible without the unconditional love and support of my parents, Morag and Richard MacDonald. I also thank my younger sister, Kaitlin, for always being there when I needed to someone to talk to. Finally, thank you to my fiancée, Ellika. My days begin and end with you, and for this, I couldn't be more grateful. 
 dedication: |
-  In loving memory of my Grammy, Sheila Paget, who always encouraged me to ask questions.
+  In loving memory of my Grammy, Sheila Paget, for encouraging me to think deeply and ask questions.
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl
