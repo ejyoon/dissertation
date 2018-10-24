@@ -209,7 +209,7 @@ d_lm %>%
   kable("latex", 
         booktabs = T, 
         caption = "Results for the four linear models fit using Maxiumum Likelihood Estimation. All p-values are one-sided to reflect our directional hypotheses about the VLP measures improving over development.",
-        caption.short = "Results for MLE models") %>%
+        caption.short = "Results for MLE models fit to data in Experiment 1.1.") %>%
   kable_styling(latex_options = "scale_down") %>% 
   row_spec(row = 0, bold = TRUE) %>% 
   column_spec(column = 2, width = "3cm") %>% 

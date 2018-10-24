@@ -1,4 +1,4 @@
-# Social cues modulate attention and memory during cross-situational learning ^[This chapter is published in @macdonald2017social Social cues modulate the representations underlying cross-situational learning. *Cognitive Psychology *, 94, 67-84.]
+# Social cues modulate attention and memory during cross-situational word learning ^[This chapter is published in @macdonald2017social Social cues modulate the representations underlying cross-situational learning. *Cognitive Psychology *, 94, 67-84.]
 
 \chaptermark{Social cues modulate word learning} 
 
