@@ -829,7 +829,7 @@ The major design change was to make the length of exposure trials equivalent acr
 
 ### Results and Discussion
 
-```{r expt4-plot, out.width="60%", fig.cap = "Experiment 4.4 results. Accuracy on test trials in Experiment 4 collapsed across the Long and Short inspection time conditions. The dashed line represents chance performance. Color and line type indicate whether there was gaze present on exposure trials. Error bars indicate 95\\% confidence intervals computed by non-parametric bootstrap.", fig.scap = "Experiment 4.4 results"}
+```{r expt4-plot, out.width="50%", fig.cap = "Experiment 4.4 results. Accuracy on test trials in Experiment 4 collapsed across the Long and Short inspection time conditions. The dashed line represents chance performance. Color and line type indicate whether there was gaze present on exposure trials. Error bars indicate 95\\% confidence intervals computed by non-parametric bootstrap.", fig.scap = "Experiment 4.4 results"}
 
 include_graphics(path = here::here(data_code_path_soc_xsit, "figures/expt4_collapsed.png"))
 ```

@@ -6,7 +6,7 @@ In this chapter, we present two studies of eye movements during real-time famili
 
 Real-time language comprehension involves linking the incoming linguistic signal to the visual world. Information gathered via visual fixations can facilitate the comprehension process. But do listeners seek language-relevant visual information? Here, we propose that children flexibly adapt their eye movements to seek information from social partners that supports language understanding. We present evidence for our explanation using two case studies of eye movements during real-time language processing: children learning spoken English vs. children learning American Sign Language and children processing English in noisy vs. clear auditory environments. Across both studies, we found that listeners adapted their gaze to fixate longer on a social partner when it was useful for language comprehension. Fixating longer on their social partner led to a higher proportion of gaze shifts landing on the named objects, and more language-driven, as opposed to random, shifts. These results suggest that children can increase their information gathering thresholds to seek additional visual information from social partners that supports real-time language comprehension.
 
-```{r schematic-speed-fam, fig.cap="A schematic showing the components of the OED model captured by the case studies in Chapter 3.", fig.scap="Overview of Chapter 3."}
+```{r schematic-speed-fam, fig.cap="A schematic showing the components of the active-social learning framework addressed by the case studies in Chapter 3.", fig.scap="Overview of Chapter 3."}
 data_code_path_saf <- "index/chapter_child_rmds/SPEED-ACC-FAM"
 include_graphics(path = here::here(data_code_path_saf, "figures/speed_familiar.jpeg"))
 ```

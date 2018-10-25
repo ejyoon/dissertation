@@ -28,13 +28,13 @@ acknowledgements: |
   
   I am also thankful to the developmental community at Stanford. This research was improved thanks to the feedback from my cohort, my labmates in the Language and Cognition Lab, and the members of the Language Learning and Social Cognition labs. 
 
-  I have been fortunate to work with incredible mentors throughout graduate school. Thank you to Anne Fernald, Virginia Marchman, and Hyo Gweon for your support and for shaping many of the ideas in this dissertation. I am especially grateful to my advisor, Michael Frank, who has been my greatest advocate. Thank you for your patience, kindness, and for showing me how to think clearly.
+  I have been fortunate to work with incredible mentors throughout graduate school. Thank you to Anne Fernald, Virginia Marchman, and Hyo Gweon for your support and for shaping many of the ideas in this dissertation. I am especially grateful to my advisor, Michael Frank, who has been my strongest advocate. Thank you for your patience, kindness, and for showing me how to think clearly.
 
   I am grateful to have made some incredible friends while completing this research. Kara Weisman, MH Tessler, and Erica Yoon, I'm glad we went through this experience together, and your support throughout has meant the world to me.
 
   None of what I have accomplished would be possible without the unconditional love and support of my parents, Morag and Richard. I also thank my younger sister, Kaitlin, for always being there when I needed to someone to talk to. Finally, thank you to my fiancée, Ellika. My days begin and end with you, and for this, I couldn't be more grateful. 
 dedication: |
-  In loving memory of my Grammy, Sheila Paget, for encouraging me to think deeply and ask questions.
+  In loving memory of my Grammy, Sheila Paget, for encouraging me to think deeply and to always ask questions.
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl
