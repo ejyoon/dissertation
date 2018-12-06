@@ -39,8 +39,6 @@ This competition for visual attention in ASL could lead to qualitatively differe
 
 Adapting the LWL procedure for ASL enables us to address four questions.  First, to what extent do children and adult signers shift their gaze away from the language source and to a named referent prior to the offset of the target sign?  Second, how do deaf and hearing ASL-learners compare in the time course of real-time lexical processing?  Third, how do patterns of eye movements during real-time language comprehension in ASL-learners compare to those of adult signers?  Finally, are individual differences in ASL-learners' processing skill related to age and to expressive vocabulary development? 
 
-
-
 ## Study
 
 ### Methods
