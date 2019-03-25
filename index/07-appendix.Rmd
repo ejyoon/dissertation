@@ -239,163 +239,163 @@ Next, we performed a parallel analysis, exploring whether the iconicity of our s
 ## Model output for Experiment 3.1
 
 ```{r trio-rt-model, results = 'asis'}
-ms_rt_trio %>% 
-  mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
-         condition = ifelse(condition == "asl", "ASL", str_to_title(condition))) %>% 
-  select(-hdi_lower, -hdi_upper) %>% 
-  arrange(m_rt) %>% 
-  rename(`Center Stimulus Type` = condition,
-         `Mean RT` = m_rt) %>% 
-  apa_table(placement = 'h',
-  caption = "Output of the regression predicting reaction time (milliseconds) as a function of center stimulus type in Experiment 1.")
+# ms_rt_trio %>% 
+#   mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
+#          condition = ifelse(condition == "asl", "ASL", str_to_title(condition))) %>% 
+#   select(-hdi_lower, -hdi_upper) %>% 
+#   arrange(m_rt) %>% 
+#   rename(`Center Stimulus Type` = condition,
+#          `Mean RT` = m_rt) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Output of the regression predicting reaction time (milliseconds) as a function of center stimulus type in Experiment 1.")
 ```
 
 ```{r trio-acc-model, results = 'asis'}
-ms_acc_trio %>% 
-  mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
-         condition = ifelse(condition == "asl", "ASL", str_to_title(condition))) %>% 
-  arrange(prop) %>% 
-  select(-hdi_lower, -hdi_upper) %>% 
-  rename(`Center Stimulus Type` = condition,
-         `Mean Accuracy` = prop) %>% 
-  apa_table(placement = 'h',
-  caption = "Output of the logistic regression predicting accuracy as a function of center stimulus type in Experiment 1.")
+# ms_acc_trio %>% 
+#   mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
+#          condition = ifelse(condition == "asl", "ASL", str_to_title(condition))) %>% 
+#   arrange(prop) %>% 
+#   select(-hdi_lower, -hdi_upper) %>% 
+#   rename(`Center Stimulus Type` = condition,
+#          `Mean Accuracy` = prop) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Output of the logistic regression predicting accuracy as a function of center stimulus type in Experiment 1.")
 ```
 
 ```{r trio-acc-contrasts, results = 'asis'}
-ms_contrasts_trio_acc %>% 
-  mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
-         contrast = case_when(
-           contrast == "asl_face" ~ "ASL vs. Face",
-           contrast == "asl_noasl" ~ "ASL vs. English",
-           contrast == "face_object_bullseye" ~ "Face vs. Object/Bullseye",
-           contrast == "bullseye_chance" ~ "Bullseye vs. Chance",
-           contrast == "object_chance" ~ "Object vs. Chance"
-         )) %>% 
-  select(-hdi_lower, -hdi_upper) %>% 
-  arrange(prop) %>% 
-  rename(`Contrast` = contrast,
-         `Mean Difference Accuracy` = prop) %>% 
-  apa_table(placement = 'h',
-  caption = "Output of the model estimating differences in Accuracy for specific contrasts of interest in Experiment 1.")
+# ms_contrasts_trio_acc %>% 
+#   mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
+#          contrast = case_when(
+#            contrast == "asl_face" ~ "ASL vs. Face",
+#            contrast == "asl_noasl" ~ "ASL vs. English",
+#            contrast == "face_object_bullseye" ~ "Face vs. Object/Bullseye",
+#            contrast == "bullseye_chance" ~ "Bullseye vs. Chance",
+#            contrast == "object_chance" ~ "Object vs. Chance"
+#          )) %>% 
+#   select(-hdi_lower, -hdi_upper) %>% 
+#   arrange(prop) %>% 
+#   rename(`Contrast` = contrast,
+#          `Mean Difference Accuracy` = prop) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Output of the model estimating differences in Accuracy for specific contrasts of interest in Experiment 1.")
 ```
 
 ```{r trio-rt-contrasts, results = 'asis'}
-ms_contrasts_trio_rt %>% 
-  mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
-         contrast = case_when(
-           contrast == "asl_face" ~ "ASL vs. Face",
-           contrast == "asl_noasl" ~ "ASL vs. English",
-           contrast == "face_object_bullseye" ~ "Face vs. Object/Bullseye"
-         )) %>% 
-  select(-hdi_lower, -hdi_upper) %>% 
-  arrange(rt) %>% 
-  rename(`Contrast` = contrast,
-         `Mean Difference RT` = rt) %>% 
-  apa_table(placement = 'h',
-  caption = "Output of the model estimating differences in RT for specific contrasts of interest in Experiment 1.")
+# ms_contrasts_trio_rt %>% 
+#   mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
+#          contrast = case_when(
+#            contrast == "asl_face" ~ "ASL vs. Face",
+#            contrast == "asl_noasl" ~ "ASL vs. English",
+#            contrast == "face_object_bullseye" ~ "Face vs. Object/Bullseye"
+#          )) %>% 
+#   select(-hdi_lower, -hdi_upper) %>% 
+#   arrange(rt) %>% 
+#   rename(`Contrast` = contrast,
+#          `Mean Difference RT` = rt) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Output of the model estimating differences in RT for specific contrasts of interest in Experiment 1.")
 ```
 
 ```{r trio-ewma-cuts, results = 'asis'}
-ms_cuts_trio %>% 
-  mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
-         condition = ifelse(condition == "asl", "ASL", str_to_title(condition))) %>% 
-  select(-hdi_lower, -hdi_upper) %>% 
-  arrange(MAP) %>% 
-  rename(`Center Stimulus Type` = condition,
-         `Mean EWMA Cut Point` = MAP) %>% 
-  apa_table(placement = 'h',
-  caption = "Output of the model estimating the point in the Reaction Time distribution when children's Exponentially Weighted Moving Average statistic crossed the pre-defined guessing threshold for the ASL and Face center stimulus types in Experiment 1.")
+# ms_cuts_trio %>% 
+#   mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]"),
+#          condition = ifelse(condition == "asl", "ASL", str_to_title(condition))) %>% 
+#   select(-hdi_lower, -hdi_upper) %>% 
+#   arrange(MAP) %>% 
+#   rename(`Center Stimulus Type` = condition,
+#          `Mean EWMA Cut Point` = MAP) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Output of the model estimating the point in the Reaction Time distribution when children's Exponentially Weighted Moving Average statistic crossed the pre-defined guessing threshold for the ASL and Face center stimulus types in Experiment 1.")
 ```
 
 ```{r trio-guess-cuts, results = 'asis'}
-ms_guess_trio %>% 
-  mutate_if(is.numeric, round, 2) %>% 
-  mutate(`95% HDI` = str_c("[", ci_lower, ", ", ci_upper, "]"),
-         condition = ifelse(condition == "asl", "ASL", str_to_title(condition))) %>% 
-  select(-ci_lower, -ci_upper) %>% 
-  arrange(MAP) %>% 
-  rename(`Center Stimulus Type` = condition,
-         `Mean Language-driven` = MAP) %>% 
-  apa_table(placement = 'h',
-  caption = "Output of the model estimating the mean proportion of shifts categorized as language-driven by the Exponentially Weighted Moving Average model for the ASL and Face center stimulus types in Experiment 1.")
+# ms_guess_trio %>% 
+#   mutate_if(is.numeric, round, 2) %>% 
+#   mutate(`95% HDI` = str_c("[", ci_lower, ", ", ci_upper, "]"),
+#          condition = ifelse(condition == "asl", "ASL", str_to_title(condition))) %>% 
+#   select(-ci_lower, -ci_upper) %>% 
+#   arrange(MAP) %>% 
+#   rename(`Center Stimulus Type` = condition,
+#          `Mean Language-driven` = MAP) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Output of the model estimating the mean proportion of shifts categorized as language-driven by the Exponentially Weighted Moving Average model for the ASL and Face center stimulus types in Experiment 1.")
 ```
 
 ```{r trio-hddm, results = 'asis'}
-ms.hddm_trio %>% 
-  ungroup() %>% 
-  mutate_if(is.numeric, round, 2) %>% 
-  mutate(`95% HDI` = str_c("[", HDI_lower, ", ", HDI_upper, "]")) %>% 
-  select(-HDI_lower, -HDI_upper) %>% 
-  arrange(Parameter, Mean) %>% 
-  mutate(Parameter = str_to_title(Parameter)) %>% 
-  rename(`Mean Param Estimate` = Mean,
-         `Center Stim Type` = condition) %>% 
-  apa_table(placement = 'h',
-  caption = "Summary of the Drift Diffusion Model output for the drift rate and boundary separation parameters for both all four center stimulus types in Experiment 1.")
+# ms.hddm_trio %>% 
+#   ungroup() %>% 
+#   mutate_if(is.numeric, round, 2) %>% 
+#   mutate(`95% HDI` = str_c("[", HDI_lower, ", ", HDI_upper, "]")) %>% 
+#   select(-HDI_lower, -HDI_upper) %>% 
+#   arrange(Parameter, Mean) %>% 
+#   mutate(Parameter = str_to_title(Parameter)) %>% 
+#   rename(`Mean Param Estimate` = Mean,
+#          `Center Stim Type` = condition) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Summary of the Drift Diffusion Model output for the drift rate and boundary separation parameters for both all four center stimulus types in Experiment 1.")
 ```
 
 ## Model output for Experiment 3.2
 
 ```{r noise-acc-model, results = 'asis'}
-ms_acc_noise %>% 
-  ungroup() %>% 
-  mutate_if(is.character, str_to_title) %>% 
-  mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]")) %>% 
-  arrange(prop) %>% 
-  select(-hdi_lower, -hdi_upper) %>% 
-  rename(`Noise Condition` = noise_condition,
-         `Mean Accuracy` = prop,
-         `Age Group` = age_category) %>% 
-  apa_table(placement = 'h',
-  caption = "Output of the logistic regression predicting accuracy as a function of noise condition and age group in Experiment 2.")
-```
-
-```{r noise-rt-model, results = 'asis'}
-ms_rt_noise %>% 
-  ungroup() %>% 
-  mutate_if(is.character, str_to_title) %>% 
-  mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]")) %>% 
-  select(-hdi_lower, -hdi_upper) %>% 
-  arrange(m_rt) %>% 
-  rename(`Noise Condition` = noise_condition,
-         `Mean RT` = m_rt,
-         `Age Group` = age_category) %>% 
-  apa_table(placement = 'h',
-  caption = "Output of the regression estimating reaction times (milliseconds) as a function of noise condition and age group in Experiment 2.")
+# # ms_acc_noise %>% 
+# #   ungroup() %>% 
+# #   mutate_if(is.character, str_to_title) %>% 
+# #   mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]")) %>% 
+# #   arrange(prop) %>% 
+# #   select(-hdi_lower, -hdi_upper) %>% 
+# #   rename(`Noise Condition` = noise_condition,
+# #          `Mean Accuracy` = prop,
+# #          `Age Group` = age_category) %>% 
+# #   apa_table(placement = 'h',
+# #   caption = "Output of the logistic regression predicting accuracy as a function of noise condition and age group in Experiment 2.")
+# ```
+# 
+# ```{r noise-rt-model, results = 'asis'}
+# ms_rt_noise %>% 
+#   ungroup() %>% 
+#   mutate_if(is.character, str_to_title) %>% 
+#   mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]")) %>% 
+#   select(-hdi_lower, -hdi_upper) %>% 
+#   arrange(m_rt) %>% 
+#   rename(`Noise Condition` = noise_condition,
+#          `Mean RT` = m_rt,
+#          `Age Group` = age_category) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Output of the regression estimating reaction times (milliseconds) as a function of noise condition and age group in Experiment 2.")
 ```
 
 ```{r noise-guess-cuts, results = 'asis'}
-ms_guess_noise %>% 
-  select(-model, -parameter) %>% 
-  mutate_if(is.numeric, round, 2) %>% 
-  mutate_if(is.character, str_to_title) %>% 
-  select(noise_condition, everything()) %>% 
-  mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]")) %>% 
-  select(-hdi_lower, -hdi_upper) %>% 
-  arrange(MAP) %>% 
-  rename(`Noise Condition` = noise_condition,
-         `Mean Language-driven` = MAP,
-         `Age Group` = age_category) %>% 
-  apa_table(placement = 'h',
-  caption = "Output of the model estimating the mean proportion of shifts categorized as language-driven by the Exponentially Weighted Moving Average model for the each noise condition and age group in Experiment 2.")
+# ms_guess_noise %>% 
+#   select(-model, -parameter) %>% 
+#   mutate_if(is.numeric, round, 2) %>% 
+#   mutate_if(is.character, str_to_title) %>% 
+#   select(noise_condition, everything()) %>% 
+#   mutate(`95% HDI` = str_c("[", hdi_lower, ", ", hdi_upper, "]")) %>% 
+#   select(-hdi_lower, -hdi_upper) %>% 
+#   arrange(MAP) %>% 
+#   rename(`Noise Condition` = noise_condition,
+#          `Mean Language-driven` = MAP,
+#          `Age Group` = age_category) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Output of the model estimating the mean proportion of shifts categorized as language-driven by the Exponentially Weighted Moving Average model for the each noise condition and age group in Experiment 2.")
 ```
 
 
 ```{r noise-hddm, results = 'asis'}
-hddm_table_age %>% 
-  ungroup() %>% 
-  mutate_if(is.numeric, round, 2) %>% 
-  mutate(`95% HDI` = str_c("[", HDI_lower, ", ", HDI_upper, "]")) %>% 
-  select(-HDI_lower, -HDI_upper) %>% 
-  arrange(param_name, MAP) %>% 
-  mutate(param_name = str_to_title(param_name),
-         age_code = str_to_title(age_code)) %>% 
-  rename(`Parameter` = param_name,
-         `Mean Parameter Estimate` = MAP,
-         `Age Group` = age_code) %>% 
-  apa_table(placement = 'h',
-  caption = "Summary of the Drift Diffusion Model output for the drift rate and boundary separation parameters for both processing contexts and age groups in Experiment 2.")
+# hddm_table_age %>% 
+#   ungroup() %>% 
+#   mutate_if(is.numeric, round, 2) %>% 
+#   mutate(`95% HDI` = str_c("[", HDI_lower, ", ", HDI_upper, "]")) %>% 
+#   select(-HDI_lower, -HDI_upper) %>% 
+#   arrange(param_name, MAP) %>% 
+#   mutate(param_name = str_to_title(param_name),
+#          age_code = str_to_title(age_code)) %>% 
+#   rename(`Parameter` = param_name,
+#          `Mean Parameter Estimate` = MAP,
+#          `Age Group` = age_code) %>% 
+#   apa_table(placement = 'h',
+#   caption = "Summary of the Drift Diffusion Model output for the drift rate and boundary separation parameters for both processing contexts and age groups in Experiment 2.")
 ```
 
 
