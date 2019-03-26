@@ -1,0 +1,112 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F, 
+                      fig.width=4, fig.asp = 0.618, out.width = "90%", 
+                      fig.align = 'center', fig.pos = 't')
+
+source(here::here("index/disseration_helpers.R"))
+intro_figs_path <- "index/chapter_child_rmds/ch1_goal_account/figs/"
+```
+
+## Introduction
+
+Imagine that a stranger on the street approached you and asked: 
+“I’m sorry to bother you, but can you tell me the way to the city hall by any chance?”
+Regardless of your answer, you probably would not feel puzzled or offended by the way in which the stranger decided to seek information that he needs. 
+This is in contrast with an alternative situation where the stranger said to you instead: “Tell me the way to the city hall.” 
+In such case you would immediately notice the lack of politeness in his utterance, and your response to him may be negatively affected by the irritating oddity of the situation. 
+Similarly, a person who noticed her friend’s new, flashy dress could comment: “Your new dress is gorgeous!” even if the speaker actually felt that the dress was merely decent or even ugly. 
+But why? Why are people expected to speak politely, when there are alternative utterances that can convey information about the world or the speaker’s intention more directly (“Tell me the way”) or truthfully (“Your dress is ugly”)?
+					
+Language is simultaneously both an informational and social tool. 
+Through language, people communicate information about the world, but also form their social relationships and establish their identity within the society. 
+On one hand, some theories of language functions describe language as a transmission device for transferring from a sender to a receiver information that reflects context or the state of affairs [@buhler1934; @shannon1948; @jakobson1960]. 
+The importance of informativity is further emphasized in more recent, influential theories on pragmatics of natural language, which explain how meanings beyond literal meanings of utterances arise [@grice1975; @searle1975]. 
+On the other hand, some linguistic theories, especially those with references to language development, identify social roles of language that people use to make contact with others and form relationships [@halliday1975; @ervin1967]. These theories underscore that linguistic rules that language users tend to follow represent the norms and structure of the community using the language [@ervin1969].
+
+Could polite speech reflect both the informational and the social roles of linguistic communication? Previous theoretical accounts for polite speech vary in their focus on informational versus social aspects of polite language. Some theories view polite speech as reflecting social rules and norms [@watts1992], some as abiding by communicative maxims that people are expected to follow in conversations, to be both as informative and as armative of their conversational partner as possible [@lakoff1973; @leech1983], and others as performing face management, or trying to maintain interactants’ good public self-image or reputation [@brown1987].
+
+In this Chapter, I propose that that polite speech highlights both informational and social uses of language: 
+Polite speech reflects a principled tradeoff between the informational, epistemic content a speaker wants to convey (e.g. “I want to know the way to the city hall”) and other social concerns, such as prosocial or self-presentational goal that the speaker wants to express for herself and others (“I’m not rudely commanding you to tell me the answer, but making a request in a respectful way”). Thus, my goal is to unify previous theoretical frameworks in one, goal-driven account of polite speech. 
+In what follows, I will describe the goal-based account of polite speech in detail (Part I), and summarize previous models and theories of polite speech and situate them within the framework of the current goal-driven account (Part II). Then I will examine empirical evidence for goal-driven approach to polite speech: In Part III, I will focus on empirical work on adult production and comprehension of polite speech which show that adults reason about speaker goals in polite speech; and in Part IV, I will probe empirical evidence from developmental work that children’s production and understanding of polite speech advance as they grow older. In doing this I will show that children’s production and comprehension of polite speech is related to the relative complexity of polite speech based on its goal tradeoff.
+
+## Part I: A Goal-based account of politeness
+
+What does it mean to speak politely? 
+Common instances of polite speech that occur to one’s mind probably include the simplest politeness markers, such as “please,” “thanks,” and “sorry.” 
+More complicated examples would involve ways in which, for example, a person make a request: under normally conceivable circumstances, 
+it would certainly be more polite to ask “Would it be too much trouble to ask you to complete this survey when you’re not too busy?” than to say “Do this survey now.” 
+The word "polite" can sometimes carry a negative undertone in its meaning, as in “she was just being polite,” which is likely to mean the speaker was hiding her genuine intentions to make the listener feel good. From these examples, we can identify a few aspects that a polite utterance may exhibit: observance of social rules, relatively high degree of elaborateness or indirectness, and dishonesty or disingenuousness in the interest of others’ feelings or reputations.
+					
+More formal definitions of the term politeness also reveal common features that polite speech shows. Cambridge and Oxford Dictionaries respectively define what it means to be polite: “behaving in a way that is socially correct and shows respect for other people’s feelings”; and “courteous, behaving in a manner that is respectful or considerate of others; well-mannered” [@oxfordPolite; @cambridgePolite]. 
+Similar to the previous examples of polite speech, these definitions suggest politeness involves (1) observance of social expectations and (2) respect for others. 
+@boyer1702’s The English Theophrastus: of the Manners of the Age, compilation of texts describing the English life in the early eighteenth century, identifies a purpose in trying to be polite: “Politeness may be defined as a dextrous management of our Words and Actions whereby *men make other people have a better Opinion of us and themselves* [emphasis added].” Thus, according to the Theophrastus definition, speakers speak politely in order to boost the self-images of the interactants (both the speakers themselves and their addressees).
+					
+These common themes of politeness have been identified by previous theoretical accounts of polite speech (reviewed in detail in Part II). But each of the accounts only focused on certain aspects of polite speech but disregarded others, and their explanations for politeness have been viewed as largely disparate. Here I make a unification proposal, where these existing approaches to polite speech can be united under a single goal-based account of polite speech.
+
+I propose that polite speech reflects some degree of tradeoff between three main communicative goals that a speaker has: informational, prosocial, and (self-)presentational. *Informational goal* has to do with the speaker’s desire to convey the most accurate information in the most efficient manner. *Prosocial goal* is about the speaker’s desire to retain the listener's acceptable self-image as a decent individual and as a reputable member of society. *Presentational goal* reflects the speaker's desire to present the speaker herself in a good light, to appear to be a kind and helpful individual. Below I describe each goal in more detail.
+
+### Informational goal. 
+
+A speaker’s informational goal, i.e. to prioritize information transfer in communication, may involve two closely related notions: informativity and truthfulness. 
+Informativity is the notion of conveying the intended meaning in the most efficient and precise manner possible. 
+The idea of informativity here is similar to @grice1975’s notion of cooperativity: 
+A speaker will cooperatively choose utterances such that the listener can understand her intended message. 
+Thus, the current notion of informativity that I adopt will encompass the whole Cooperative Principle (CP) that Grice posited (“Make your contribution such as required by the purposes of the conversation at the moment”), and especially the Maxim of Quantity (“Make your contribution as informative as is required”), 
+though Maxims of Relevance (“Be relevant”) and Manner (“Be perspicuous”; i.e. be brief, orderly, and unambiguous) can also be relevant to the notion of informativity as I discuss in this Chapter.
+					
+The idea of informativity has been formalized in probabilistic (Bayesian) models as a utility function of a speaker with particular goals in mind. The “rational speech act” (RSA) theory of language understanding (see @goodman2016 for a review) assumes that listeners expect speakers to aim to be helpful yet parsimonious, choosing their utterances approximately optimally based on a communicative goal (e.g., inform the listener) and interpret an utterance by inferring what the helpful speaker meant based on the utterance and any other relevant information about the world. The theory defines a standard, informative utility as the amount of information a literal listener ($L_0$) would still not know about world state ($s$) after hearing a speaker’s utterance ($w$):
+					
+$$U_{epistemic}(w; s) = ln(P_{L_0}(s | w))$$
+					
+where the utterance choice is approximately rational (i.e., in proportion to the expected utility gain) and $w$ is chosen from a set of alternative, relevant utterances.
+					
+For example, if Bob asked Alice “How was my cookie?” and Alice said to Bob “It was good,” with only the goal to be informative in mind, Bob would think that Alice was being maximally informative by using the word “good” instead of another relevant, stronger word such as “amazing,” and infer that Ann meant “good but not amazing” because otherwise Ann would have used the word “amazing” instead.
+					
+I note here that Ann’s speech act could be analyzed as having observed the Gricean Maxim of Quantity, by making her utterance maximally informative, and Bob’s inference as being based on such assumption that Ann’s utterance is as informative as is required to meet Bob’s needs. But as the comparison between the former goal-directed analysis and this latter maxim-based analysis may reveal, the maxim-based account is difficult to formalize [@hirschberg1985] whereas the goal-directed view allows for quantitative account of factors contributing to the linguistic phenomena at hand [@goodman2016]. 
+From here on, I take the goal-directed view rather than the Gricean maxim-based view of the speaker; 
+thus, analyses of speakers and their utterances will be based on speakers’ communicative goals to convey information, etc., rather than their observation or violation of Gricean maxims.
+					
+Informational goal can also involve truthfulness: the meaning that accessed by the listener should match the true state of the world as closely as possible. 
+In other words, the speaker will want to convey what is true (to the extent of her knowledge), not what is false. 
+For example, if Bob baked some cookies and they tasted terrible, and Alice had the goal to be truthful, she would want to convey what matches the true state of the world as closely as possible (“Your cookies tasted terrible”). On the other hand, if Alice remarked to Bob about his cookies “Your cookies tasted good,” with goal to be informative and truthful, the true state of the world must be such that Bob’s presentation was truly good (but probably not amazing, because otherwise Alice would have said that it was amazing), and not bad or terrible.
+					
+As for when speakers decide not to tell the truth, there is a difference between violating versus flouting of truthfulness (which Grice also discusses; see @grice1975, p. 49, 53). 
+Flouting involves contradicting common knowledge shared between the speaker and listener about the true state of the world, such that the listener notices that the utterance meaning does not match the true state. 
+For example, after Alice and Bob together watch a movie that was obviously gory and disturbing to both of them, 
+if Bob says “well, that was a really happy, fluffy movie!” then his utterance would be flouting truthfulness goal, 
+and Ann would recognize Bob’s utterance as an ironic one. 
+On the other hand, violating truthfulness does not hold assumption of such common knowledge of the true state of the world, and thus the listener may not notice the mismatch between the utterance meaning and true state of the world, although the listener can potentially access it through other means (e.g. realizing that the speaker had reasons to lie). 
+Here I will mainly focus on violation, not flouting, of truthfulness, for example when speakers tell white lies (i.e., when the speakers do not intend that the listeners know what the truth is).
+					
+Speakers’ informational goal to be informative and truthful may encompass communicative cooperation in both locutionary and perlocutionary senses. A locutionary goal deals with conveying the intended meaning of the utterance within a conversation, whereas a perlocutionary goal involves achieving the speaker’s ultimate goals toward the listener [@attardo1997]. 
+What could be an informational goal in its perlocutionary sense? 
+In being truthful, speakers may ultimately want to maintain their moral obligation to tell the truth to others. This obligation is in line with Western philosophers’ argument throughout the history that it is morally wrong to lie [@augustine1952; @kant1949], although there have been debates on whether the degree of wrongness may depend on context [e.g., if the speaker was telling a white lie; @sweetser1987]. 
+For example, if Alice said to Bob “Your cookies were good,” Alice’s locutionary goal would be to convey to Bob her intended meaning that his presentation was good (but perhaps not amazing), whereas her perlocutionary goal would be for Bob to think that the presentation was good, which was (apparently) the truth; Alice thereby upholds her moral obligation to tell the truth to Bob. Alice’s goal to be truthful, then, is achieved in both locutionary and perlocutionary senses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In the next section, I present an overview of the empirical work in the dissertation, linking it to the integrative framework discussed in this chapter. I also highlight the relevant pieces of the broader framework that the empirical work addresses. Importantly, these case studies tend to focus on eye movements that gather task-related information to guide future action, as opposed to exploratory eye movements in a novel environment. This feature makes them a good candidate for the active-social framework inspired by OED since these models were developed to explain information seeking in the context of well-defined tasks and clear learning goals.
+
+### Links between case studies and the broader framework
+
+Chapter 2 investigates children's decisions about where to look while comprehending a visual-manual language (American Sign Language: ASL). In the grounded sign processing context, children must use visual fixations to gather information about both the referents and the linguistic signal, creating competition for visual attention that is not present in spoken language comprehension. This competition could fundamentally change how children decide to gather visual information during real-time language comprehension. Using our active-social theoretical framework, we might hypothesize that ASL-learners query the visual world in different ways such as fixating longer on social partners before seeking a named object since this behavior provides access to language, which can help guide future actions. Alternatively, it could be that ASL learners show parallel looking patterns to children acquiring spoken language, shifting their gaze to gather visual information about the objects in the scene soon after they have sufficient information about the identity of the named object. Chapter 2 explores these questions by measuring the timing and location of ASL learners' eye movements as they process sentences that contain familiar signs referring to objects in the visual scene.
+
+Chapter 3 builds on the sign language work by directly comparing the gaze dynamics of children learning ASL to children learning spoken English during familiar language processing. We measure when children decide to stop fixating on a social partner to seek named referents in the visual world. Using our integrative framework, we hypothesized that looking to a signer returns higher value information for the specific task of identifying the named object, which would lead signers to generate slower but more consistent gaze shifts away from the language source and to the rest of the visual world. Chapter 3 also describes a study of English-learning children and adult's eye movements in noisy auditory contexts. We hypothesized that looking to a speaker becomes more useful when the auditory signal is less reliable, which, as in the ASL case, would make children fixate on the language source longer to gather more information, leading them to produce more language-consistent gaze shifts.
+
+Chapters 4 and 5 explore how the information seeking framework generalizes to processing words in the context of social cues to reference. Social cues are an interesting test case for our active-social account because communicative partners who produce reliable cues to reference might become more valuable targets for children's looking. Thus, we hypothesized that in the context of reliable social cues, children should fixate longer on their social partner, modulating the information stored from a labeling event. In Chapter 4, we present a series of large-scale word learning experiments, showing that the presence of a social cue reduces the number of word-object hypotheses that adults remember from a labeling event. Chapter 5 describes a set of eye-tracking studies that measure when children decide to stop fixating on a social partner as a function of (1) whether the social partner provides a cue to reference and (2) their knowledge of the word-object mappings. 
+
+Overall, the goal of the empirical work is to ask how children's gaze patterns adapt to a diverse set of contexts that change the value of seeking information from social partners. The common thread across this research is that children's real-time visual information seeking is quite flexible and can adapt to the informational structure of the environment to support language processing.

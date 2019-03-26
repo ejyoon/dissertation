@@ -202,16 +202,16 @@ accurately (Grice, 1975).
 If politeness only gets in the way of effective information transfer,
 why be polite? Clearly, there are social concerns, and most linguistic
 theories assume utterance choices are motivated by these concerns,
-couched as either polite maxims (G. Leech, 1983), social norms (Ide,
-1989), or aspects of a speaker and/or listener's identity, known as
-\emph{face} (P. Brown \& Levinson, 1987; Goffman, 1967). All of these
-theories use different approaches to explain polite language, and some
-are even framed as counterarguments to existing theories (e.g., see
-Watts, 2003, and @matsumoto1988 for counterarguments to some issues in
-P. Brown \& Levinson (1987)). One possible commonality among these
-theories however, is that they all describe ways in which language
-communication deviates from certain expected utterances or conversations
-due to speakers' social concerns.
+couched as either polite maxims (Leech, 1983), social norms (Ide, 1989),
+or aspects of a speaker and/or listener's identity, known as \emph{face}
+(P. Brown \& Levinson, 1987; Goffman, 1967). All of these theories use
+different approaches to explain polite language, and some are even
+framed as counterarguments to existing theories (e.g., see Richard J
+Watts (2003) and Matsumoto (1988) responding to some issues in P. Brown
+\& Levinson (1987)). One possible commonality among these theories
+however, is that they all describe ways in which language communication
+deviates from certain expected utterances or conversations due to
+speakers' social concerns.
 
 In this thesis, my goal is to offer an integrative theoretical framework
 that aims to unify these existing theories, and provide empirical
@@ -262,1337 +262,245 @@ versus blunt truths.
 
 \caption[Schematic overview of the dissertation content.]{The upper panel shows a schematic overview of an integrative framework of polite language understanding based on competing social goals. The lower panels show different studies examining adults' and children's understanding of different component goals (and possible tradeoffs between them) that correspond to each chapter of the dissertation.}\label{fig:schematic-overview}
 \end{figure}
-\chapter{Children's information seeking within social learning
-contexts}\label{childrens-information-seeking-within-social-learning-contexts}
+\chapter{A goal-based account of polite
+language}\label{a-goal-based-account-of-polite-language}
 
-\chaptermark{Information seeking within social contexts}
+\chaptermark{A goal-based account of polite language}
 
 \section{Introduction}\label{introduction}
 
-Early cognitive development is remarkable. Consider that children,
-despite limitations on their processing capabilities and ambiguity in
-the input, rapidly acquire new lexical concepts, eventually reaching an
-adult vocabulary ranging from 50,000 to 100,000 words (P. Bloom, 2002).
-And they accomplish this all while also developing motor skills,
-learning social norms, and building causal knowledge. How can we explain
-the children's prodigious learning abilities?
-
-Social learning accounts point out that children do not solve these
-problems on their own. Instead, they are typically surrounded by
-parents, other knowledgeable adults, or older peers -- all of whom are
-likely to know more than they do and want to facilitate their learning.
-Social learning accounts also emphasize how social contexts can
-bootstrap children's learning via several, distinct mechanisms. For
-example, work on early language acquisition shows that social partners
-provide input that is tuned to children's cognitive abilities (Eaves Jr,
-Feldman, Griffiths, \& Shafto, 2016; Fernald \& Kuhl, 1987), that guides
-children's attention to important features in the world (Yu \& Ballard,
-2007), and increases levels of sustained attention, which results in
-better learning outcomes (P. K. Kuhl, 2007; Yu \& Smith, 2016).
-
-Social contexts can also change the inferences that support children's
-learning from evidence. Recent work in the fields of concept learning
-and causal intervention suggests that the presence of another person
-engages a set of psychological reasoning where the learner thinks about
-\emph{why} other people performed specific actions. The critical insight
-comes from knowing that another person has intentionally selected
-examples, which allows children to make stronger inferences that speed
-learning (Bonawitz \& Shafto, 2016; Frank, Goodman, \& Tenenbaum, 2009;
-Shafto, Goodman, \& Griffiths, 2014). For example, children learn at
-different rates after observing the same evidence depending on whether
-they thought the actions that generated that evidence were accidental
-(less informative) or intentionally selected (more informative).
-Moreover, adults and children will make even stronger inferences if they
-believe that another person selected their actions with the goal of
-helping them to learn (i.e., teaching) (Shafto, Goodman, \& Frank,
-2012b).
-
-However, children are not passive recipients of information -- from
-people or the world. Instead, they actively select behaviors -- for
-example, asking questions or choosing where to allocate visual attention
--- that can change the content, pacing, and sequence of their learning
-experience. Recent theories of cognitive development have proposed the
-metaphor of the ``child as a scientist'' and characterized early
-learning as a process of exploration and hypothesis testing following
-principles of the scientific method (Gopnik, Meltzoff, \& Kuhl, 1999; L.
-Schulz, 2012). Moreover, empirical work across a variety of domains --
-education (Grabinger \& Dunlap, 1995), machine learning (Castro et al.,
-2009; Settles, 2012), and cognitive science (D. B. Markant \& Gureckis,
-2014) -- has directly compared learning trajectories in self-directed
-contexts (active learning) as compared to settings where the learner has
-less control (passive learning). The upshot of this work is that active
-contexts often lead to faster learning because of enhanced attention and
-arousal or because learners select information that is closely linked to
-their current goals, uncertainty, and skill (see Gureckis \& Markant
-(2012) for a review).
-
-Thus, children are capable of selecting actions to support their
-learning, and a large body of work shows that social partners can create
-particularly rich contexts for learning. Empirical work within each
-framework, however, has often focused on the separate effects of active
-or social processes. This approach, however, does not reflect the
-ecological context in which language acquisition unfolds. That is,
-children acquire their first language from interactions with other
-people where they have the opportunity to select actions -- where to
-look, where to point, what question to ask -- that influence the content
-and pacing of the experience. The mismatch between the existing
-empirical work and children's natural learning environments highlights
-the need for integration across the active and social theoretical
-accounts.
-
-But how can we integrate these two proposals, which often include
-definitional issues and a lack of formal foundations? In this chapter, I
-present an integrated account of active learning within social contexts,
-arguing that it represents an important step for theories of early
-cognitive development. To connect the active and social learning
-proposals, I use the computational frameworks of Optimal Experiment
-Design (Emery \& Nenarokomov, 1998; Lindley, 1956) and Bayesian models
-of social reasoning (Goodman \& Frank, 2016). The key insight is that
-the presence of another person can modulate the \emph{availability} and
-\emph{usefulness} of different actions that the active learner could
-select. Specifically, social interactions can shape learners' goals,
-hypotheses, actions, answers, and decisions about when to stop gathering
-information.
-
-In addition to the theoretical account, this chapter provides concrete
-definitions of active and social learning to clarify the behaviors and
-phenomena that the account aims to address
-(\protect\hyperlink{scope}{Part I}). Then, I briefly review the
-framework of Optimal Experiment Design (OED)
-(\protect\hyperlink{oed}{Part II}), highlighting how it can be can be
-used to formalize human information seeking behaviors. I also discuss
-the empirical evidence for OED-like reasoning in both adults' and
-children's learning. Finally, I conclude by presenting the integrative
-account of how social contexts can shape information seeking
-(\protect\hyperlink{active_social}{Part III}). In the final section, I
-also highlight a series of new links between the social and active
-accounts, which present a way forward for empirical work that sheds
-light on how children's active learning operates over fundamentally
-social input.
-
-\hypertarget{scope}{\section{Part I: Learning from others and learning
-on your own}\label{scope}}
-
-A diverse set of scholars, theories, and empirical work has considered
-the contributions of active and social processes to children's learning.
-One consequence of this range of approaches is that the terms ``active''
-and ``social'' have become associated with a variety of meanings. Thus,
-before integrating the two accounts, it is worth defining what I mean by
-active learning and social contexts. By providing clear definitions,
-this section aims to clarify the behaviors and phenomena that the
-integrative account attempts to explain.
-
-\subsection{Social learning}\label{social-learning}
-
-Learning can be social in a variety of ways. First, children could learn
-with another person present but without attending to or directly
-interacting with them. Research in social psychology shows that the mere
-presence of other people can facilitate the performance of simple tasks
-and impair the performance of complex tasks (N. B. Cottrell, Wack,
-Sekerak, \& Rittle, 1968; Uziel, 2007). Second, children could learn by
-looking to others as a guide and observing or imitating their behavior.
-Children's capacity for faithful imitation has been argued to be a
-critical feature separating human from non-human learning (Call,
-Carpenter, \& Tomasello, 2005). Finally, children could both attend to
-the person and directly interact with them, entering a communicative
-learning context that engages psychological reasoning processes that
-alter the course of learning (Frank \& Goodman, 2014; Goodman \& Frank,
-2016; Shafto et al., 2012b).
-
-For the integrative account discussed in this chapter, I define a social
-context as a learning environment where another agent is present. This
-definition includes all of the social learning behaviors -- observation,
-imitation, and learning from direct interaction -- mentioned above. This
-broad definition highlights the diverse pathways through which social
-information could interact with children's active learning. Moreover,
-this definition captures the variety of contexts in which children
-develop, i.e., in some cultures children experience high amounts of
-child-centered interactions while in others they are often expected to
-learn through observation of older peers and adults (Rogoff et al.,
-1993).
-
-Social learning theories emphasize that children's rapid conceptual
-development is facilitated by the uniquely human capacity to transmit
-and acquire information from other people. A primary benefit of learning
-from others is that children gain access to knowledge that has
-accumulated over many generations; information that would be too complex
-for any individual to figure out on their own (Boyd, Richerson, \&
-Henrich, 2011). In addition to the cumulative effects, social contexts
-facilitate in-the-moment learning since more knowledgeable others can
-provide input that is most useful for children (Kline, 2015; Shafto et
-al., 2012b) and communicate information that is likely to generalize to
-other contexts (Csibra \& Gergely, 2009).
-
-There is a large body of empirical work showing the effects of social
-input in a variety of domains, including language acquisition, causal
-learning, and concept learning. For example, newborn infants prefer to
-look at face-like patterns compared to other abstract configurations
-(Farroni, Csibra, Simion, \& Johnson, 2002; Johnson, Dziurawiec, Ellis,
-\& Morton, 1991), to listen to speech over non-speech (Vouloumanos \&
-Werker, 2007), their mother's voice over a stranger's (DeCasper, Fifer,
-Oates, \& Sheldon, 1987), and infant-directed speech over adult-directed
-speech (Cooper \& Aslin, 1990; Fernald \& Kuhl, 1987; Pegg, Werker, \&
-McLeod, 1992). Moreover, these attentional biases lead to differential
-learning in the presence of another person. 4-month-olds show better
-memory for faces that gazed directly at them (Farroni, Massaccesi,
-Menon, \& Johnson, 2007), for an object if an adult gazed at that object
-during learning (Cleveland, Schug, \& Striano, 2007; Reid \& Striano,
-2005), and perform better at tasks such as segmenting words from
-infant-directed speech compared to adult-directed speech (Thiessen,
-Hill, \& Saffran, 2005). P. K. Kuhl (2007) refer to these effects as
-``social gating'' phenomena since the presence of another person
-activates or enhances children's underlying learning mechanisms.
-
-In addition to enhancing attention and memory, social contexts can
-facilitate learning by generating useful information tailored to the
-child's current developmental stage (Vygotsky, 1987). Empirical work
-shows that caregivers alter their communication style when speaking to
-children (e.g.,exaggerating prosody, reducing speed), which in turn can
-help children learn vowel sounds (Adriaans \& Swingley, 2017; De Boer \&
-Kuhl, 2003), segment the speech stream (Fernald \& Mazzie, 1991;
-Thiessen et al., 2005), recognize familiar words (Singh, Nestor, Parikh,
-\& Yull, 2009) and learn new lexical concepts (Graf Estes \& Hurley,
-2013). Additional evidence comes from studies of early vocab development
-showing that infants will produce more speech-like sounds when
-interacting with caregivers who provide contingent responses (Goldstein
-\& Schwade, 2008). Goldstein \& Schwade (2008) propose that social input
-was particularly useful because the responses were closer in time,
-making it easier for children to compare any discrepancies between their
-vocalization and the target speech sound. Finally, converging support
-comes from research on children's early word learning, which shows that
-social partners can reduce the complexity of the visual scene by
-selecting actions -- gazing, pointing, holding -- that make a single
-object dominant in the visual field (Yu \& Smith, 2013; Yu, Ballard, \&
-Aslin, 2005) and by producing labels for objects that children are
-already attending to (Tomasello \& Farrar, 1986).
-
-Another feature of social interactions is that other people's actions
-are not random; instead, people tend to intentionally select actions to
-accomplish some goal (e.g., to communicate information). Moreover, if
-children are sensitive to \emph{why} someone took action, they can use
-this information to facilitate learning. Recent empirical and modeling
-work has formalized this idea as a process of belief updating in
-Bayesian models of cognition (Frank \& Goodman, 2014; Goodman \& Frank,
-2016; Shafto et al., 2012b). For example, adults are more likely to
-think that pressing two buttons is necessary to activate a toy if that
-action was demonstrated by someone who knew how the toy worked as
-compared to someone accidentally pressing both buttons (Goodman, Baker,
-\& Tenenbaum, 2009). Shafto et al. (2012b) interpret these results as a
-psychological reasoning process: ``if the other person were
-knowledgeable and wanted to generate the effect, then he would perform
-both actions.'' This finding also suggests that learners assume that
-others' goal-directed behaviors will be efficient and that they should
-avoid performing unnecessary actions.
-
-Similar effects of psychological reasoning on inference occur in word
-learning (Frank \& Goodman, 2014; Xu \& Tenenbaum, 2007b), selective
-trust in testimony (Shafto, Eaves, Navarro, \& Perfors, 2012a), tool use
-(Sage \& Baldwin, 2011), and concept learning (Shafto et al., 2014).
-Moreover, there is evidence that even young learners' inferences are
-sensitive to the presence of goal-directed behaviors. For example, J. M.
-Yoon, Johnson, \& Csibra (2008) showed that 8-month-olds tend to encode
-an object's identity when a communicative point directed their
-attention, but they will encode an object's spatial location if directed
-by a non-communicative reach. Also, Senju \& Csibra (2008) found that
-infants are more likely to follow another person's gaze when relevant,
-communicative cues accompanied it (e.g., infant-directed speech or
-direct eye contact).
-
-Finally, several accounts of cultural learning argue that an assumption
-of \emph{generalizability} is fundamental to social learning via
-communication, allowing for the accumulation of cultural knowledge
-across generations (Boyd et al., 2011; Csibra \& Gergely, 2009; Kline,
-2015). In these explanations, adults generate ostensive signals such as
-direct gaze, infant-directed speech, and infant-directed actions, which,
-in turn, direct infants' attention and bias them to expect generalizable
-information. Experimental work testing predictions of this ``Natural
-Pedagogy'' hypothesis shows that children tend to think that information
-presented in communicative contexts is generalizable (Butler \& Markman,
-2012; J. M. Yoon et al., 2008), and corpus analyses show that generic
-language (e.g., ``birds fly'') is common in everyday adult-child
-conversations (Gelman, Goetz, Sarnecka, \& Flukes, 2008).
-
-The work on social learning reviewed in this section highlight several
-points that are important for theories of cognitive development. First,
-from an early age, children are surrounded by other people who know more
-than they do and can provide useful learning opportunities. Second,
-children are motivated to interact with other people, and these
-interactions engage and guide attention to relevant information.
-Finally, social contexts can trigger a set of psychological reasoning
-mechanisms that lead to stronger inferences, allowing children to get
-more information out of the same evidence.
-
-Children, however, are not passive recipients of information from the
-world or other people. Instead, they actively process their input and
-select behaviors that change learning experiences. A literature on
-children's active learning has developed alongside social learning
-theories.
-
-\subsection{Active learning}\label{active-learning}
-
-Learning can also be active in a variety of ways. First, a child could
-be physically active, and these actions could change the way they
-process information. Research on embodied cognition has explored the
-effects of action experience on infants' learning (see Kontra,
-Goldin-Meadow, \& Beilock (2012) for a review), showing results such as
-infants who physically hold and manipulate objects will outperform a
-control group on measures of object attention and exploration (Needham,
-Barrett, \& Peterman, 2002 ). Second, active learning could refer to
-children's active internal monitoring and processing of incoming
-information. For example, young learners do not just accept other
-people's claims and will reject answers that conflict with their
-knowledge (Pea, 1982), and children engage in self-generated
-explanations that can lead to changes in how they process and retain the
-same incoming information (Lombrozo, 2006). Finally, active learning
-could refer to a decision-making process where children take actions
-that control the sequence and pace of their learning experiences.
-
-For the integrative account discussed here, I focus on active learning
-effects that arise via children's decisions about what action to take
-next. The critical assumption is that active learners take actions that
-maximize the amount of information they can get while minimizing the
-costs of effort and time. By limiting the account to active decisions, I
-do not aim to ignore the importance of other types of active learning;
-instead, the goal is to constrain the space of connections between
-active and social learning theories. Moreover, children's action
-selection captures a rich set of behaviors, including pointing, eye
-movements, verbal question asking, and causal interventions. Finally,
-focusing on active decisions connects work on children's learning to a
-rich tradition of computational and experimental research in the fields
-of machine learning, decision theory, and statistics.
-
-The idea that children's actions are important for cognitive development
-has also been an influential aspect of both classic (Berlyne, 1960;
-e.g., Bruner, 1961; Piaget \& Cook, 1952) and modern (Gopnik et al.,
-1999; L. Schulz, 2012) theories of learning. Moreover, the effects of
-active processes have been studied in education (Grabinger \& Dunlap,
-1995; Prince, 2004), machine learning (Ramirez-Loaiza, Sharma, Kumar, \&
-Bilgic, 2017; Settles, 2012), and cognitive psychology (Castro et al.,
-2009; Chi, 2009). A common thread across these diverse bodies of work is
-that active contexts lead to different (and often more rapid) learning
-outcomes because they (a) enhance learners' attention and memory and (b)
-allow learners to structure experiences that are tuned to their own
-goals, beliefs, and capabilities (see D. B. Markant, Ruggeri, Gureckis,
-\& Xu (2016) for a review).
-
-One compelling example of how to explore the effects of self-directed
-choice comes from D. Markant, DuBrow, Davachi, \& Gureckis (2014)'s
-study on ``deconstructed'' active learning. Adults were asked to
-memorize the identities and locations of objects hidden in a grid and
-given different levels of control. They could select: (1) next location
-to search, (2) item to reveal, (3) duration of the trial, or (4) time
-between trials. D. Markant et al. (2014) also included a ``yoked''
-control group who saw the same training data that was generated by the
-active learning group, thus equating the experience while varying the
-level of control. Across all conditions, there was a memory advantage
-for active control, providing evidence for the benefits of being able to
-coordinate the timing of information with internal attentional
-processes.
-
-Research on language comprehension also has varied levels of active
-control to tease apart attentional vs.~informational effects. For
-example, Schober \& Clark (1989) asked participants to use language to
-direct another person on how to arrange a set of geometric objects (that
-did not have familiar labels) in a 4x4 matrix. Critically, the listener
-could either: (1) talk to the director, (2) listen to a recorded
-conversation and pause the recording, or (3) listen to the recording but
-not stop it. Adults who participated in conversation performed better
-than participants in both passive listening contexts. Moreover, the
-capacity to control the timing of the recording did not improve
-accuracy, suggesting that active participation in conversation provides
-an informational advantage such that people could clarify intended
-meanings before misunderstandings became an issue for later
-comprehension.
-
-Developmental experiments have also found active learning advantages.
-For example, Ruggeri, Markant, Gureckis, \& Xu (2016) showed that
-control over the timing of new information led to better spatial memory
-in 6- to 8-year-olds (Ruggeri et al., 2016); Partridge, McGovern, Yung,
-\& Kidd (2015) showed similar effects in the domain of word learning
-(see also Kachergis, Yu, \& Shiffrin (2013) for evidence in adults); and
-L. Schulz (2012) found that active learning supports preschoolers'
-understanding of new causal structures. Finally, 16-month-olds show
-better memory for objects they pointed to compared to an object that
-they had not actively engaged with (Begus, Gliga, \& Southgate, 2014)
-(see also Stahl \& Feigenson (2015)) and adults tend to produce more
-labels for objects that their infants point to (Z. Wu \& Gros-Louis,
-2015), providing additional evidence that even young infants can
-generate actions that elicit information to support their learning.
-
-Research on infants' selective visual attention provides a final
-compelling example of children's capacity to select useful information.
-For example, Kidd, Piantadosi, \& Aslin (2012) found that 7- and
-8-month-olds' prefer to direct gaze at stimuli with intermediate levels
-of complexity, looking away when the stimulus was either highly
-predictable or highly surprising (see also Kidd, Piantadosi, \& Aslin
-(2014) for evidence in the auditory domain). Moreover, Gerken, Balcomb,
-\& Minton (2011) found that 17-month-olds increase attention to a stream
-of input that was learnable but would disengage if the input did not
-have any consistent structure to extract.
-
-\subsection{The scope of the integrative
-account}\label{the-scope-of-the-integrative-account}
-
-In sum, the empirical work reviewed above shows that both social and
-active processes can influence learning by enhancing attention/memory,
-changing inferential processes, and by generating useful learning input.
-The rest of this chapter presents an integrative account that I scope to
-focus on children's active learning \emph{decisions} within social
-contexts. I argue that this is a useful step forward because it allows
-researchers to ask how specific pieces of social learning affect
-separate underlying components of decision making.
-
-One major challenge for integrating these two proposals is the large
-number of factors that could influence how active learning interacts
-with social reasoning, which in turn creates an extensive space of
-possibilities for researchers to test. One way to constrain this problem
-is to use a formal model of information seeking that take an
-ideal-observer approach (Geisler, 2003). The ideal-observer model
-defines the structure of the learning task and asks how well learners
-can take advantage of the information in the environment. This approach
-pushes researchers to explicitly specify the processes of active and
-social learning as separable, underlying components, which can then
-become targets for empirical work.
-
-Research in cognitive psychology has used the ideal-observer approach to
-understand human active learning. One particularly useful model has been
-a formal account of scientific reasoning named Optimal Experiment Design
-(OED). The OED model was initially designed to help scientists select
-the best experiment from the set of possible experiments, where ``best''
-means the experiment leading to the most information gained. Researchers
-have used this formalization to ask whether people's information-seeking
-behaviors match predictions from OED models.
-
-Moreover, OED has the benefit of using the same mathematical framework
-as recently-developed Bayesian models of social learning, teaching, and
-communication (Frank et al., 2009; Goodman \& Frank, 2016; Shafto et
-al., 2012a). These parallel formalizations suggest a productive way to
-integrate active and social learning theories. This point is the primary
-focus of the integrative account that I present in
-\protect\hyperlink{active_social}{Part III} of this chapter. Before
-discussing the details of the account, I briefly review the OED
-formalization and evidence for OED-like reasoning in human information
-seeking.
-
-\hypertarget{oed}{\section{Part II: A formal account of active
-learning}\label{oed}}
-
-Optimal Experiment Design (OED) (Emery \& Nenarokomov, 1998; Lindley,
-1956; Nelson, 2005) is a statistical framework for quantifying the
-usefulness of experiments. Lindley (1956) described the approach as a
-transition from viewing statistics as binary decision making to a
-practice of gathering information about the ``state of nature''
-(p.~987). The concrete proposal is to design studies that maximize
-expected information gain (a measure borrowed from Information Theory
-and discussed in more detail below) and continue to collect data until
-the information gained reaches a pre-determined threshold.
-
-The OED approach allows scientists to make design choices that maximize
-the effectiveness of their experiments, reducing inefficiency and cost.
-Consider the following toy example borrowed from Ouyang, Tessler, Ly, \&
-Goodman (2016) where a researcher is interested in designing the best
-experiment to figure out whether people think a coin is fair or biased
-(i.e., a trick coin). Here the researcher's hypotheses correspond to
-different models of the coin {[}\(M_{fair}: Bernoulli(p = 0.5)\){]} and
-{[}\(M_{bias}: Bernoulli(p)\) where \(p \sim Uniform(0,1)\){]} and the
-experiments correspond to different sequences of coin flips that she
-could select as stimuli. Imagine that the researcher has limited time or
-resources and can only show a sequence of four coin flips, creating a
-space of 16 possible experiments. An OED model allows the researcher to
-select the best experiment that maximally differentiates the two
-hypotheses. For example, OED provides an answer to the question: how
-much better would it be to use {[}\(HHHH\){]} versus {[}\(HTHT\){]}?
-Here, {[}\(HHHH\){]} is more informative because both the bias and the
-fair coin models make the same predictions for the {[}\(HTHT\){]}
-experiment, meaning I would not learn much from this test.
-\begin{figure}[!t]
-
-{\centering \includegraphics[width=0.9\linewidth]{erica_yoon_dissertation_files/figure-latex/word-learn-schematic-1} 
-
-}
-
-\caption[Schematic of an active word learning context.]{Schematic of an active word learning context using the decomposition of Optimal Experiment Design. Social input (hearing a new word) triggers an inquiry goal. Then the learner considers potential hypotheses for the candidate word-object links, weighting each hypothesis by its prior probability. In this case, the learner thinks that the new word is less likely to refer to the familiar object BALL. Next, he considers possible queries (actions) and the potential outcomes of those actions. In the word learning context, the child must direct queries towards a social partner, which provides the learner with more possible queries: both verbal (questions) and nonverbal (eye gaze; pointing). If the learner selects the action to maximize expected utility, then he would ask the most informative question, which removes all uncertainty for the meaning of 'Dax' -- 'What's that called?' If he does select the relatively less informative action of asking about a single object, he would be unlikely to ask about the familiar object BALL since there is less information to be gained from this query based on his prior beliefs.}\label{fig:word-learn-schematic}
-\end{figure}
-Nelson, McKenzie, Cottrell, \& Sejnowski (2010) demonstrate the
-usefulness of taking an OED approach for differentiating competing
-theories of information seeking in adults' category learning. They
-created an OED model of their task, which included the design choices
-(what combination of features to show participants) and the relevant
-behavioral hypotheses (the different theories of category learning).
-They used the model to simulate the outcomes of using different stimulus
-sets, and selected the stimuli for which the competing theories made
-different predictions, and thus speeded the rate of learning from their
-experiments.
-
-Coenen, Nelson, \& Gureckis (2017) provide a thorough review of the OED
-framework and its links to human information seeking. They describe the
-four parts of an OED model, which are necessary to compute the expected
-value of an action: (1) hypotheses, (2) queries, (3) a generative model
-of the types of answers that each query could elicit, and (4) a way to
-score each answer with respect to the learning goal. There are also two
-components that are external to the utility computation but important
-for an account of human inquiry. First, having a learning goal, which
-instantiates the process of reasoning about hypotheses, questions, and
-answers. And second, having a stopping rule, which refers to a threshold
-that causes the learner to stop seeking information and generate an
-action. In Part III, I define each component of the OED model, and in
-the Appendix for this chapter I provide the mathematical details of the
-OED account.
-
-\subsection{Evidence of OED-like reasoning in human
-behavior}\label{evidence-of-oed-like-reasoning-in-human-behavior}
-
-A growing body of psychological research has used the OED framework as a
-metaphor for active learning. The proposal is that when people make
-decisions, they engage in a similar process of evaluating the usefulness
-of different actions relative to their learning goals. Using this
-evaluation process, learners can then select behaviors that maximize the
-potential for gaining information. One of the successes of the OED
-account is that it can capture a wide range of information seeking
-behaviors, including verbal question asking (Ruggeri \& Lombrozo, 2015),
-planning interventions in causal learning tasks (C. Cook, Goodman, \&
-Schulz, 2011), and decisions about where to look during scene
-understanding (Najemnik \& Geisler, 2005).
-(Figure~\ref{fig:word-learn-schematic} shows a schematic overview of how
-OED principles shape the learning process for the task of word
-learning.)
-
-One compelling example of OED-like behavior is Nelson (2005)`s study of
-eye movements during concept learning. Their model combined Bayesian
-probabilistic learning, which represents current knowledge as a
-probability distribution over concepts, with an OED model that
-calculated the usefulness of different patterns of eye movements for the
-goal of learning about the novel concepts. Nelson (2005) showed that an
-OED model could predict a shift in participants' distribution of visual
-fixations as they became more familiar with the target concepts. Early
-in learning, when the concepts were unfamiliar, the model generated a
-broader, less efficient distribution of fixations to explore all
-candidate features. However, after the model began to learn the target
-concepts, eye movement patterns shifted to become more efficient and
-focused on a single stimulus dimension to maximize accuracy. This shift
-from exploratory to efficient eye movements matched adult performance,
-suggesting that human information seeking was well-adapted to the
-structure of the learning problem and the uncertainty in the task.
-
-Developmental work has also used OED models to ask whether children are
-capable of selecting useful behaviors that maximize learning goals. For
-example, Legare, Mills, Souza, Plummer, \& Yasskin (2013) found that 4-
-to 6-year-old children consistently asked yes/no questions to figure out
-the identity of an object hidden in a box. Children produced a high
-proportion of questions that generated useful, constraining information
-(e.g., ``Is it red?'') as opposed to questions that provided redundant
-information (see also Mills, Legare, Grant, \& Landrum (2011); Mills,
-Legare, Bills, \& Mejias (2010)). Moreover, children can generate
-efficient actions to learn about the causal structure of objects. For
-example, C. Cook et al. (2011) found that preschoolers could design
-useful tests that successfully distinguished between competing
-hypotheses for how to activate a music box, even showing the capacity to
-reason about a decision that would influence future learning
-opportunities.
-
-Although the OED approach provides a formal account of information
-seeking behaviors, there are several ways in which it falls short as an
-explanation of self-directed learning. Coenen et al. (2017) argue that
-OED models make several critical assumptions about the learner and the
-learning task, including (1) the hypotheses/questions/answers under
-consideration, (2) that people are actually engaging in some expected
-utility computation in order to maximize the goal of knowledge
-acquisition, and (3) that the learner has sufficient cognitive
-capacities to carry out the calculations.
-
-In the next section, I argue that the limitations of the OED approach
-can be productively reconstrued as opportunities for understanding how
-learning from other people could scaffold children's active learning. I
-focus on integrating research and theory on social learning with the
-five critical components of the OED model: goals, hypotheses, questions,
-answers, and stopping rules (see Figure~\ref{fig:integrative-schematic}
-for a schematic overview of the active-social learning account).
-
-\hypertarget{active_social}{\section{Part III: Information seeking
-within social contexts}\label{active_social}}
-
-Why connect active learning processes with social learning effects?
-First, children do not re-invent knowledge of the world, and while they
-can learn a tremendous amount from their actions, much of their
-generalization and abstraction is shaped by input from other people.
-Moreover, social learning can be the only way to learn something (e.g.,
-first language acquisition). Finally, children are often surrounded by
-parents, other adults, and older peers -- all of whom may know more
-about the world than they do, creating contexts where the opportunity
-for social learning is ubiquitous.
-
-Second, there is a body of empirical work showing that active learning
-can be biased and ineffective in systematic ways. For example, work by
-Klahr \& Nigam (2004) found that elementary school-aged children were
-less effective at discovering the principles of well-controlled
-experiments from their self-directed learning, but were capable of
-learning these principles from direct instruction. D. B. Markant \&
-Gureckis (2014) showed that active exploration provided no benefit over
-passive input in category learning when there was a mismatch between the
-target concept and adults' prior hypotheses going into the learning
-task. And McCormack, Bramley, Frosch, Patrick, \& Lagnado (2016) found
-that 6-7 year-olds showed no benefit from active interventions on a
-causal system compared to observing another person perform the
-interventions.
-
-In a comprehensive review of the self-directed learning literature,
-Gureckis \& Markant (2012) point out the learner's understanding of the
-task determines the quality of active exploration: if the representation
-is weak, then self-directed learning will be biased and ineffective.
-Coenen et al. (2017) pursue this line of argument even further,
-proposing a set of specific challenges for research on active learning.
-Here is a sample of those open questions that are most relevant to the
-ideas in this chapter:
-\begin{itemize}
-\tightlist
-\item
-  What triggers inquiry behaviors in the first place?
-\item
-  How do people construct a set of hypotheses?
-\item
-  How do people generate a set of queries?
-\item
-  What makes an answer good?
-\item
-  How do people generate and weight possible answers to their queries?
-\item
-  How does learning from answers affect query selection and belief
-  change?
-\end{itemize}
-\noindent
-In this section, I argue that ideas from research on social learning can
-address these challenges. I start with the OED model and use it as a
-conceptual tool to integrate social contexts and active learning. The
-contribution of this formalization is that it makes the different
-components of active learning explicit while highlighting the aspects
-that might be particularly challenging for young learners. Moreover, the
-``challenges'' to the OED account can be reconstrued as opportunities
-for understanding the benefits of learning from other people. In each of
-the following sub-sections, I define the challenge for active learning,
-discuss how social contexts could address it, and highlight prior or
-future empirical work that connects active and social learning accounts.
-\begin{figure}[!t]
-
-{\centering \includegraphics[width=0.9\linewidth]{erica_yoon_dissertation_files/figure-latex/integrative-schematic-1} 
-
-}
-
-\caption[Schematic of the integrative account of active learning within a social context.]{Schematic of active learning within a social context. Each panel shows how social information could influence a different component of the active learning process. These social effects occur in-the-moment of learning or over developmental time. Also, the cause of the social effect varies from the mere presence of another person to triggering a sophisticated psychological reasoning process about others' goal-directed behaviors. Note that the panels correspond to the different sub-sections in Part III of this chapter.}\label{fig:integrative-schematic}
-\end{figure}
-\subsection{Goals}\label{goals}
-
-In the OED framework, an inquiry goal refers to the underlying
-motivation for information seeking. Researchers often operationalize
-these goals as a search for the target hypothesis amongst a set of
-candidate hypotheses. Some examples of inquiry goals that children might
-hold are:
-\begin{itemize}
-\tightlist
-\item
-  What is this speaker referring to? (word learning)
-\item
-  What types of objects are called ``daxes?'' (category learning)
-\item
-  How does this toy work? (causal learning)
-\item
-  Is this person reliable? (selective learning)
-\end{itemize}
-\noindent
-Specifying learning goals is essential since without them the learner
-will struggle to evaluate whether an action leads to progress. Coenen et
-al. (2017) illustrate this point by saying,
-\begin{quote}
-The importance of such goals is made clear by the fact that in
-experiments designed to evaluate OED principles, participants are
-usually instructed on the goal of a task and are often incentivized by
-some monetary reward tied to achieving that goal. Similarly, in
-developmental studies, children are often explicitly asked to answer
-specific questions, solve a particular problem, or choose between a set
-of actions. (p.~32-33)
-\end{quote}
-\noindent
-Characterizing children's goals, however, is not trivial since they
-could consider a range of goals at any moment with no guarantee that
-learning progress is one of them. One line of theorizing about the OED
-hypothesis argues that useful information seeking should only occur in
-the presence of precise tasks and goals. Consider the example of a
-parent handing their child a new toy with several buttons on it and
-saying, ``Let's figure out how this toy works!'' In this case, it
-becomes possible to ask whether the child selects actions that are more
-or less useful for increasing their knowledge of the toy's causal
-structure.
-
-This example illustrates how other people can trigger learning goals.
-Empirical work shows how the actions of a social partner can increase
-children's tendency to detect their uncertainty (see Lyons \& Ghetti
-(2010) for a review). The upshot of this research is that children's
-ability to realize when they do not know something is relatively slow to
-develop. For example, Markman (1979) showed that elementary school-aged
-children were unable to detect apparent inconsistencies in written
-paragraphs (e.g., ``fish can't see without light, and there's no light
-at the bottom of the ocean, but some fish at the bottom of the ocean
-only know their food by its color.''). Interestingly, if the
-experimenter gave children an explicit warning or challenge to find a
-problem with the essay, then they were more likely to monitor their
-uncertainty and asked more clarifying questions. This finding can be
-reconstrued as an effect of the social context, shifting children's
-expectations, highlighting the learning goal, and facilitating their
-information seeking actions. Converging evidence comes Kim, Paulus,
-Sodian, \& Proust (2016), who showed that 3- to 4-year-olds are more
-likely to monitor their uncertainty about the contents of an opaque box
-when they were told that they would have to teach another person about
-the contents of the box (see also Lombrozo (2006)). In this case, the
-anticipation of social interaction may have increased children's
-tendency to focus on their goal to learn the identity of the objects.
-
-In addition to triggering inquiry goals, social partners can directly
-communicate the \emph{value} of learning goals relative to the other
-goals that children may pursue. This connection draws on theoretical and
-empirical work exploring how children's environments can shape their
-intuitive frameworks for processing information and generating goals
-(Dweck \& Leggett, 1988). Under these accounts, children's beliefs about
-the malleability of traits influence whether they focus on taking
-actions that increase their competence (prioritize learning) or that
-demonstrate their fixed abilities (prioritize performing). Empirical
-work shows that when adults use language to emphasize a learning goal
-(e.g., ``If you pick the task in this box, you'll probably learn a lot
-of new things.'' vs. ``If you pick this box, although you won't learn
-new things, it will really show me what kids can do.''), then children
-tend to select the more difficult task {[}elliott1988goals{]}. Moreover,
-both lab-based experiments and observational work provide evidence that
-the language adults use when praising children influences their tendency
-to adopt inquiry goals (Cimpian, Arce, Markman, \& Dweck, 2007;
-Gunderson et al., 2013).
-
-While social partners can emphasize learning, the presence of another
-person can also engage learners' psychological reasoning about their
-mental states. This reasoning process can then elicit social goals that
-take priority over learning goals. Consider the ``Goals'' panel of the
-schematic active-social learning context shown in
-Figure~\ref{fig:integrative-schematic}. If the learner is worried about
-what his social partner thinks of him, then he might prioritize actions
-that reduce the chance of appearing unknowledgeable and choose not to
-ask about the novel objects. Moreover, he could seek out easy tasks that
-demonstrate his competence at the expense of selecting actions that help
-him learn. The OED framework typically focuses on informational goals
-with progress measured as a reduction in uncertainty over candidate
-hypotheses. However, recent empirical and modeling work has begun to
-move beyond information-specific utility functions to include other
-goals that learners may hold (e.g., saving time, money, or cognitive
-resources) {[}meder2012information{]}.
-
-Recent work in modeling pragmatic communication\footnote{Rational Speech
-  Act (RSA) framework for pragmatic reasoning. The RSA approach models
-  language comprehension and production as, ``a process of recursive
-  reasoning about what speakers would have said, given a set of
-  communicative goals'' (p.819) (Goodman \& Frank, 2016)} provides a way
-to integrate social goals within the OED framework. For example, E. J.
-Yoon, Tessler, Goodman, \& Frank (2017) modeled speakers' decisions to
-use polite speech as opposed to direct speech (e.g., indirect language
-such as ``we don't think that dress looks phenomenal on you'' as opposed
-to ``It looks terrible'') as a tradeoff between maximizing informational
-and social goals, showing that speakers are balancing these two when
-deciding what to say.
-
-In both OED and RSA, people are assumed to select actions that maximize
-utility, but the politeness model allows social information to play a
-role in the utility computation. Future research could adapt this
-utility-theoretic approach and model the effects of social contexts as
-changes to the weight children place on social goals, which, in turn,
-leads to selecting easier tasks where they can appear competent (see E.
-J. Yoon, MacDonald, Asaba, Gweon, \& Frank (2018) for an example of this
-type of approach). This integration builds on the goal-orienting
-accounts reviewed above (Dweck \& Leggett, 1988) since behavior is as an
-output of a mixture of goals as opposed to children holding either a
-performance or a learning goal.
-
-Another open question about learning goals is how often children
-experience contexts where these goals are apparent or emphasized in
-their everyday experience. We do not yet have a reliable estimate of the
-prevalence of situations that would lead children to generate learning
-goals. One exception, however, is research on \emph{guided
-participation} by Rogoff et al. (1993) provides evidence that parents
-from a diverse set of cultural backgrounds produce high rates of
-structuring and goal-orienting behaviors during activities such as
-cooking, shopping, or working. It is interesting to consider whether
-variability in children's exposure to goal-orienting behaviors could
-influence children's tendency to generate learning goals spontaneously.
-
-\subsection{Hypotheses}\label{hypotheses}
-
-Once children have a learning goal, the next step in the OED model is to
-figure out what hypotheses to consider. Intuitively, a hypothesis is a
-candidate explanation for how the world works. For example, consider the
-schematic learning context shown in
-Figure~\ref{fig:word-learn-schematic}. Here, the child might generate
-the following hypotheses about the meaning of a new word ``Dax'': (1)
-Dax = object A, (2) Dax = object B, or (3) Dax = object C.\footnote{This
-  hypothesis space is simplified since it only considers the possibility
-  of one-to-one word-object mappings and that the new word refers to the
-  co-occurring visual context.}
-
-The set of hypotheses under consideration is critical for quantifying
-effective self-directed learning in the OED account. The usefulness
-function of expected information gain (see Appendix A for details) works
-by comparing the learner's uncertainty over hypotheses before and after
-they see an answer. Without a defined hypothesis space, however, it is
-challenging to select the best action to reduce uncertainty. Put another
-way; the OED framework does not readily deal with situations where
-learners might have to consider a large space of hypotheses or might
-perform actions without considering any hypotheses at all. These
-challenges are especially relevant for developmental accounts that draw
-on OED principles since these scenarios are plausible for young
-learners. Social partners, however, can address this challenge by
-providing children with a constrained set of hypotheses that facilitate
-the comparison of different information-seeking actions.
-
-Consider the case of children's early word learning where even the
-simplest of words, concrete nouns, are often used in complex contexts
-with multiple possible referents, which creates the potential for an (in
-principle) unlimited number of hypotheses that children could entertain
-when trying to figure out word meanings (Quine, 1960). Social-pragmatic
-theories of lexical development often start from the idea that adults
-constrain the learning task by providing social cues (e.g., eye gaze,
-pointing) that connect words to their referents during labeling (P.
-Bloom, 2002; E. V. Clark, 2009; Hollich et al., 2000). Some of our work
-presented in Chapter 4 shows that the number and fidelity word-object
-hypotheses that learners store tracks with the strength of social cues
-available during the labeling moment (MacDonald, Yurovsky, \& Frank,
-2017b). Other empirical work has found that children as young as 16
-months prefer to map novel words to objects that are the target of a
-speaker's gaze and not their own (D. A. Baldwin, 1993). And analyses of
-naturalistic parent-child labeling events shows that young learners
-tended to retain labels accompanied by clear referential cues, which
-served to make a single object dominant in the visual field (Yu \&
-Smith, 2012).
-
-Social input can also shape the hypotheses that children generate by
-revising their intuitive theories about the world. Gerstenberg \&
-Tenenbaum (2017) describe an intuitive theory as, ``an ontology of
-concepts, and a system of (causal) laws that govern how the different
-concepts interrelate\ldots{}'' (p.~3). Importantly, these theories shape
-how children interpret incoming information and, in turn, the set of
-candidate explanations they could explore. Empirical work on conceptual
-change across development has studied the ways that children integrate
-input from other people with their current theories (Gelman, 2009). For
-example, elementary school-aged children tend to hold a mixture of
-beliefs about the shape of the earth, ranging from a flat earth theory
-to the adult-like, sphere model (Vosniadou \& Brewer, 1992).
-Interestingly, some children hold intermediate beliefs such as a theory
-where there are two earths, suggesting that they actively integrate
-aspects of their initial theory with the information they get from other
-people (see Opfer \& Siegler (2004) for another example from intuitive
-theories of biological concepts).
-
-In sum, children's candidate hypotheses can be shaped by social
-information. This effect can occur during the moment of learning (e.g.,
-referential gaze during word learning) and over a developmental
-timescale (e.g., intuitive theory revision). Critically, social partners
-can facilitate active learning by constraining the set of hypotheses
-under consideration, which makes comparing the utility of
-information-seeking actions more tractable. An open question is how
-children's information seeking changes as a function of the size of the
-hypothesis space. Moreover, similar to the research on children's goals,
-it would be useful to move beyond lab-based studies and towards
-observational research that measures how children's everyday social
-interactions constrain the hypotheses they decide to target with their
-exploration behaviors.
-
-\subsection{Queries}\label{queries}
-
-Queries refer to the set of experiments that a scientist could conduct
-to gather information about their hypotheses. In children's active
-learning, queries are the set of actions they could take to collect
-information from the world. Empirical work on active learning has
-explored a variety of behaviors, including verbal questions, pushing a
-button to figure out how a toy works, and decisions about where to look.
-One of the strengths of the OED account is that it provides general
-principles that could explain such a wide range of behaviors.
-
-The challenge for young learners, however, is to discover what behaviors
-are available and figure out which of those actions are useful for
-learning. One way to address this challenge is for children to look to
-older peers and adults to figure out what actions can help them learn.
-Moreover, social learning contexts can change the space of possible
-queries by adding the option of seeking information from a social
-partner, which expands the set of possible learning-related actions
-children could take.
-
-Research on children's verbal questions provides insight into how social
-partners could model useful queries. First, it is a truism that asking a
-question in natural language requires that children have acquired a
-conventionalized symbolic system, which must have been learned from
-other people. Second, both experimental work and corpus analyses provide
-evidence that children's question-asking becomes more varied and
-productive over the first years of life as they get exposed to more
-complex language input. Finally, observational studies have found that
-that parents' use of wh-questions predicts children's later vocabulary
-and verbal reasoning outcomes (Rowe, Leech, \& Cabrera, 2017), and
-children of parents who were trained to ask ``good'' questions during
-book reading episodes at home had children who asked better questions
-during book reading sessions at school (Birbili \& Karagiorgou, 2009).
-One explanation for these associations is that wh-questions led children
-to produce more complex responses that build verbal abilities. Another
-intriguing causal pathway, however, is that the frequency and type of
-parents' questions provided children with a template for how to ask
-useful questions.
-
-Even if children can generate a set of queries, they still have to
-evaluate the relative usefulness of each action concerning their
-learning goal. Empirical work with adults shows a substantial gap
-between people's question-generating and question-evaluation skills. For
-example, Rothe, Lake, \& Gureckis (2015) used an OED model to measure
-the expected information gain of adults' natural language questions in a
-modified ``Battleship'' game and found that people rarely produced high
-information gain questions. In a follow-up experiment, however, Rothe et
-al. (2015) showed that when a different group of adults had access to
-the list of questions generated by the participants in the unconstrained
-version, they were quite good at recognizing questions that would
-generate useful information.
-
-Developmental work provides additional evidence of this
-production-comprehension asymmetry in question asking. For example,
-children younger than the age of three have difficulty generating useful
-verbal questions compared to their older peers in lab-based experiments
-(Mills et al., 2010, 2011), but even the youngest children in those
-studies are capable of comprehending information elicited by others'
-questions to succeed at parallel tasks (Mills, Danovitch, Grant, \&
-Elashi, 2012). Moreover, Mills et al. (2011) manipulated whether
-children were pre-exposed to adults who modeled useful queries and found
-that this led to even the youngest children producing useful questions
-at a much higher rate. Finally, converging evidence comes from research
-showing that direct instruction (i.e., understanding the objectives of
-inquiry and identifying useful questions) is necessary for
-elementary-school-aged children to develop skill in designing
-informative experiments for learning about physics concepts (Kuhn \&
-Pease, 2008).
-
-In addition to providing a model of queries, social contexts also expand
-the set of possible questions by adding a social target for information
-seeking actions. That is, the child has an additional choice: to gather
-information from the non-social world or other people. The ``Questions''
-panel in Figure 3 shows a child playing with a set of concrete objects.
-If there is no social partner present, they could still interact with
-the objects to learn about their shape, texture, or functional
-properties. If another person is present, however, the child now has the
-option to ask verbal questions or to seek information from the other
-speaker by gathering their nonverbal cues (e.g., pointing, eye gaze, or
-facial expressions).
-
-Recent empirical work has explored the factors that influence children's
-decisions to seek information from other people. For example, Fitneva,
-Lam, \& Dunfield (2013) showed that children know when to query other
-people to gain information that they could not get on their own (e.g.,
-invisible properties of a novel social category). Additional evidence
-comes from work by Lockhart, Goddu, Smith, \& Keil (2016) where they
-showed that 5- to 11-year-olds could reliably determine the kinds of
-things a person ``growing up on their own'' could learn from personal
-experience (that the sky is blue) vs.~required interactions with other
-people (that the earth is round). Finally, work on children's
-help-seeking behaviors shows that both preschoolers and even infants
-seek help systematically when completing a task, turning to a social
-target to request information or acting on the world depending on which
-information source was more likely to help them achieve their current
-goal (Gweon \& Schulz, 2011; Vredenburgh \& Kushnir, 2016).
-
-Some of our work has investigated how the presence of a social partner
-changes the set of information seeking behaviors available to the
-learner (see Chapter 3). By measuring changes in children's eye
-movements during familiar language processing, we asked how real-time
-information seeking adapts to support comprehension. We found that
-children who were learning a visual-manual language gathered more
-information before generating a language-driven gaze shift away from a
-signer as compared to children processing spoken language while fixating
-on a speaker (MacDonald, Blonder, Marchman, Fernald, \& Frank, 2017a).
-This result suggests that sign language learners were sensitive to the
-higher value of fixations in a visual-manual language where disengaging
-from the signer reduces access to any following linguistic information.
-We found a similar adaptation of information seeking in both children
-and adults' processing of spoken language within noisy acoustic
-environments where looking to a speaker's face provided visual
-information that could support the comprehension of the less reliable
-acoustic signal. Critically, listeners would not have had access to this
-information seeking action outside of a face-to-face, social interaction
-(e.g., listening to a noisy audio recording).
-
-\subsection{Answers}\label{answers}
-
-Once the learner generates a set of possible queries, they can simulate
-the set of possible answers they could get in return. In the OED
-framework, an answer is useful if it decreases the learner's uncertainty
-about their hypotheses. The challenge for the child as an active learner
-is two-fold: (1) figure out what which answers are likely for each query
-and (2) decide how much to update their beliefs after seeing an answer.
-In this section, I discuss how social contexts can affect each component
-of the answer-evaluation process.
-
-Defining a ``good'' answer is challenging. Intuitively, a good answer
-provides the learner with information that they did not already know,
-that they were interested in learning, and that is likely to be useful
-beyond the current context. Even within the formal OED framework, there
-have been a variety of ways to instantiate this utility function (e.g.,
-information gain, probability gain, and Kullback-Leibler divergence)
-(Nelson, 2005). These information-theoretic utility functions take into
-account the learner's prior beliefs, which are represented as
-probability distributions over hypotheses and compute the effect of each
-answer on the learner's beliefs represented as a conditional probability
-distribution.
-
-Social learning theories often start from the idea that interactions
-with other people increase the probability of getting useful
-information. For example, evolutionary models argue that knowledge
-transfer between generations allows for the gradual accumulation of
-small improvements that eventually led to sophisticated tools, beliefs,
-and practices that would be difficult, if not impossible, for any
-individual to discover on their own (Kline, 2015). Boyd et al. (2011)
-provide the example of a hunter stumbling across the link between the
-color/texture of ice and its stability, saying that this type of rare
-information would be much harder for individuals to re-discover on their
-own. However, cultural transmission allows humans to pass these
-discoveries down to subsequent generations, allowing humans to move
-beyond the information that the world is likely to provide.
-
-Csibra \& Gergely (2009)'s theory of ``Natural Pedagogy'' argues that an
-assumption of \emph{generalizability} is a fundamental component of the
-answers that children get when they interact with adults. Under their
-account, when adults provide ostensive cues (eye gaze or child-directed
-speech) to signal generalizable knowledge children update their beliefs
-differently. Empirical work shows that infants are more likely to
-generalize the valence of an object to a new person when learning in the
-presence of an ostensive, pedagogical cue (Gergely, Egyed, \& Király,
-2007). Moreover, infants are more likely to encode the stable features
-of an object, as opposed to its location in space, if a communicative
-signal such as a point guided their attention to that object (J. M. Yoon
-et al., 2008).
-
-In addition to an increased chance of seeing generalizable information,
-features of the social context can also modulate the way active learners
-evaluate possible answers. This link is one of the more developed
-connections between the OED and social learning accounts. That is,
-researchers have made progress in modeling the influence of different
-assumptions that a learner could make about the process through which
-other people generate answers. Shafto et al. (2012b) describe these
-different sampling assumptions, placing them along a continuum that
-varies regarding how much a learner should update their beliefs:
-\begin{itemize}
-\tightlist
-\item
-  \emph{Weak sampling}: answers generated at random from the set of all
-  possible answers (independent of target hypothesis)
-\item
-  \emph{Strong sampling}: answers generated at random from the set of
-  answers that are true of the correct hypothesis (linked to target
-  hypothesis)
-\item
-  \emph{Pedagogical sampling}: answers generated that maximize the
-  learner's belief in the correct hypothesis (linked to target
-  hypothesis and consider alternative hypotheses)
-\end{itemize}
-\noindent
-If the learner assumes strong or pedagogical sampling, then they can
-make stronger inferences that speed learning. For example, if we see
-someone press two buttons to activate a device, we are more likely to
-think that both buttons were necessary if that person knew how the
-machine worked and wanted to communicate to us how it worked. Otherwise,
-if one of the buttons would have been sufficient, then it would not make
-sense for them to perform the less efficient action of pressing both
-buttons. The effects of these sampling assumptions are fundamentally
-psychological. They require the learner to reason about others' goals
-and to reason about whether other people are thinking about their
-intentions. (See the ``Answers'' panel of
-Figure~\ref{fig:integrative-schematic} for an illustration of this
-recursive reasoning process within an active learning context.)
-
-Empirical support for the pedagogical sampling account comes from a
-range of domains/tasks, including word learning (Frank et al., 2009),
-pragmatic inference (Frank \& Goodman, 2012), and causal reasoning
-(Bonawitz et al., 2011). These empirical findings connect directly to
-the OED model. Consider Xu \& Tenenbaum (2007a)'s finding that when a
-knowledgeable teacher generates object labels, learners assumed the
-examples indicated the true word meaning, making it more likely that the
-teacher would draw three samples from the broader, basic category (as
-opposed to the smaller subordinate category). They modeled this effect
-by modifying the likelihood function in a Bayesian cognitive model. In
-this case, the likelihood function for the teacher-driven condition was
-designed to capture the idea that learners should prefer more
-restrictive hypotheses if they are confident that the teacher generated
-labels based on the actual word meaning. This formalization makes direct
-contact with the OED model of human inquiry since learners consider how
-much answers will update their beliefs, capturing the idea that
-responses generated with the goal to teach carry more information.
-
-Another line of empirical work has focused on children's decisions about
-whom to learn from. Even young infants are capable of \emph{selective}
-learning, rejecting answers that conflict with their knowledge (Pea,
-1982) and seeking information from people who tend to provide useful
-information in the past (Koenig, Clement, \& Harris, 2004). For example,
-Chow, Poulin-Dubois, \& Lewis (2008) found that 14-month-olds are less
-likely to follow the gaze of a person who had consistently directed gaze
-towards an empty location. Moreover, children prefer to learn from
-familiar rather than unfamiliar adults (Corriveau \& Harris, 2009),
-adults rather than peers (Rakoczy, Hamann, Warneken, \& Tomasello,
-2010), and ingroup rather than outgroup members (MacDonald, Schug,
-Chase, \& Barth, 2013). Moreover, Gweon, Pelton, Konopka, \& Schulz
-(2014) found that 14-month-olds explore objects more after interacting
-with a teacher who had been under-informative in their previous
-demonstrations, providing evidence of an early ability to link the
-quality of answers to active learning decisions.
-
-Interestingly, the outcome measures in these studies of selective
-learning -- whom to direct questions towards or how long to explore a
-novel toy -- are information-gathering decisions. While this is an
-implicit link to the OED account, researchers have modeled selective
-learning phenomena as modifications to the likelihood function in
-Bayesian cognitive models. For example, Shafto et al. (2012a) developed
-a model in which children reason about both the helpfulness and
-knowledgeability of speakers when deciding whom to learn from and were
-able to capture several qualitative findings from the selective trust
-literature. This approach parallels the word learning and pedagogical
-sampling models reviewed above, highlighting how social reasoning could
-change the utility of the answers learners get from other people.
-
-One candidate for future research is to ask how social contexts change
-children's decisions about whether to initiate information seeking
-behaviors in the first place. That is, if their social partners are
-unlikely to provide useful answers, then active learning (even if
-children are capable of selecting informative actions) becomes less
-valuable. The dual consideration of costs and benefits in active
-learning has been the focus of much research in machine learning, which
-tries to select the set of questions to ask taking into account how long
-it will take a human to respond (Haertel, Seppi, Ringger, \& Carroll,
-2008). Moreover, recent lab-based studies and theorizing in social
-cognition suggest that children are capable of ``intuitive utility
-maximization'' reasoning that others take actions to increase rewards
-while minimizing costs regarding time and effort (Jara-Ettinger, Gweon,
-Tenenbaum, \& Schulz, 2015). It would be interesting to bring these
-cost-based approaches to bear on questions about how social contexts
-modify children's active learning.
-
-\subsection{Stopping rules}\label{stopping-rules}
-
-A stopping rule is a threshold that when exceeded causes the learner to
-stop gathering information and generate a response. These rules fall
-into two categories: information or time-based. For example, when
-searching for information on the internet, a learner might create the
-time-based stopping rule -- spend one hour searching -- or the
-information-based rule -- explore until we find the definitions that we
-need. The function of a stopping rule is to balance information gained
-with reducing unnecessary time/effort put into the search task.
-
-The challenge for both the child as active learner and researchers
-interested in explaining stopping rules is both operationalizing and
-estimating the critical pieces needed for developing a stopping rule:
-the rate of information gain and the cost of information search. To
-address this challenge, researchers have used ideas from theories of
-animal foraging to model adults' decisions of when to stop gathering
-information (Pirolli \& Card, 1999). For example, Manohar \& Husain
-(2013) used a ``patch'' model to explain the timing of adults' decisions
-about when to fixate and re-fixate on one of two symbolic gambles
-displayed on a computer monitor. They proposed that fixating on an item
-results in a leaky gain in precision and that people should shift their
-gaze once their information gain rate falls below a pre-defined
-threshold (see also Hills, Jones, \& Todd (2012) for evidence from
-semantic memory). Moreover, much progress has been made by modeling
-perceptual decisions as a noisy evidence accumulation process with
-responses generated when information crosses a pre-defined threshold
-(Ratcliff \& McKoon, 2008).
-
-Social partners play a key role in children's decisions to stop
-information seeking since they are a valuable resource of information.
-Empirical work has primarily focused on how children persist in seeking
-information from social partners if their initial request is not
-satisfied. For example, Frazier, Gelman, \& Wellman (2009) used a corpus
-analysis of parent responses to children's \emph{how} and \emph{why}
-questions and found that preschoolers were more than twice as likely to
-re-ask a question after getting a non-explanatory response (e.g., CHILD:
-``Why you put yogurt in there?'' ADULT: ``Yogurt's part of the
-ingredients'') compared to an explanatory answer (e.g., CHILD: ``How do
-you get sick?'' ADULT: ``we don't know.'') (see also Deborah, Louisa
-Chan, \& Holt (2004)). These studies suggest that even toddlers are
-sensitive to when they have gathered sufficient information to address
-their information seeking goals within social contexts.
-
-In addition to providing information, social partners can take actions
-that shape children's decisions about whether to persist in exploration.
-For example, Bonawitz et al. (2011) showed that preschoolers spend less
-time exploring an object and are less likely to discover alternative
-object-functions after an adult explicitly taught a single function
-(Bonawitz et al., 2011). Children's stopping behavior is reasonable
-since their social partner communicated that there was no other
-information to be gained by taking actions on the object. Moreover,
-Butler \& Markman (2012) showed that an adults' pedagogical
-demonstration led to an increase in children's object exploration when
-testing whether a hidden property (magnetism) generalized to a new but
-similar looking object. These results highlight the complex ways social
-interactions can modulate children's thresholds for ending their
-information search.
-
-Our work exploring where children choose to look during real-time
-language comprehension (see Chapter 3) can be construed as an effect of
-access to social information on children's stopping decisions
-(MacDonald, Marchman, Fernald, \& Frank, 2018). We found that both
-adults and children fixate more on a speaker's face when processing
-familiar words in a noisy auditory environment, an adaptation that
-resulted in a higher proportion of gaze shifts to the named referent. We
-used a cognitive model of decision making (Drift-Diffusion Model
-Ratcliff \& McKoon (2008)) to provide evidence that an increase to
-listeners' decision thresholds, and not processing efficiency, best
-explained the behavioral results. This approach provides an example of
-bringing cognitive models of decision making into contact with empirical
-questions about children's language comprehension within face-to-face
-social interactions.
-
-Another promising approach for future research is to ask how children's
-developing capacity to reason about the cost of actions changes their
-active learning behaviors. In the OED framework, cost (e.g., monetary
-value of running an additional experiment) is critical to deciding when
-to stop gathering additional information, but this is complex to
-operationalize in human information seeking. However, there has also
-been a growing interest in developing ``cost-sensitive'' active learning
-algorithms in the field of machine learning (Haertel et al., 2008), with
-researchers beginning to define costs in increasingly sophisticated
-ways. For example, Settles, Craven, \& Friedland (2008) point out that
-the cost of information gathering should not be measured as a reduction
-in the number of training trials if those training trials vary in length
-because specific questions are more challenging to answer.
-
-An important next step to understanding children as efficient active
-learners is to explore how they balance the desire want to ask questions
-that maximize information gain while taking into account the cost
-incurred by others (e.g., time or mental effort) to provide that
-information. This idea is fundamentally psychological in that it expands
-the utility computation to include some measure of how our behavior
-affects others' actions and mental states. This line of research falls
-directly out of an integrated active-social learning framework.
-
-\section{Conclusions: Eye movements as a case
-study}\label{conclusions-eye-movements-as-a-case-study}
-
-In this chapter, I presented concrete definitions of active and social
-learning and described a unifying framework of information seeking
-within social learning contexts. I used Optimal Experiment Design (OED)
-as a theoretical tool to propose that the presence of another person can
-affect children's information seeking by:
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  instantiating learning goals, communicating the value of learning
-  goals, or triggering social goals
-\item
-  constraining the learner's hypothesis space
-\item
-  modeling useful queries
-\item
-  providing useful answers
-\item
-  changing thresholds for stopping information seeking
-\end{enumerate}
-\noindent
-The account described in this chapter argues that the social and active
-learning theories have much to be gained from considering the other.
-Active learning accounts will benefit by understanding how learners
-incorporate social information into their decision making, allowing
-researchers to develop more sophisticated utility functions that might
-better capture what people care about when learning something new. This
-approach seems especially crucial for characterizing the development of
-active learning since observational studies of children's learning
-environments suggest that opportunities to learn from social interaction
-are ubiquitous.
-
-On the other hand, researchers interested in social learning phenomena
-can benefit from advances in the study of active learning by connecting
-their ideas to the rich traditions of machine learning, decision theory,
-and statistics. Moreover, research on social learning phenomena often
-uses information-seeking decisions as dependent variables in
-experiments. Thus, a secondary benefit would be a better understanding
-of the factors that influence the measurement of social learning
-effects.
-
-Finally, the evidence reviewed in this chapter shows that research has
-mostly focused on lab-based experiments where social and active learning
-effects are measured in isolation during highly-constrained tasks. An
-important next step is to estimate the presence of learning goals,
-tractable hypothesis spaces, and the quality of answers in children's
-everyday experiences. This line of inquiry will require a shift from
-relying on lab experiments to leveraging large-scale, observational
-datasets. And while this approach adds complexity, I think that the
-benefit will be a far greater understanding of how children's active
-learning operates over fundamentally social input.
-
-The rest of this thesis presents a series of empirical studies of
-familiar language comprehension and novel word learning, which I situate
-within the integrative framework discussed here. The majority of the
-experiments use eye movements as a case study of children's early
-information seeking. To motivate this choice, in the next secttion, I
-briefly describe how eye movements could reflect different kinds of
-information seeking, clarifying both the linking hypothesis and the set
-of behaviors that the empirical work aims to address.
-
-\subsection{Why eye movements?}\label{why-eye-movements}
-
-There are several reasons why eye movements are well-suited for asking
-questions about children's information seeking within social contexts.
-First, deciding where to allocate visual attention is an
-ecologically-valid component of early learning. That is, there are many
-places that young children could be looking, and one of the fundamental
-challenges for children is to focus their attentional resources on the
-relevant aspects of the environment. Empirical work with infants has
-shown that their attention is often stimulus-driven and sticky (Oakes,
-2011), suggesting that young learners should benefit from using social
-cues to guide their visual attention to relevant information. Moreover,
-control over gaze is earlier to develop as compared to other, more
-explicit forms of information seeking such as verbal question asking.
-And the efficiency of children's gaze shifts rapidly develops during
-early childhood (e.g., children's eye movement to seek out named objects
-Fernald, Pinto, Swingley, Weinbergy, \& McRoberts (1998)). Together,
-these findings suggest that active control over eye gaze is useful for
-the ecological learning tasks that children face.
-
-Visual fixations have also been successfully modeled as a form of
-information seeking. In these frameworks, eye movements are
-characterized as a way to gather information to reduce uncertainty and
-guide future actions. For example, eye movements during an activity like
-making a sandwich are best explained by people's task goals as opposed
-to external features of the visual world such as the salience of objects
-(Hayhoe \& Ballard, 2005). Moreover, changes in the distribution of
-adults' gaze during category learning can be explained by an OED model
-that calculates the usefulness of different types of fixations for the
-goal of learning concepts (Nelson, 2005). These successes help to
-clarify our hypothesis linking the observable behavior of gaze shifts to
-the psychological construct of interest -- information seeking. This
-link provides a foundation from which we can interpret the effects of
-social context on information seeking eye movements.
-
-Before presenting an overview of the empirical work, it is worth
-highlighting two additional points about eye movements and information
-seeking. First, multiple mechanisms can drive visual attention. Gottlieb
-(2012) reviews evidence for three types of attention: Attention for
-action, for learning, and for liking. Each of these mechanisms assigns
-value to the information returned by an eye movement differently. Eye
-movements for action will tend to cluster around areas that generate
-highly reliable cues, whereas eye movements for learning will focus on
-locations that are less predictable, and finally, fixations for liking
-will be driven by the reward probability predicted by a visual cue. In
-this dissertation, I focus on eye movements that gather information to
-guide actions such as locating a named, familiar object in the visual
-world or learning the mapping between a new label and an unfamiliar
-object.
-
-Second, theoretical work on goal-based vision has proposed two, broad
-categories of information-seeking eye movements: (1) fixations that
-gather task-related information such as frequently shifting gaze towards
-the rear-view mirror while driving, and (2) eye movements that are used
-to explore a new task environment without a specific information goal
-(Henderson, Brockmole, Castelhano, \& Mack, 2007). Prior empirical work
-has shown dissociations between these two systems of looking for action
-and looking for learning at both the behavioral and neural levels of
-analysis (Maddux \& Holland, 2011). Here, I focus on fixations that
-gather information for a specific task, as opposed to more exploratory
-fixations, which are better explained by models of information search
-and curiosity-driven actions in which learners explore in an open-ended
-fashion to discover new tasks (Baranes, Oudeyer, \& Gottlieb, 2015;
-Gottlieb \& Oudeyer, 2018).
+Imagine that a stranger on the street approached you and asked: ``I'm
+sorry to bother you, but can you tell me the way to the city hall by any
+chance?'' Regardless of your answer, you probably would not feel puzzled
+or offended by the way in which the stranger decided to seek information
+that he needs. This is in contrast with an alternative situation where
+the stranger said to you instead: ``Tell me the way to the city hall.''
+In such case you would immediately notice the lack of politeness in his
+utterance, and your response to him may be negatively affected by the
+irritating oddity of the situation. Similarly, a person who noticed her
+friend's new, flashy dress could comment: ``Your new dress is
+gorgeous!'' even if the speaker actually felt that the dress was merely
+decent or even ugly. But why? Why are people expected to speak politely,
+when there are alternative utterances that can convey information about
+the world or the speaker's intention more directly (``Tell me the way'')
+or truthfully (``Your dress is ugly'')?
+
+Language is simultaneously both an informational and social tool.
+Through language, people communicate information about the world, but
+also form their social relationships and establish their identity within
+the society. On one hand, some theories of language functions describe
+language as a transmission device for transferring from a sender to a
+receiver information that reflects context or the state of affairs
+(Bühler, 1934; Jakobson, 1960; Shannon, 1948). The importance of
+informativity is further emphasized in more recent, influential theories
+on pragmatics of natural language, which explain how meanings beyond
+literal meanings of utterances arise (Grice, 1975; Searle, 1975). On the
+other hand, some linguistic theories, especially those with references
+to language development, identify social roles of language that people
+use to make contact with others and form relationships (Ervin-Tripp,
+1967; Halliday, 1975). These theories underscore that linguistic rules
+that language users tend to follow represent the norms and structure of
+the community using the language (Ervin-Tripp, 1969).
+
+Could polite speech reflect both the informational and the social roles
+of linguistic communication? Previous theoretical accounts for polite
+speech vary in their focus on informational versus social aspects of
+polite language. Some theories view polite speech as reflecting social
+rules and norms (Richard J. Watts, Ide, \& Ehlich, 1992), some as
+abiding by communicative maxims that people are expected to follow in
+conversations, to be both as informative and as armative of their
+conversational partner as possible (Lakoff, 1973; Leech, 1983), and
+others as performing face management, or trying to maintain
+interactants' good public self-image or reputation (P. Brown \&
+Levinson, 1987).
+
+In this Chapter, I propose that that polite speech highlights both
+informational and social uses of language: Polite speech reflects a
+principled tradeoff between the informational, epistemic content a
+speaker wants to convey (e.g. ``I want to know the way to the city
+hall'') and other social concerns, such as prosocial or
+self-presentational goal that the speaker wants to express for herself
+and others (``I'm not rudely commanding you to tell me the answer, but
+making a request in a respectful way''). Thus, my goal is to unify
+previous theoretical frameworks in one, goal-driven account of polite
+speech. In what follows, I will describe the goal-based account of
+polite speech in detail (Part I), and summarize previous models and
+theories of polite speech and situate them within the framework of the
+current goal-driven account (Part II). Then I will examine empirical
+evidence for goal-driven approach to polite speech: In Part III, I will
+focus on empirical work on adult production and comprehension of polite
+speech which show that adults reason about speaker goals in polite
+speech; and in Part IV, I will probe empirical evidence from
+developmental work that children's production and understanding of
+polite speech advance as they grow older. In doing this I will show that
+children's production and comprehension of polite speech is related to
+the relative complexity of polite speech based on its goal tradeoff.
+
+\section{Part I: A Goal-based account of
+politeness}\label{part-i-a-goal-based-account-of-politeness}
+
+What does it mean to speak politely? Common instances of polite speech
+that occur to one's mind probably include the simplest politeness
+markers, such as ``please,'' ``thanks,'' and ``sorry.'' More complicated
+examples would involve ways in which, for example, a person make a
+request: under normally conceivable circumstances, it would certainly be
+more polite to ask ``Would it be too much trouble to ask you to complete
+this survey when you're not too busy?'' than to say ``Do this survey
+now.'' The word ``polite'' can sometimes carry a negative undertone in
+its meaning, as in ``she was just being polite,'' which is likely to
+mean the speaker was hiding her genuine intentions to make the listener
+feel good. From these examples, we can identify a few aspects that a
+polite utterance may exhibit: observance of social rules, relatively
+high degree of elaborateness or indirectness, and dishonesty or
+disingenuousness in the interest of others' feelings or reputations.
+
+More formal definitions of the term politeness also reveal common
+features that polite speech shows. Cambridge and Oxford Dictionaries
+respectively define what it means to be polite: ``behaving in a way that
+is socially correct and shows respect for other people's feelings''; and
+``courteous, behaving in a manner that is respectful or considerate of
+others; well-mannered'' (``Polite,'' 2017a, 2017b). Similar to the
+previous examples of polite speech, these definitions suggest politeness
+involves (1) observance of social expectations and (2) respect for
+others. Boyer (1702)'s The English Theophrastus: of the Manners of the
+Age, compilation of texts describing the English life in the early
+eighteenth century, identifies a purpose in trying to be polite:
+``Politeness may be defined as a dextrous management of our Words and
+Actions whereby \emph{men make other people have a better Opinion of us
+and themselves} {[}emphasis added{]}.'' Thus, according to the
+Theophrastus definition, speakers speak politely in order to boost the
+self-images of the interactants (both the speakers themselves and their
+addressees).
+
+These common themes of politeness have been identified by previous
+theoretical accounts of polite speech (reviewed in detail in Part II).
+But each of the accounts only focused on certain aspects of polite
+speech but disregarded others, and their explanations for politeness
+have been viewed as largely disparate. Here I make a unification
+proposal, where these existing approaches to polite speech can be united
+under a single goal-based account of polite speech.
+
+I propose that polite speech reflects some degree of tradeoff between
+three main communicative goals that a speaker has: informational,
+prosocial, and (self-)presentational. \emph{Informational goal} has to
+do with the speaker's desire to convey the most accurate information in
+the most efficient manner. \emph{Prosocial goal} is about the speaker's
+desire to retain the listener's acceptable self-image as a decent
+individual and as a reputable member of society. \emph{Presentational
+goal} reflects the speaker's desire to present the speaker herself in a
+good light, to appear to be a kind and helpful individual. Below I
+describe each goal in more detail.
+
+\subsection{Informational goal.}\label{informational-goal.}
+
+A speaker's informational goal, i.e.~to prioritize information transfer
+in communication, may involve two closely related notions: informativity
+and truthfulness. Informativity is the notion of conveying the intended
+meaning in the most efficient and precise manner possible. The idea of
+informativity here is similar to Grice (1975)'s notion of cooperativity:
+A speaker will cooperatively choose utterances such that the listener
+can understand her intended message. Thus, the current notion of
+informativity that I adopt will encompass the whole Cooperative
+Principle (CP) that Grice posited (``Make your contribution such as
+required by the purposes of the conversation at the moment''), and
+especially the Maxim of Quantity (``Make your contribution as
+informative as is required''), though Maxims of Relevance (``Be
+relevant'') and Manner (``Be perspicuous''; i.e.~be brief, orderly, and
+unambiguous) can also be relevant to the notion of informativity as I
+discuss in this Chapter.
+
+The idea of informativity has been formalized in probabilistic
+(Bayesian) models as a utility function of a speaker with particular
+goals in mind. The ``rational speech act'' (RSA) theory of language
+understanding (see N. D. Goodman \& Frank (2016a) for a review) assumes
+that listeners expect speakers to aim to be helpful yet parsimonious,
+choosing their utterances approximately optimally based on a
+communicative goal (e.g., inform the listener) and interpret an
+utterance by inferring what the helpful speaker meant based on the
+utterance and any other relevant information about the world. The theory
+defines a standard, informative utility as the amount of information a
+literal listener (\(L_0\)) would still not know about world state
+(\(s\)) after hearing a speaker's utterance (\(w\)):
+
+\[U_{epistemic}(w; s) = ln(P_{L_0}(s | w))\]
+
+where the utterance choice is approximately rational (i.e., in
+proportion to the expected utility gain) and \(w\) is chosen from a set
+of alternative, relevant utterances.
+
+For example, if Bob asked Alice ``How was my cookie?'' and Alice said to
+Bob ``It was good,'' with only the goal to be informative in mind, Bob
+would think that Alice was being maximally informative by using the word
+``good'' instead of another relevant, stronger word such as ``amazing,''
+and infer that Ann meant ``good but not amazing'' because otherwise Ann
+would have used the word ``amazing'' instead.
+
+I note here that Ann's speech act could be analyzed as having observed
+the Gricean Maxim of Quantity, by making her utterance maximally
+informative, and Bob's inference as being based on such assumption that
+Ann's utterance is as informative as is required to meet Bob's needs.
+But as the comparison between the former goal-directed analysis and this
+latter maxim-based analysis may reveal, the maxim-based account is
+difficult to formalize (Hirschberg, 1985) whereas the goal-directed view
+allows for quantitative account of factors contributing to the
+linguistic phenomena at hand (N. D. Goodman \& Frank, 2016a). From here
+on, I take the goal-directed view rather than the Gricean maxim-based
+view of the speaker; thus, analyses of speakers and their utterances
+will be based on speakers' communicative goals to convey information,
+etc., rather than their observation or violation of Gricean maxims.
+
+Informational goal can also involve truthfulness: the meaning that
+accessed by the listener should match the true state of the world as
+closely as possible. In other words, the speaker will want to convey
+what is true (to the extent of her knowledge), not what is false. For
+example, if Bob baked some cookies and they tasted terrible, and Alice
+had the goal to be truthful, she would want to convey what matches the
+true state of the world as closely as possible (``Your cookies tasted
+terrible''). On the other hand, if Alice remarked to Bob about his
+cookies ``Your cookies tasted good,'' with goal to be informative and
+truthful, the true state of the world must be such that Bob's
+presentation was truly good (but probably not amazing, because otherwise
+Alice would have said that it was amazing), and not bad or terrible.
+
+As for when speakers decide not to tell the truth, there is a difference
+between violating versus flouting of truthfulness (which Grice also
+discusses; Grice (1975), p.~49, 53). Flouting involves contradicting
+common knowledge shared between the speaker and listener about the true
+state of the world, such that the listener notices that the utterance
+meaning does not match the true state. For example, after Alice and Bob
+together watch a movie that was obviously gory and disturbing to both of
+them, if Bob says ``well, that was a really happy, fluffy movie!'' then
+his utterance would be flouting truthfulness goal, and Ann would
+recognize Bob's utterance as an ironic one. On the other hand, violating
+truthfulness does not hold assumption of such common knowledge of the
+true state of the world, and thus the listener may not notice the
+mismatch between the utterance meaning and true state of the world,
+although the listener can potentially access it through other means
+(e.g.~realizing that the speaker had reasons to lie). Here I will mainly
+focus on violation, not flouting, of truthfulness, for example when
+speakers tell white lies (i.e., when the speakers do not intend that the
+listeners know what the truth is).
+
+Speakers' informational goal to be informative and truthful may
+encompass communicative cooperation in both locutionary and
+perlocutionary senses. A locutionary goal deals with conveying the
+intended meaning of the utterance within a conversation, whereas a
+perlocutionary goal involves achieving the speaker's ultimate goals
+toward the listener (Attardo, 1997). What could be an informational goal
+in its perlocutionary sense? In being truthful, speakers may ultimately
+want to maintain their moral obligation to tell the truth to others.
+This obligation is in line with Western philosophers' argument
+throughout the history that it is morally wrong to lie (Augustine, 1952;
+Kant, 1949), although there have been debates on whether the degree of
+wrongness may depend on context (e.g., if the speaker was telling a
+white lie; Sweetser, 1987). For example, if Alice said to Bob ``Your
+cookies were good,'' Alice's locutionary goal would be to convey to Bob
+her intended meaning that his presentation was good (but perhaps not
+amazing), whereas her perlocutionary goal would be for Bob to think that
+the presentation was good, which was (apparently) the truth; Alice
+thereby upholds her moral obligation to tell the truth to Bob. Alice's
+goal to be truthful, then, is achieved in both locutionary and
+perlocutionary senses.
 
 In the next section, I present an overview of the empirical work in the
 dissertation, linking it to the integrative framework discussed in this
@@ -2057,9 +965,9 @@ matched for visual salience with 3--4 tokens of each object type. Each
 object served as target four times and as distracter four times for a
 total of 32 trials. Side of target picture was counterbalanced across
 trials.
-\begin{figure}[t]
+\begin{figure}[!t]
 
-{\centering \includegraphics[width=0.95\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOL/figures/figure1} 
+{\centering \includegraphics[width=0.9\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOL/figures/figure1} 
 
 }
 
@@ -2239,9 +1147,9 @@ ASL-learners' processing skills to those of adult signers and exploring
 relations to age among the children. Finally, is individual variation in
 children's ASL processing efficiency related to the size of their
 productive ASL vocabularies?
-\begin{figure}[t]
+\begin{figure}[!t]
 
-{\centering \includegraphics[width=0.95\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOL/figures/figure2} 
+{\centering \includegraphics[width=0.9\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOL/figures/figure2} 
 
 }
 
@@ -2314,9 +1222,9 @@ allowing us to perform the subsequent analyses that estimate (a) group
 differences in looking behavior and (b) links between individual
 variation in speed and accuracy of eye movements during ASL processing
 and variation in productive vocabulary.
-\begin{figure}[t]
+\begin{figure}[!t]
 
-{\centering \includegraphics[width=0.95\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOL/figures/figure3} 
+{\centering \includegraphics[width=0.9\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOL/figures/figure3} 
 
 }
 
@@ -2360,7 +1268,7 @@ these results provide additional justification (over and above
 children's highly similar language background experience) for analyzing
 all the native ASL-learning children together, regardless of hearing
 status, in the subsequent analyses.
-\begin{figure}[t]
+\begin{figure}[!t]
 
 {\centering \includegraphics[width=0.8\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOL/figures/figure4} 
 
@@ -2633,12 +1541,13 @@ develops rapidly in early childhood, regardless of language modality.
 \chapter[Children flexibly seek visual information during signed and
 spoken language comprehension]{\texorpdfstring{Children flexibly seek
 visual information during signed and spoken language
-comprehension\footnote{Parts of this chapter are published as MacDonald
-  et al. (2017a) An information-seeking account of eye movements during
-  spoken and signed language comprehension and as MacDonald et al.
-  (2018) Adults and preschoolers seek visual information to support
-  language comprehension in noisy environments. Proceedings of the 39th
-  and 40th Annual Meetings of the Cognitive Science Society.}}{Children flexibly seek visual information during signed and spoken language comprehension}}\label{children-flexibly-seek-visual-information-during-signed-and-spoken-language-comprehension}
+comprehension\footnote{Parts of this chapter are published as MacDonald,
+  Blonder, Marchman, Fernald, \& Frank (2017) An information-seeking
+  account of eye movements during spoken and signed language
+  comprehension and as MacDonald, Marchman, Fernald, \& Frank (2018)
+  Adults and preschoolers seek visual information to support language
+  comprehension in noisy environments. Proceedings of the 39th and 40th
+  Annual Meetings of the Cognitive Science Society.}}{Children flexibly seek visual information during signed and spoken language comprehension}}\label{children-flexibly-seek-visual-information-during-signed-and-spoken-language-comprehension}
 
 \chaptermark{Information seeking in spoken and signed language}
 
@@ -2672,9 +1581,9 @@ from social partners that supports real-time language comprehension.
 \chapter[Social cues modulate attention and memory during
 cross-situational word learning]{\texorpdfstring{Social cues modulate
 attention and memory during cross-situational word learning\footnote{This
-  chapter is published in MacDonald et al. (2017b) Social cues modulate
-  the representations underlying cross-situational learning.
-  \emph{Cognitive Psychology }, 94, 67-84.}}{Social cues modulate attention and memory during cross-situational word learning}}\label{social-cues-modulate-attention-and-memory-during-cross-situational-word-learning}
+  chapter is published in MacDonald, Yurovsky, \& Frank (2017) Social
+  cues modulate the representations underlying cross-situational
+  learning. \emph{Cognitive Psychology }, 94, 67-84.}}{Social cues modulate attention and memory during cross-situational word learning}}\label{social-cues-modulate-attention-and-memory-during-cross-situational-word-learning}
 
 \chaptermark{Social cues modulate word learning}
 
@@ -2710,9 +1619,9 @@ results suggest that the representations underlying cross-situational
 word learning of concrete object labels flexibly respond to uncertainty
 in the input. And when ambiguity is high, learners tend to store a
 broader range of information.
-\begin{figure}[t]
+\begin{figure}[!t]
 
-{\centering \includegraphics[width=0.95\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/soc_xsit} 
+{\centering \includegraphics[width=0.9\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/soc_xsit} 
 
 }
 
@@ -2806,23 +1715,23 @@ Social-pragmatic theories of language acquisition emphasize the
 importance of social cues for word learning (P. Bloom, 2002; E. V.
 Clark, 2009; Hollich et al., 2000). Experimental work has shown that
 even children as young as 16 months prefer to map novel words to objects
-that are the target of a speaker's gaze and not their own (D. A.
-Baldwin, 1993). In an analysis of naturalistic parent-child labeling
-events, Yu and Smith (2012) found that young learners tended to retain
-labels that were accompanied by clear referential cues, which served to
-make a single object dominant in the visual field. And correlational
-studies have demonstrated strong links between early intention-reading
-skills (e.g., gaze following) and later vocabulary growth (Brooks \&
-Meltzoff, 2005, 2008; Carpenter, Nagell, Tomasello, Butterworth, \&
-Moore, 1998). Moreover, studies outside the domain of language
-acquisition have shown that the presence of social cues: (a) produce
-better spatial learning of audiovisual events (R. Wu, Gopnik,
-Richardson, \& Kirkham, 2011), (b) boost recognition of a cued object
-(Cleveland et al., 2007), and (c) lead to preferential encoding of an
-object's featural information (J. M. Yoon et al., 2008). Together, the
-evidence suggests that social cues could alter the representations
-stored during cross-situational word learning by modulating how people
-allocate attention to the relevant statistics in the input.
+that are the target of a speaker's gaze and not their own (Baldwin,
+1993). In an analysis of naturalistic parent-child labeling events, Yu
+and Smith (2012) found that young learners tended to retain labels that
+were accompanied by clear referential cues, which served to make a
+single object dominant in the visual field. And correlational studies
+have demonstrated strong links between early intention-reading skills
+(e.g., gaze following) and later vocabulary growth (Brooks \& Meltzoff,
+2005, 2008; Carpenter, Nagell, Tomasello, Butterworth, \& Moore, 1998).
+Moreover, studies outside the domain of language acquisition have shown
+that the presence of social cues: (a) produce better spatial learning of
+audiovisual events (Wu, Gopnik, Richardson, \& Kirkham, 2011), (b) boost
+recognition of a cued object (Cleveland, Schug, \& Striano, 2007), and
+(c) lead to preferential encoding of an object's featural information
+(J. M. Yoon, Johnson, \& Csibra, 2008). Together, the evidence suggests
+that social cues could alter the representations stored during
+cross-situational word learning by modulating how people allocate
+attention to the relevant statistics in the input.
 
 The goal of our current investigation was to ask whether the presence of
 a valid social cue -- a speaker's gaze -- could change the
@@ -2878,9 +1787,9 @@ above 95\% were allowed to participate, and each HIT paid 30 cents.
 Data were excluded if participants completed the task more than once or
 if participants did not respond correctly on familiar object trials (131
 HITs). The final sample consisted of 1438 participants.
-\begin{figure}[t]
+\begin{figure}[!t]
 
-{\centering \includegraphics[width=0.95\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/stimuli_new} 
+{\centering \includegraphics[width=0.85\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/stimuli_new} 
 
 }
 
@@ -2983,9 +1892,9 @@ the paper. All models were fit using the lme4 package in R (Bates,
 Maechler, Bolker, \& Walker, 2013), and all of our data and our
 processing/analysis code can be viewed in the version control repository
 for this paper at \url{https://github.com/kemacdonald/soc_xsit}.
-\begin{figure}[t]
+\begin{figure}[!t]
 
-{\centering \includegraphics[width=0.95\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/expt1_new} 
+{\centering \includegraphics[width=0.85\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/expt1_new} 
 
 }
 
@@ -3220,9 +2129,9 @@ and in the 3-interval condition (\(\beta\) = -0.48, \(p\) \textless{}
 .001). The interaction between gaze and interval was not significant,
 meaning that gaze had the same effect on participants' inspection times
 at both intervals (see Panel A of Figure 3).
-\begin{figure}[t]
+\begin{figure}[!t]
 
-{\centering \includegraphics[width=0.95\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/expt2_new} 
+{\centering \includegraphics[width=0.85\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/expt2_new} 
 
 }
 
@@ -3373,9 +2282,9 @@ manipulation both in how often they used the gaze cue and in how they
 rated the reliability of the speaker at the end of the task.
 
 \subsubsection{Test trials}\label{test-trials-2}
-\begin{figure}[t]
+\begin{figure}[!t]
 
-{\centering \includegraphics[width=0.95\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/expt3_main_plot} 
+{\centering \includegraphics[width=0.85\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/expt3_main_plot} 
 
 }
 
@@ -3395,9 +2304,9 @@ analysis, which tested the effect of the reliability manipulation, and
 three secondary analyses, which explored the effects of participants'
 (a) use of the gaze cue, (b) subjective reliability assessments, and (c)
 inspection time on exposure trials.
-\begin{figure}[t]
+\begin{figure}[!t]
 
-{\centering \includegraphics[width=0.95\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/expt3_sub_plot} 
+{\centering \includegraphics[width=0.85\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/expt3_sub_plot} 
 
 }
 
@@ -3600,7 +2509,7 @@ that time had run out and encouraged them to respond within the time
 window on subsequent trials.
 
 \subsection{Results and Discussion}\label{results-and-discussion-3}
-\begin{figure}[t]
+\begin{figure}[!t]
 
 {\centering \includegraphics[width=0.5\linewidth]{/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_child_rmds/SOC-XSIT/figures/expt4_collapsed} 
 
@@ -3772,21 +2681,21 @@ and memory constraints of the learner. These results also add to a large
 literature showing the importance of social information for word
 learning (P. Bloom, 2002; E. V. Clark, 2009) and to recent work
 exploring the interaction between statistical learning mechanisms and
-other types of information (Frank et al., 2009; Koehne \& Crocker, 2014;
-Yu \& Ballard, 2007). Our findings suggest that referential cues affect
-statistical learning by modulating the amount of information that
-learners store in the underlying representations that support learning
-over time.
+other types of information (Frank, Goodman, \& Tenenbaum, 2009; Koehne
+\& Crocker, 2014; Yu \& Ballard, 2007). Our findings suggest that
+referential cues affect statistical learning by modulating the amount of
+information that learners store in the underlying representations that
+support learning over time.
 
 Is gaze a privileged cue, or could other, less-social cues (e.g., an
 arrow) also affect the representations underlying cross-situational
 learning? On the one hand, previous research has shown that gaze cues
 lead to more reflexive attentional responses compared to arrows
 (Friesen, Ristic, \& Kingstone, 2004), that gaze-triggered attention
-results in better learning compared to salience-triggered attention (R.
-Wu \& Kirkham, 2010), and that even toddlers readily use gaze to infer
-novel word meanings (D. A. Baldwin, 1993). Thus, it could be that gaze
-is an especially effective cue for constraining word learning since it
+results in better learning compared to salience-triggered attention (Wu
+\& Kirkham, 2010), and that even toddlers readily use gaze to infer
+novel word meanings (Baldwin, 1993). Thus, it could be that gaze is an
+especially effective cue for constraining word learning since it
 communicates a speaker's referential intent and is a particularly good
 way to guide attention. On the other hand, the generative process of the
 cue -- whether it is more or less social in nature -- might be less
@@ -3810,7 +2719,7 @@ social information as part of the underlying computation. A third
 possibility is that participants thought of the referential cue as
 pedagogical. In this context, learners assume that the speaker will
 choose an action that is most likely to increase the learner's belief in
-the true state of the world (Shafto et al., 2012b), making it
+the true state of the world (Shafto, Goodman, \& Frank, 2012), making it
 unnecessary to allocate resources to alternative hypotheses. Experiments
 show that children spend less time exploring an object and are less
 likely to discover alternative object-functions if a single function is
@@ -4001,16 +2910,16 @@ incorporate the effects of reasoning about other people's mental states.
 We have taken some initial steps towards this goal by developing a model
 of active-social learning that integrates ideas from Optimal Experiment
 Design (OED) with formalizations of recursive social reasoning from
-Bayesian models of pragmatic language interpretation (Goodman \& Frank,
-2016). We found that this integrated model was able to reproduce the
-qualitative patterns in adults' decisions of whether to forego
+Bayesian models of pragmatic language interpretation (N. D. Goodman \&
+Frank, 2016b). We found that this integrated model was able to reproduce
+the qualitative patterns in adults' decisions of whether to forego
 information seeking in favor of more immediately rewarding actions when
 their social partner highlighted performance and presentational goals
-(E. J. Yoon et al., 2018). The integrative framework described here
-directly inspired this line of research, and I hope that future versions
-of the model will be able to generate graded, testable predictions for
-behavior across a variety of domains -- e.g., eye movements, early
-vocalizations, and verbal question asking.
+(E. J. Yoon, MacDonald, Asaba, Gweon, \& Frank, 2018). The integrative
+framework described here directly inspired this line of research, and I
+hope that future versions of the model will be able to generate graded,
+testable predictions for behavior across a variety of domains -- e.g.,
+eye movements, early vocalizations, and verbal question asking.
 
 Second, we used one particular formalization of active inquiry. The OED
 model focuses on learners' information-seeking decisions given a
@@ -4022,21 +2931,21 @@ long to look for food if they were trying to maximize caloric intake
 while minimizing their effort and time (see Pirolli \& Card (1999) for a
 review). Cognitive scientists have successfully modeled a range of
 behaviors as a form of spatial foraging, such as searching for semantic
-concepts in memory (Hills et al., 2012) and decisions about where to
-direct visual attention in real-time (Manohar \& Husain, 2013). In
-addition to these search models, recent work on curiosity-based learning
-in developmental robotics has created algorithms that optimize intrinsic
-estimates of learning progress. This formalization creates systems that
-focus on seeking activities and stimuli of intermediate complexity where
-learners' predictions are steadily improving, and uncertainty is
-steadily decreasing (Oudeyer \& Smith, 2016). One of the challenges for
-researchers trying to integrate active and social learning is that the
-space of possible connections is quite large. By constraining our
-framework to active decision making, we were able to make some progress
-on an important sub-component of a larger set of children's
-information-seeking behaviors. Future theoretical work, however, should
-consider possible connections between social learning phenomena and the
-foraging/curiosity-based learning frameworks.
+concepts in memory (Hills, Jones, \& Todd, 2012) and decisions about
+where to direct visual attention in real-time (Manohar \& Husain, 2013).
+In addition to these search models, recent work on curiosity-based
+learning in developmental robotics has created algorithms that optimize
+intrinsic estimates of learning progress. This formalization creates
+systems that focus on seeking activities and stimuli of intermediate
+complexity where learners' predictions are steadily improving, and
+uncertainty is steadily decreasing (Oudeyer \& Smith, 2016). One of the
+challenges for researchers trying to integrate active and social
+learning is that the space of possible connections is quite large. By
+constraining our framework to active decision making, we were able to
+make some progress on an important sub-component of a larger set of
+children's information-seeking behaviors. Future theoretical work,
+however, should consider possible connections between social learning
+phenomena and the foraging/curiosity-based learning frameworks.
 
 Third, our ultimate goal for the active-social framework is to
 incorporate effects at a developmental timescale. The experiments in
@@ -4173,9 +3082,9 @@ environments in which children acquire their first language.
 Design}\label{mathematical-details-of-optimal-experiment-design}
 
 This supplement contains the mathematical details of the OED approach as
-described in Coenen et al. (2017). The goal is to provide a concrete
-foundation for the conceptual analysis of how social learning contexts
-can influence different components of active learning.
+described in Coenen, Nelson, \& Gureckis (2017). The goal is to provide
+a concrete foundation for the conceptual analysis of how social learning
+contexts can influence different components of active learning.
 
 The OED model quantifies the \emph{expected utility} of different
 information seeking actions. Formally, the set of queries is defined as
@@ -4861,11 +3770,14 @@ Intercept & 3.37 & 0.16 & 21.32 & $<$ .001 & *** \\
 \setlength{\parskip}{8pt}
 
 \hypertarget{refs}{}
-\hypertarget{ref-adriaans2017prosodic}{}
-Adriaans, F., \& Swingley, D. (2017). Prosodic exaggeration within
-infant-directed speech: Consequences for vowel learnability. \emph{The
-Journal of the Acoustical Society of America}, \emph{141}(5),
-3070--3078.
+\hypertarget{ref-attardo1997}{}
+Attardo, S. (1997). Locutionary and perlocutionary cooperation: The
+perlocutionary cooperative principle. \emph{Journal of Pragmatics},
+\emph{27}(6), 753--779.
+
+\hypertarget{ref-augustine1952}{}
+Augustine, S. (1952). Treaties on various issues. Washington, DC:
+Catholic University of America Press.
 
 \hypertarget{ref-axia1985}{}
 Axia, G., \& Baroni, M. R. (1985). Linguistic politeness at different
@@ -4875,11 +3787,6 @@ age levels. \emph{Child Development}, 918--927.
 Baldwin, D. A. (1993). Infants' ability to consult the speaker for clues
 to word reference. \emph{Journal of Child Language}, \emph{20}(02),
 395--418.
-
-\hypertarget{ref-baranes2015eye}{}
-Baranes, A., Oudeyer, P.-Y., \& Gottlieb, J. (2015). Eye movements
-reveal epistemic curiosity in human observers. \emph{Vision Research},
-\emph{117}, 81--90.
 
 \hypertarget{ref-barr2013random}{}
 Barr, D. J., Levy, R., Scheepers, C., \& Tily, H. J. (2013). Random
@@ -4891,31 +3798,14 @@ Bates, D., Maechler, M., Bolker, B., \& Walker, S. (2013). Lme4: Linear
 mixed-effects models using eigen and s4. \emph{R Package Version},
 \emph{1}(4).
 
-\hypertarget{ref-begus2014infants}{}
-Begus, K., Gliga, T., \& Southgate, V. (2014). Infants learn what they
-want to learn: Responding to infant pointing leads to superior learning.
-
 \hypertarget{ref-benitez2018predictable}{}
 Benitez, V. L., \& Saffran, J. R. (2018). Predictable events enhance
 word learning in toddlers. \emph{Current Biology}, \emph{28}(17),
 2787--2793.
 
-\hypertarget{ref-berlyne1960conflict}{}
-Berlyne, D. E. (1960). Conflict, arousal, and curiosity.
-
-\hypertarget{ref-birbili2009helping}{}
-Birbili, M., \& Karagiorgou, I. (2009). Helping children and their
-parents ask better questions: An intervention study. \emph{Journal of
-Research in Childhood Education}, \emph{24}(1), 18--31.
-
 \hypertarget{ref-bloom2002children}{}
 Bloom, P. (2002). \emph{How children learn the meaning of words}. The
 MIT Press.
-
-\hypertarget{ref-bonawitz2016computational}{}
-Bonawitz, E., \& Shafto, P. (2016). Computational models of development,
-social influences. \emph{Current Opinion in Behavioral Sciences},
-\emph{7}, 95--100.
 
 \hypertarget{ref-bonawitz2011double}{}
 Bonawitz, E., Shafto, P., Gweon, H., Goodman, N. D., Spelke, E., \&
@@ -4928,11 +3818,10 @@ Bonnefon, J.-F., Feeney, A., \& Villejoubert, G. (2009). When some is
 actually all: Scalar inferences in face-threatening contexts.
 \emph{Cognition}, \emph{112}(2), 249--258.
 
-\hypertarget{ref-boyd2011cultural}{}
-Boyd, R., Richerson, P. J., \& Henrich, J. (2011). The cultural niche:
-Why social learning is essential for human adaptation. \emph{Proceedings
-of the National Academy of Sciences}, \emph{108}(Supplement 2),
-10918--10925.
+\hypertarget{ref-boyer1702}{}
+Boyer, A. (1702). \emph{The english theophrastus: Or, the manners of the
+age: Being the modern characters of the court, the town, and the
+city...} W. Turner... R. Basset...; J. Chantry.
 
 \hypertarget{ref-brooks2005development}{}
 Brooks, R., \& Meltzoff, A. N. (2005). The development of gaze following
@@ -4949,20 +3838,8 @@ Language}, \emph{35}(01), 207--220.
 Brown, P., \& Levinson, S. C. (1987). \emph{Politeness: Some universals
 in language usage} (Vol. 4). Cambridge university press.
 
-\hypertarget{ref-bruner1961act}{}
-Bruner, J. S. (1961). The act of discovery. \emph{Harvard Educational
-Review}.
-
-\hypertarget{ref-butler2012preschoolers}{}
-Butler, L. P., \& Markman, E. M. (2012). Preschoolers use intentional
-and pedagogical cues to guide inductive inferences and exploration.
-\emph{Child Development}, \emph{83}(4), 1416--1428.
-
-\hypertarget{ref-call2005copying}{}
-Call, J., Carpenter, M., \& Tomasello, M. (2005). Copying results and
-copying actions in the process of social learning: Chimpanzees (pan
-troglodytes) and human children (homo sapiens). \emph{Animal Cognition},
-\emph{8}(3), 151--163.
+\hypertarget{ref-buhler1934}{}
+Bühler, K. (1934). \emph{Sprachtheorie}. Oxford, England: Fischer.
 
 \hypertarget{ref-carlson2001individual}{}
 Carlson, S. M., \& Moses, L. J. (2001). Individual differences in
@@ -4980,26 +3857,6 @@ Cartmill, E. A., Armstrong, B. F., Gleitman, L. R., Goldin-Meadow, S.,
 Medina, T. N., \& Trueswell, J. C. (2013). Quality of early parent input
 predicts child vocabulary 3 years later. \emph{Proceedings of the
 National Academy of Sciences}, \emph{110}(28), 11278--11283.
-
-\hypertarget{ref-castro2009human}{}
-Castro, R. M., Kalish, C., Nowak, R., Qian, R., Rogers, T., \& Zhu, X.
-(2009). Human active learning. In \emph{Advances in neural information
-processing systems} (pp. 241--248).
-
-\hypertarget{ref-chi2009active}{}
-Chi, M. T. (2009). Active-constructive-interactive: A conceptual
-framework for differentiating learning activities. \emph{Topics in
-Cognitive Science}, \emph{1}(1), 73--105.
-
-\hypertarget{ref-chow2008see}{}
-Chow, V., Poulin-Dubois, D., \& Lewis, J. (2008). To see or not to see:
-Infants prefer to follow the gaze of a reliable looker.
-\emph{Developmental Science}, \emph{11}(5), 761--770.
-
-\hypertarget{ref-cimpian2007subtle}{}
-Cimpian, A., Arce, H.-M. C., Markman, E. M., \& Dweck, C. S. (2007).
-Subtle linguistic cues affect children's motivation. \emph{Psychological
-Science}, \emph{18}(4), 314--316.
 
 \hypertarget{ref-clark2009first}{}
 Clark, E. V. (2009). \emph{First language acquisition}. Cambridge
@@ -5022,102 +3879,18 @@ questions about human inquiry.
 Colombo, J. (2001). The development of visual attention in infancy.
 \emph{Annual Review of Psychology}, \emph{52}(1), 337--367.
 
-\hypertarget{ref-cook2011science}{}
-Cook, C., Goodman, N. D., \& Schulz, L. E. (2011). Where science starts:
-Spontaneous experiments in preschoolers' exploratory play.
-\emph{Cognition}, \emph{120}(3), 341--349.
+\hypertarget{ref-ervin1967}{}
+Ervin-Tripp, S. M. (1967). An issei learns english. \emph{Journal of
+Social Issues}, \emph{23}(2), 78--90.
 
-\hypertarget{ref-cooper1990preference}{}
-Cooper, R. P., \& Aslin, R. N. (1990). Preference for infant-directed
-speech in the first month after birth. \emph{Child Development},
-\emph{61}(5), 1584--1595.
-
-\hypertarget{ref-corriveau2009choosing}{}
-Corriveau, K., \& Harris, P. L. (2009). Choosing your informant:
-Weighing familiarity and recent accuracy. \emph{Developmental Science},
-\emph{12}(3), 426--437.
-
-\hypertarget{ref-cottrell1968social}{}
-Cottrell, N. B., Wack, D. L., Sekerak, G. J., \& Rittle, R. H. (1968).
-Social facilitation of dominant responses by the presence of an audience
-and the mere presence of others. \emph{Journal of Personality and Social
-Psychology}, \emph{9}(3), 245.
-
-\hypertarget{ref-csibra2009natural}{}
-Csibra, G., \& Gergely, G. (2009). Natural pedagogy. \emph{Trends in
-Cognitive Sciences}, \emph{13}(4), 148--153.
-
-\hypertarget{ref-de2003investigating}{}
-De Boer, B., \& Kuhl, P. K. (2003). Investigating the role of
-infant-directed speech with a computer model. \emph{Acoustics Research
-Letters Online}, \emph{4}(4), 129--134.
-
-\hypertarget{ref-deborah2004children}{}
-Deborah, G. K. N., Louisa Chan, E., \& Holt, M. B. (2004). When children
-ask,``What is it?'' what do they want to know about artifacts?
-\emph{Psychological Science}, \emph{15}(6), 384--389.
-
-\hypertarget{ref-decasper1987human}{}
-DeCasper, A. J., Fifer, W. P., Oates, J., \& Sheldon, S. (1987). Of
-human bonding: Newborns prefer their mothers' voices. \emph{Cognitive
-Development in Infancy}, 111--118.
-
-\hypertarget{ref-dweck1988social}{}
-Dweck, C. S., \& Leggett, E. L. (1988). A social-cognitive approach to
-motivation and personality. \emph{Psychological Review}, \emph{95}(2),
-256.
-
-\hypertarget{ref-eaves2016infant}{}
-Eaves Jr, B. S., Feldman, N. H., Griffiths, T. L., \& Shafto, P. (2016).
-Infant-directed speech is consistent with teaching. \emph{Psychological
-Review}, \emph{123}(6), 758.
-
-\hypertarget{ref-emery1998optimal}{}
-Emery, A., \& Nenarokomov, A. V. (1998). Optimal experiment design.
-\emph{Measurement Science and Technology}, \emph{9}(6), 864.
-
-\hypertarget{ref-farroni2002eye}{}
-Farroni, T., Csibra, G., Simion, F., \& Johnson, M. H. (2002). Eye
-contact detection in humans from birth. \emph{Proceedings of the
-National Academy of Sciences}, \emph{99}(14), 9602--9605.
-
-\hypertarget{ref-farroni2007direct}{}
-Farroni, T., Massaccesi, S., Menon, E., \& Johnson, M. H. (2007). Direct
-gaze modulates face recognition in young infants. \emph{Cognition},
-\emph{102}(3), 396--404.
-
-\hypertarget{ref-fernald1987acoustic}{}
-Fernald, A., \& Kuhl, P. (1987). Acoustic determinants of infant
-preference for motherese speech. \emph{Infant Behavior and Development},
-\emph{10}(3), 279--293.
-
-\hypertarget{ref-fernald1991prosody}{}
-Fernald, A., \& Mazzie, C. (1991). Prosody and focus in speech to
-infants and adults. \emph{Developmental Psychology}, \emph{27}(2), 209.
-
-\hypertarget{ref-fernald1998rapid}{}
-Fernald, A., Pinto, J. P., Swingley, D., Weinbergy, A., \& McRoberts, G.
-W. (1998). Rapid gains in speed of verbal processing by infants in the
-2nd year. \emph{Psychological Science}, \emph{9}(3), 228--231.
-
-\hypertarget{ref-fitneva2013development}{}
-Fitneva, S. A., Lam, N. H., \& Dunfield, K. A. (2013). The development
-of children's information gathering: To look or to ask?
-\emph{Developmental Psychology}, \emph{49}(3), 533.
+\hypertarget{ref-ervin1969}{}
+Ervin-Tripp, S. M. (1969). Sociolinguistics. \emph{Advances in
+Experimental Social Psychology}, \emph{4}, 91--165.
 
 \hypertarget{ref-franchak2018see}{}
 Franchak, J. M., Kretch, K. S., \& Adolph, K. E. (2018). See and be
 seen: Infant--caregiver social looking during locomotor free play.
 \emph{Developmental Science}, \emph{21}(4), e12626.
-
-\hypertarget{ref-frank2012predicting}{}
-Frank, M. C., \& Goodman, N. D. (2012). Predicting pragmatic reasoning
-in language games. \emph{Science}, \emph{336}(6084), 998--998.
-
-\hypertarget{ref-frank2014inferring}{}
-Frank, M. C., \& Goodman, N. D. (2014). Inferring word meanings by
-assuming that speakers are informative. \emph{Cognitive Psychology},
-\emph{75}, 80--96.
 
 \hypertarget{ref-frank2009using}{}
 Frank, M. C., Goodman, N. D., \& Tenenbaum, J. B. (2009). Using
@@ -5130,42 +3903,10 @@ discourse contributions to the determination of reference in
 cross-situational word learning. \emph{Language Learning and
 Development}, \emph{9}(1), 1--24.
 
-\hypertarget{ref-frazier2009preschoolers}{}
-Frazier, B. N., Gelman, S. A., \& Wellman, H. M. (2009). Preschoolers'
-search for explanatory information within adult--child conversation.
-\emph{Child Development}, \emph{80}(6), 1592--1611.
-
 \hypertarget{ref-friesen2004attentional}{}
 Friesen, C. K., Ristic, J., \& Kingstone, A. (2004). Attentional effects
 of counterpredictive gaze and arrow cues. \emph{Journal of Experimental
 Psychology: Human Perception and Performance}, \emph{30}(2), 319.
-
-\hypertarget{ref-geisler2003ideal}{}
-Geisler, W. S. (2003). Ideal observer analysis. \emph{The Visual
-Neurosciences}, \emph{10}(7), 12--12.
-
-\hypertarget{ref-gelman2009learning}{}
-Gelman, S. A. (2009). Learning from others: Children's construction of
-concepts. \emph{Annual Review of Psychology}, \emph{60}, 115--140.
-
-\hypertarget{ref-gelman2008generic}{}
-Gelman, S. A., Goetz, P. J., Sarnecka, B. W., \& Flukes, J. (2008).
-Generic language in parent-child conversations. \emph{Language Learning
-and Development}, \emph{4}(1), 1--31.
-
-\hypertarget{ref-gergely2007pedagogy}{}
-Gergely, G., Egyed, K., \& Király, I. (2007). On pedagogy.
-\emph{Developmental Science}, \emph{10}(1), 139--146.
-
-\hypertarget{ref-gerken2011infants}{}
-Gerken, L., Balcomb, F. K., \& Minton, J. L. (2011). Infants avoid
-`labouring in vain'by attending more to learnable than unlearnable
-linguistic patterns. \emph{Developmental Science}, \emph{14}(5),
-972--979.
-
-\hypertarget{ref-gerstenberg2017intuitive}{}
-Gerstenberg, T., \& Tenenbaum, J. B. (2017). Intuitive theories.
-\emph{Oxford Handbook of Causal Reasoning}, 515--548.
 
 \hypertarget{ref-gillette1999human}{}
 Gillette, J., Gleitman, H., Gleitman, L., \& Lederer, A. (1999). Human
@@ -5180,43 +3921,15 @@ Gleitman, L. (1990). The structural sources of verb meanings.
 Goffman, E. (1967). \emph{Interaction ritual: Essays on face-to-face
 interaction}. Aldine.
 
-\hypertarget{ref-goldstein2008social}{}
-Goldstein, M. H., \& Schwade, J. A. (2008). Social feedback to infants'
-babbling facilitates rapid phonological learning. \emph{Psychological
-Science}, \emph{19}(5), 515--523.
-
-\hypertarget{ref-goodman2016pragmatic}{}
-Goodman, N. D., \& Frank, M. C. (2016). Pragmatic language
+\hypertarget{ref-goodman2016}{}
+Goodman, N. D., \& Frank, M. C. (2016a). Pragmatic language
 interpretation as probabilistic inference. \emph{Trends in Cognitive
 Sciences}, \emph{20}(11), 818--829.
 
-\hypertarget{ref-goodman2009cause}{}
-Goodman, N. D., Baker, C. L., \& Tenenbaum, J. B. (2009). Cause and
-intent: Social reasoning in causal learning. In \emph{Proceedings of the
-31st annual conference of the cognitive science society} (pp.
-2759--2764).
-
-\hypertarget{ref-gopnik1999scientist}{}
-Gopnik, A., Meltzoff, A. N., \& Kuhl, P. K. (1999). \emph{The scientist
-in the crib: Minds, brains, and how children learn.} William Morrow \&
-Co.
-
-\hypertarget{ref-gottlieb2012attention}{}
-Gottlieb, J. (2012). Attention, learning, and the value of information.
-\emph{Neuron}, \emph{76}(2), 281--295.
-
-\hypertarget{ref-gottlieb2018towards}{}
-Gottlieb, J., \& Oudeyer, P.-Y. (2018). Towards a neuroscience of active
-sampling and curiosity. \emph{Nature Reviews Neuroscience}, 1.
-
-\hypertarget{ref-grabinger1995rich}{}
-Grabinger, R. S., \& Dunlap, J. C. (1995). Rich environments for active
-learning: A definition. \emph{Research in Learning Technology},
-\emph{3}(2).
-
-\hypertarget{ref-graf2013infant}{}
-Graf Estes, K., \& Hurley, K. (2013). Infant-directed prosody helps
-infants map sounds to meanings. \emph{Infancy}, \emph{18}(5), 797--824.
+\hypertarget{ref-goodman2016pragmatic}{}
+Goodman, N. D., \& Frank, M. C. (2016b). Pragmatic language
+interpretation as probabilistic inference. \emph{Trends in Cognitive
+Sciences}, \emph{20}(11), 818--829.
 
 \hypertarget{ref-grice1975}{}
 Grice, H. P. (1975). Logic and conversation. In P. Cole \& J. L. Morgan
@@ -5229,44 +3942,17 @@ cognitive resources: Levels of analysis between the computational and
 the algorithmic. \emph{Topics in Cognitive Science}, \emph{7}(2),
 217--229.
 
-\hypertarget{ref-gunderson2013parent}{}
-Gunderson, E. A., Gripshover, S. J., Romero, C., Dweck, C. S.,
-Goldin-Meadow, S., \& Levine, S. C. (2013). Parent praise to 1-to
-3-year-olds predicts children's motivational frameworks 5 years later.
-\emph{Child Development}, \emph{84}(5), 1526--1541.
-
-\hypertarget{ref-gureckis2012self}{}
-Gureckis, T. M., \& Markant, D. B. (2012). Self-directed learning a
-cognitive and computational perspective. \emph{Perspectives on
-Psychological Science}, \emph{7}(5), 464--481.
-
-\hypertarget{ref-gweon201116}{}
-Gweon, H., \& Schulz, L. (2011). 16-month-olds rationally infer causes
-of failed actions. \emph{Science}, \emph{332}(6037), 1524--1524.
-
-\hypertarget{ref-gweon2014sins}{}
-Gweon, H., Pelton, H., Konopka, J. A., \& Schulz, L. E. (2014). Sins of
-omission: Children selectively explore when teachers are
-under-informative. \emph{Cognition}, \emph{132}(3), 335--341.
-
-\hypertarget{ref-haertel2008return}{}
-Haertel, R. A., Seppi, K. D., Ringger, E. K., \& Carroll, J. L. (2008).
-Return on investment for active learning. In \emph{Proceedings of the
-nips workshop on cost-sensitive learning} (Vol. 72).
-
-\hypertarget{ref-hayhoe2005eye}{}
-Hayhoe, M., \& Ballard, D. (2005). Eye movements in natural behavior.
-\emph{Trends in Cognitive Sciences}, \emph{9}(4), 188--194.
-
-\hypertarget{ref-henderson2007visual}{}
-Henderson, J. M., Brockmole, J. R., Castelhano, M. S., \& Mack, M.
-(2007). Visual saliency does not account for eye movements during visual
-search in real-world scenes. In \emph{Eye movements} (pp. 537--III).
-Elsevier.
+\hypertarget{ref-halliday1975}{}
+Halliday, M. A. K. (1975). \emph{Learning how to mean: Explorations in
+the development of language}. London: Edward Arnold.
 
 \hypertarget{ref-hills2012optimal}{}
 Hills, T. T., Jones, M. N., \& Todd, P. M. (2012). Optimal foraging in
 semantic memory. \emph{Psychological Review}, \emph{119}(2), 431.
+
+\hypertarget{ref-hirschberg1985}{}
+Hirschberg, J. B. (1985). \emph{A theory of scalar implicature}.
+University of Pennsylvania.
 
 \hypertarget{ref-hollich2000breaking}{}
 Hollich, G. J., Hirsh-Pasek, K., Golinkoff, R. M., Brand, R. J., Brown,
@@ -5286,51 +3972,18 @@ universals of linguistic politeness. \emph{Multilingua-Journal of
 Cross-Cultural and Interlanguage Communication}, \emph{8}(2-3),
 223--248.
 
-\hypertarget{ref-jara2015children}{}
-Jara-Ettinger, J., Gweon, H., Tenenbaum, J. B., \& Schulz, L. E. (2015).
-Children's understanding of the costs and rewards underlying rational
-action. \emph{Cognition}, \emph{140}, 14--23.
+\hypertarget{ref-jakobson1960}{}
+Jakobson, R. (1960). Linguistics and poetics. In \emph{Style in
+language} (pp. 350--377). MA: MIT Press.
 
-\hypertarget{ref-johnson1991newborns}{}
-Johnson, M. H., Dziurawiec, S., Ellis, H., \& Morton, J. (1991).
-Newborns' preferential tracking of face-like stimuli and its subsequent
-decline. \emph{Cognition}, \emph{40}(1), 1--19.
-
-\hypertarget{ref-kachergis2013actively}{}
-Kachergis, G., Yu, C., \& Shiffrin, R. M. (2013). Actively learning
-object names across ambiguous situations. \emph{Topics in Cognitive
-Science}, \emph{5}(1), 200--213.
+\hypertarget{ref-kant1949}{}
+Kant, I. (1949). On a supposed right to lie from altruistic motives.
+\emph{Critical of Practical Reason and Other Writings}, 346--350.
 
 \hypertarget{ref-kanwisher1997locus}{}
 Kanwisher, N., Woods, R. P., Iacoboni, M., \& Mazziotta, J. C. (1997). A
 locus in human extrastriate cortex for visual shape analysis.
 \emph{Journal of Cognitive Neuroscience}, \emph{9}(1), 133--142.
-
-\hypertarget{ref-kidd2012goldilocks}{}
-Kidd, C., Piantadosi, S. T., \& Aslin, R. N. (2012). The goldilocks
-effect: Human infants allocate attention to visual sequences that are
-neither too simple nor too complex. \emph{PloS One}, \emph{7}(5),
-e36399.
-
-\hypertarget{ref-kidd2014goldilocks}{}
-Kidd, C., Piantadosi, S. T., \& Aslin, R. N. (2014). The goldilocks
-effect in infant auditory attention. \emph{Child Development},
-\emph{85}(5), 1795--1804.
-
-\hypertarget{ref-kim2016young}{}
-Kim, S., Paulus, M., Sodian, B., \& Proust, J. (2016). Young children's
-sensitivity to their own ignorance in informing others. \emph{PloS One},
-\emph{11}(3), e0152595.
-
-\hypertarget{ref-klahr2004equivalence}{}
-Klahr, D., \& Nigam, M. (2004). The equivalence of learning paths in
-early science instruction effects of direct instruction and discovery
-learning. \emph{Psychological Science}, \emph{15}(10), 661--667.
-
-\hypertarget{ref-kline2015learn}{}
-Kline, M. A. (2015). How to learn about teaching: An evolutionary
-framework for the study of teaching behavior in humans and other
-animals. \emph{Behavioral and Brain Sciences}, \emph{38}.
 
 \hypertarget{ref-koehne2014interplay}{}
 Koehne, J., \& Crocker, M. W. (2014). The interplay of cross-situational
@@ -5341,57 +3994,24 @@ Koenig, M. A., Clement, F., \& Harris, P. L. (2004). Trust in testimony:
 Children's use of true and false statements. \emph{Psychological
 Science}, \emph{15}(10), 694--698.
 
-\hypertarget{ref-kontra2012embodied}{}
-Kontra, C., Goldin-Meadow, S., \& Beilock, S. L. (2012). Embodied
-learning across the life span. \emph{Topics in Cognitive Science},
-\emph{4}(4), 731--739.
-
-\hypertarget{ref-kuhl2007speech}{}
-Kuhl, P. K. (2007). Is speech learning `gated'by the social brain?
-\emph{Developmental Science}, \emph{10}(1), 110--120.
-
-\hypertarget{ref-kuhn2008needs}{}
-Kuhn, D., \& Pease, M. (2008). What needs to develop in the development
-of inquiry skills? \emph{Cognition and Instruction}, \emph{26}(4),
-512--559.
+\hypertarget{ref-lakoff1973}{}
+Lakoff, R. (1973). The logic of politeness; or, minding your p's and
+q's. In A. W. C. Corum T. Cedric Smith-Stark (Ed.), \emph{Papers from
+the ninth regional meeting of the chicago linguistics society} (pp.
+292--305). Chicago: Department of Linguistics, University of Chicago.
 
 \hypertarget{ref-leech1983}{}
 Leech, G. (1983). \emph{Principles of pragmatics}. London, New York:
 Longman Group Ltd.
-
-\hypertarget{ref-legare2013use}{}
-Legare, C. H., Mills, C. M., Souza, A. L., Plummer, L. E., \& Yasskin,
-R. (2013). The use of questions as problem-solving strategies during
-early childhood. \emph{Journal of Experimental Child Psychology},
-\emph{114}(1), 63--76.
 
 \hypertarget{ref-lenth2016lsmeans}{}
 Lenth, R. V. (2016). Least-squares means: The R package lsmeans.
 \emph{Journal of Statistical Software}, \emph{69}(1), 1--33.
 \url{http://doi.org/10.18637/jss.v069.i01}
 
-\hypertarget{ref-lindley1956measure}{}
-Lindley, D. V. (1956). On a measure of the information provided by an
-experiment. \emph{The Annals of Mathematical Statistics}, 986--1005.
-
-\hypertarget{ref-lockhart2016could}{}
-Lockhart, K. L., Goddu, M. K., Smith, E. D., \& Keil, F. C. (2016). What
-could you really learn on your own?: Understanding the epistemic
-limitations of knowledge acquisition. \emph{Child Development},
-\emph{87}(2), 477--493.
-
-\hypertarget{ref-lombrozo2006structure}{}
-Lombrozo, T. (2006). The structure and function of explanations.
-\emph{Trends in Cognitive Sciences}, \emph{10}(10), 464--470.
-
-\hypertarget{ref-lyons2010metacognitive}{}
-Lyons, K. E., \& Ghetti, S. (2010). Metacognitive development in early
-childhood: New questions about old assumptions. In \emph{Trends and
-prospects in metacognition research} (pp. 259--278). Springer.
-
 \hypertarget{ref-macdonald2017info}{}
 MacDonald, K., Blonder, A., Marchman, V., Fernald, A., \& Frank, M. C.
-(2017a). An information-seeking account of eye movements during spoken
+(2017). An information-seeking account of eye movements during spoken
 and signed language comprehension. In \emph{Proceedings of the 39th
 annual conference of the cognitive science society}.
 
@@ -5406,24 +4026,14 @@ and preschoolers seek visual information to support language
 comprehension in noisy environments. In \emph{Proceedings of the 40th
 annual conference of the cognitive science society}.
 
-\hypertarget{ref-macdonald2013my}{}
-MacDonald, K., Schug, M., Chase, E., \& Barth, H. (2013). My people,
-right or wrong? Minimal group membership disrupts preschoolers'
-selective trust. \emph{Cognitive Development}, \emph{28}(3), 247--259.
-
 \hypertarget{ref-macdonald2017social}{}
-MacDonald, K., Yurovsky, D., \& Frank, M. C. (2017b). Social cues
+MacDonald, K., Yurovsky, D., \& Frank, M. C. (2017). Social cues
 modulate the representations underlying cross-situational learning.
 \emph{Cognitive Psychology}, \emph{94}, 67--84.
 
 \hypertarget{ref-mackay2003information}{}
 MacKay, D. J. (2003). \emph{Information theory, inference and learning
 algorithms}. Cambridge university press.
-
-\hypertarget{ref-maddux2011dissociations}{}
-Maddux, J.-M., \& Holland, P. C. (2011). Dissociations between medial
-prefrontal cortical subregions in the modulation of learning and action.
-\emph{Behavioral Neuroscience}, \emph{125}(3), 383.
 
 \hypertarget{ref-manohar2013attention}{}
 Manohar, S. G., \& Husain, M. (2013). Attention as foraging for
@@ -5435,35 +4045,10 @@ Marchman, V. A., \& Fernald, A. (2008). Speed of word recognition and
 vocabulary knowledge in infancy predict cognitive and language outcomes
 in later childhood. \emph{Developmental Science}, \emph{11}(3), F9--F16.
 
-\hypertarget{ref-markant2014better}{}
-Markant, D. B., \& Gureckis, T. M. (2014). Is it better to select or to
-receive? Learning via active and passive hypothesis testing.
-\emph{Journal of Experimental Psychology: General}, \emph{143}(1), 94.
-
-\hypertarget{ref-markant2016enhanced}{}
-Markant, D. B., Ruggeri, A., Gureckis, T. M., \& Xu, F. (2016). Enhanced
-memory as a common effect of active learning. \emph{Mind, Brain, and
-Education}, \emph{10}(3), 142--152.
-
-\hypertarget{ref-markant2014deconstructing}{}
-Markant, D., DuBrow, S., Davachi, L., \& Gureckis, T. M. (2014).
-Deconstructing the effect of self-directed study on episodic memory.
-\emph{Memory \& Cognition}, \emph{42}(8), 1211--1224.
-
-\hypertarget{ref-markman1979realizing}{}
-Markman, E. M. (1979). Realizing that you don't understand: Elementary
-school children's awareness of inconsistencies. \emph{Child
-Development}, 643--655.
-
 \hypertarget{ref-matsumoto1988}{}
 Matsumoto, Y. (1988). Reexamination of the universality of face:
 Politeness phenomena in japanese. \emph{Journal of Pragmatics},
 \emph{12}(4), 403--426.
-
-\hypertarget{ref-mccormack2016children}{}
-McCormack, T., Bramley, N., Frosch, C., Patrick, F., \& Lagnado, D.
-(2016). Children's use of interventions to learn causal structure.
-\emph{Journal of Experimental Child Psychology}, \emph{141}, 1--22.
 
 \hypertarget{ref-mcmurray2012word}{}
 McMurray, B., Horst, J. S., \& Samuelson, L. K. (2012). Word learning
@@ -5476,123 +4061,37 @@ Medina, T. N., Snedeker, J., Trueswell, J. C., \& Gleitman, L. R.
 \emph{Proceedings of the National Academy of Sciences}, \emph{108}(22),
 9014--9019.
 
-\hypertarget{ref-mills2012little}{}
-Mills, C. M., Danovitch, J. H., Grant, M. G., \& Elashi, F. B. (2012).
-Little pitchers use their big ears: Preschoolers solve problems by
-listening to others ask questions. \emph{Child Development},
-\emph{83}(2), 568--580.
-
-\hypertarget{ref-mills2010preschoolers}{}
-Mills, C. M., Legare, C. H., Bills, M., \& Mejias, C. (2010).
-Preschoolers use questions as a tool to acquire knowledge from different
-sources. \emph{Journal of Cognition and Development}, \emph{11}(4),
-533--560.
-
-\hypertarget{ref-mills2011determining}{}
-Mills, C. M., Legare, C. H., Grant, M. G., \& Landrum, A. R. (2011).
-Determining who to question, what to ask, and how much information to
-ask for: The development of inquiry in young children. \emph{Journal of
-Experimental Child Psychology}, \emph{110}(4), 539--560.
-
-\hypertarget{ref-najemnik2005optimal}{}
-Najemnik, J., \& Geisler, W. S. (2005). Optimal eye movement strategies
-in visual search. \emph{Nature}, \emph{434}(7031), 387.
-
-\hypertarget{ref-needham2002pick}{}
-Needham, A., Barrett, T., \& Peterman, K. (2002). A pick-me-up for
-infants' exploratory skills: Early simulated experiences reaching for
-objects using ``sticky mittens'' enhances young infants' object
-exploration skills. \emph{Infant Behavior and Development},
-\emph{25}(3), 279--295.
-
 \hypertarget{ref-nelson2005finding}{}
 Nelson, J. D. (2005). Finding useful questions: On bayesian
 diagnosticity, probability, impact, and information gain.
 \emph{Psychological Review}, \emph{112}(4).
-
-\hypertarget{ref-nelson2010experience}{}
-Nelson, J. D., McKenzie, C. R., Cottrell, G. W., \& Sejnowski, T. J.
-(2010). Experience matters: Information acquisition optimizes
-probability gain. \emph{Psychological Science}, \emph{21}(7), 960--969.
 
 \hypertarget{ref-oakes2011infant}{}
 Oakes, L. M. (2011). \emph{Infant perception and cognition: Recent
 advances, emerging theories, and future directions}. Oxford University
 Press, USA.
 
-\hypertarget{ref-opfer2004revisiting}{}
-Opfer, J. E., \& Siegler, R. S. (2004). Revisiting preschoolers' living
-things concept: A microgenetic analysis of conceptual change in basic
-biology. \emph{Cognitive Psychology}, \emph{49}(4), 301--332.
-
 \hypertarget{ref-oudeyer2016evolution}{}
 Oudeyer, P.-Y., \& Smith, L. B. (2016). How evolution may work through
 curiosity-driven developmental process. \emph{Topics in Cognitive
 Science}, \emph{8}(2), 492--502.
 
-\hypertarget{ref-ouyang2016practical}{}
-Ouyang, L., Tessler, M. H., Ly, D., \& Goodman, N. (2016). Practical
-optimal experiment design with probabilistic programs. \emph{arXiv
-Preprint arXiv:1608.05046}.
-
-\hypertarget{ref-partridge2015young}{}
-Partridge, E., McGovern, M. G., Yung, A., \& Kidd, C. (2015). Young
-children's self-directed information gathering on touchscreens. In
-\emph{Proceedings of the 37th annual conference of the cognitive science
-society, austin, tx. cognitive science society}.
-
-\hypertarget{ref-pea1982origins}{}
-Pea, R. D. (1982). Origins of verbal logic: Spontaneous denials by
-two-and three-year olds. \emph{Journal of Child Language}, \emph{9}(3),
-597--626.
-
-\hypertarget{ref-pegg1992preference}{}
-Pegg, J. E., Werker, J. F., \& McLeod, P. J. (1992). Preference for
-infant-directed over adult-directed speech: Evidence from 7-week-old
-infants. \emph{Infant Behavior and Development}, \emph{15}(3), 325--345.
-
-\hypertarget{ref-piaget1952origins}{}
-Piaget, J., \& Cook, M. T. (1952). The origins of intelligence in
-children.
-
 \hypertarget{ref-pirolli1999information}{}
 Pirolli, P., \& Card, S. (1999). Information foraging.
 \emph{Psychological Review}, \emph{106}(4), 643.
 
-\hypertarget{ref-prince2004does}{}
-Prince, M. (2004). Does active learning work? A review of the research.
-\emph{Journal of Engineering Education}, \emph{93}(3), 223--231.
+\hypertarget{ref-oxfordPolite}{}
+Polite. (2017a). In \emph{OED online}. Oxford University Press.
+Retrieved from
+\url{http://www.oed.com/view/Entry/146878?rskey=4vSu4F\&result=1\&isAdvanced=false}
+
+\hypertarget{ref-cambridgePolite}{}
+Polite. (2017b). In \emph{Cambridge online dictionary}. Cambridge
+University Press. Retrieved from
+\url{http://dictionary.cambridge.org/us/dictionary/english/polite}
 
 \hypertarget{ref-quine19600}{}
 Quine, W. V. (1960). 0. word and object. \emph{111e MIT Press}.
-
-\hypertarget{ref-rakoczy2010bigger}{}
-Rakoczy, H., Hamann, K., Warneken, F., \& Tomasello, M. (2010). Bigger
-knows better: Young children selectively learn rule games from adults
-rather than from peers. \emph{British Journal of Developmental
-Psychology}, \emph{28}(4), 785--798.
-
-\hypertarget{ref-ramirez2017active}{}
-Ramirez-Loaiza, M. E., Sharma, M., Kumar, G., \& Bilgic, M. (2017).
-Active learning: An empirical study of common baselines. \emph{Data
-Mining and Knowledge Discovery}, \emph{31}(2), 287--313.
-
-\hypertarget{ref-ratcliff2008diffusion}{}
-Ratcliff, R., \& McKoon, G. (2008). The diffusion decision model: Theory
-and data for two-choice decision tasks. \emph{Neural Computation},
-\emph{20}(4), 873--922.
-
-\hypertarget{ref-reid2005adult}{}
-Reid, V. M., \& Striano, T. (2005). Adult gaze influences infant
-attention and object processing: Implications for cognitive
-neuroscience. \emph{European Journal of Neuroscience}, \emph{21}(6),
-1763--1766.
-
-\hypertarget{ref-rogoff1993guided}{}
-Rogoff, B., Mistry, J., Göncü, A., Mosier, C., Chavajay, P., \& Heath,
-S. B. (1993). Guided participation in cultural activity by toddlers and
-caregivers. \emph{Monographs of the Society for Research in Child
-Development}, i--179.
 
 \hypertarget{ref-rohde2014markers}{}
 Rohde, H., \& Frank, M. C. (2014). Markers of topical discourse in
@@ -5604,72 +4103,19 @@ Ross-sheehy, S., Oakes, L. M., \& Luck, S. J. (2003). The development of
 visual short-term memory capacity in infants. \emph{Child Development},
 \emph{74}(6), 1807--1822.
 
-\hypertarget{ref-rothe2015asking}{}
-Rothe, A., Lake, B. M., \& Gureckis, T. M. (2015). Asking useful
-questions: Active learning with rich queries. In \emph{CogSci}.
-
-\hypertarget{ref-rowe2017going}{}
-Rowe, M. L., Leech, K. A., \& Cabrera, N. (2017). Going beyond input
-quantity: Wh-questions matter for toddlers' language and cognitive
-development. \emph{Cognitive Science}, \emph{41}(S1), 162--179.
-
-\hypertarget{ref-ruggeri2015children}{}
-Ruggeri, A., \& Lombrozo, T. (2015). Children adapt their questions to
-achieve efficient search. \emph{Cognition}, \emph{143}, 203--216.
-
-\hypertarget{ref-ruggeri2016active}{}
-Ruggeri, A., Markant, D. B., Gureckis, T. M., \& Xu, F. (2016). Active
-control of study leads to improved recognition memory in children. In
-\emph{Proceedings of the 38th annual conference of the cognitive science
-society. austin, tx: Cognitive science society}.
-
-\hypertarget{ref-sage2011disentangling}{}
-Sage, K. D., \& Baldwin, D. (2011). Disentangling the social and the
-pedagogical in infants' learning about tool-use. \emph{Social
-Development}, \emph{20}(4), 825--844.
-
-\hypertarget{ref-schober1989understanding}{}
-Schober, M. F., \& Clark, H. H. (1989). Understanding by addressees and
-overhearers. \emph{Cognitive Psychology}, \emph{21}(2), 211--232.
-
-\hypertarget{ref-schulz2012origins}{}
-Schulz, L. (2012). The origins of inquiry: Inductive inference and
-exploration in early childhood. \emph{Trends in Cognitive Sciences},
-\emph{16}(7), 382--389.
-
-\hypertarget{ref-senju2008gaze}{}
-Senju, A., \& Csibra, G. (2008). Gaze following in human infants depends
-on communicative signals. \emph{Current Biology}, \emph{18}(9),
-668--671.
-
-\hypertarget{ref-settles2012active}{}
-Settles, B. (2012). Active learning. \emph{Synthesis Lectures on
-Artificial Intelligence and Machine Learning}, \emph{6}(1), 1--114.
-
-\hypertarget{ref-settles2008active}{}
-Settles, B., Craven, M., \& Friedland, L. (2008). Active learning with
-real annotation costs. In \emph{Proceedings of the nips workshop on
-cost-sensitive learning} (pp. 1--10).
-
-\hypertarget{ref-shafto2012epistemic}{}
-Shafto, P., Eaves, B., Navarro, D. J., \& Perfors, A. (2012a). Epistemic
-trust: Modeling children's reasoning about others' knowledge and intent.
-\emph{Developmental Science}, \emph{15}(3), 436--447.
+\hypertarget{ref-searle1975}{}
+Searle, J. (1975). Indirect speech acts. In P. Cole \& J. L. Morgan
+(Eds.), \emph{Syntax and semantics} (Vol. 3, pp. 59--82). Academic
+Press.
 
 \hypertarget{ref-shafto2012learning}{}
-Shafto, P., Goodman, N. D., \& Frank, M. C. (2012b). Learning from
-others the consequences of psychological reasoning for human learning.
+Shafto, P., Goodman, N. D., \& Frank, M. C. (2012). Learning from others
+the consequences of psychological reasoning for human learning.
 \emph{Perspectives on Psychological Science}, \emph{7}(4), 341--351.
 
-\hypertarget{ref-shafto2014rational}{}
-Shafto, P., Goodman, N. D., \& Griffiths, T. L. (2014). A rational
-account of pedagogical reasoning: Teaching by, and learning from,
-examples. \emph{Cognitive Psychology}, \emph{71}, 55--89.
-
-\hypertarget{ref-singh2009influences}{}
-Singh, L., Nestor, S., Parikh, C., \& Yull, A. (2009). Influences of
-infant-directed speech on early word recognition. \emph{Infancy},
-\emph{14}(6), 654--666.
+\hypertarget{ref-shannon1948}{}
+Shannon, C. E. (1948). A mathematical theory of communication.
+\emph{Bell Syst. Tech. J.}, \emph{27}, 623--656.
 
 \hypertarget{ref-siskind1996computational}{}
 Siskind, J. M. (1996). A computational study of cross-situational
@@ -5696,10 +4142,9 @@ Smith, L. B., Suanda, S. H., \& Yu, C. (2014). The unrealized promise of
 infant statistical word--referent learning. \emph{Trends in Cognitive
 Sciences}, \emph{18}(5), 251--258.
 
-\hypertarget{ref-stahl2015observing}{}
-Stahl, A. E., \& Feigenson, L. (2015). Observing the unexpected enhances
-infants' learning and exploration. \emph{Science}, \emph{348}(6230),
-91--94.
+\hypertarget{ref-sweetser1987}{}
+Sweetser, E. (1987). The definition of lie. \emph{Cultural Models in
+Language and Thought}, 43--66.
 
 \hypertarget{ref-tanenhaus2000eye}{}
 Tanenhaus, M. K., Magnuson, J. S., Dahan, D., \& Chambers, C. (2000).
@@ -5707,15 +4152,6 @@ Eye movements and lexical access in spoken-language comprehension:
 Evaluating a linking hypothesis between fixations and linguistic
 processing. \emph{Journal of Psycholinguistic Research}, \emph{29}(6),
 557--580.
-
-\hypertarget{ref-thiessen2005infant}{}
-Thiessen, E. D., Hill, E. A., \& Saffran, J. R. (2005). Infant-directed
-speech facilitates word segmentation. \emph{Infancy}, \emph{7}(1),
-53--71.
-
-\hypertarget{ref-tomasello1986joint}{}
-Tomasello, M., \& Farrar, M. J. (1986). Joint attention and early
-language. \emph{Child Development}, 1454--1463.
 
 \hypertarget{ref-trueswell2016perceiving}{}
 Trueswell, J. C., Lin, Y., Armstrong, B., Cartmill, E. A.,
@@ -5728,48 +4164,29 @@ Trueswell, J. C., Medina, T. N., Hafri, A., \& Gleitman, L. (2013).
 Propose but verify: Fast mapping meets cross-situational word learning.
 \emph{Cognitive Psychology}, \emph{66}(1), 126--156.
 
-\hypertarget{ref-uziel2007individual}{}
-Uziel, L. (2007). Individual differences in the social facilitation
-effect: A review and meta-analysis. \emph{Journal of Research in
-Personality}, \emph{41}(3), 579--601.
-
 \hypertarget{ref-vlach2013memory}{}
 Vlach, H. A., \& Johnson, S. P. (2013). Memory constraints on infants'
 cross-situational statistical learning. \emph{Cognition}, \emph{127}(3),
 375--382.
-
-\hypertarget{ref-vosniadou1992mental}{}
-Vosniadou, S., \& Brewer, W. F. (1992). Mental models of the earth: A
-study of conceptual change in childhood. \emph{Cognitive Psychology},
-\emph{24}(4), 535--585.
 
 \hypertarget{ref-vouloumanos2008fine}{}
 Vouloumanos, A. (2008). Fine-grained sensitivity to statistical
 information in adult word learning. \emph{Cognition}, \emph{107}(2),
 729--742.
 
-\hypertarget{ref-vouloumanos2007listening}{}
-Vouloumanos, A., \& Werker, J. F. (2007). Listening to language at
-birth: Evidence for a bias for speech in neonates. \emph{Developmental
-Science}, \emph{10}(2), 159--164.
-
-\hypertarget{ref-vredenburgh2016young}{}
-Vredenburgh, C., \& Kushnir, T. (2016). Young children's help-seeking as
-active information gathering. \emph{Cognitive Science}, \emph{40}(3),
-697--722.
-
 \hypertarget{ref-vul2014}{}
 Vul, E., Goodman, N., Griffiths, T. L., \& Tenenbaum, J. B. (2014). One
 and done? Optimal decisions from very few samples. \emph{Cognitive
 Science}, \emph{38}(4), 599--637.
 
-\hypertarget{ref-vygotsky1987zone}{}
-Vygotsky, L. (1987). Zone of proximal development. \emph{Mind in
-Society: The Development of Higher Psychological Processes},
-\emph{5291}, 157.
-
 \hypertarget{ref-watts2003}{}
 Watts, R. J. (2003). \emph{Politeness}. Cambridge University Press.
+
+\hypertarget{ref-watts1992}{}
+Watts, R. J., Ide, S., \& Ehlich, K. (1992). Introduction. In
+\emph{Politeness in language: Studies in its history, theory and
+practice (ed. by r.J. watts, s. ide, \& k. ehlich)} (pp. 1--17). Mouton
+de Gruyter.
 
 \hypertarget{ref-woodard2016two}{}
 Woodard, K., Gleitman, L. R., \& Trueswell, J. C. (2016). Two-and
@@ -5788,30 +4205,11 @@ Wu, R., Gopnik, A., Richardson, D. C., \& Kirkham, N. Z. (2011). Infants
 learn about objects from statistics and people. \emph{Developmental
 Psychology}, \emph{47}(5), 1220.
 
-\hypertarget{ref-wu2015caregivers}{}
-Wu, Z., \& Gros-Louis, J. (2015). Caregivers provide more labeling
-responses to infants' pointing than to infants' object-directed
-vocalizations. \emph{Journal of Child Language}, \emph{42}(3), 538--561.
-
-\hypertarget{ref-xu2007sampling}{}
-Xu, F., \& Tenenbaum, J. B. (2007a). Sensitivity to sampling in bayesian
-word learning. \emph{Developmental Science}, \emph{10}(3), 288--297.
-
-\hypertarget{ref-xu2007word}{}
-Xu, F., \& Tenenbaum, J. B. (2007b). Word learning as bayesian
-inference. \emph{Psychological Review}, \emph{114}(2), 245.
-
 \hypertarget{ref-yoon2018balancing}{}
 Yoon, E. J., MacDonald, K., Asaba, M., Gweon, H., \& Frank, M. C.
 (2018). Balancing informational and social goals in active learning. In
 \emph{Proceedings of the 40th annual conference of the cognitive science
 society}.
-
-\hypertarget{ref-yoonwon}{}
-Yoon, E. J., Tessler, Michael Henry, Goodman, N. D., \& Frank, M. C.
-(2017). ``I won't lie, it wasn't amazing'': Modeling polite indirect
-speech. In \emph{Proceedings of the 39th annual conference of the
-cognitive science society}.
 
 \hypertarget{ref-yoon2008communication}{}
 Yoon, J. M., Johnson, M. H., \& Csibra, G. (2008). Communication-induced
@@ -5831,21 +4229,6 @@ via cross-situational statistics. \emph{Psychological Science},
 \hypertarget{ref-yu2012embodied}{}
 Yu, C., \& Smith, L. B. (2012). Embodied attention and word learning by
 toddlers. \emph{Cognition}.
-
-\hypertarget{ref-yu2013joint}{}
-Yu, C., \& Smith, L. B. (2013). Joint attention without gaze following:
-Human infants and their parents coordinate visual attention to objects
-through eye-hand coordination. \emph{PloS One}, \emph{8}(11), e79659.
-
-\hypertarget{ref-yu2016social}{}
-Yu, C., \& Smith, L. B. (2016). The social origins of sustained
-attention in one-year-old human infants. \emph{Current Biology},
-\emph{26}(9), 1235--1240.
-
-\hypertarget{ref-yu2005role}{}
-Yu, C., Ballard, D. H., \& Aslin, R. N. (2005). The role of embodied
-intention in early lexical acquisition. \emph{Cognitive Science},
-\emph{29}(6), 961--1005.
 
 \hypertarget{ref-yurovsky2014algorithmic}{}
 Yurovsky, D., \& Frank, M. C. (2015). An integrative account of

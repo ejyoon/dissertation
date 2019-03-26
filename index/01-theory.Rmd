@@ -1,6 +1,6 @@
-# Children's information seeking within social learning contexts
+# A goal-based account of polite language
 
-\chaptermark{Information seeking within social contexts} 
+\chaptermark{A goal-based account of polite language} 
 
-```{r child = 'chapter_child_rmds/Active-social/active_social_theory.Rmd'}
+```{r child = 'chapter_child_rmds/ch1_goal_account/goal_account.Rmd'}
 ```
