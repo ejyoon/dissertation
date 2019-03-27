@@ -10,24 +10,31 @@ intro_figs_path <- "index/chapter_child_rmds/ch1_goal_account/figs/"
 ## Introduction
 
 Imagine that a stranger on the street approached you and asked: 
-“I’m sorry to bother you, but can you tell me the way to the city hall by any chance?”
+“I’m sorry to bother you, but could you tell me the way to the city hall?”
 Regardless of your answer, you probably would not feel puzzled or offended by the way in which the stranger decided to seek information that he needs. 
-This is in contrast with an alternative situation where the stranger said to you instead: “Tell me the way to the city hall.” 
+This is in contrast with a different situation where the stranger said to you instead: “Tell me the way to the city hall.” 
 In such case you would immediately notice the lack of politeness in his utterance, and your response to him may be negatively affected by the irritating oddity of the situation. 
-Similarly, a person who noticed her friend’s new, flashy dress could comment: “Your new dress is gorgeous!” even if the speaker actually felt that the dress was merely decent or even ugly. 
+Now imagine another context where a person was wearing a new, flashy dress, and her friend thought the dress was hideous. 
+It may actually be more surprising if the friend truthfully said "Your new dress is ugly," than if the friend decided to lie and say "Your new dress is gorgeous!"
 But why? Why are people expected to speak politely, when there are alternative utterances that can convey information about the world or the speaker’s intention more directly (“Tell me the way”) or truthfully (“Your dress is ugly”)?
 					
-Language is simultaneously both an informational and social tool. 
-Through language, people communicate information about the world, but also form their social relationships and establish their identity within the society. 
+Language is a virtuous tool that serves many functions. 
+Through language, people communicate information about the world, but also form their social relationships and establish their identity within their society. 
 On one hand, some theories of language functions describe language as a transmission device for transferring from a sender to a receiver information that reflects context or the state of affairs [@buhler1934; @shannon1948; @jakobson1960]. 
 The importance of informativity is further emphasized in more recent, influential theories on pragmatics of natural language, which explain how meanings beyond literal meanings of utterances arise [@grice1975; @searle1975]. 
-On the other hand, some linguistic theories, especially those with references to language development, identify social roles of language that people use to make contact with others and form relationships [@halliday1975; @ervin1967]. These theories underscore that linguistic rules that language users tend to follow represent the norms and structure of the community using the language [@ervin1969].
+On the other hand, some linguistic theories, especially those with references to language development, identify social roles of language that people use to make contact with others and form relationships [@halliday1975; @ervin1967]. 
+These theories underscore how linguistic rules that language users tend to follow represent the norms and structure of the community using the language [@ervin1969].
 
-Could polite speech reflect both the informational and the social roles of linguistic communication? Previous theoretical accounts for polite speech vary in their focus on informational versus social aspects of polite language. Some theories view polite speech as reflecting social rules and norms [@watts1992], some as abiding by communicative maxims that people are expected to follow in conversations, to be both as informative and as armative of their conversational partner as possible [@lakoff1973; @leech1983], and others as performing face management, or trying to maintain interactants’ good public self-image or reputation [@brown1987].
+Could polite speech reflect both the informational and the social roles of linguistic communication? 
+Previous theoretical accounts of polite speech vary in their focus on informational versus social aspects of polite language. 
+Some theories view polite speech as reflecting social rules and norms [@watts1992], 
+some as abiding by communicative maxims that people are expected to follow in conversations, to be both as informative and as affirmative of their conversational partner as possible [@lakoff1973; @leech1983], 
+and yet some others as performing face management, or trying to maintain interactants’ good public self-image or reputation [@brown1987].
 
 In this Chapter, I propose that that polite speech highlights both informational and social uses of language: 
-Polite speech reflects a principled tradeoff between the informational, epistemic content a speaker wants to convey (e.g. “I want to know the way to the city hall”) and other social concerns, such as prosocial or self-presentational goal that the speaker wants to express for herself and others (“I’m not rudely commanding you to tell me the answer, but making a request in a respectful way”). Thus, my goal is to unify previous theoretical frameworks in one, goal-driven account of polite speech. 
-In what follows, I will describe the goal-based account of polite speech in detail (Part I), and summarize previous models and theories of polite speech and situate them within the framework of the current goal-driven account (Part II). Then I will examine empirical evidence for goal-driven approach to polite speech: In Part III, I will focus on empirical work on adult production and comprehension of polite speech which show that adults reason about speaker goals in polite speech; and in Part IV, I will probe empirical evidence from developmental work that children’s production and understanding of polite speech advance as they grow older. In doing this I will show that children’s production and comprehension of polite speech is related to the relative complexity of polite speech based on its goal tradeoff.
+Polite speech reflects a principled tradeoff between the informational, epistemic content a speaker wants to convey (e.g. “I want you to tell me the way to the city hall”) and other social concerns, such as prosocial or self-presentational goal that the speaker wants to express for herself and others (“I’m not rudely commanding you to tell me the answer, but making a request in a respectful way”). Thus, my goal is to unify previous theoretical frameworks in one, goal-driven account of polite speech. 
+In what follows, I will describe the goal-based account of polite speech in detail (Part I), and summarize previous models and theories of polite speech and situate them within the framework of the current goal-driven account (Part II). 
+Then I will examine empirical evidence for goal-driven approach to polite speech: In Part III, I will focus on empirical work on adult production and comprehension of polite speech which show that adults reason about speaker goals in polite speech; and in Part IV, I will probe empirical evidence from developmental work that children’s production and understanding of polite speech advance as they grow older. In doing this I will show that children’s production and comprehension of polite speech is related to the relative complexity of polite speech based on its goal tradeoff.
 
 ## Part I: A Goal-based account of politeness
 
@@ -35,17 +42,22 @@ What does it mean to speak politely?
 Common instances of polite speech that occur to one’s mind probably include the simplest politeness markers, such as “please,” “thanks,” and “sorry.” 
 More complicated examples would involve ways in which, for example, a person make a request: under normally conceivable circumstances, 
 it would certainly be more polite to ask “Would it be too much trouble to ask you to complete this survey when you’re not too busy?” than to say “Do this survey now.” 
-The word "polite" can sometimes carry a negative undertone in its meaning, as in “she was just being polite,” which is likely to mean the speaker was hiding her genuine intentions to make the listener feel good. From these examples, we can identify a few aspects that a polite utterance may exhibit: observance of social rules, relatively high degree of elaborateness or indirectness, and dishonesty or disingenuousness in the interest of others’ feelings or reputations.
+The word "polite" can sometimes carry a negative undertone in its meaning, as in “she was just being polite,” which is likely to mean the speaker was hiding her genuine beliefs or intentions to make the listener feel good. 
+From these examples, we can identify a few characteristics that a polite utterance may exhibit: observance of social rules, relatively high degree of elaborateness or indirectness, and dishonesty or disingenuousness in the interest of others’ feelings or reputations.
 					
 More formal definitions of the term politeness also reveal common features that polite speech shows. Cambridge and Oxford Dictionaries respectively define what it means to be polite: “behaving in a way that is socially correct and shows respect for other people’s feelings”; and “courteous, behaving in a manner that is respectful or considerate of others; well-mannered” [@oxfordPolite; @cambridgePolite]. 
 Similar to the previous examples of polite speech, these definitions suggest politeness involves (1) observance of social expectations and (2) respect for others. 
 @boyer1702’s The English Theophrastus: of the Manners of the Age, compilation of texts describing the English life in the early eighteenth century, identifies a purpose in trying to be polite: “Politeness may be defined as a dextrous management of our Words and Actions whereby *men make other people have a better Opinion of us and themselves* [emphasis added].” Thus, according to the Theophrastus definition, speakers speak politely in order to boost the self-images of the interactants (both the speakers themselves and their addressees).
 					
-These common themes of politeness have been identified by previous theoretical accounts of polite speech (reviewed in detail in Part II). But each of the accounts only focused on certain aspects of polite speech but disregarded others, and their explanations for politeness have been viewed as largely disparate. Here I make a unification proposal, where these existing approaches to polite speech can be united under a single goal-based account of polite speech.
+These common themes of politeness have been identified by previous theoretical accounts of polite speech (reviewed in detail in Part II). But each of the accounts only focused on certain aspects of polite speech but disregarded others, and their explanations for politeness have been viewed as largely disparate. 
+Here I make a unification proposal, where these existing approaches to polite speech can be united under a single goal-based account of polite speech.
 
-I propose that polite speech reflects some degree of tradeoff between three main communicative goals that a speaker has: informational, prosocial, and (self-)presentational. *Informational goal* has to do with the speaker’s desire to convey the most accurate information in the most efficient manner. *Prosocial goal* is about the speaker’s desire to retain the listener's acceptable self-image as a decent individual and as a reputable member of society. *Presentational goal* reflects the speaker's desire to present the speaker herself in a good light, to appear to be a kind and helpful individual. Below I describe each goal in more detail.
+I propose that polite speech reflects some degree of tradeoff between three main communicative goals: informational, prosocial, and (self-)presentational. 
+*Informational goal* has to do with the speaker’s desire to convey the most accurate information in the most efficient manner. 
+*Prosocial goal* is about the speaker’s desire to retain the listener's acceptable self-image as a decent individual and as a reputable member of society. 
+*Presentational goal* reflects the speaker's desire to present the speaker herself in a good light, to appear to be a kind and helpful individual. Below I describe each goal in more detail.
 
-### Informational goal. 
+### Informational goal
 
 A speaker’s informational goal, i.e. to prioritize information transfer in communication, may involve two closely related notions: informativity and truthfulness. 
 Informativity is the notion of conveying the intended meaning in the most efficient and precise manner possible. 
@@ -83,15 +95,45 @@ What could be an informational goal in its perlocutionary sense?
 In being truthful, speakers may ultimately want to maintain their moral obligation to tell the truth to others. This obligation is in line with Western philosophers’ argument throughout the history that it is morally wrong to lie [@augustine1952; @kant1949], although there have been debates on whether the degree of wrongness may depend on context [e.g., if the speaker was telling a white lie; @sweetser1987]. 
 For example, if Alice said to Bob “Your cookies were good,” Alice’s locutionary goal would be to convey to Bob her intended meaning that his presentation was good (but perhaps not amazing), whereas her perlocutionary goal would be for Bob to think that the presentation was good, which was (apparently) the truth; Alice thereby upholds her moral obligation to tell the truth to Bob. Alice’s goal to be truthful, then, is achieved in both locutionary and perlocutionary senses.
 
+Besides an informational goal, a speaker may also want to address concerns that are social in nature: having to do with interacting and maintaining good relationships with other people. 
+Below I describe two related but different goals that speakers may want to accomplish for social reasons: prosocial and presentational. 
 
+### Prosocial goal
 
+A prosocial goal involves the speaker’s desire to to follow social norms and make others feel happy and respected. 
+Speakers can try to accomplish the prosocial goal in several ways, one of which is social norm observance: abiding by social norms and expectations. 
+There may be simple rules such as “say please when you make a request” or “say thanks to express gratitude,” but sometimes the norms can be more complex.
+Speakers should avoid saying utterances that are *too* polite, to the extent that the utterances become marked and are no longer considered “optimally polite.” 
+For example, a request for opening a window by saying “Sorry, could you open that window behind you? Thanks.” would be a normal, socially expected way to make the request; 
+but a request such as “I’m so terribly sorry to bother you with this irritating request, but if you don’t mind, would you care to open that window behind you, only if it’s not going to be too much trouble for you?” would be a signal to the addressee that something in the situation is odd and marked; 
+either that the request involves a higher cost than is normally expected for opening a window, or the speaker is unusually afraid of incurring a debt to the addressee, etc.
+This principle of social norm observance is then parallel to Grice’s Cooperative Principle, in that the CP outlines normative expectations for a speaker who wants to convey information as efficiently as possible, whereas the current principle of social norm observance deals with normative expectations for a speaker who wants to maintain social order. Thus, if the CP is a principle of information transfer, social norm observance is a principle of social order. Both principles call for unmarkedness of utterances, and when the utterances are marked due to a violation of its rules, then the listener will try to infer reasons for such violation.
 
+Speakers may also try to be prosocial through face management. 
+*Face* is a notion introduced by @goffman1967, and represents an individual’s publicly manifest self-esteem. 
+He argued that people perform interpersonal rituals whereby face maintenance is a fundamental condition of the interactions. 
+Goffman identified two kinds of faces that people want to maintain: *positive face*, or the want for solidarity or approval from others, and *negative face*, or the want to be free from imposition. Interactants will always want to preserve each other’s face, and so potential face threats will somehow have to be modified. 
+@brown1987 suggested that a strategy for such facework is politeness, which they defined as deviation from Gricean informativity (described in detail in Part II).
 
+For example, a request such as “You couldn’t possibly pass the salt, could you?” would be an example of negative politeness strategy [i.e. a strategy to save negative face; @brown1987, p. 136] as the speaker is being pessimistic about the compliance of her request and not assuming that the listener has to be willing or able to do any acts predicated of him. 
+On the other hand, utterances that emphasize the common ground between the speaker and listener (i.e. that the speaker and listener share the same goals, values, knowledge, etc.), and address the fulfillment of the listener’s want are positive politeness strategies; for example, “What a beautiful vase this is! Where did it come from?” [@brown1987, p. 103] saves the listener’s positive face by attending to the listener’s wants and interests. 
+When face management is in conflict with informational goals, the meaning of utterance would differ depending on which goal the speaker decided to prioritize. As described earlier, if Ann said to Bob, “Your presentation was good,” and she wanted to prioritize informational goals only, then her utterance would indicate that Bob’s presentation was truly good (though perhaps not amazing). 
+However, if Ann spoke with a prosocial goal to save Bob’s face and wanted to boost his self-image instead, then Bob’s presentation actually could be bad rather than good.
 
+### Presentational goal
 
+Language also reflects a speaker’s goal to present themselves in a good light, thereby saving the speaker's own face. 
+This last goal is related to the informational and prosocial goals previously described,
+in that speakers must be mindful of the listener's want to be informed or to maintain his positive self-image, 
+but instead of actually *being* maximally informative or prosocial, presentational goal concerns *appearing* to care about these goals.
+Thus, a speaker may engage in a recursive reasoning about a listener who thinks about a speaker who wants to be informative and/or prosocial, 
+and then can produce utterances to make the listener *think* that the speaker is being informative, being prosocial, or both of those things. 
+For example, rather than saying “your talk was terrible,” people are more likely to say “it wasn’t bad” to *indirectly* suggest that the talk was not great, while signaling their good intention to be nice and not say the harsh truth (see Chapter II for the formal definition and more detailed description of the presentational goal). 
 
-
-
+## Part II: Previous theoretical accounts of polite speech
+					
+In Part II, I aim to (i) describe different classes of theoretical approaches to the understanding of polite speech; (ii) for each class, explain how the approach can be situated within the current proposal for the goal-based account for polite speech; and (iii) discuss what advantages the goal-based account can offer beyond the existing approaches. 
+Summary of prominent theories and their implications within goal-based framework can be found in Table FIXME.
 
 
 
