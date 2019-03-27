@@ -135,10 +135,13 @@ For example, rather than saying “your talk was terrible,” people are more li
 In Part II, I aim to (i) describe different classes of theoretical approaches to the understanding of polite speech; (ii) for each class, explain how the approach can be situated within the current proposal for the goal-based account for polite speech; and (iii) discuss what advantages the goal-based account can offer beyond the existing approaches. 
 Summary of prominent theories and their implications within goal-based framework can be found in Table FIXME.
 
-
-
-
-
+\newpage
+\blandscape
+Landscape
+```{r}
+summary(cars)
+```
+\elandscape
 
 
 In the next section, I present an overview of the empirical work in the dissertation, linking it to the integrative framework discussed in this chapter. I also highlight the relevant pieces of the broader framework that the empirical work addresses. Importantly, these case studies tend to focus on eye movements that gather task-related information to guide future action, as opposed to exploratory eye movements in a novel environment. This feature makes them a good candidate for the active-social framework inspired by OED since these models were developed to explain information seeking in the context of well-defined tasks and clear learning goals.

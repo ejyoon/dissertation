@@ -43,6 +43,10 @@ header-includes:
 - \usepackage{longtable}
 - \usepackage{afterpage}
 - \usepackage{threeparttable}
+- \usepackage{pdflscape}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+
 ---
 
 <!--
