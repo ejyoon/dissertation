@@ -286,10 +286,10 @@ plot_var <- ggplot(ms_var,
   scale_fill_solarized() +
   guides(fill=FALSE)
 
-plot_var
-
 ggsave("speaker_production_cor.png", plot = plot_var, width = 7, height = 4,
        path = here::here(file_path))
+
+knitr::include_graphics(here::here(file_path, "speaker_production_cor.png"), dpi = 130)
 
 cor2_mainMod = with(ms_var, cor(data_prob, model_prob))^2
 
@@ -373,10 +373,10 @@ plot.comp <- ms_utt %>%
         legend.position="bottom") +
   guides(color=guide_legend(title=NULL))
 
-plot.comp
-
 ggsave("model_comparisons.png", plot = plot.comp, width = 11, height = 4,
        path = here::here(file_path))
+
+knitr::include_graphics(here::here(file_path, "model_comparisons.png"), dpi = 130)
 
 ```
 
