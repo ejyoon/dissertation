@@ -12,226 +12,263 @@ knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F,
                       fig.align = 'center', fig.pos = 't')
 ```
 
-# Supplementary materials for Chapter 1
-
-## Mathematical details of Optimal Experiment Design
-
-This supplement contains the mathematical details of the OED approach as described in @coenen2017asking. The goal is to provide a concrete foundation for the conceptual analysis of how social learning contexts can influence different components of active learning. 
-
-The OED model quantifies the *expected utility* of different information seeking actions. Formally, the set of queries is defined as $Q_1, Q_2,..., Q_n = \{Q\}$. The expected utility of each query ($EU(Q)$) is a function of two factors: (1) the probability of obtaining a specific answer $P(a)$ weighted by (2) the usefulness of that answer for achieving the learning goal $U(a)$.
-
-$$EU(Q) = \sum_{a\in q}{P(a)U(a)}$$
-\noindent
-There are a variety of ways to define the usefulness function to score each answer. An exhaustive review is beyond the scope of this paper (for a detailed analysis of different approaches, see @nelson2005finding). One standard method is to use *information gain*, which is defined as the change in the learner's overall uncertainty (difference in entoropy) before and after receiving an answer.
-
-$$U(a) = ent(H) - ent(H|a)$$
-
-\noindent
-Where $ent(H)$ is defined using Shannon entropy ^[Shannon entropy is a measure of unpredictability or amount of uncertainty in the learner's probability distribution over hypotheses. Intuitively, higher entropy distributions are more uncertain and harder to predict. For example, if the learner believes that all hypotheses are equally likely, then they are in a state of high uncertainty/entropy. In contrast, if the learner firmly believes in one hypothesis, then uncertainty/entropy is low.] [@mackay2003information], which provides a measure of the overall amount of uncertainty in the learner's beliefs about the candidate hypotheses. 
-
-$$ent(H) = -\sum_{a\in A}{P(h)log_2P(h)}$$
-\noindent
-The conditional entropy computation is the same, but takes into account the change in the learner's beliefs after seeing an answer.
-
-$$ ent(H|a) = -\sum_{h\in H}{P(h|a)logP(h|a)} $$
-\noindent
-To calculate the change in the learner's belief in a hypothesis $P(h|a)$, we use Bayes rule. 
-
-$$ P(h|a) = \frac{P(h)P(a|h)}{P(a)} $$ 
-
-\noindent
-If the researcher defines all these parts of the OED model (hypotheses, questions, answers, and the usefulness function), then selecting the optimal query is straightforward. The learner performs the expected utility computation for each query in the set of possible queries and picks the one that maximizes utility. In practice, the learner considers each possible answer, scores the answer with the usefulness function, and weights the score using the probability of getting that answer. 
-
-Before reviewing the behavioral evidence for OED-like reasoning in adults and children, I will present a worked example of how to compute the expected utility of a single query. The goal is to provide simple calculations that illustrate how reasoning about hypotheses, questions, and answers can lead to selecting useful actions. This example is slightly modified from @nelson2005finding.  
-
-Imagine that you are a biologist, and you come across a new animal that you think belongs to one of two species: "glom" or "fizo." You cannot directly query the category identity, but you can gather information about the presence or absence of two features (eats meat? or is nocturnal?) that you know from prior research are more or less likely for each of the species. The following probabilities summarise this prior knowledge:
-
-  * $P(eatsMeat \mid glom) = 0.1$  
-  * $P(eatsMeat \mid fizo) = 0.9$
-  * $P(nocturnal \mid glom) = 0.3$  
-  * $P(nocturnal \mid fizo) = 0.5$ 
-
-\noindent  
-You also know from previous research that the probability of seeing a glom or a fizo in the wild is:
-
-  * $P(glom) = 0.7$ 
-  * $P(fizo) = 0.3$ 
-
-\noindent  
-Which feature should you test: eats meat? or sleeps at night? Intuitively, it seems better to test whether the creature eats meat because an answer to this question provides good evidence about whether the animal is a fizo since $P(eatsMeat \mid fizo) = 0.9$. However, the OED computation allows the biologist to go beyond this intuition and compute precisely how much better it is to ask the "eats meat?" question. All the scientist has to do is pass her knowledge about the hypotheses and features through the expected utility computation. 
-
-Here are the steps of the OED computation for calculating the utility of the "eats meat?" question. First, we use Bayes rule to calculate how much our beliefs would change if we received a "yes" or a "no" answer. ^[Note that the $P(eatsMeat)$ term is computed by taking $P(eatsMeat) = [P(eatsMeat \mid glom) \ times P(glom)] + [P(eatsMeat \mid fizo) \times P(fizo)] = (0.1 \times 0.7) + (0.9 \times 0.3) = 0.34$]
-
-$$ P(glom \mid eatsMeat) = \frac{P(eatsMeat \mid glom) \times P(glom)}{P(eatsMeat)} = \frac{0.1 \times 0.7}{0.34} = 0.21 $$ 
-
-\noindent
-Next, we calculate the uncertainty over the Species hypothesis before doing any experiment. We do this by computing the prior entropy.
-
-$$
-\begin{aligned}
-ent(Species) &= -\sum_{h\in H}{P(h) \times log_2P(h)} \\
- &= [-P(glom) \times log_2P(glom)]+[-P(fizo) \times log_2P(fizo)]\\
- &= [-(0.7 \times log_2(0.7)] + [-(0.3 \times log_2(0.3)]\\
- &= 0.88
-\end{aligned}
-$$
-
-\noindent
-To calculate information gain, we also need to compute our uncertainty over hypotheses conditional on seeing each answer, or the posterior entropy. First, for the "yes" answer:
-
-$$
-\begin{aligned}
-ent(Species|eatsMeat = yes) &= -\sum_{a\in A}P(Species \mid eatsMeat = yes) \times log_2P(species \mid eatsMeat = yes) \\
-&= [0.21 \times log_2(0.21)] + [0.79 \times log_2(0.79)]\\
-&=  0.73
-\end{aligned}
-$$
-
-\noindent
-We use the difference between the prior and posterior entropy to compute the utility of the "yes" answer.
-
-$$
-\begin{aligned}
-U(a = yes) &= ent(Species) - ent(Species \mid eatsMeat = yes)\\
-&= 0.88 - 0.73 \\
-&= 0.15
-\end{aligned}
-$$
-
-\noindent
-Next, we do the same process for the "no" answer. First, we calculate the posterior entropy.
-
-$$ 
-\begin{aligned}
-ent(Species|eatsMeat = no) &= -\sum_{a\in A}{P(Species \mid eatsMeat = no) \times log_2P(species \mid eatsMeat = no)}\\
-&= [0.95 \times log_2(0.95)] + [0.05 \times log_2(0.05)]\\
-&=  0.27
-\end{aligned}
-$$
-
-\noindent
-Again, we use the difference between the prior and posterior entropy to compute the utility of the "no" answer.
-
-$$ 
-\begin{aligned}
-U(a = no) &= ent(Species) - ent(Species \mid eatsMeat = no)\\
-&= 0.88 - 0.27 \\
-&= 0.61
-\end{aligned}
-$$
-
-\noindent
-Note that the $U(a = no) > U(a = yes)$. This captures the intuition that learning that the animal does not eat meat would provide strong evidence against the "fizo" hypothesis since $P(eatsMeat \mid fizo) = 0.9$. Finally, to compute the overall expected information gain for the **"eats meat?" question**, we weight the utility of each answer by its probability:
-
-$$
-\begin{aligned}
-EU(Q = eatsMeat) &= \sum_{a\in A}{P(a)U(a)} \\
-&= [P(eatsMeat = yes) \times U(eatsMeat = yes)] + \\& \qquad \qquad \qquad [P(eatsMeat = no) \times U(eatsMeat = no)]\\
-&= [0.34 \times 0.15] + [0.66 \times 0.61]\\
-&= 0.46
-\end{aligned}
-$$
-
-If we performed the same steps to calculate the expected utility of the "sleeps at night?" question, we get $EU(Q = sleepsNight) = 0.026$. So if the biologist wants to maximize the chance of gaining useful information, she should select the "eats meat?" experiment since $EU(Q = eatsMeat) > EU(Q = sleepsNight)$.
-
-
 # Supplementary materials for Chapter 2
 
-In this appendix, we present four pieces of supplemental information. First, we provide details about the Bayesian models used to analyze the data. Second, we present a sensitivity analysis that provides evidence that the estimates of the associations between age/vocabulary and accuracy/reaction time (RT) are robust to different parameterizations of the prior distribution and different cutoffs for the analysis window. Third, we present the results of a parallel set of analyses using a non-Bayesian approach to show that these results are consistent regardless of choice of analytic framework. And fourth, we present two exploratory analyses measuring the effects of phonological overlap and iconicity on RT and accuracy. In both analyses, we did not see evidence that these factors changed the dynamics of eye movements during ASL processing
+In this appendix, we present FIXME.
 
-## Model Specifications
+## Model details
 
-Our key analyses use Bayesian linear models to test our hypotheses of interest and to estimate the associations between age/vocabulary and RT/accuracy. Figure S1 (Accuracy) and S2 (RT) present graphical models that represent all of the data, parameters, and other variables of interest, and their dependencies. Latent parameters are shown as unshaded nodes while observed parameters and data are shown as shaded nodes. All models were fit using JAGS software (Plummer, 2003) and adapted from models in Kruschke (2014) and Lee and Wagenmakers (2014).
+The *literal listener* $L_0$ is a simple Bayesian agent that takes the utterance to be true:
 
-### Accuracy
+$$P_{L_0}(s | w) \propto [\![ w ]\!] (s) * P(s).$$
 
-```{r, fig.cap = "Graphical model representation of the linear regression used to predict accuracy. The shaded nodes represent observed data (i.e., each participant's age, vocabulary, and mean accuracy). Unshaded nodes represent latent parameters (i.e., the intercept and slope of the linear model).", fig.scap="Graphical representation of the accuracy model in Experiment 1.1."}
+\noindent where $[\![ w ]\!](s)$ is the truth-functional denotation of the utterance
+$w$ (i.e. the utterance's literal meaning): It is a function
+that maps world-states $s$ to Boolean truth values. The literal
+meaning is used to update the literal listener's prior beliefs
+over world states $P(s)$.
 
-include_graphics(path = here::here(data_code_path_sol, "figures/acc_model.png"))
+The *speaker* $S_1$ chooses utterances approximately optimally given a utility function, which can be decomposed into two components. 
+First, informational utility ($U_{inf}$) is the amount of information a literal listener $L_0$ would still not know about world state $s$ after hearing a speaker's utterance $w$. 
+Second, social utility ($U_{soc}$) is the expected subjective utility of the state inferred given the utterance $w$. 
+The utility of an utterance subtracts the cost $c(w)$ from the weighted combination of the social and epistemic utilities. 
+
+$$U(w; s; \phi_{S_1}) = \phi_{S_1} \cdot \ln(P_{L_0}(s \mid w)) + (1 - \phi_{S_1}) \cdot \mathbb{E}_{P_{L_0}(s \mid w)}[V(s)] - C(w).$$
+
+\noindent The speaker then chooses utterances $w$ softmax-optimally given the state $s$ and his goal weight mixture $\phi_{S_1}$: 
+
+$$P_{S_1}(w \mid s, \phi_{S_1}) \propto \mathrm{exp}(\lambda_{1} \cdot \mathbb{E}[U(w; s; \phi_{S_1})]).$$
+
+## Literal semantic task
+
+We probed judgments of literal meanings of the target words assumed by our model and used in our main experiment. 
+
+### Participants 
+
+51 participants with IP addresses in the United States were recruited on Amazon’s Mechanical Turk. 
+
+### Design and Methods
+
+We used thirteen different context items in which a speaker evaluated a performance of some kind. 
+For example, in one of the contexts, Ann saw a presentation, and Ann’s feelings toward the presentation (true state) were shown on a scale from zero to three hearts (e.g., two out of three hearts filled in red color; see Figure\ \ref{fig:screenshot} for an example of the heart scale). 
+The question of interest was "Do you think Ann thought the presentation was / wasn’t X?" and participants responded by choosing either “no” or “yes.” 
+The target could be one of four possible words: *terrible*, *bad*, *good*, and *amazing*, giving rise to eight different possible utterances (with negation or no negation). 
+Each participant read 32 scenarios, depicting every possible combination of states and utterances. 
+The order of context items was randomized, and there were a maximum of four repeats of each context item per participant. 
+
+### Behavioral results
+
+We analyzed the data by collapsing across context items.
+For each utterance-state pair, we computed the posterior distribution over the semantic weight (i.e., how consistent X utterance is with Y state) assuming a uniform prior over the weight (i.e., a standard Beta-Binomial model). 
+Meanings of the words as judged by participants were as one would expect (Figure\ \ref{fig:litsem}). 
+
+```{r litsem, echo=FALSE, fig.width = 10, fig.height = 4, out.width = "\\textwidth", fig.pos = "!h", fig.cap = "Semantic measurement results. Proportion of acceptances of utterance types (shown in different colors) combined with target words (shown in different facets) given the true state represented on a scale of hearts. Error bars represent 95\\% confidence intervals."}
+d <- read.csv(here::here(file_path, "literal_semantics.csv")) %>%
+  mutate(utterance = fct_relevel(utterance, "terrible", "bad", "good", "amazing"))
+
+ms <- d %>%
+  mutate(positivity = fct_recode(positivity,
+                                "it was ~ " = "it was ___",
+                                "it wasn't ~ " = "it wasn't ___"
+                                ),
+         positivity = fct_relevel(positivity, "it was ~ ")) %>%
+  group_by(positivity, state, utterance, subid) %>%
+  summarize(
+            judgment = mean(judgment, na.rm=TRUE)
+          ) %>%
+  group_by(positivity, state, utterance) %>%
+  multi_boot_standard(col = "judgment") %>%
+  mutate(judgment = mean)
+
+qplot(state, judgment, 
+      colour = positivity,
+      data=ms) + 
+  geom_line(aes(group=positivity)) +
+  facet_grid(.~utterance) +
+  xlab("state (0=worst)") +
+  ylab("proportion of\n acceptances") +
+  geom_errorbar(aes(ymin=ci_lower,ymax=ci_upper,width=.1)) +
+  theme_few(base_size = 16) +
+  scale_color_ptol(name="")+
+  # scale_color_solarized() +
+  theme(legend.position = "bottom") +
+  geom_hline(yintercept = .5, lty=2)
+
+ggsave("literal_semantics.png", width = 7, height = 3,
+       path = here::here(file_path))
 ```
 
-To test the association between age/vocabulary and accuracy we assume each participant's mean accuracy is drawn from a Gaussian distribution with a mean, $\mu$, and a standard deviation, $\sigma$. The mean is a linear function of the intercept, $\alpha$, which encodes the expected value of the outcome variable when the predictor is zero, and the slope, $\beta$, which encodes the expected change in the outcome with each unit change in the predictor (i.e., the strength of association). 
+## Data analysis
 
+We used `r cite_r(here::here(file_path, "politeness.bib"))` for all our analyses.
 
-For $\alpha$ and $\sigma$, we use vague priors on a standardized scale, allowing the model to consider a wide range of plausible values. Since the slope parameter $\beta$ is critical to our hypothesis of a linear association, we chose to use an informed prior: that is, a truncated Gaussian distribution with a mean of zero and a standard deviation of one on a standardized scale. Centering the distribution at zero is conservative and places the highest prior probability on a null association, to reduce the chance that our model overfits the data. Truncating the prior encodes our directional hypothesis that accuracy should increase with age and larger vocabulary size. And using a standard deviation of one constrains the plausible slope values, thus making our alternative hypothesis more precise. We constrained the slope values based on previous research with children learning spoken language showing that the average gain in accuracy for one month of development between 18-24 months to be ~1.5%  (Fernald, Zangl, Portillo, & Marchman, 2008). 
+## Full statistics on human data
 
-### Reaction Time
-
-```{r, fig.cap = "Graphical model representation of the linear regression plus latent mixture model (i.e., guessing model). The model assumes that each individual participant's first shift is either the result of guessing or knowledge. And the latent indicator $z_i$ determines whether that participant is included in the linear regression estimating the association between age/vocabulary and RT.", fig.scap="Graphical representation of the RT model in Experiment 1.1."}
-
-include_graphics(path = here::here(data_code_path_sol, "figures/rt_model.png"))
+```{r brmTab, results="asis"}
+apa_table(brm.tab, caption= "Predictor mean estimates with standard deviation and 95% credible interval information for a Bayesian linear mixed-effects model predicting negation production based on true state and speaker goal (with both-goal as the reference level).")
 ```
 
-The use of RT as a processing measure is based on the assumption that the timing of a child's first shift reflects the speed of their incremental language comprehension. Yet, some children have a first shift that seems to be unassociated with this construct: their first shift behavior appears random. We quantify this possibility for each participant explicitly (i.e., the probability that the participant is a "guesser") and we create an analysis model where participants who were more likely to be guessers have less of an influence on the estimated relations between RT and age/vocabulary.
+We used Bayesian linear mixed-effects models [`brms` package in R; @R-brms] using crossed random effects of true state and goal with maximal random effects structure [@gelman2006data; @barr2013random]. The full statistics are shown in Table \@ref(tab:brmTab).
 
-To quantify each participant's probability of guessing, we computed the proportion of signer-to-target (correct) and signer-to-distracter (incorrect) shifts for each child. We then used a latent mixture model in which we assumed that the observed data, k_i, were generated by two processes (guessing and knowledge) that had different overall probabilities of success, with the "guessing group" having a probability of 50%, $\psi$, and the "knowledge" group having a probability greater than 50%, $\phi$. The group membership of each participant is a latent indicator variable, $z_i$, inferred based on that participant's proportion of correct signer-to-target shifts relative to the overall proportion of correct shifts across all participants (see Lee & Wagenmakers (2014) for a detailed discussion of this modeling approach). We then used each participant's inferred group membership to determine whether they were included in the linear regression. In sum, the model allows participants to contribute to the estimated associations between age/vocabulary and RT proportional to our belief that they were guessing.
+## Model fitting and inferred parameters
 
-As in the Accuracy model, we use vague priors for $\alpha$ and $\sigma$ on a standardized scale. We again use an informed prior for $\beta$, making our alternative hypothesis more precise. That is, we constrained the plausible slope values based on previous research with children learning spoken language showing that the average gain in RT for one month of development between 18-24 months to be ~30 ms (Fernald, Zangl, Portillo, & Marchman, 2008).
+```{r otherParams, results='asis'}
+other_tab <- d_other_s %>%
+    mutate(model = case_when(
+    model == "inf" ~ "ninformational only", 
+    model == "soc" ~ "social only", 
+    model == "pres" ~ "presentational only", 
+    model == "inf_pres" ~ "ninformational, presentational", 
+    model == "inf_soc" ~ "ninformational, social", 
+    model == "soc_pres" ~ "social, presentational", 
+    model == "full" ~ "ninformational, social, presentational" 
+  )) %>%
+  mutate(param = round(param, digits=2)) %>%
+  spread(parameter, param)
 
-## Sensitivity Analysis: Prior Distribution and Window Selection
+colnames(other_tab) <- c("Model", "Cost of negation", "Speaker optimality")
 
-```{r, fig.cap = "Coefficient plot for the slope parameter for four different parameterizations of the prior and for three different analysis windows. Each panel shows a different model. Each point represents a coefficient measuring the strength of association between the two variables. Error bars are 95\\% HDIs around the coefficient. Color represents the three different analysis windows.", fig.scap="Results of sensitivity analysis for Experiment 1.1."}
-
-include_graphics(path = here::here(data_code_path_sol, "figures/supp_coef_plot.png"))
+apa_table(other_tab, escape=FALSE, caption = "Inferred negation cost and speaker optimality parameters for all model variants.")
 ```
 
-We conducted a sensitivity analysis to show that our parameter estimates for the associations between accuracy/RT and age/vocabulary are robust to decisions about (a) the analysis window and (b) the specification of the prior distribution on the slope parameter. Specifically, we varied the parameterization of the standard deviation on the slope, allowing the model to consider a wider or narrower range of values to be plausible a priori. We also fit these different models to two additional analysis windows +/- 300 ms from the final analysis window: 600-2500 ms (the middle 90% of the RT distribution in our experiment).
+Other than speaker goal mixture weights explained in the main text (shown in Table \@ref(tab:phi)), the full model has two global parameters: the speaker's soft-max parameter $\lambda_{S_2}$ and soft-max paramater of the hypothetical speaker that the pragmatic listener reasons about $\lambda_{S_1}$.
+$\lambda_{S_1}$ was 1, and $\lambda_{S_2}$ was inferred from the data: 
+We put a prior that was consistent with those used for similar models in this model class: $\lambda_{S_2}$ ~ $Uniform(0,20)$.
+Finally, we incorporate the literal semantics data into the RSA model by maintaining uncertainty about the semantic weight of utterance $w$ for state $s$, for each of the states and utterances, and assuming a Beta-Binomial linking function between these weights and the literal semantics data (see *Literal semantics task* above).
+We infer the posterior distribution over all of the model parameters and generate model predictions based on this posterior distribution using Bayesian data analysis [@lee2014]. 
+We ran 4 MCMC chains for 80,000 iterations, discarding the first 40,000 for burnin. 
+The inferred values of parameters are shown in Table \@ref(tab:otherParams).
 
-```{r}
-d_sensitivity <- read_delim(here::here(data_code_path_sol, "data/processed_data/sol_supp_sensitivity_table.txt"), delim = "\t")
+## Data Availability
 
-d_sensitivity %>% 
-  kable("latex", 
-        booktabs = T, 
-        caption = "Bayes Factors for all four linear models fit to three different analysis windows using four different parameterizations of the prior distribution for the slope parameter.",
-        caption.short = "Results for sensitivity analysis for Experiment 1.1") %>%
-  kable_styling(latex_options = "scale_down") %>% 
-  row_spec(row = 0, bold = TRUE) %>% 
-  column_spec(column = 2, width = "3cm") %>% 
-  column_spec(column = 1, width = "3.5cm") 
+Our model, preregistration of hypotheses, procedure, data, and analyses are available at \url{https://github.com/ejyoon/polite_speaker}. 
+
+## Supplemental Figures
+
+```{r utterance, echo=FALSE, out.width = "\\textwidth", fig.pos = "!h", fig.height=6, fig.cap="Experimental results (solid lines) and fitted predictions from the full model (dashed lines) for speaker production. Proportion of utterances chosen (utterance type – direct vs. indirect – in different colors and words shown on x-axis) given the true states (columns) and speaker goals (rows). Error bars represent 95\\% confidence intervals for the data and 95\\% highest density intervals for the model. Black dotted line represents the chance level."}
+plot.utt <- ggplot(data=ms_utt %>%
+                     filter(source == "data" | model == "full") %>%
+  mutate(positivity = fct_recode(positivity, 
+                               "It was ~" = "yes",
+                               "It wasn't ~" = "not",
+                               "It was ~" = "It was~",
+                               "It wasn't ~" = "It wasn't~"
+                               ),
+         positivity = fct_relevel(positivity, "It was ~")) %>%
+                     mutate(
+                       # positivity = fct_relevel(positivity, "not"),
+                            true_state = fct_recode(true_state,
+                                                    "0 heart" = "0", 
+                                                    "1 heart" = "1", 
+                                                    "2 hearts" = "2", 
+                                                    "3 hearts" = "3" 
+                                                    ),
+                            goal = fct_recode(goal, "kind" = "social")), 
+       aes(x=utterance, y=prob, group = interaction(positivity, source), colour = positivity, linetype = source)) +
+  geom_line()+
+  facet_grid(goal~true_state, labeller = labeller(goal = label_both)) +
+  xlab("utterance") +
+  ylab("proportion chosen") +
+  geom_linerange(aes(ymin=ci_lower,ymax=ci_upper), position="dodge") +
+  geom_hline(yintercept=.1, lty=2) +
+  ylim(0,1)+
+  scale_color_ptol()+
+  # scale_color_solarized(labels = c("It wasn't~","It was~"))+
+  ggthemes::theme_few()+
+  theme(axis.text.x = element_text(angle = 45, vjust=0.5),
+        legend.position = "bottom") +
+  guides(colour=guide_legend(title="utterance type")) +
+  scale_linetype_discrete(labels = c("data", "model"))
+
+plot.utt
+
+ggsave("speaker_production_utt_wMod.png", plot = plot.utt, width = 7, height = 5,
+       path = here::here(file_path))
 ```
 
+```{r comparisonAll, echo=FALSE, out.width = "\\textwidth", fig.pos = "!h", fig.width=11, fig.height=7, fig.cap="Comparison of predictions for proportion of utterances chosen by pragmatic speaker from possible model variants (left) and human data (rightmost) for average proportion of negation produced among all utterances, given true state of 0 heart and speaker with a goal to be informative (top), kind (middle), or both (bottom). Gray dotted line indicates chance level at 12.5\\%."}
+plot.comp.all <- ms_utt %>%  
+  mutate(model = case_when(
+    model == "NA" ~ "Human data", 
+    model == "inf" ~ "model: \ninformational \nonly", 
+    model == "soc" ~ "model: \nsocial only", 
+    model == "pres" ~ "model: \npresentational \nonly", 
+    model == "inf_pres" ~ "model: \ninformational, \npresentational", 
+    model == "inf_soc" ~ "model: \ninformational, \nsocial", 
+    model == "soc_pres" ~ "model: \nsocial, \npresentational", 
+    model == "full" ~ "model: \ninformational, \nsocial, \npresentational" 
+  ),
+  model = fct_relevel(model, "model: \ninformational \nonly", "model: \nsocial only", "model: \npresentational \nonly", "model: \nsocial, \npresentational", "model: \ninformational, \nsocial", "model: \ninformational, \npresentational", "model: \ninformational, \nsocial, \npresentational")) %>%
+  mutate(positivity = fct_recode(positivity, 
+                               "It was ~" = "yes",
+                               "It wasn't ~" = "not",
+                               "It was ~" = "It was~",
+                               "It wasn't ~" = "It wasn't~"
+                               ),
+         positivity = fct_relevel(positivity, "It was ~")) %>%
+  mutate(
+    # positivity = fct_recode(positivity,
+    #                              "It was ~" = "yes",
+    #                              "It wasn't ~" = "not"),
+         # positivity = fct_relevel(positivity, "It wasn't ~"),
+         goal = fct_recode(goal, "kind" = "social") 
+         ) %>%
+  filter(true_state == "0") %>%
+  ggplot(., 
+       aes(x=utterance, y=prob, fill=positivity, 
+           # group = interaction(positive, source), linetype = forcats::fct_rev(positive),
+           group = positivity,
+           colour = positivity)) +
+  geom_hline(yintercept=.125, lty=2, color="gray") +
+  geom_line()+
+  facet_grid(goal~model, labeller = labeller(goal = label_both)) +
+  xlab("utterance") +
+  geom_linerange(aes(ymin=ci_lower,ymax=ci_upper), position="dodge") +
+  ylim(0,.7)+
+  scale_color_ptol(guide=FALSE)+
+  # scale_color_solarized(guide=FALSE)+
+  ggthemes::theme_few(base_size = 15)+
+  ylab("proportion chosen") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1),
+        legend.position="bottom") +
+  guides(color=guide_legend(title=NULL))
 
-Figure S3 shows the results of the sensitivity analysis, plotting the coefficient for the $\beta$ parameter in each model for the three different analysis windows for each specification of the prior. All models show similar coefficient values, suggesting that inferences about the parameters are not sensitive to the exact form of the priors. Table S1 shows the Bayes Factors for all models across three analysis windows and fit using four different vales for the slope prior. The Bayes Factor only drops below 3 when the prior distribution is quite broad (standard deviation of 3.2) and only for the longest analysis window (600-2800 ms). In sum, the strength of evidence for a linear association is robust to the choice of analysis window and prior specification.
+plot.comp.all
 
-## Parallel set of non-Bayesian analyses
+ggsave("model_comparisons_all.png", plot = plot.comp.all, width = 11, height = 4,
+       path = here::here(file_path))
 
-First, we compare Accuracy and RT of native hearing and deaf signers using a Welch Two Sample t-test and do not find evidence that these groups are different (Accuracy: t(28) = 0.75, p = 0.45, 95% CI on the difference in means [-0.07, 0.14]; RT: t(28) = 0.75, p = 0.46, 95% CI on the difference in means [-125.47 ms, 264.99 ms]. 
-
-Second, we test whether children and adults tend to generate saccades away from the central signer prior to the offset of the target sign. To do this, we use a One Sample t-test with a null hypothesis that the true mean is not equal to 1, and we find evidence against this null (Children: M = 0.88, t(28) = -2.92, p = 0.007, 95% CI [0.79, 0.96]; Adults: M = 0.51, t(15) = -6.87, p < 0.001, 95% CI [0.35, 0.65])
-
-Third, we fit the four linear models using MLE to estimate the relations between the processing measures on the VLP task (Accuracy/RT) and age/vocabulary. We follow recommendations from Barr (2008) and use a logistic transform to convert the proportion accuracy scores to a scale more suitable for the linear model. 
-
-```{r}
-d_lm <- read_delim(here::here(data_code_path_sol, "data/processed_data/sol_supp_freq_table.txt"), delim = "\t")
-
-d_lm %>% 
-  kable("latex", 
-        booktabs = T, 
-        caption = "Results for the four linear models fit using Maxiumum Likelihood Estimation. All p-values are one-sided to reflect our directional hypotheses about the VLP measures improving over development.",
-        caption.short = "Results for MLE models fit to data in Experiment 1.1.") %>%
-  kable_styling(latex_options = "scale_down") %>% 
-  row_spec(row = 0, bold = TRUE) %>% 
-  column_spec(column = 2, width = "3cm") %>% 
-  column_spec(column = 1, width = "3.5cm") 
 ```
 
-## Analyses of phonological overlap and iconicity
+```{r negation, echo=FALSE, fig.width=11, fig.height=4, out.width = "\\textwidth", fig.pos = "!h", fig.cap="Experimental results (left) and fitted model predictions (right) for average proportion of negation produced among all utterances, given true states (x-axis) and goals (colors)."}
+plot.neg <- ms_neg %>%  
+  mutate(model = case_when(
+    model == "NA" ~ "Human data", 
+    model == "inf" ~ "model: \ninformational \nonly", 
+    model == "soc" ~ "model: \nsocial only", 
+    model == "pres" ~ "model: \npresentational \nonly", 
+    model == "inf_pres" ~ "model: \ninformational, \npresentational", 
+    model == "inf_soc" ~ "model: \ninformational, \nsocial", 
+    model == "soc_pres" ~ "model: \nsocial, \npresentational", 
+    model == "full" ~ "model: \ninformational, \nsocial, \npresentational" 
+  ),
+  model = fct_relevel(model, "model: \ninformational \nonly", "model: \nsocial only", "model: \npresentational \nonly", "model: \nsocial, \npresentational", "model: \ninformational, \nsocial", "model: \ninformational, \npresentational", "model: \ninformational, \nsocial, \npresentational")) %>%
+  ggplot(., 
+       aes(x=true_state, y=prob, color = goal, group=goal)) +
+  geom_line(stat="identity", position=position_dodge()) +
+  xlab("true state") +
+  ylab("proportion negation") +
+  geom_linerange(aes(ymin=ci_lower,ymax=ci_upper), position=position_dodge(width=.05)) +
+  theme_few(base_size = 15)+
+  scale_color_solarized() +
+  facet_grid(.~model) +
+  theme(legend.position="bottom")
 
-```{r, fig.cap = "Scatterplot of the association between degree of phonological overlap and RT (top row) and accuracy (bottom row) for both adults (left column) and children (right column). The blue line represents a linear model fit.", fig.scap="Association between degree of phonological overlap and RT/Accuracy in Experiment 1.1."}
+plot.neg
 
-include_graphics(path = here::here(data_code_path_sol, "figures/phonological_overlap.png"))
+ggsave("speaker_production_neg_wMod.png", plot = plot.neg, width = 7, height = 3,
+       path = here::here(file_path))
 ```
-
-First, we analyzed whether phonological overlap of our item-pairs might have influenced adults and children’s RTs and accuracy. Signs that are higher in phonological overlap might have been more difficult to process because they are more confusable. Here, phonological overlap is quantified as the number of features (e.g., Selected Fingers, Major Location, Movement, Sign Type) that both signs shared. Values were taken from a recently created database (ASL-LEX) of lexical and phonological properties of nearly 1,000 signs of American Sign Language (Caselli et al., 2017). Our item-pairs varied in degree of overlap from 1-4 features.  We did not see evidence that degree of phonological overlap influenced either processing measure in the VLP task.
-
-```{r, fig.cap = "Scatterplot of the association between degree of iconicity and RT (top row) and accuracy (bottom row) for both adults (left column) and children (right column). The blue line represents a linear model fit.", fig.scap="Association between degree of iconicity and RT/Accuracy in Experiment 1.1"}
-
-include_graphics(path = here::here(data_code_path_sol, "figures/iconicity.png"))
-```
-
-
-Next, we performed a parallel analysis, exploring whether the iconicity of our signs might have influenced adults and children’s RT and accuracy. It is possible that highly iconic signs might be easier to process because of the visual similarity to the target object. Again, we used ASL-LEX to quantify the iconicity of our signs. To generate these values, native signers were asked to explicitly rate the iconicity of each sign on a scale of 1-7, with 1 being not iconic at all and 7 being very iconic. Similar to the phonological overlap analysis, we did see evidence that degree of iconicity influenced either processing measure for either age group in the VLP task.
 
 
 # Supplementary materials for Chapter 3
