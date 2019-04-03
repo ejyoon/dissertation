@@ -1,4 +1,4 @@
-# Adults' polite speech predictions reflect competing social goals ^[This chapter is submitted and currently under review at *Open Mind*, and is joint work with Michael Henry Tessler, Noah D. Goodman and Michael C. Frank.]
+# Adults consider tradeoffs between competing social goals to predict polite language use ^[This chapter is submitted and currently under review at *Open Mind*, and is joint work with Michael Henry Tessler, Noah D. Goodman and Michael C. Frank.]
 
 \chaptermark{Modeling polite speech} 
 

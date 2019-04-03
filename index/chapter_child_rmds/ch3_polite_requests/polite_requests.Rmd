@@ -1,0 +1,630 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F, 
+                      fig.width=4, fig.asp = 0.618, out.width = "90%", 
+                      fig.align = 'center', fig.pos = 't')
+
+source(here::here("index/disseration_helpers.R"))
+child_req_image_path <- "index/chapter_child_rmds/ch3_polite_requests/figs"
+child_req_file_path <- "index/chapter_child_rmds/ch3_polite_requests/files"
+```
+
+```{r, libraries}
+library(png)
+library(grid)
+library(ggplot2)
+library(xtable)
+library(tidyverse)
+library(lme4)
+library(brms)
+library(ggthemes)
+library(broom)
+
+library(here)
+library(langcog)
+```
+
+```{r child_request_data}
+d <- read_csv(here::here(child_req_file_path, "polcon_all_data.csv")) %>%
+  filter(!is.na(gender) & gender != "na") %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate(age_fct = as.factor(age_fct)) %>%
+  mutate(expt_regrp = fct_recode(expt, "v3" = "v3_lookit")) %>%
+  mutate(sample = case_when(
+    expt == "v3_lookit" ~ "online",
+    TRUE ~ "nursery school"
+  )) %>%
+  mutate(request_type = fct_relevel(request_type, "can you~"))
+```
+
+
+## Introduction
+
+We use and hear polite speech on a daily basis: polite utterances range from simple words of apology (“sorry”) or gratitude (“thanks”) to compliments (“I love your dress!”) and requests (“Can you please open the window?”). 
+Yet polite utterances are seemingly inefficient and even misinformative: speakers say “Can you please ...” when it should suffice to say, “Open the window.”
+These facts are a mystery for frameworks which describe communication in terms of efficient information transfer [e.g., @buhler1934; @shannon1948; @goodman2013]: If language is a tool for transferring information, speakers should be as efficient as possible in their communication to prioritize informativity. 
+Nonetheless, everyday politeness is ubiquitous in everyday language use, and adults tend to use strategies to be polite even while arguing [@holtgraves1997]. 
+
+So why do people speak politely? 
+Linguistic theories assume that people’s utterance choices are motivated by social concerns, 
+framed as either maxims [@leech1983], social norms [@ide1989], or listener’s and/or speaker’s public identity [*face*; @brown1987]. For example, @brown1987's theory predicts that if a speaker’s intended meaning contains a threat to the listener’s face or self-image, the speaker’s utterance will be less direct and less informative. 
+For example, if a speaker considered that saying "Open the window" will give the impression that she is in a position to give orders to the listener, she could instead say "Can you please open the window?", using a more indirect form of request to give the other person a sense of autonomy or freedom from imposition [@clark1980].
+Thus, while it may hinder the goal of efficient information transfer, using polite speech can help the speaker save the listener’s face while simultaneously communicating her own positive social goals [@yoon2017]. 
+
+Do children speak politely, and if so, what do they understand about polite speech?
+Previous research shows that children begin producing polite speech early on; 
+They produce “please” at 2.5 years [@read1978],
+and request forms increase in their variety and frequency with age [@bates1976; @bates1977; @ervin1982; @bock1981; @nippold1982].
+Young children learn to produce different forms of requests depending on context: 
+For example, by three years children are able to vary their utterances based on whether they are instructed to “tell” versus “ask” an addressee to given them a puzzle piece [@bock1981].
+And even at two years, children are able to modify their requests to make them more polite [“ask in the nicest way possible”; @bates1977].
+Hence, children’s production of polite speech seems to parallel adult speakers’ desires to produce utterances with appropriate levels of face-saving. 
+
+While children appear to produce polite speech from an early age, less is known about whether they *understand* polite speech. 
+Examining children's comprehension of polite speech is important for a number of reasons.
+First, children’s polite speech understanding can reveal their inferential abilities underlying more general pragmatic understanding: going beyond what was literally said to infer what was intended.
+For example, children need to understand that, in saying “can you open the window?” 
+the speaker does not literally question the listener’s ability to open the window but rather wants to make a polite request.
+Thus, understanding what children comprehend about polite speech can help see how children are able to infer speaker’s intentions behind utterances.
+
+Second, understanding polite speech can have practical implications for education, 
+as caregivers often care about teaching their children to be more polite. 
+Indeed, from very early on, parents teach children to follow normative rituals to say “please”, “thank you”, “hello” and “good-bye” [@gleason1984].
+It can be enlightening to know whether and when children understand positive implications of following these norms.  
+
+Third, examining children’s *comprehension* of polite speech as compared to their *production* is meaningful,
+in that children’s comprehension can reveal more abstract representations and inferences about language than their productivity [e.g., @fisher2002]:
+Children’s ability to say “please” early on does not necessarily indicate that they understand saying “please” is more polite, nicer and socially apt,
+as children may simply obey or imitate what their caregivers tell them to say without understanding its meaning.
+
+Research on children’s comprehension of polite speech has received less focus than research on their production of polite speech. 
+Moreover, the few studies that did examine children's understanding of polite speech have been largely inconclusive.
+Though there was some initial evidence to suggest that producing a request with “please” is judged to be polite by three years of age [@bates1976; @bates1977], in a later study, the judgment of “please” as being polite was only replicated starting at five years of age, but not younger [@nippold1982]. 
+These initial studies also lacked statistical tests to assess each age group’s performance, and did not systematically manipulate cues other than linguistic markers (e.g., prosody or facial expressions). 
+
+In addition to children’s recognition of politeness markers, there are also many open questions about their abilities to recognize the intentions underlying polite speech.
+For example, do children know that the word “polite” should be associated with politeness rules people abide by (e.g., saying “please”)?
+Relatedly, do children recognize polite speech as being positively valenced, such that they think it is better and nicer to say polite things? 
+Do children understand the social implications of speaking politely? For example, polite people may be more likely to get their wishes granted (“I will pour him more water because he was nice”) and may be better social play partners compared to those who are impolite.
+Finally, what cues to politeness do children recognize? Do they recognize linguistic politeness markers such as “please,” or “can you,” or both? Or do they rely on prosodic cues that make utterances sound more respectful, or on facial expressions that make a person look kind?
+
+In this current work, we sought to answer these questions, and test what 2- to 4-year-old children understand about requests using politeness markers. 
+Across three experiments, we presented stories about speakers who decided to speak politely (e.g., "Please pour me more water") or impolitely ("Pour me more water") and 
+asked child participants to make judgments between the two speakers. 
+We examined in each experiment whether:
+(1) children are able to reason about speakers using polite speech as being relatively more “polite” and “nice” and less “rude” or “mean” than speakers not using polite speech;
+(2) they can reason about social implications of using polite speech (e.g., politeness as a sign of a nice play partner, or greater likelihood of compliance from the addressee); and
+(3) they show improvement with age for these lines of reasoning.
+We also examined whether children need additional cues to politeness such as facial expressions (Expt 1) or prosodic cues (Expt 2), or they can make use of linguistic politeness markers alone (Expt 3) to make appropriate inferences about speakers.
+
+## Experiment 1
+
+In Experiment 1, we tested whether 3- to 4-year-old children were able to understand the implications of using simple politeness markers, based on linguistic cues of interest (whether the speaker says "please," "can you") and other cues (facial expressions and prosodic cues) that make polite speech more salient and naturalistic. 
+
+### Methods
+
+#### Participants
+
+```{r participant_exclusion_v1_2_3}
+# exclusion criteria applied to expt 1.
+subj_v1_too_few_trials <- d %>% 
+  filter(expt == "v1", trial == "6", is.na(correct)) %>% 
+  distinct(subid)
+
+subj_v1_too_few_trials_count <- subj_v1_too_few_trials %>% 
+  count(subid)
+
+# exclusion criteria applied to expt 2.
+subj_v2_failed_practice <- filter(d, (expt == "v2" & trial == "0" & correct == "0")) %>% 
+  distinct(subid)
+
+subj_v2_failed_practice_count <- subj_v2_failed_practice %>%
+  count(.)
+
+subj_v2_too_few_trials <- d %>% 
+  filter(expt == "v2") %>% 
+  count(subid) %>%
+  filter(n < 6)
+
+subj_v2_too_few_trials_count <- subj_v2_too_few_trials %>% 
+  count(.)
+
+# exclusion criteria applied to expt 3 in-person sample.
+subj_v3_failed_practice <- filter(d, (expt == "v3" & trial == "0" & correct == "0")) %>% 
+  distinct(subid)
+
+subj_v3_failed_practice_count <- subj_v3_failed_practice %>%
+  count(.)
+
+subj_v3_too_few_trials <- d %>% 
+  filter(expt == "v3") %>% 
+  distinct(subid, trial, .keep_all=T) %>%
+  count(subid) %>%
+  filter(n < 6)
+
+subj_v3_too_few_trials_count <- subj_v3_too_few_trials %>% 
+  count(.)
+
+# filter out participant id from above, and also drop trial 0 (practice)
+d <- d %>% 
+  filter(!subid %in% subj_v1_too_few_trials$subid) %>%
+  filter(!subid %in% subj_v2_failed_practice$subid) %>%
+  filter(!subid %in% subj_v2_too_few_trials$subid) %>%
+  filter(!subid %in% subj_v3_failed_practice$subid) %>%
+  filter(!subid %in% subj_v3_too_few_trials$subid) %>%
+  filter(trial != "0")
+```
+
+```{r participant_exclusion_v3_online}
+# exclusion from online sample was computed separately before preprocessing
+v3_online_excl <- read_csv(here::here(child_req_file_path, "v3_drop.csv")) %>%
+  count(reason_for_drop)
+
+v3_online_excl_few_trials <- v3_online_excl %>% 
+  filter(reason_for_drop == "too few trials")
+
+v3_online_excl_failed_practice <- v3_online_excl %>% 
+  filter(reason_for_drop == "failed practice")
+```
+
+```{r participant_info}
+subj <- d %>% 
+  count(expt, age_fct, subid) %>%
+  group_by(expt, age_fct) %>%
+  summarise(n=n()) %>%
+  unite(expt_age, expt, age_fct)
+
+subj_female <- d %>% 
+  count(expt, age_fct, gender, subid) %>%
+  filter(gender == "F") %>%
+  group_by(expt, age_fct) %>%
+  summarise(n_f=n()) %>%
+  unite(expt_age, expt, age_fct)
+
+ms_age <- d %>% 
+  group_by(expt, age_fct) %>%
+  summarise(m = mean(age, na.rm = T),
+            sd_age = sd(age, na.rm = T)) %>% 
+  mutate_if(is.numeric, round, 2) %>%
+  unite(expt_age, expt, age_fct)
+
+ms_demog <- left_join(subj, subj_female) %>%
+  left_join(., ms_age)
+```
+
+3-year-old  ($n=$ `r filter(ms_demog, expt_age == "v1_3")$n`; `r filter(ms_demog, expt_age == "v1_3")$n_f` F, $M_{age}$ = `r filter(ms_demog, expt_age == "v1_3")$m` years, $SD_{age}$ = `r filter(ms_demog, expt_age == "v1_3")$sd_age`) and 4-year-old children ($n=$ `r filter(ms_demog, expt_age == "v1_4")$n`; `r filter(ms_demog, expt_age == "v1_4")$n_f` F, $M_{age}$ = `r filter(ms_demog, expt_age == "v1_4")$m` years, $SD_{age}$ = `r filter(ms_demog, expt_age == "v1_4")$sd_age`) were recruited from a local preschool. 
+An additional 3 children were tested but excluded due to failure on the practice questions ($n=$ 2) or completion of fewer than half of the test trials ($n=$ `r subj_v1_too_few_trials_count$n`).
+
+#### Stimuli and design
+
+We designed a picture book with twelve stories in which a protagonist is approached by two speakers, one of whom makes a request by producing an utterance with a politeness marker (e.g., "Please pour me more water"), and the other produces an utterance without ("Pour me more water"). 
+There were three types of politeness marker that could be used: "please" (as in "Please pour me more water"), "can you" ("Can you pour me more water"), and "can you please" ("Can you please pour me more water"). 
+
+We designed six question types to ask participants following the presentation of the stories: four *speaker attribute* questions (*polite*: "Which one was more polite?"; *rude*: "Which one was more rude?"; *nice*: "Which one was nicer?"; *mean*: "Which one was meaner?") and two *social implication* questions (*play partner*: "Which one would you rather play with?"; *compliance*: "Which one will [get what they want]?"). Each participant would be asked one of the four speaker attribute questions, followed by one of the two social implication questions.
+
+In Experiment 1, all utterances were produced live by the experimeter, with appropriate proodic cues and facial expressions for each request: Utterances with politeness markers were produced by kind voice and facial expression, whereas utterances lacking politeness marker were produced with angry voice and facial cues.
+
+#### Procedure
+
+The experimenter presented to the child a storybook with a total of thirteen stories about different characters. In the *practice* phase, the child heard a story with one clearly mean character (*Drew kicked Carol*) and one clearly nice character (*Graham gave Carol a gift*). After a reminder of what each character did, the experimenter asked the participant: *Which one was being meaner?* and *Which one was being nicer?* If the child answered the question wrong the first time, the experimenter read the story one more time, saying, "Let's think about the story one more time." Only children who correctly answered both questions in the first or second attempt were included in the analyses.
+
+In the *test* phase, the child heard twelve stories, in each of which they saw one speaker who decided to speak politely (*Jean wanted more water in her cup. Jean said to Fred, "Please pour me more water"*) and another speaker who spoke impolitely (*Suzy also wanted more water in her cup. Suzy said to Fred, "Pour me more water."*). After a reminder about what each speaker said, the child was asked a total of two questions. For the first question, the experimenter asked one out of four possible questions for speaker attribute: "Which one was being more polite [more rude/nicer/meaner]?" For the second, social implication question, the experimenter either asked about play partner (*Which one would you rather play with?*) or likelihood of compliance (e.g., *Which one will Fred give water to?*). The order of story types and question types was counterbalanced.
+
+### Results and Discussion
+
+```{r}
+# set up data before visualization and ana
+breaks = c(2, 2.5, 3, 3.5, 4, 4.5, 5)
+d_ana <- d %>%
+  mutate(request_type = fct_relevel(request_type, "please", "can you~")) %>%
+  mutate(question_type = fct_relevel(question_type, "polite", "rude", "nice", "mean", "play", "comp"),
+         question_type = fct_recode(question_type,
+                                    "Which one was \nmore polite?" = "polite",
+                                    "Which one was \nmore rude?" = "rude",
+                                    "Which one was \nnicer?" = "nice",
+                                    "Which one was \nmeaner?" = "mean",
+                                    "Which one would you \nrather play with?" = "play",
+                                    "Which one [will get \nwhat they want]?" = "comp"
+                                    )) %>%
+  mutate(expt = fct_recode(expt, 
+                           "Expt 1" = "v1",
+                           "Expt 2" = "v2", 
+                           "Expt 3\n(nursery school)" = "v3",
+                           "Expt 3\n(online)" = "v3_lookit")) %>%
+  # mutate(expt_regrp = fct_recode(expt, 
+  #                          "Expt 1\n(markers, prosody, face)" = "Expt 1",
+  #                          "Expt 2\n(markers, prosody)" = "Expt 2",
+  #                          "Expt 3\n(markers only)" = "Expt 3\n(nursery school)", 
+  #                          "Expt 3\n(markers only)" = "Expt 3\n(online)"))
+  mutate(expt_regrp = fct_recode(expt, 
+                           "Expt 1" = "Expt 1",
+                           "Expt 2" = "Expt 2",
+                           "Expt 3" = "Expt 3\n(nursery school)", 
+                           "Expt 3" = "Expt 3\n(online)"))
+  
+```
+
+```{r figResults}
+d_plot <- d_ana %>%
+  group_by(expt_regrp, sample, age_fct, request_type, question_type, subid) %>%
+  summarise(correct = mean(correct, na.rm = T)) %>%
+  group_by(expt_regrp, sample, age_fct, request_type, question_type) %>%
+  multi_boot_standard(col = "correct", na.rm = T) %>%
+  rename(correct = mean)
+
+p_all <- ggplot(data=d_plot,
+       aes(x=age_fct, y=correct, col=request_type, shape = sample, group=interaction(sample,request_type))) +
+  geom_line(alpha=.3) +
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper),
+                  position = position_dodge(width = .1), alpha=.3, fatten = 3) +
+  geom_point(size=3, position = position_dodge(width = .1), alpha=.8) +
+  facet_grid(expt_regrp~question_type, scales = "fixed", space = "fixed") +
+  theme_few() +
+  ylab("Proportion correct") +
+  xlab("Age (years)") +
+  scale_color_ptol() +
+  geom_hline(yintercept =.5, lty=2) +
+  ylim(c(.25,1.1)) +
+  theme(
+        legend.position="top",
+        legend.box = "vertical") +
+  labs(color="Marker used by polite speaker",
+       shape = "Sample")
+
+ggsave(p_all, file=here::here(child_req_image_path, "fig_results.png"), width=9, height=5)
+```
+
+\newpage
+\blandscape
+
+```{r figResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Bottom right: Story example. Top, left: Results. Proportion of correct responses to questions comparing between a speaker who used a politeness marker (where blue indicates \"please\", yellow \"can you\", and red \"can you please\") versus a speaker who did not. Data are binned into one-year age groups. Each row represents data from a different Experiment. Columns represent different questions asked. Dashed line represents chance level (i.e., if participant were guessing at random)."}
+png::readPNG(here::here(child_req_image_path, "fig_results_edit.png")) %>%
+  grid::grid.raster()
+```
+
+\elandscape
+
+```{r ttest}
+failproof.t <- purrr::possibly(t.test, data.frame(p.value=1.0000e-10, statistic=NA))
+
+ms_tt <- d_ana %>%
+  group_by(expt_regrp, question_type, request_type, age_fct, subid) %>%
+  summarize(correct = mean(correct, na.rm=TRUE)) %>%
+  group_by(expt_regrp, question_type, request_type, age_fct) %>%
+  summarise(correct = list(correct)) %>%
+  group_by(expt_regrp, question_type, request_type, age_fct) %>%
+  mutate(t_value = failproof.t(unlist(correct), mu=.5)$statistic,
+    p_value = failproof.t(unlist(correct), mu=.5)$p.value,
+    sig = ifelse(p_value < .01, "**", ifelse(p_value < .05, "*", "null"))
+    ) %>%
+  select(-correct)
+
+ms_tt_qtype <- d_ana %>%
+  group_by(expt_regrp, question_type, age_fct, subid) %>%
+  summarize(correct = mean(correct, na.rm=TRUE)) %>%
+  group_by(expt_regrp, question_type, age_fct) %>%
+  summarise(correct = list(correct)) %>%
+  group_by(expt_regrp, question_type, age_fct) %>%
+  mutate(t_value = failproof.t(unlist(correct), mu=.5)$statistic,
+    p_value = failproof.t(unlist(correct), mu=.5)$p.value,
+    sig = ifelse(p_value < .01, "**", ifelse(p_value < .05, "*", "null"))
+    ) %>%
+  select(-correct)
+
+ms_tt_rtype <- d_ana %>%
+  group_by(expt_regrp, request_type, age_fct, subid) %>%
+  summarize(correct = mean(correct, na.rm=TRUE)) %>%
+  group_by(expt_regrp, request_type, age_fct) %>%
+  summarise(correct = list(correct)) %>%
+  group_by(expt_regrp, request_type, age_fct) %>%
+  mutate(t_value = failproof.t(unlist(correct), mu=.5)$statistic,
+    p_value = failproof.t(unlist(correct), mu=.5)$p.value,
+    sig = ifelse(p_value < .01, "**", ifelse(p_value < .05, "*", "null"))
+    ) %>%
+  select(-correct)
+
+```
+
+
+```{r v1_results}
+# define contrast weights for question type (expt 1, 2)
+attr_vs_imp <- c(-1/4, -1/4, -1/4, -1/4, 1/2, 1/2) # attributes vs. social implications
+polkind_vs_nicekind <- c(-1/2, -1/2, 1/2, 1/2, 0, 0) # polite-rude vs. nice-mean
+pos_vs_neg <- c(-1, 1, -1, 1, 0, 0) # positive vs. negative
+pol_vs_rude <- c(-1, 1, 0, 0, 0, 0) 
+pol_vs_play <- c(-1, 0, -1, 0, 2, 0)
+
+mat.temp <- rbind(constant=1/6, pol_vs_play, attr_vs_imp, polkind_vs_nicekind, pos_vs_neg, pol_vs_rude)
+mat <- solve(mat.temp)
+
+# drop first three columns, only interested in latter three
+mat <- mat[ , -1]
+mat <- mat[ , -1]
+
+# contrast weights for request type
+contrasts(d$request_type)[,1] <- c(-.5, 1, -.5)
+contrasts(d$request_type)[,2] <- c(-.5, -.5, 1)
+
+lmer_v1 <- d %>% 
+  filter(expt == "v1") %>%
+  mutate(question_type = fct_relevel(question_type, "polite", "rude", "nice", "mean", "play", "comp")) %>%
+  # filter(question_type %in% c("polite", "rude", "nice", "mean")) %>%
+  # mutate(request_type = fct_relevel(request_type, "please")) %>%
+  glmer(correct ~ scale(age) * question_type * request_type + (1| item),
+       contrasts=list(question_type = mat),
+       family="binomial",
+       data = .)
+
+v1_lmer_coeff <- lmer_v1 %>%
+  broom::tidy() %>%
+  filter(group == "fixed") %>%
+  mutate(p.val.clean = ifelse(p.value < .001, "< .001", round(p.value, 3)),
+         statistic = round(statistic, 2),
+         estimate = round(estimate, 2))
+```
+
+We looked at the proportion of correct responses to various questions comparing speakers who used a politeness marker and spoke kindly, and speakers who did not use a politeness marker and spoke meanly (Figure\ \ref{fig:figResultsPlacement}, first row). 
+A mixed-effects logistic regression predicting accuracy based on age, question type and politeness marker type
+^[for Experiments 1 and 2, we use this model structure with a maximal random effect structure that converges: `accuracy ~ age x question type x politeness marker type + (1 | item)`, where age is continuous, centered and scaled. All categorical variables were deviation coded, with specified contrasts of interest for the question type. Significance was calculated using the standard normal approximation to the $t$ distribution [@barr2013].]
+showed there was an improvement with age ($\beta$ = `r v1_lmer_coeff$estimate[2]`, $p =$ `r v1_lmer_coeff$p.val.clean[2]`).
+The regression model also revealed that children seemed to find some question types easier than others: Responses to *nice* and *mean* questions were more accurate than to *polite* and *rude* questions ($\beta$ = `r v1_lmer_coeff$estimate[4]`, $p =$ `r v1_lmer_coeff$p.val.clean[4]`), whereas social implication questions (*play partner* and *compliance*) were overall more difficult compared to speaker attribute questions (*polite*, *rude*, *nice*, and *mean*; $\beta$ = `r v1_lmer_coeff$estimate[3]`, $p =$ `r v1_lmer_coeff$p.val.clean[3]`). 
+
+```{r}
+d_plot <- d_plot %>%
+  mutate_if(is.numeric, round, 2)
+
+d_summary <- d_plot %>% 
+  group_by(expt_regrp, question_type, age_fct) %>% 
+  summarise(correct = mean(correct)) %>%
+  mutate_if(is.numeric, round, 2)
+
+d_summary_range_by_question <- d_summary %>%
+  group_by(expt_regrp, age_fct) %>% 
+  summarise(min = min(correct), max = max(correct))
+
+d_summary2 <- d_plot %>%
+  group_by(expt_regrp, question_type, request_type) %>%
+  summarise(correct = mean(correct)) %>%
+  mutate_if(is.numeric, round, 2)
+
+d_summary3 <- d_plot %>%
+  group_by(expt_regrp, question_type) %>%
+  summarise(correct = mean(correct)) %>%
+  mutate_if(is.numeric, round, 2)
+
+d_summary4 <- d_plot %>%
+  group_by(expt_regrp, request_type) %>%
+  summarise(correct = mean(correct)) %>%
+  mutate_if(is.numeric, round, 2)
+
+d_summary5 <- d_plot %>%
+  group_by(expt_regrp, request_type, age_fct) %>%
+  summarise(correct = mean(correct)) %>%
+  mutate_if(is.numeric, round, 2)
+```
+
+Looking more closely at responses for each of the question types, 
+children from both age groups tended to accurately answer the *polite*, *nice*, *mean*, *rude*, and *play partner* questions overall
+(3-year-olds' mean accuracy range: `r filter(d_summary_range_by_question, expt_regrp == "Expt 1", age_fct == "3")$min` - `r filter(d_summary_range_by_question, expt_regrp == "Expt 1", age_fct == "3")$max`;
+4-year-olds' mean accuracy range: `r filter(d_summary_range_by_question, expt_regrp == "Expt 1", age_fct == "4")$min` - `r filter(d_summary_range_by_question, expt_regrp == "Expt 1", age_fct == "4")$max`),
+indicating correctly that the speaker who used a politeness marker was more polite and nicer, and less mean and rude, and was likely a better play partner. 
+For the *compliance* question, 4-year-olds overall answered correctly that the speaker who used politeness marker will likely get what they want from the listener ($M_{4y}$ = `r filter(d_summary, expt_regrp == "Expt 1", age_fct == "4", question_type == "Which one [will get \nwhat they want]?")$correct`, $p$ < .01), 
+but 3-year-olds did not perform above chance 
+($M_{3y}$ = `r filter(d_summary, expt_regrp == "Expt 1", age_fct == "3", question_type == "Which one [will get \nwhat they want]?")$correct`).
+As for the different politeness marker types, 
+both age groups overall tended to give correct answers based on all three markers, but especially "can you please" 
+(3-year-olds: $M_{please}$ = `r filter(d_summary5, expt_regrp == "Expt 1", age_fct == "3", request_type == "please")$correct`,
+$M_{can you}$ = `r filter(d_summary5, expt_regrp == "Expt 1", age_fct == "3", request_type == "can you~")$correct`,
+$M_{can you please}$ = `r filter(d_summary5, expt_regrp == "Expt 1", age_fct == "3", request_type == "can you please~")$correct`;
+4-year-olds: $M_{please}$ = `r filter(d_summary5, expt_regrp == "Expt 1", age_fct == "4", request_type == "please")$correct`,
+$M_{can you}$ = `r filter(d_summary5, expt_regrp == "Expt 1", age_fct == "4", request_type == "can you~")$correct`,
+$M_{can you please}$ = `r filter(d_summary5, expt_regrp == "Expt 1", age_fct == "4", request_type == "can you please~")$correct`).
+
+In sum, in this first experiment, we saw preliminary evidence that children pay attention to some cues to politeness and are able to use these cues to infer whether speakers are relatively polite, rude, nice or mean, and whether speakers are good play partners and are likely to get what they wanted from their addressees. 
+4-year-olds answered questions accurately more often compared to 3-year-olds, especially for the question about addressee's compliance with the speaker's request. 
+In general, however, both age groups tended to be accurate when all the possible cues were used to signal that one speaker was polite (used "can you please", spoke with a kind tone and face) and the other speaker wasn't (did not use a politeness marker, spoke with an angry tone and face). 
+
+There were a number of remaining issues from Experiment 1.
+Children may not have used the linguistic politeness markers (e.g., “please”) per se, and rather prosodic and facial cues that accompany these markers. 
+That is, children may have relied on the speaker’s kind voice and face rather than their use of “please” to evaluate their niceness or likeability as a play partner. 
+Similarly, greater accuracy for some questions over others (e.g., *nice* > *polite*) may have been due to greater association between some of the words and prosodic and facial cues (e.g., a kind face may be seen to signal niceness more than politeness), not due to greater understanding for those words or concepts. 
+Another concern is that the experimenter was aware of the manipulations (i.e., they knew which speaker was supposed to be “polite”) and thus could have affected the presentation of these speakers in ways that are not consistent across all participants. In our next two experiments, we sought to remove these potential confounds.
+
+## Experiment 2
+
+In Experiment 1, we saw initial evidence that children can use some combinations of linguistic, prosodic, and facial cues to politeness. In Experiment 2, we examined whether children can make similar judgments using linguistic and prosodic cues only, without facial expressions. For this, we conducted a preregistered experiment where we used pre-recorded voiceovers to present speaker utterances, so that (1) we could look at children's judgments based on linguistic markers and prosodic cues only, and (2) we could remove the role of the experimenter in presentation of these utterances. 
+
+### Methods
+
+#### Participants
+
+3-year-old  ($n=$ `r filter(ms_demog, expt_age == "v2_3")$n`; `r filter(ms_demog, expt_age == "v2_3")$n_f` F, $M_{age}$ = `r filter(ms_demog, expt_age == "v2_3")$m` years, $SD_{age}$ = `r filter(ms_demog, expt_age == "v2_3")$sd_age`) and 4-year-old children ($n=$ `r filter(ms_demog, expt_age == "v2_4")$n`; `r filter(ms_demog, expt_age == "v2_4")$n_f` F, $M_{age}$ = `r filter(ms_demog, expt_age == "v2_4")$m` years, $SD_{age}$ = `r filter(ms_demog, expt_age == "v2_4")$sd_age`) were recruited from a local preschool. 
+An additional `r subj_v2_failed_practice_count$n` children were tested but excluded due to failure on the practice questions.
+
+#### Stimuli and design
+
+The design was identical to Experiment 1. Stimuli were the same as Experiment 1 except two changes: (1) Instead of a picture book, we presented the stories on a tablet; (2) the speakers' utterances were now presented as recorded voiceovers. The voiceovers were recorded by native English speakers, and contained prosodic cues that matched the presence/absence of a politeness marker (e.g., "Please pour me more water" was recorded with a kind voice and "pour me more water" with an angry voice).
+
+#### Procedure
+
+The procedure was identical to Experiment 1, except for the following change: The participants now had to tap on a speaker on tablet in order either to hear them speak, or to choose an answer to the questions asked. 
+
+### Results and Discussion
+
+```{r v2_results}
+lmer_v2 <- d %>% 
+  filter(expt == "v2") %>%
+  mutate(question_type = fct_relevel(question_type, "polite", "rude", "nice", "mean", "play", "comp")) %>%
+  glmer(correct ~ scale(age) * question_type * request_type + (1| item),
+       contrasts=list(question_type = mat),
+       family="binomial",
+       data = .)
+
+v2_lmer_coeff <- lmer_v2 %>%
+  broom::tidy() %>%
+  filter(group == "fixed") %>%
+  mutate(p.val.clean = ifelse(p.value < .001, "< .001", round(p.value, 3)),
+         statistic = round(statistic, 2),
+         estimate = round(estimate, 2))
+```
+
+Overall we saw similar patterns of results in Experiment 2 (Figure\ \ref{fig:figResultsPlacement}, second row) compared to Exp. 1. 
+A mixed-effects logistic regression predicting accuracy based on age, question type and politeness marker type showed that accuracy improved with age ($\beta$ = `r v2_lmer_coeff$estimate[2]`, $p =$ `r v2_lmer_coeff$p.val.clean[2]`), and children made accurate judgments more often when the politeness marker was "can you please" than when the marker was "please" or "can you"  ($\beta$ = `r v2_lmer_coeff$estimate[7]`, $p =$ `r v2_lmer_coeff$p.val.clean[7]`).
+There was no main effect of question type, but there was an interaction between age and question type such that performance for *nice* and *mean* questions saw greater improvement with age than for *polite* and *rude* questions ($\beta$ = `r v2_lmer_coeff$estimate[10]`, $p =$ `r v2_lmer_coeff$p.val.clean[10]`). 
+
+For children's responses to different question types, 
+3-year-olds' accuracy did not differ from chance level for *nice*, *mean*, and *play partner* questions, but their means numerically exceeded 50% for all question types, 
+and 4-year-olds accurately answered questions of all types
+(3-year-olds' mean accuracy range: `r filter(d_summary_range_by_question, expt_regrp == "Expt 2", age_fct == "3")$min` - `r filter(d_summary_range_by_question, expt_regrp == "Expt 1", age_fct == "3")$max`;
+4-year-olds' mean accuracy range: `r filter(d_summary_range_by_question, expt_regrp == "Expt 2", age_fct == "4")$min` - `r filter(d_summary_range_by_question, expt_regrp == "Expt 1", age_fct == "4")$max`).
+For politeness marker types, 3-year-olds' performance did not differ from chance for "please" and "can you",
+but both age groups tended to answer questions about different politeness markers accurately overall 
+(3-year-olds: $M_{please}$ = `r filter(d_summary5, expt_regrp == "Expt 2", age_fct == "3", request_type == "please")$correct`,
+$M_{can you}$ = `r filter(d_summary5, expt_regrp == "Expt 2", age_fct == "3", request_type == "can you~")$correct`,
+$M_{can you please}$ = `r filter(d_summary5, expt_regrp == "Expt 2", age_fct == "3", request_type == "can you please~")$correct`;
+4-year-olds: $M_{please}$ = `r filter(d_summary5, expt_regrp == "Expt 2", age_fct == "4", request_type == "please")$correct`,
+$M_{can you}$ = `r filter(d_summary5, expt_regrp == "Expt 2", age_fct == "4", request_type == "can you~")$correct`,
+$M_{can you please}$ = `r filter(d_summary5, expt_regrp == "Expt 2", age_fct == "4", request_type == "can you please~")$correct`).
+
+In sum, across Experiments 1 and 2, we saw that
+children tend to make accurate judgments about speakers given their use of politeness markers, especially "can you please," together with prosodic cues, 
+and children get better with age in their use of politeness cues to respond to questions about speaker attributes and social implications.
+
+## Experiment 3
+
+We conducted a third, pre-registered experiment to see whether children are able to evaluate speakers based on linguistic markers only, without any other supporting cues such as prosodic cues or facial expressions.  
+
+### Methods
+
+#### Participants
+
+We recruited two samples of participants: one from the same local nursery school as Experiments 1 and 2, and the other from Lookit (\url{https://lookit.mit.edu/}), an online platform for child research participation, in which parents and their children can participate together. The nursery school sample consisted of 3-year-old  ($n=$ `r filter(ms_demog, expt_age == "v3_3")$n`; `r filter(ms_demog, expt_age == "v3_3")$n_f` F, $M_{age}$ = `r filter(ms_demog, expt_age == "v3_3")$m` years, $SD_{age}$ = `r filter(ms_demog, expt_age == "v3_3")$sd_age`) and 4-year-old children ($n=$ `r filter(ms_demog, expt_age == "v3_4")$n`; `r filter(ms_demog, expt_age == "v3_4")$n_f` F, $M_{age}$ = `r filter(ms_demog, expt_age == "v3_4")$m` years, $SD_{age}$ = `r filter(ms_demog, expt_age == "v3_4")$sd_age`). An additional `r subj_v3_failed_practice_count$n` children were tested but excluded due to failure on the practice questions. The online sample consisted of 2-year-old  ($n=$ `r filter(ms_demog, expt_age == "v3_lookit_2")$n`; `r filter(ms_demog, expt_age == "v3_lookit_2")$n_f` F, $M_{age}$ = `r filter(ms_demog, expt_age == "v3_lookit_2")$m` years, $SD_{age}$ = `r filter(ms_demog, expt_age == "v3_lookit_2")$sd_age`), 3-year-old  ($n=$ `r filter(ms_demog, expt_age == "v3_lookit_3")$n`; `r filter(ms_demog, expt_age == "v3_lookit_3")$n_f` F, $M_{age}$ = `r filter(ms_demog, expt_age == "v3_lookit_3")$m` years, $SD_{age}$ = `r filter(ms_demog, expt_age == "v3_lookit_3")$sd_age`) and 4-year-old children ($n=$ `r filter(ms_demog, expt_age == "v3_lookit_4")$n`; `r filter(ms_demog, expt_age == "v3_lookit_4")$n_f` F, $M_{age}$ = `r filter(ms_demog, expt_age == "v3_lookit_4")$m` years, $SD_{age}$ = `r filter(ms_demog, expt_age == "v3_lookit_4")$sd_age`). An additional `r v3_online_excl_failed_practice$n + v3_online_excl_few_trials$n` children were tested but excluded due to failure on the practice questions ($n=$ `r v3_online_excl_failed_practice$n`) or completion of fewer than half of the test trials ($n=$ `r v3_online_excl_few_trials$n`).
+
+#### Stimuli
+
+For the nursery school sample, stimuli were identical to Experiment 2 except that the voiceovers for all utterances had the same prosody: All utterances ended with a rising intonation. 
+For the online sample, stimuli were identical to what the nursery school participants saw except that the story narrations (other than speaker utterances) were also pre-recorded such that parents did not need to read the stories aloud to their children. 
+
+#### Procedure
+
+For the nursery school sample, the procedure was identical to Experiment 2. 
+For the online sample, the procedure was similar except that parents and children participated together at home and there was no experimenter present. Parents accessed the webpage for the study and gave their consent for participation, and then read instructions to proceed through the different stories, 
+which specifically asked the parents to not tell their children correct answers for the questions. 
+
+### Results and Discussion
+
+```{r v3_results}
+d_v3 <- d %>% 
+  filter(expt == "v3" | expt == "v3_lookit") %>%
+  mutate(question_type = fct_relevel(question_type, "rude", "polite", "nice", "mean", "play", "comp")) %>%
+  droplevels()
+
+contrasts(d_v3$question_type) <- c(-1, 1)
+
+# contrast weights for request type
+contrasts(d$request_type)[,1] <- c(-.5, 1, -.5)
+contrasts(d$request_type)[,2] <- c(-.5, -.5, 1)
+
+lmer_v3 <- d_v3 %>%
+  glmer(correct ~ expt + scale(age) * question_type * request_type + (1| item),
+       family="binomial",
+       data = .)
+
+v3_lmer_coeff <- lmer_v3 %>%
+  broom::tidy() %>%
+  filter(group == "fixed") %>%
+  mutate(p.val.clean = ifelse(p.value < .001, "< .001", round(p.value, 3)),
+         statistic = round(statistic, 2),
+         estimate = round(estimate, 2))
+```
+
+```{r}
+d_all <- d %>% 
+  filter(question_type %in% c("polite", "rude")) %>%
+  filter(!is.na(correct)) %>%
+  mutate(expt_regrp = fct_relevel(expt_regrp, "v1")) %>%
+  droplevels()
+
+contrasts(d_all$question_type) <- c(1, -1)
+
+# contrast weights for request type
+contrasts(d_all$request_type)[,1] <- c(-.5, 1, -.5)
+contrasts(d_all$request_type)[,2] <- c(-.5, -.5, 1)
+
+# contrast weights for expt
+contrasts(d_all$expt_regrp)[,1] <- c(-.5, 1, -.5)
+contrasts(d_all$expt_regrp)[,2] <- c(-.5, -.5, 1)
+
+# contrast weights for expt
+# contrasts(d_all$expt)[,1] <- c(-1/3, 1, -1/3, -1/3)
+# contrasts(d_all$expt)[,2] <- c(-1/3, -1/3, 1, -1/3)
+# contrasts(d_all$expt)[,3] <- c(-1/3, -1/3, -1/3, 1)
+
+# lmer_all <- d_all %>%
+#   glmer(correct ~ sample + expt_regrp * scale(age) * question_type * request_type + (1| item),
+#        family="binomial",
+#        data = .)  
+
+lmer_all_expt_main <- d_all %>%
+  glmer(correct ~ sample + expt_regrp + scale(age) * question_type * request_type + (1| item),
+       family="binomial",
+       data = .)  
+
+all_lmer_coeff <- lmer_all_expt_main %>%
+  broom::tidy() %>%
+  filter(group == "fixed") %>%
+  mutate(p.val.clean = ifelse(p.value < .001, "< .001", round(p.value, 3)),
+         statistic = round(statistic, 2),
+         estimate = round(estimate, 2))
+  
+```
+
+#### Experiment 3 
+
+For Experiment 3, we were able to look at how children answered the *polite* and *rude* questions given the same three politeness marker types as in Experiments 1 and 2, with three age groups including 2-year-olds. (Fig. \ \ref{fig:figResultsPlacement}, third row).
+
+A mixed-effects logistic regression controlling for the effect of sample^[Model structure: `accuracy ~ sample + age x question type x politeness marker type + (1 | item)`] showed improvement with age ($\beta$ = `r v3_lmer_coeff$estimate[3]`, $p =$ `r v3_lmer_coeff$p.val.clean[3]`) as well as better performance for "can you please" than "please" and "can you" together ($\beta$ = `r v3_lmer_coeff$estimate[5]`, $p =$ `r v3_lmer_coeff$p.val.clean[5]`), consistent with Experiment 2 results.
+Performance for "please" was also better than for "can you please" and "please" together
+($\beta$ = `r v3_lmer_coeff$estimate[6]`, $p =$ `r v3_lmer_coeff$p.val.clean[6]`),
+which may be surprising given that we previously did not see the same effect in Experiments 1 and 2.
+One possible explanation is that controlling for prosodic cues in Experiment 3 actually made it *easier* to use "please" as a politeness cue. Because we had stripped all the other variations, it may have made the contrast between the presence and absence of the marker "please" *more* salient.
+
+Additionally, children were better with the *polite* questions than *rude*  overall ($\beta$ = `r v3_lmer_coeff$estimate[4]`, $p =$ `r v3_lmer_coeff$p.val.clean[4]`), 
+but especially given "please" ($\beta$ = `r v3_lmer_coeff$estimate[11]`, $p =$ `r v3_lmer_coeff$p.val.clean[11]`). 
+Finally, children showed a greater improvement with age for "can you please" compared to "please" and "can you" together ($\beta$ = `r v3_lmer_coeff$estimate[8]`, $p =$ `r v3_lmer_coeff$p.val.clean[8]`).
+
+#### All experiments 
+
+Did children perform better given facial and/or prosodic cues, or were linguistic politeness markers sufficient? To see any potential effect of experiment on children's performance, we conducted an exploratory mixed-effects logistic regression on all three experiments together^[Model structure: `accuracy ~ sample + experiment + age x question type x politeness marker type + (1 | item)`]. The regression model showed no significant main effect of experiment, suggesting that children did not perform more poorly when facial and prosodic cues were removed, and they were able to make accurate judgments based on linguistic cues alone. 
+The model also showed that children improved with increasing age ($\beta$ = `r all_lmer_coeff$estimate[5]`, $p$ `r all_lmer_coeff$p.val.clean[5]`) and that children were more accurate with "can you please" than "please" and "can you" ($\beta$ = `r all_lmer_coeff$estimate[7]`, $p =$ `r all_lmer_coeff$p.val.clean[7]`), confirming results from each individual experiment. Additionally, the model showed that children became better at judging the politeness marker "can you please" with age ($\beta$ = `r all_lmer_coeff$estimate[1]`, $p =$ `r all_lmer_coeff$p.val.clean[10]`), and that children answered *polite* questions better than *rude* questions about the marker "please" ($\beta$ = `r all_lmer_coeff$estimate[13]`, $p =$ `r all_lmer_coeff$p.val.clean[13]`)
+
+## General Discussion
+
+What do young children understand about polite speech? 
+In three experiments, we looked at how 2- to 4-year-old children reason about making requests with or without simple politeness markers such as "please", "can you" and "can you please." 
+By 3 years, children pay attention to the use of politeness markers to accurately judge whether that speaker is relatively more polite, rude, nicer or meaner compared to another speaker. 
+By 4 years, children reliably infer that a speaker who uses a politeness marker is a better play partner and more likely to get what they want.
+Across all three experiments, we saw a clear developmental trend such that children improved in their reasoning about polite speech with increasing age.
+We observed no large experiment effects as we eliminated facial and prosodic cues; instead, all these inferences appeared to be supported by linguistic markers alone.
+
+Even though children have been shown to produce polite speech such as "please," evidence has been sparse and inconclusive for whether young children below 5 years comprehend speaker attributes and intentions based on polite speech. 
+Here, we found that children are sensitive to the use of politeness markers in speech, and are able to use these markers to infer the speaker's attributes (e.g., niceness) by 3 years, and consequent social implications by 4 years. 
+These ages are closer to the age of first reliable production of polite speech than have been suggested by earlier work.
+
+Children in the US are often explicitly taught and prompted to use politeness markers such as "please" in their requests from early on [e.g., "What's the magic word?"; @gleason1984],
+thus they may quickly learn to use these markers as a rule in order to get what they want.
+They also might hear other remarks that pair politeness markers with positive words (e.g., "You should be *nice* and say *please*"), which may help them learn the association between polite speech and positive attributes. 
+Gradually, children may recognize more subtle social processes that are related to polite speech production: Adults may praise and reward children who spoke politely, and children themselves may like peers who ask for permission to play with their toys rather than take the toys away without asking.
+Future work with corpus data analysis looking at these interactions between children and others may reveal important conversational patterns that help children acquire social meanings of polite speech.
+
+There are limitations to the current work that present other opportunities for future research. 
+Because this work looked only at the behaviors of English-speaking children with a relatively high socioeconomic status in the US, it is an open question how children with different language and cultural background may develop understanding of polite speech.
+Cross-cultural investigation of what markers are present in other languages, cultures and backgrounds, as well as how those markers are acquired, will be informative.
+
+Also, we did not manipulate the social status of speakers or addressees. 
+Though not explicitly stated, the visual depiction and narration used for the current work suggested that speakers were communicating with their peers only. 
+However, one key prediction from politeness theory is that speakers will adjust their utterances based on the status of the addressees [@brown1987]. 
+Indeed children adjust own their speech based on the listener status and age: Even at two years, children use a polite form of request (“Can I have...”) to an adult but an imperative form (“Give me...”) to a peer [@shatz1973].
+Thus, future work should examine how children use cues to politeness to judge speaker intentions in different contexts, including varied status differences between speakers and listeners. 
+
+In sum, the current work showed that young children understand implications of using simple politeness markers in requests.
+A broader understanding of the emergence of politeness may offer insights into how children become proficient users of language across the wide range of social situations that they encounter.

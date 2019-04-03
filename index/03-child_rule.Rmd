@@ -1,0 +1,9 @@
+# Children understand social goals behind polite requests ^[This chapter is submitted and currently under review for the 41st Annual Meeting of the Cognitive Science Society, and is joint work with Michael C. Frank.]
+
+\chaptermark{Children's understanding of polite requests} 
+
+In the last chapter, I examined adults' understanding of polite speech based on goal tradeoffs. What do children understand about polite speech? Looking at children's polite speech comprehension can help examine children's pragmatic understanding more generally, and can be informative for caregivers who want to teach children what it means to be polite. Even though children start to produce polite speech from early on, there is little known about whether they understand intentions behind polite language. In this Chapter, I show that by 3 years, English-speaking preschool children understand that it is more polite and nicer (and less rude and mean) to use politeness markers such as \"please\" when making requests, and by 4 years, they understand that the use of these politeness markers indicates that the speaker is more socially likeable and is more likely to gain compliance from their conversational partners. This work can help lay the foundation for future work on children's understanding of polite speech and pragmatic development more generally.
+
+```{r child = 'chapter_child_rmds/ch3_polite_requests/polite_requests.Rmd'}
+```
+
