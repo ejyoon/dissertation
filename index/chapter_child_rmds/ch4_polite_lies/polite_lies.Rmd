@@ -1,0 +1,11 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F, 
+                      fig.width=4, fig.asp = 0.618, out.width = "90%", 
+                      fig.align = 'center', fig.pos = 't')
+
+source(here::here("index/disseration_helpers.R"))
+child_lies_image_path <- "index/chapter_child_rmds/ch4_polite_lies/figs"
+child_lies_file_path <- "index/chapter_child_rmds/ch4_polite_lies/files"
+```
+
+FIXME.

@@ -1,0 +1,8 @@
+# Children understand tradeoffs between informational and prosocial goals
+
+\chaptermark{Children's understanding of goal tradeoffs} 
+
+FIXME.
+
+```{r child = 'chapter_child_rmds/ch4_polite_lies/polite_lies.Rmd'}
+```

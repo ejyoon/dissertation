@@ -86,6 +86,6 @@ on chapters.
 
 # Introduction {-#intro}
 
-```{r child = 'chapter_child_rmds/Intro/intro.Rmd'}
+```{r child = 'chapter_child_rmds/ch0_intro/intro.Rmd'}
 ```
 
