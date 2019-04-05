@@ -1,0 +1,96 @@
+subid,initial,consent,consent-vid,dot,dob,age_exact,sex,hispanic,race,english,lang1,lang2,lang3,parent1_ed,parent2_ed,no_preemie,experimenter,comments
+20416_01,NA,Y,Y,2/4/16,4/12/07,8.821917808,M,N,asian,95,English,Chinese,,6,6,Y,Veronica,Experimentor error on 1 question- see video/data coding sheet
+20416_02,NA,Y,Y,2/4/16,9/3/09,6.424657534,F,N,asian,95,English,Chinese,,6,6,Y,Veronica,
+20416_03,NA,Y,Y,2/4/16,2/27/09,6.939726027,M,N,white,100,English,,,2,2,Y,Veronica,
+20416_04,NA,Y,Y,2/4/16,3/26/07,8.868493151,M,N,white,100,English,,,2,2,Y,Veronica,
+20716_01,NA,Y,Y,2/7/16,4/11/07,8.832876712,F,N,asian,75,English,Japanese,,4,4,Y,Rachel,
+20716_02,NA,Y,Y,2/7/16,9/16/10,5.397260274,F,Y,NA,100,English,Spanish,,3,2,Y,Veronica,
+21216_01,NA,Y,Y,2/12/16,4/19/10,5.821917808,F,N,white,95,English,Spanish,,6,4,Y,Veronica,
+21416_01,NA,Y,Y,2/14/16,1/12/10,6.093150685,F,N,asian,95,English,Tamil,,6,6,Y,Veronica,
+21416_02,NA,Y,Y,2/14/16,1/28/08,8.052054795,M,N,asian,95,English,Tamil,,6,6,Y,Veronica,
+21416_03,NA,Y,Y,2/14/16,8/24/08,7.479452055,F,Y,American Indian/Black/white/mexican,95,English,Spanish,,4,NA,Y,Veronica,
+21716_01,NA,Y,Y,2/17/16,9/1/08,7.465753425,F,Y,NA,95,English,Spanish,,3,6,Y,Rachel,"Camera didn't have memory card in, was able to hand code all responses"
+21716_02,NA,Y,Y,2/17/16,2/12/09,7.016438356,M,N,other,,English,Malayadam,,6,6,Y,Rachel,
+21716_03,NA,Y,Y,2/17/16,4/17/10,5.84109589,M,N,white,75,English,Spanish,,6,3,Y,Veronica,
+21716_04,NA,Y,Y,2/17/16,6/9/11,4.695890411,F,N,asian,75,English,Urdu,,6,6,Y,Veronica,Exclude
+21716_05,NA,Y,Y,2/17/16,5/26/09,6.734246575,F,N,asian,75,English,Urdu,,6,6,Y,Veronica,Exclude
+21816_01,NA,Y,Y,2/18/16,3/15/09,6.934246575,M,N,asian,95,English,Kannada,,6,6,Y,Veronica,
+21816_02,NA,Y,Y,2/18/16,12/23/08,7.15890411,F,N,pacific islander,100,English,,,4,4,Y,Veronica,
+21916_01,NA,Y,Y,2/19/16,12/31/09,6.139726027,F,N,black,100,English,,,6,NA,Y,Veronica,
+21916_02,NA,Y,Y,2/19/16,3/16/09,6.934246575,M,N,asian,100,English,,,6,6,Y,Veronica,
+21916_03,NA,Y,Y,2/19/16,6/13/10,5.690410959,F,N,white,95,English,Spanish,,6,4,Y,Veronica,
+21916_04,NA,Y,Y,2/19/16,5/30/10,5.728767123,M,N,white,100,English,,,4,4,Y,Veronica,
+21916_05,NA,Y,N,2/19/16,6/29/09,6.646575342,M,N,asian,95,English,Amharic,,4,5,Y,Veronica,Twins No video
+21916_06,NA,Y,N,2/19/16,6/29/09,6.646575342,M,N,asian,95,English,Amharic,,4,5,Y,Veronica,Twins No video
+22616_01,NA,Y,Y,2/26/16,1/2/08,8.156164384,M,N,asian,75,English,Chinese,,6,4,Y,Veronica,
+3216_01,NA,Y,Y,3/2/16,9/3/08,7.498630137,F,N,asian,95,English,Waray dialect,,6,6,Y,Rachel,
+32316_01,NA,Y,Y,3/23/16,4/21/09,6.926027397,F,Y,"1/2 hispanic, 1/2 white",100,English,NA,,3,2,N ,Rachel,
+32416_01,NA,Y,Y,3/24/16,4/21/08,7.928767123,M,N,white,100,English,NA,,6,6,Y,Veronica,
+32516_01,NA,Y,Y,3/25/16,6/12/09,6.789041096,F,Y,white/hispanic,95,English,Spanish,,6,3,N,Veronica,
+33116_01,NA,Y,Y,3/31/16,8/11/09,6.64109589,F,N,white,100,English,Spanish,,4,4,Y,Veronica,
+33116_02,NA,Y,Y,3/31/16,12/23/08,7.273972603,M,N,white,75,English,Turkish,,6,6,Y,Veronica,
+33116_03,NA,Y,Y,3/31/16,1/5/10,6.238356164,M,N,white,100,English,NA,,6,4,Y,Veronica,
+33116_04,NA,Y,Y,3/31/16,9/27/07,8.515068493,F,N,white,100,English,NA,,6,4,Y,Veronica,
+33116_05,NA,Y,N,3/31/16,3/9/09,7.065753425,F,N,white,95,English,French,,6,6,Y,Veronica,
+40116_01,NA,Y,Y,4/1/16,1/2/09,7.249315068,M,N,asian,95,English,Malayalam,,6,6,Y,Veronica,(Fraternal) Twins
+40116_02,NA,Y,Y,4/1/16,1/2/09,7.249315068,M,N,asian,95,English,Malayalam,,6,6,Y,Veronica,(Fraternal) Twins
+40216_01,NA,Y,Y,4/2/16,7/19/08,7.709589041,M,N,asian/indian,75,English,Punjabi,,6,4,Y,Veronica,
+40216_02,NA,Y,Y,4/2/16,10/1/09,6.506849315,F,N,asian,75,English,Chinese,,6,6,Y,Veronica,
+40216_03,NA,Y,Y,4/2/16,1/23/10,6.194520548,M,Y,white,95,English,Spanish,ASL,3,2,Y,Veronica,
+40616_01,NA,Y,Y,4/6/16,6/26/09,6.783561644,F,N,asian,95,English,Telugu,,6,6,Y,Rachel,
+41216_01,NA,Y,Y,4/12/16,12/11/09,6.339726027,F,N,asian,95,English,Hindi,Malayalam,6,6,Y,Veronica,
+41216_02,NA,Y,Y,4/12/16,2/5/10,6.18630137,F,N,asian,95,English,Tamil,Urdu,6,6,Y,Veronica,
+41216_03,NA,Y,Y,4/12/16,3/13/08,8.087671233,M,N,asian,95,English,Hindi,,6,6,Y,Veronica,
+41316_01,NA,Y,Y,4/13/16,2/25/10,6.134246575,F,N,asian,100,English,Telugu,Hindi,4,6,Y,Veronica,
+41316_02,NA,Y,Y,4/13/16,2/25/10,6.134246575,F,N,asian,100,English,Telugu,Hindi,4,6,Y,Veronica,
+41416_01,NA,Y,Y,4/14/16,11/11/08,7.42739726,F,N,asian,5,Cantonese,English,,3,3,Y,Veronica,
+41516_01,NA,Y,Y,4/15/16,2/22/09,7.147945205,F,N,white,100,English,Spanish,,6,5,do not remember/ decline to state,Rachel,
+41516_02,NA,Y,Y,4/15/16,7/19/07,8.747945205,M,N,white,100,English,Spanish,,6,5,do not remember/ decline to state,Rachel,
+41516_03,NA,Y,Y,4/15/16,2/8/11,5.18630137,F,Y,"black, german, costa rican",100,English,Spanish,German,3,3,Y,Veronica,
+41516_04,NA,Y,Y,4/15/16,10/28/10,5.468493151,M,N,asian,95,English,Nepali,,6,4,Y,Rachel,
+41516_05,NA,Y,Y,4/15/16,11/26/10,5.389041096,F,N,"asian, white",100,English,Chinese,,6,4,Y,Veronica,
+41516_06,NA,Y,Y,4/15/16,8/12/09,6.679452055,M,N,white,100,English,NA,,6,4,Y,Rachel,
+42016_01,NA,Y,Y,4/20/16,1/2/11,5.301369863,M,N,asian,95,English,NA,,6,4,N,Veronica,Stopped halfway through-- child was getting comprehension questions wrong and coaching from older brother
+42016_02,NA,Y,Y,4/20/16,8/20/07,8.673972603,M,N,asian,95,English,NA,,6,4,N,Veronica,
+42216_01,NA,Y,Y,4/22/16,10/27/10,5.490410959,M,N,white,100,English,NA,,4,6,Y,Veronica,
+42216_02,NA,Y,Y,4/22/16,10/27/08,7.490410959,M,decline,asian,75,English,Kannada,,6,6,Y,Veronica,
+42216_03,NA,Y,Y,4/22/16,11/21/09,6.421917808,F,N,white,95,English,NA,,5,6,Y,Veronica,
+42716_01,NA,Y,Y,4/27/16,7/5/10,5.816438356,F,N,white,100,English,NA,,6,4,Y,Rachel,
+42716_02,NA,Y,Y,4/27/16,7/5/10,5.816438356,F,N,white,100,English,NA,,6,4,Y,Rachel,
+42716_03,NA,Y,Y,4/27/16,11/5/10,5.479452055,M,N,Irani,95,English,Persian,,6,6,Y,Veronica,
+42716_04,NA,Y,Y,4/27/16,11/24/10,5.42739726,M,decline,decline,100,English,,,decline,decline,Y,Rachel,
+42816_01,NA,Y,Y,4/28/16,5/8/10,5.978082192,F,N,asian,95,English,Vietnamese,,4,NA,Y,Veronica,
+42816_02,NA,Y,Y,4/28/16,8/6/09,6.731506849,M,N,white,25,Dutch,English,,6,6,Y,Veronica,
+51416_01,NA,Y,N,5/14/16,11/27/11,4.465753425,M,N,black,100,English,Amharic,,4,4,Y,Veronica,Exclude-age
+51416_02,NA,Y,Y,5/14/16,5/26/07,8.975342466,F,N,asian,75,English,Tamil,French,5,5,Y,Veronica,
+51416_03,NA,Y,N,5/14/16,10/2/10,5.619178082,F,N,white,100,English,,,2,4,Y,Veronica,
+51816_01,NA,Y,Y,5/18/16,5/18/11,5.005479452,M,Y,"white, mexican",100,English,,,4,4,Y,Rachel,
+51816_02,NA,Y,Y,5/18/16,8/30/11,4.720547945,F,N,european,100,English,Flemish,Dutch,6,6,Y,Rachel,Exclude- age
+51816_03,NA,Y,N,5/18/16,8/16/07,8.761643836,F,N,white,100,English,,,5,4,N,Rachel,
+51816_04,NA,Y,Y,5/18/16,6/16/07,8.928767123,M,N,white,100,English,,,4,4,Y,Rachel,
+51816_05,NA,Y,Y,5/18/16,6/2/10,5.964383562,M,N,asian,100,English,Hindi,,6,6,Y,Veronica,
+52216_01,NA,Y,Y,5/22/16,11/1/07,8.561643836,M,N,asian,95,English,Bengali,,6,6,Y,Rachel,No video
+52216_02,NA,Y,Y,5/22/16,2/16/11,5.265753425,M,N,asian,95,English,Bengali,,6,6,Y,Rachel ,No video
+52616_01,NA,Y,Y,5/26/16,6/19/08,7.939726027,F,N,white,100,English,Spanish,,4,4,Y,Veronica,
+52616_02,NA,Y,Y,5/26/16,6/19/08,7.939726027,F,N,white,100,English,Spanish,,4,4,Y,Veronica,
+53016_01,NA,Y,Y,5/30/16,8/6/07,8.821917808,F,Y,spanish,95,English,Spanish,,2,2,Y,Veronica,
+5316_01,NA,Y,Y,5/3/16,8/20/10,5.706849315,M,Y,black/african American,100,English,Spanish,,4,5,N,Veronica,Exclude?
+5416_01,NA,Y,Y,5/4/16,9/25/08,7.610958904,F,N,Filipino,100,English,,,6,4,N,Rachel,
+5416_02,NA,Y,Y,5/4/16,3/28/10,6.106849315,F,N,asian,100,English,Filipino,,6,6,Y,Rachel,
+5416_03,NA,Y,Y,5/4/16,5/20/07,8.964383562,M,N,asian,100,English,Filipino,,6,6,Y,Rachel,
+5616_01,NA,Y,Y,5/6/16,4/27/10,6.030136986,F,Y,white,100,English,NA,,2,3,Y,Veronica,
+5816_01,NA,Y,Y,5/8/16,2/15/09,7.230136986,M,N,white,100,English,German,,3,4,N,Veronica,
+5816_02,NA,Y,Y,5/8/16,1/9/11,5.331506849,F,N,white,100,English,,,6,2,Y,Veronica,Exclude- wrong answers on practice
+5816_03,NA,Y,Y,5/8/16,1/6/10,6.339726027,F,N,asian,95,English,Chinese,,6,4,N,Veronica,
+5816_04,NA,Y,Y,5/8/16,1/6/10,6.339726027,M,N,asian,95,English,Chinese,,6,4,N,Veronica,
+5816_05,NA,Y,Y,5/8/16,4/6/08,8.093150685,F,N,white,100,English,,,6,6,Y,Veronica,
+5816_06,NA,Y,Y,5/8/16,3/8/11,5.17260274,F,N,white,100,English,,,6,6,Y,Veronica,
+5816_07,NA,Y,Y,5/8/16,3/29/11,5.115068493,F,N,asian/white,75,English,Mandarin,,5,4,Y,Veronica,Exclude- wrong answers on pracrice
+5816_08,NA,Y,Y,5/8/16,9/3/10,5.682191781,F,N,white,100,English,,,6,4,Y,Veronica,
+5816_09,NA,Y,Y,5/8/16,11/9/10,5.498630137,M,N,asian,95,English,Japanese,,4,4,N,Veronica,Exclude- wrong answers on practice
+61216_01,NA,Y,Y,6/12/16,11/6/08,7.602739726,M,Y,"asian, native hawaiian ",100,English,,,3,3,N,Rachel,
+61216_02,NA,Y,Y,6/12/16,4/12/09,7.17260274,F,Y,hispanic,75,English,Spanish,,2,1,Y,Rachel,
+61916_01,NA,Y,Y,6/19/16,9/4/08,7.794520548,M,N,white,100,English,,,6,3,Y,Rachel,
+61916_02,NA,Y,Y,6/19/16,4/17/08,8.178082192,F,Y,"asian, hispanic",100,English,,,6,3,Y,Rachel,
+6816_01,NA,Y,Y,6/8/16,4/2/08,8.189041096,M,N,asian,75,English,Telugu,Spanish,6,6,Y,Rachel,
+6816_02,NA,Y,Y,6/8/16,8/15/07,8.821917808,F,Y,NA,95,English,Spanish,,6,2,Y,Rachel,

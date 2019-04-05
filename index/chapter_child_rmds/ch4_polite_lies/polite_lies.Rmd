@@ -3,9 +3,181 @@ knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F,
                       fig.width=4, fig.asp = 0.618, out.width = "90%", 
                       fig.align = 'center', fig.pos = 't')
 
+library(here); library(tidyverse); library(ggthemes); library(langcog); library(brms); library(stringr); library(lme4); library(knitr)
+
 source(here::here("index/disseration_helpers.R"))
 child_lies_image_path <- "index/chapter_child_rmds/ch4_polite_lies/figs"
 child_lies_file_path <- "index/chapter_child_rmds/ch4_polite_lies/files"
 ```
 
-FIXME.
+```{r child_inf_data}
+d1 <- read.csv(here(child_lies_file_path, "trupol_data_all.csv"))
+d_age <- read.csv(here(child_lies_file_path, "trupol_v2_subject_log.csv")) %>%
+  select(subid, consent, english, age_exact, sex)
+d1 <- left_join(d1, d_age) %>%
+  filter(age == "adult" | site == "India" | consent == "Y") %>%
+  filter(age == "adult" | site == "India" | english > 50)
+  
+d1$age <- as.factor(as.character(d1$age))
+d1$order <- as.factor(as.character(d1$order))
+d1$site <- as.factor(as.character(d1$site))
+d1$polite <- as.factor(as.character(d1$polite))
+d1$q_kind <- as.factor(as.character(d1$q_kind))
+d1$cond <- as.factor(as.character(d1$cond))
+d1$subid <- as.factor(as.character(d1$subid))
+d1$answer <- as.factor(as.character(d1$answer))
+
+d_orig <- d1 %>%
+  mutate(cond = fct_recode(cond,
+    "expt" = "exp"
+  )) %>%
+  mutate(trial = substr(q, 6, 6)) %>%
+  mutate(sample = "original") %>%
+  rename(speaker = polite, qkind = q_kind, agebin = age, age = age_exact) %>%
+  mutate(qkind = fct_recode(qkind,
+                            "mean" = "meanness",
+                            "nice" = "niceness",
+                            "truth" = "truth-telling")) %>%
+  
+  select(subid, site, sample, cond, age, sex, trial, qkind, speaker, answer, age, agebin)
+
+d_raw <- read_csv(here(child_lies_file_path, "trupol_v3_data_reorg.csv"))
+
+d_filter_by_practice <- d_raw %>%
+  filter(practice1 == "Y", practice2 == "Y", practice3 == "Y",
+         practice4 == "Y", practice5 == "Y", practice6 == "Y")
+
+d_clean <- d_raw %>%
+  filter(subid %in% d_filter_by_practice$subid) %>%
+  select(-practice1, -practice2, -practice3, 
+         -practice4, -practice5, -practice6) %>%
+  gather(-order, -subid, key = trial, value = answer) %>%
+  separate(trial, c("trial", "question"), extra="merge") %>%
+  mutate(trial = substr(trial, 6, 6)) %>%
+  mutate(question = case_when(
+                               grepl("playWhy", question) ~ "Pwhy",
+                               grepl("play", question) ~ "play",
+                               TRUE ~ question
+                               )
+         )
+
+order <- read_csv(here(child_lies_file_path, "trupol_v3_order.csv")) %>%
+  mutate_if(is.numeric, as.character)
+
+d_join1 <- left_join(d_clean %>% mutate_if(is.numeric, as.character), order)
+
+log <- read_csv(here(child_lies_file_path, "trupol_v3_subject_log.csv")) %>%
+  rename(subid = "Subject ID") %>%
+  filter(Consent == "Y", English > 3, !grepl("pilot", Comments)) %>%
+  select(subid, Age, Gender)
+
+d_rep <- left_join(log, d_join1) %>%
+  filter(!is.na(order)) %>%
+  rename(age = Age, sex = Gender) %>%
+  mutate(site = "US", sample = "replication") %>%
+  mutate(qkind = case_when(
+    !is.na(qkind) ~ qkind,
+    TRUE ~ question
+  )) %>%
+  mutate(speaker = case_when(
+    qkind == "play" | qkind == "Pwhy" ~ "NA",
+    TRUE ~ speaker
+  )) %>%
+  mutate(agebin = case_when(
+    age < 7 ~ "6",
+    age >= 7 ~ "8"
+  )) %>%
+  mutate(answer = case_when(
+    answer == "Y" ~ "1",
+    answer == "N" ~ "0",
+    TRUE ~ answer
+  )) %>% 
+  select(subid, site, sample, cond, age, sex, trial, qkind, speaker, answer, agebin)
+
+d <- rbind(d_orig, d_rep) %>%
+  mutate_if(is.character, as.factor)
+
+d <- d %>%
+  filter(site == "US")
+
+```
+
+```{r childInfSample, results = 'asis'}
+child_lies_tab <- d %>% 
+  group_by(cond, sample, agebin, subid) %>%
+  summarise(n=n()) %>%
+  group_by(cond, sample, agebin) %>%
+  summarise(n=n()) %>%
+  mutate(n = round(n)) %>%
+  ungroup() %>%
+  mutate(cond = fct_recode(cond, 
+                           "Control (no reason for dishonesty)" = "cont",
+                           "Experimental (politeness reasons)" = "expt"
+                           )) %>%
+  mutate(agebin = fct_recode(agebin,
+                             "5-6-yr" = "6",
+                             "7-8-yr" = "8"
+                             )) %>%
+  rename('Number of participants'=n) %>%
+  rename(Condition = cond) %>%
+  rename(Sample = sample) %>%
+  rename('Age group' = agebin)
+
+
+apa_table(child_lies_tab, caption = "Participant demographic information.")
+```
+
+```{r childInfPlot}
+d_plot <- d %>%
+  # filter(trial %in% c(1, 2, 3, 4)) %>%
+  # filter(qkind %in% c("nice", "mean", "truth")) %>%
+  filter(qkind %in% c("nice", "mean")) %>%
+  # filter(qkind != "truth") %>%
+  mutate(qkind = fct_relevel(qkind, "truth", "nice", "mean")) %>%
+  mutate(qkind = fct_recode(qkind, 
+                            "telling the truth" = "truth"
+                            )) %>%
+  mutate(speaker = fct_recode(speaker, 
+                            "dishonest" = "polite"
+                            )) %>%
+  mutate(cond = fct_recode(cond, 
+                           "dishonest for \nno apparent reason" = "cont",
+                           "dishonest for \npoliteness reasons" = "expt"
+                           )) %>%
+  mutate(agebin = fct_recode(agebin,
+                             "5-6-yr" = "6",
+                             "7-8-yr" = "8"
+                             )) %>%
+  filter(answer == "1" | answer == "0") %>%
+  mutate(answer = as.numeric(as.character(answer))) %>%
+  group_by(sample, agebin, qkind, cond, speaker, subid) %>%
+  summarise(answer = mean(answer, na.rm=T)) %>%
+  group_by(sample, agebin, qkind, cond, speaker) %>%
+  multi_boot_standard(col="answer") %>%
+  rename(answer = mean) %>%
+  # ggplot(., aes(x=agebin, y=answer, col=cond, shape=sample, alpha=sample)) +
+  ggplot(., aes(x=agebin, y=answer, col=cond, shape=sample)) +
+  # geom_jitter(height=.05) +
+  geom_point(aes(size=.6), position=position_dodge(width=.3), stat = "identity") +
+  geom_linerange(aes(ymin=ci_lower, ymax=ci_upper), position=position_dodge(width=.3), stat = "identity") +
+  facet_grid(qkind~speaker) + 
+  theme_few() +
+  theme(legend.position = "bottom", legend.title = element_blank()) +
+  geom_hline(aes(yintercept=0.5), linetype="dashed") +
+  scale_colour_ptol() + 
+  # scale_alpha_manual(values=c(0,1)) +
+  # ggtitle("Expt 1: Judgments for honest vs. polite speaker") +
+  ylab("Proportion \"yes [the speaker was _____]\"") +
+  xlab("Age") +
+  ylim(-0.1,1.1) +
+  scale_y_continuous(breaks=seq(0,1,.5)) +
+  guides(size=FALSE)
+
+# ggsave(here("age_by_cond_bothSamples_truth.pdf"), width=6, height=5)
+ggsave(d_plot, file=here::here(child_lies_image_path, "trupol_plot.png"), width=5, height=5)
+```
+
+```{r figTrupolResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "FIXME."}
+png::readPNG(here::here(child_lies_image_path, "trupol_plot.png")) %>%
+  grid::grid.raster()
+```
