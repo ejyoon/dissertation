@@ -1,5 +1,5 @@
 book_filename: "erica_yoon_dissertation"
 chapter_name: "Chapter "
-rmd_files: ["index.Rmd", "01-theory.Rmd", "02-adult.Rmd", "03-child_rule.Rmd", "04-child-inference.Rmd", "06-conclusion.Rmd", "07-appendix.Rmd", "99-references.Rmd"]
+rmd_files: ["index.Rmd", "01-theory.Rmd", "02-child_rule.Rmd", "03-child-inference.Rmd", "04-adult.Rmd", "06-conclusion.Rmd", "07-appendix.Rmd", "99-references.Rmd"]
 download: [["thesis.pdf", "PDF"], ["thesis.epub", "EPUB"], ["thesis.docx", "Word"]]
 delete_merged_file: true

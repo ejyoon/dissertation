@@ -6,8 +6,8 @@ knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F,
 library(here); library(tidyverse); library(ggthemes); library(langcog); library(brms); library(stringr); library(lme4); library(knitr)
 
 source(here::here("index/disseration_helpers.R"))
-child_lies_image_path <- "index/chapter_child_rmds/ch4_polite_lies/figs"
-child_lies_file_path <- "index/chapter_child_rmds/ch4_polite_lies/files"
+child_lies_image_path <- "index/chapter_child_rmds/ch3_polite_lies/figs"
+child_lies_file_path <- "index/chapter_child_rmds/ch3_polite_lies/files"
 ```
 
 ```{r child_inf_data}
@@ -102,6 +102,62 @@ d <- d %>%
 
 ```
 
+## Introduction
+
+Your friend gives a terrible presentation and asks for your opinion. Must you admit, “Your talk was terrible,” or is it acceptable to say: “Your talk was fine”? The latter is potentially misleading but gives the listener what she might want to hear—-in other words, it would be polite.
+
+Politeness violates a critical principle of cooperative communication: exchanging information efficiently and accurately [@grice1975]. If information transfer was the only currency in communication, a cooperative speaker would find polite utterances undesirable because they are potentially misleading. People are polite, however, and speakers do produce polite utterances. 
+Adults and children spontaneously produce requests in polite forms [@clark1980; @axia1985]. Speakers exhibit politeness strategies even while arguing, preventing unnecessary offense to their interactants [@holtgraves1997]. 
+Listeners even attribute ambiguous speech to a polite desire to hide a truth that could hurt another’s self-image [e.g. @bonnefon2009]. 
+In fact, it is difficult to imagine human speech that efficiently conveys only the truth. 
+Intuitively, politeness is one prominent characteristic that differentiates human speech from stereotyped robotic communication, which may try to follow rules to say “please” or “thank you” yet still
+lack genuine politeness.
+
+Does this mean people are not cooperative communicators? 
+@brown1987 recast the notion of a cooperative speaker as one who has both an informational goal to improve the listener’s knowledge state as well as a prosocial goal to minimize any potential damage to the hearer’s (and the speaker’s own) self-image, which they called *face.* 
+In their analysis, if the speaker’s intended meaning contains no threat to the speaker or listener’s face, then the speaker will choose to convey the meaning in an efficient manner, putting it *on the record*. As the degree of face-threat becomes more severe, however, a speaker will choose to be polite by producing more indirect utterances.
+
+One possible proposal based on this idea by @brown1987 is that people think about polite language as reflecting a tradeoff between information transfer and face-saving.
+When you try to save face, you hide or you risk losing some information in your intended message by making your utterance false or indirect to some degree. 
+When you prioritize truthfulness and informativity, you may risk losing listener’s (or your own) face.
+In this Chapter, I'll examine whether and how children and adults may think about polite speech this way: 
+Do they reason about polite speech as reflecting a tradeoff between the goals of information transfer and face-saving?
+
+From very early on, children seem to understand that speakers want to be informative, and that they want to be prosocial.
+Around one year of age, children already start to adjust their own informativeness in their communicative action depending on the listener needs [@liszkowski2008], and as they get older they correctly judge a speaker’s truthfulness and preferentially learn from informants who were previously accurate [@corriveau2009]. By 6 years they are able to readily judge whether teachers are being underinformative [@gweon2014].
+In the last Chapter I presented evidence that children understand speakers' goals to be kind, as 3- to 4-year-olds reason that those who say "please" are nicer and more polite, and are likely to be better play partners.
+
+Do children think of these goals to be informative and to be kind as separate, fixed *rules* to follow, or do they make *inferences* that integrates and accounts for both goals that the speaker may consider?
+One possibility is that children have a rule-based approach to language. 
+They may speak based on deterministic rules such as "If you want something, then you should say *please*" and "If you see/feel/think *X*, then you should (truthfully) say *X.*"
+Children can use these rules to evaluate speakers based on whether they follow these rules or not ("She is nice because she said *please*"; or "She is bad/wrong because she said these cookies are yummy but they are really salty.")
+
+Whereas these rules can make language production and understanding easy and productive, speakers often do not follow these simple fixed rules deterministically. 
+For example, sometimes people tell the truth ("Those herbs are poisonous, you shoudn't eat them!") but at other times they tell lies ("This is a very delicious salad that you prepared!").
+Indeed, caregivers contradict their own teachings as they often demand children to tell the truth ("Who broke the vase? Be honest."), but also reproach them for telling the truth at times (Child: "This [meal that Grandma cooked] is yucky" Father:"Don't say that, you should be nice!").
+Thus, language users ultimately need to learn that language reflects not only simple deterministic rules to follow, but also more nuanced tradeoffs between different goals that speakers might have. 
+
+Do adults and children go beyond simple rules and engage in an *inference*-based reasoning to think about how speech reflects speakers' different goals to be informative or to be prosocial? 
+In this Chapter, I consider the case study of prosocial lies to examine whether children understand the tradeoff between speakers' informational goals and prosocial goals. 
+
+From early on, children start *producing* prosocial lies.
+
+But do children *understand* that prosocial lies reflect speakers' goals to be prosocial and kind to the listener prioritized over the goals to be informative? 
+Children do seem to be sensitive to speakers' prosocial intentions. 
+By 4 years, children evaluate lies differently depending on whether the lies were told to be kind to the listener (e.g., "Your new hat looks great") or to hide their own misdeed ["Yes, I brushed my teeth"; @bussey1999].
+7- to 11-year-old children also tend to rate lie-telling more favorably in politeness situations (e.g. a teacher gave the protagonist an undesirable gift) than in transgression situations [e.g. the protagonist damaged a library book; @heyman2009].
+
+Whereas these previous studies asked children to judge different situations and utterances that represent different categories of lies, the exact same lie may be evaluated differently depending on the perceived goal tradeoff.
+For example, saying "Your cookies were tasty" may be an acceptable lie if the listener baked those cookies as a gift for the speaker, but the same lie might only be misleading and not helpful if the listener did not bake the cookies himself but simply wanted to taste the cookies. 
+
+## Method
+
+### Participants
+
+### Stimuli and design
+
+### Procedure
+
 ```{r childInfSample, results = 'asis'}
 child_lies_tab <- d %>% 
   group_by(cond, sample, agebin, subid) %>%
@@ -126,6 +182,8 @@ child_lies_tab <- d %>%
 
 apa_table(child_lies_tab, caption = "Participant demographic information.")
 ```
+
+## Results and Discussion
 
 ```{r childInfPlot}
 d_plot <- d %>%
