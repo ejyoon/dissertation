@@ -159,12 +159,19 @@ For example, saying "Your cookies were tasty" may be an acceptable lie if the li
 ### Procedure
 
 ```{r childInfSample, results = 'asis'}
-child_lies_tab <- d %>% 
+child_lies_tab1 <- d %>% 
   group_by(cond, sample, agebin, subid) %>%
   summarise(n=n()) %>%
   group_by(cond, sample, agebin) %>%
   summarise(n=n()) %>%
-  mutate(n = round(n)) %>%
+  mutate(n = as.character(round(n)))
+
+child_lies_tab2 <- d %>% 
+  distinct(cond, sample, agebin, age, subid) %>%
+  group_by(cond, sample, agebin) %>%
+  summarise(mean=round(mean(age),2), sd=round(sd(age, na.rm=T), 2))
+  
+child_lies_tab <- left_join(child_lies_tab1, child_lies_tab2) %>%
   ungroup() %>%
   mutate(cond = fct_recode(cond, 
                            "Control (no reason for dishonesty)" = "cont",
@@ -174,13 +181,27 @@ child_lies_tab <- d %>%
                              "5-6-yr" = "6",
                              "7-8-yr" = "8"
                              )) %>%
-  rename('Number of participants'=n) %>%
+  rename('N'=n) %>%
   rename(Condition = cond) %>%
   rename(Sample = sample) %>%
-  rename('Age group' = agebin)
+  rename('Age group' = agebin) %>%
+  rename('Mean age (years)' = mean, "SD age (years)" = sd) %>%
+  replace(is.na(.), "")
 
 
-apa_table(child_lies_tab, caption = "Participant demographic information.")
+# apa_table(child_lies_tab, caption = "Participant demographic information.", align = c(rep("l", 6)) %>%
+#    column_spec(column = 5, width = "3cm")
+   
+child_lies_tab %>%     
+  kable("latex", 
+        booktabs = T, 
+        caption = "Participant demographic information.",
+        caption.short = "demographics") %>%
+  kable_styling(latex_options = "scale_down") %>% 
+  row_spec(row = 0, bold = TRUE) %>% 
+  column_spec(column = 5, width = "2.2cm") %>% 
+  column_spec(column = 6, width = "2.2cm") 
+
 ```
 
 ## Results and Discussion
