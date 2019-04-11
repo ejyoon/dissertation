@@ -125,30 +125,32 @@ Do they reason about polite speech as reflecting a tradeoff between the goals of
 
 From very early on, children seem to understand that speakers want to be informative, and that they want to be prosocial.
 Around one year of age, children already start to adjust their own informativeness in their communicative action depending on the listener needs [@liszkowski2008], and as they get older they correctly judge a speaker’s truthfulness and preferentially learn from informants who were previously accurate [@corriveau2009]. By 6 years they are able to readily judge whether teachers are being underinformative [@gweon2014].
-In the last Chapter I presented evidence that children understand speakers' goals to be kind, as 3- to 4-year-olds reason that those who say "please" are nicer and more polite, and are likely to be better play partners.
+Children also understand speakers' goals to be kind, as 3- to 4-year-olds reason that those who say "please" are nicer and more polite, and are likely to be better play partners [@yoon2019].
 
-Do children think of these goals to be informative and to be kind as separate, fixed *rules* to follow, or do they make *inferences* that integrates and accounts for both goals that the speaker may consider?
+Do children think of the goals to be informative and to be kind as separate, fixed *rules* to follow, or do they make *inferences* that integrates and accounts for both goals that the speaker may consider?
 One possibility is that children have a rule-based approach to language. 
-They may speak based on deterministic rules such as "If you want something, then you should say *please*" and "If you see/feel/think *X*, then you should (truthfully) say *X.*"
-Children can use these rules to evaluate speakers based on whether they follow these rules or not ("She is nice because she said *please*"; or "She is bad/wrong because she said these cookies are yummy but they are really salty.")
+They may think about deterministic rules such as "If you want something, then you should say *please*" and "If you see/feel/think *X*, then you should (truthfully) say *X.*"
+Children can use these rules to both produce polite and truthful utterances themselves, and evaluate speakers based on whether they follow these rules or not ("She is nice because she said *please*"; or "She is bad/wrong because she said these cookies are yummy but they are really salty.")
 
-Whereas these rules can make language production and understanding easy and productive, speakers often do not follow these simple fixed rules deterministically. 
-For example, sometimes people tell the truth ("Those herbs are poisonous, you shoudn't eat them!") but at other times they tell lies ("This is a very delicious salad that you prepared!").
-Indeed, caregivers contradict their own teachings as they often demand children to tell the truth ("Who broke the vase? Be honest."), but also reproach them for telling the truth at times (Child: "This [meal that Grandma cooked] is yucky" Father:"Don't say that, you should be nice!").
-Thus, language users ultimately need to learn that language reflects not only simple deterministic rules to follow, but also more nuanced tradeoffs between different goals that speakers might have. 
+Whereas these straightforward rules can make language production and understanding easy and productive, speakers often do not follow these rules deterministically. 
+For example, people sometimes tell the truth ("Those herbs are poisonous, you shoudn't eat them") but at other times they tell lies to be kind ("This is a very delicious salad that you prepared!").
+Indeed, caregivers contradict their own teachings as they demand children to tell the truth in some contexts ("Who broke the vase? Be honest."), but reproach them for telling the truth in other contexts (Child: "This [meal that Grandma cooked] is yucky" Father:"Don't say that, you should be nice!").
+Thus, language users ultimately need to learn that language reflects not only simple deterministic rules to follow, but also more nuanced tradeoffs between different goals that speakers might have depending on the situation. 
 
 Do adults and children go beyond simple rules and engage in an *inference*-based reasoning to think about how speech reflects speakers' different goals to be informative or to be prosocial? 
 In this Chapter, I consider the case study of prosocial lies to examine whether children understand the tradeoff between speakers' informational goals and prosocial goals. 
 
-From early on, children start *producing* prosocial lies.
+First, do children *say* things that are truthful yet kind? From early on, children start producing prosocial lies. 
+There is evidence that by 3 years, children start to tell white lies, and e.g., say that an adult “looks okay for the picture” even though she has a conspicuous mark of lipstick on her nose [@talwar2002], or lie to a gift-giver about her gift that they actually found undesirable [@talwar2007].
 
-But do children *understand* that prosocial lies reflect speakers' goals to be prosocial and kind to the listener prioritized over the goals to be informative? 
-Children do seem to be sensitive to speakers' prosocial intentions. 
-By 4 years, children evaluate lies differently depending on whether the lies were told to be kind to the listener (e.g., "Your new hat looks great") or to hide their own misdeed ["Yes, I brushed my teeth"; @bussey1999].
-7- to 11-year-old children also tend to rate lie-telling more favorably in politeness situations (e.g. a teacher gave the protagonist an undesirable gift) than in transgression situations [e.g. the protagonist damaged a library book; @heyman2009].
+But do children *understand* that prosocial lies reflect speakers' priority to be prosocial over being truthful and informative? 
+Children do seem to be sensitive to speakers' prosocial intentions: 
+By 4 years, children evaluate lies differently depending on whether the lies were told to be kind to the listener (e.g., "Your new hat looks great") or to hide their own misdeed ["Yes, I brushed my teeth"], judging the latter to be worse [@bussey1999].
+7- to 11-year-old children also tend to rate lie-telling more favorably in politeness situations (e.g. a teacher gave the protagonist an undesirable gift) than in transgression situations [e.g. the protagonist damaged a library book; @heyman2009]. 
 
-Whereas these previous studies asked children to judge different situations and utterances that represent different categories of lies, the exact same lie may be evaluated differently depending on the perceived goal tradeoff.
-For example, saying "Your cookies were tasty" may be an acceptable lie if the listener baked those cookies as a gift for the speaker, but the same lie might only be misleading and not helpful if the listener did not bake the cookies himself but simply wanted to taste the cookies. 
+It is an open question, however, whether children evaluate the exact same lie differently depending on the perceived goal tradeoff.
+For example, saying "your cookies were tasty" may be an acceptable lie if the listener baked those cookies as a gift for the speaker, but the same lie might only be misleading and not helpful if the listener did not bake the cookies himself but simply wanted to taste the cookies. Likewise, telling the truth "the cookies were yucky" may seem blunt and harsh if the speaker is talking to the person who baked the cookies, but the same utterance can be reasonable and even helpful if the listener simply wants to taste the cookies and is curious how the speaker liked them.
+In the current study, we ask whether children are able to reason about polite liars versus blunt truth-tellers, on the dimensions of information transfer (being honest) vs. face-saving (being nice/mean).
 
 ## Method
 
@@ -215,11 +217,10 @@ We included training trials where children and adults were tested on the meaning
 
 ### Stimuli and design
 
-The experimenter read aloud stories where different characters made different decisions. 
-Each of the stories involved a situation where some characters (*speakers*) were asked to give evaluative feedback on something that they just experienced (e.g., a cookie that they tasted, or a game that they played), and that they thought were bad (e.g., the cookie was yucky).
-There were two different context conditions: 
-In the *experimental* condition, speakers were asked by listeners to comment on something that the listeners themselves had created, and as such may be compelled to lie and hide the poor quality of the product in order to not hurt the listener's feelings.
-For example, the "cookies" story in the experimental condition read: "Look, this is Edward [the listener]!
+We presented stories in which some characters (*speakers*) were asked to give evaluative feedback on something bad that they just experienced (e.g., a yucky cookie that they tasted, or a boring game that they played).
+There were two different *context conditions*: 
+In the *experimental* condition, speakers were asked by listeners to comment on something that the listeners themselves had created, and so the speakers may be compelled to lie and hide the poor quality of the product in order to not hurt the listener's feelings.
+For example, one story in the experimental condition read: "Look, this is Edward [the listener]!
 One day, Edward decided to bake some cookies.
 Edward brought his cookie to school and met his friend Mary [the speaker]. Edward said to his friend Mary, “Here, try my cookie!”
 Mary tasted the cookie,
@@ -234,10 +235,17 @@ Mary tasted the cookie,
 and she did not like the cookie at all — she thought the cookie tasted yucky!
 Mary’s friend Edward also wanted to taste the cookie. Edward asked Mary, “Mary, how did you like the cookie?” Mary told Edward, “Edward, the cookie was tasty.”"
 For the original sample, the conditions were between participants (i.e., each participant saw only one of the two conditions), whereas for the replication sample, the conditions were within (i.e., each participant saw both conditions).
-
-While reading each story, experimenters checked for the participants' comprehension twice by asking whether the speaker liked the product (e.g., "So did Sally like the cookie or did she not like the cookie?") and what the speaker told the listener ("So what did Sally tell Edward again?"). If the participant gave an incorrect answer to these comprehension check questions, the experimenter said "let's think about that one more time," and repeated the story.
+Each story presented two episodes each about a different speaker, one who told a lie and the other who told the truth (*speaker type*). After presenting what each speaker decided to say, we presented three *question types*, asking participants to judge (1) whether the speaker told the truth; (2) whether the speaker was nice; and (3) whether the speaker was mean.
+For the original sample, each participant heard two stories from the same condition (either experimental or control); for the replication sample, each participant heard four stories, two from each condition. The order of context conditions, speaker types and question types was counterbalanced across participants.
 
 ### Procedure
+
+For child participants, the experimenter read the storybook with children in a room in a children's museum. 
+They were first introduced to the storybook with simple stories to familiarize them with keywords like "nice," "mean," and "truth" (e.g., "Pam ate five cookies, but Pam told her mom a lie that she didn’t eat any cookie. Was Pam telling the truth?"). 
+Then the experimenter read two (original) or four (replication) stories. 
+While reading each episode, experimenters checked for the participants' comprehension twice by asking whether the speaker liked the product (e.g., "So did Sally like the cookie or did she not like the cookie?") and what the speaker told the listener ("So what did Sally tell Edward again?"). If the participant gave an incorrect answer to these comprehension check questions, the experimenter said "let's think about that one more time," and repeated the story.
+
+For adult participants, we presented the same stories that children heard in an online task.
 
 ## Results and Discussion
 
@@ -300,3 +308,119 @@ png::readPNG(here::here(child_lies_image_path, "trupol_plot.png")) %>%
   grid::grid.raster()
 ```
 
+### Truth-telling
+
+```{r stat_truth}
+ms_stat <- d %>%
+  filter(qkind == "nice" | qkind == "mean" | qkind == "truth") %>%
+  filter(!is.na(agebin)) %>%
+  filter(cond == "expt") %>%
+  mutate(answer = as.numeric(as.character(answer))) %>%
+  select(sample, trial, age, agebin, speaker, qkind, subid, answer)
+
+lmer_truth <- glmer(data=filter(ms_stat, qkind == "truth"), family=binomial, answer ~ sample + agebin * speaker + (1 | subid))
+
+truth.speaker.beta <- round(summary(lmer_truth)$coef[4], 2)
+```
+
+```{r truthsummarytab, echo = F, results = 'asis'}
+truth.tab <- as.data.frame(summary(lmer_truth)$coef)
+
+truth.tab$Predictor <- c("Intercept",
+                      "8-year-olds",
+                      "Adults",
+                      "Polite speaker",
+                      "8-year-olds * Polite speaker",
+                      "Adults * Polite speaker")
+rownames(truth.tab) <- NULL
+truth.tab <- truth.tab[,c(5,1:3)]
+names(truth.tab)[4] <- c("$z$ value")
+
+print(xtable(truth.tab,
+             align = c("l","l","r","r", "r"),
+             label = "tab:truth_tab",
+             caption = "Predictor estimates with standard errors and significance information for a generalized linear mixed-effects model predicting speaker truth-telling judgments"),
+      include.rownames=FALSE,hline.after=c(0,nrow(truth.tab)),
+      sanitize.text.function=function(x){x},
+      caption.placement = 'bottom', 
+      table.placement = "h",
+      comment = F)
+```
+
+Across all age groups, adults and children correctly judged the honest speaker to be telling the truth, and the dishonest speaker as not telling the truth. A generalized linear mixed-effects model predicting truth-telling judgment based on age and speaker type showed a significant main effect of speaker type ($\beta$ = `r truth.speaker.beta`, $p <.001$). There was no main effect of age, and no interaction between age and speaker type. Thus, even the youngest group of participants we tested were able to correctly reason that the honest speaker was telling the truth, whereas the polite speaker was lying.
+
+### Niceness
+
+```{r stat_nice}
+lmer_nice <- glmer(data=filter(ms_stat, qkind == "nice"), family=binomial, answer ~ sample + agebin * speaker + (1 | subid))
+
+nice.speaker.beta <- round(summary(lmer_nice)$coef[4], 2)
+```
+
+```{r nicesummarytab, echo = F, results = 'asis'}
+nice.tab <- as.data.frame(summary(lmer_nice)$coef)
+
+nice.tab$Predictor <- c("Intercept",
+                      "8-year-olds",
+                      "Adults",
+                      "Polite speaker",
+                      "8-year-olds * Polite speaker",
+                      "Adults * Polite speaker")
+rownames(nice.tab) <- NULL
+nice.tab <- nice.tab[,c(5,1:3)]
+names(nice.tab)[4] <- c("$z$ value")
+
+print(xtable(nice.tab,
+             align = c("l","l","r","r", "r"),
+             label = "tab:nice_tab",
+             caption = "Predictor estimates with standard errors and significance information for a generalized linear mixed-effects model predicting speaker niceness judgments"),
+      include.rownames=FALSE,hline.after=c(0,nrow(nice.tab)),
+      sanitize.text.function=function(x){x},
+      caption.placement = 'bottom', 
+      table.placement = "h",
+      comment = F)
+```
+
+```{r stat_nice_age_cont}
+lmer_nice_age <- glmer(data=filter(ms_stat, qkind == "nice"), family=binomial, answer ~ sample + age * speaker + (1 | subid))
+
+nice.age.speaker.beta <- round(summary(lmer_nice_age)$coef[4], 2)
+```
+
+### Meanness
+
+```{r stat_mean}
+lmer_mean <- glmer(data=filter(ms_stat, qkind == "mean"), family=binomial, answer ~ sample + agebin * speaker + (1 | subid))
+
+mean.speaker.beta <- round(summary(lmer_mean)$coef[4], 2)
+```
+
+```{r meansummarytab, echo = F, results = 'asis'}
+mean.tab <- as.data.frame(summary(lmer_mean)$coef)
+
+mean.tab$Predictor <- c("Intercept",
+                      "8-year-olds",
+                      "Adults",
+                      "Polite speaker",
+                      "8-year-olds * Polite speaker",
+                      "Adults * Polite speaker")
+rownames(mean.tab) <- NULL
+mean.tab <- mean.tab[,c(5,1:3)]
+names(mean.tab)[4] <- c("$z$ value")
+
+print(xtable(mean.tab,
+             align = c("l","l","r","r", "r"),
+             label = "tab:mean_tab",
+             caption = "Predictor estimates with standard errors and significance information for a generalized linear mixed-effects model predicting speaker meanness judgments"),
+      include.rownames=FALSE,hline.after=c(0,nrow(nice.tab)),
+      sanitize.text.function=function(x){x},
+      caption.placement = 'bottom', 
+      table.placement = "h",
+      comment = F)
+```
+
+```{r stat_mean_age_cont}
+lmer_mean_age <- glmer(data=filter(ms_stat, qkind == "mean"), family=binomial, answer ~ sample + age * speaker + (1 | subid))
+
+mean.age.speaker.beta <- round(summary(lmer_mean_age)$coef[4], 2)
+```
