@@ -152,12 +152,6 @@ For example, saying "Your cookies were tasty" may be an acceptable lie if the li
 
 ## Method
 
-### Participants
-
-### Stimuli and design
-
-### Procedure
-
 ```{r childInfSample, results = 'asis'}
 child_lies_tab1 <- d %>% 
   group_by(cond, sample, agebin, subid) %>%
@@ -170,8 +164,18 @@ child_lies_tab2 <- d %>%
   distinct(cond, sample, agebin, age, subid) %>%
   group_by(cond, sample, agebin) %>%
   summarise(mean=round(mean(age),2), sd=round(sd(age, na.rm=T), 2))
-  
-child_lies_tab <- left_join(child_lies_tab1, child_lies_tab2) %>%
+
+child_lies_tab3 <- d %>%
+  group_by(cond, sample, agebin, sex, subid) %>%
+  summarise(n=n()) %>%
+  group_by(cond, sample, agebin, sex) %>%
+  summarise(n=n()) %>%
+  filter(sex == "F") %>%
+  select(-sex) %>%
+  rename(Female = n)
+
+child_lies_tab <- left_join(child_lies_tab1, child_lies_tab3) %>%
+  left_join(., child_lies_tab2) %>%
   ungroup() %>%
   mutate(cond = fct_recode(cond, 
                            "Control (no reason for dishonesty)" = "cont",
@@ -181,54 +185,88 @@ child_lies_tab <- left_join(child_lies_tab1, child_lies_tab2) %>%
                              "5-6-yr" = "6",
                              "7-8-yr" = "8"
                              )) %>%
-  rename('N'=n) %>%
+  rename('Total N'=n) %>%
   rename(Condition = cond) %>%
   rename(Sample = sample) %>%
   rename('Age group' = agebin) %>%
-  rename('Mean age (years)' = mean, "SD age (years)" = sd) %>%
-  replace(is.na(.), "")
+  rename('Mean age (years)' = mean, "SD age (years)" = sd)
 
 
 # apa_table(child_lies_tab, caption = "Participant demographic information.", align = c(rep("l", 6)) %>%
 #    column_spec(column = 5, width = "3cm")
    
-child_lies_tab %>%     
+child_lies_tab %>% 
+  replace(is.na(.), "") %>%
   kable("latex", 
         booktabs = T, 
         caption = "Participant demographic information.",
         caption.short = "demographics") %>%
   kable_styling(latex_options = "scale_down") %>% 
   row_spec(row = 0, bold = TRUE) %>% 
-  column_spec(column = 5, width = "2.2cm") %>% 
-  column_spec(column = 6, width = "2.2cm") 
+  column_spec(column = 6, width = "2.2cm") %>% 
+  column_spec(column = 7, width = "2.2cm") 
 
 ```
+### Participants
+
+We recruited parents and their children at Children's Discovery Museum of San Jose, and adults through Amazon's Mechanical Turk. We recruited two samples: a first, *original* sample and a second, pre-registered *replication* sample. You can see the participant demographic information in Table\ \ref{tab:childInfSample}. 
+
+We included training trials where children and adults were tested on the meanings of important keywords such as "nice", "mean", and "truth." For example, participants were asked: "Nicole gave her friend a gift. Was Nicole nice? Was Nicole mean?" We excluded participants who gave wrong answers on these trials, which led to exclusion of 2 child participants from the original sample. FIXME: adult excluded numbers.
+
+### Stimuli and design
+
+The experimenter read aloud stories where different characters made different decisions. 
+Each of the stories involved a situation where some characters (*speakers*) were asked to give evaluative feedback on something that they just experienced (e.g., a cookie that they tasted, or a game that they played), and that they thought were bad (e.g., the cookie was yucky).
+There were two different context conditions: 
+In the *experimental* condition, speakers were asked by listeners to comment on something that the listeners themselves had created, and as such may be compelled to lie and hide the poor quality of the product in order to not hurt the listener's feelings.
+For example, the "cookies" story in the experimental condition read: "Look, this is Edward [the listener]!
+One day, Edward decided to bake some cookies.
+Edward brought his cookie to school and met his friend Mary [the speaker]. Edward said to his friend Mary, “Here, try my cookie!”
+Mary tasted the cookie,
+and she did not like the cookie at all — she thought the cookie tasted yucky!
+Edward asked Mary, “Mary, how did you like my cookie?” Mary told Edward, “Edward, your cookie was tasty.”"
+In the *control* context condition, speakers were asked by listeners to comment on something that they stumbled upon, not what the listeners created (and thus had no reasons to lie about the quality of the product). 
+The cookie story in the control condition read:
+"Look, this is Mary!
+One day, Mary saw a free cookie.
+Mary said, “It’s a free cookie, I’ll try it!”
+Mary tasted the cookie,
+and she did not like the cookie at all — she thought the cookie tasted yucky!
+Mary’s friend Edward also wanted to taste the cookie. Edward asked Mary, “Mary, how did you like the cookie?” Mary told Edward, “Edward, the cookie was tasty.”"
+For the original sample, the conditions were between participants (i.e., each participant saw only one of the two conditions), whereas for the replication sample, the conditions were within (i.e., each participant saw both conditions).
+
+While reading each story, experimenters checked for the participants' comprehension twice by asking whether the speaker liked the product (e.g., "So did Sally like the cookie or did she not like the cookie?") and what the speaker told the listener ("So what did Sally tell Edward again?"). If the participant gave an incorrect answer to these comprehension check questions, the experimenter said "let's think about that one more time," and repeated the story.
+
+### Procedure
 
 ## Results and Discussion
 
 ```{r childInfPlot}
 d_plot <- d %>%
   # filter(trial %in% c(1, 2, 3, 4)) %>%
-  # filter(qkind %in% c("nice", "mean", "truth")) %>%
-  filter(qkind %in% c("nice", "mean")) %>%
+  filter(qkind %in% c("nice", "mean", "truth")) %>%
+  # filter(qkind %in% c("nice", "mean")) %>%
   # filter(qkind != "truth") %>%
   mutate(qkind = fct_relevel(qkind, "truth", "nice", "mean")) %>%
   mutate(qkind = fct_recode(qkind, 
                             "telling the truth" = "truth"
                             )) %>%
-  mutate(speaker = fct_recode(speaker, 
-                            "dishonest" = "polite"
+  mutate(speaker = fct_recode(speaker,
+                            "judgments for honest speaker" = "honest",
+                            "judgments for dishonest speaker" = "polite"
                             )) %>%
   mutate(cond = fct_recode(cond, 
-                           "dishonest for \nno apparent reason" = "cont",
-                           "dishonest for \npoliteness reasons" = "expt"
+                           "no apparent reason \nfor dishonesty" = "cont",
+                           "politeness reasons" = "expt"
                            )) %>%
   mutate(agebin = fct_recode(agebin,
                              "5-6-yr" = "6",
                              "7-8-yr" = "8"
                              )) %>%
   filter(answer == "1" | answer == "0") %>%
-  mutate(answer = as.numeric(as.character(answer))) %>%
+  mutate(answer = as.numeric(as.character(answer)))
+
+plot <- d_plot %>%
   group_by(sample, agebin, qkind, cond, speaker, subid) %>%
   summarise(answer = mean(answer, na.rm=T)) %>%
   group_by(sample, agebin, qkind, cond, speaker) %>%
@@ -237,6 +275,7 @@ d_plot <- d %>%
   # ggplot(., aes(x=agebin, y=answer, col=cond, shape=sample, alpha=sample)) +
   ggplot(., aes(x=agebin, y=answer, col=cond, shape=sample)) +
   # geom_jitter(height=.05) +
+  geom_smooth() +
   geom_point(aes(size=.6), position=position_dodge(width=.3), stat = "identity") +
   geom_linerange(aes(ymin=ci_lower, ymax=ci_upper), position=position_dodge(width=.3), stat = "identity") +
   facet_grid(qkind~speaker) + 
@@ -253,10 +292,11 @@ d_plot <- d %>%
   guides(size=FALSE)
 
 # ggsave(here("age_by_cond_bothSamples_truth.pdf"), width=6, height=5)
-ggsave(d_plot, file=here::here(child_lies_image_path, "trupol_plot.png"), width=5, height=5)
+ggsave(plot, file=here::here(child_lies_image_path, "trupol_plot.png"), width=5, height=5)
 ```
 
-```{r figTrupolResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "FIXME."}
+```{r figTrupolResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Speaker judgments by different age groups (x-axis) for the honest speaker (left column) and the dishonest speaker (right), in different contexts (colors). Rows represent question types (e.g., Was Sally telling the truth?), and y-axis represents proportion saying \`\`yes\" to the question. Shapes represent original (circles) vs. replication samples (triangles). "}
 png::readPNG(here::here(child_lies_image_path, "trupol_plot.png")) %>%
   grid::grid.raster()
 ```
+

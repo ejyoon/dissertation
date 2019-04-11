@@ -135,12 +135,12 @@ For example, rather than saying “your talk was terrible,” people are more li
 ## Part II: Previous theoretical accounts of polite speech
 					
 In Part II, I aim to (i) describe different classes of theoretical approaches to the understanding of polite speech; (ii) for each class, explain how the approach can be situated within the current proposal for the goal-based account for polite speech; and (iii) discuss what advantages the goal-based account can offer beyond the existing approaches. 
-Summary of prominent theories and their implications within goal-based framework can be found in Table 1.1.
+Summary of prominent theories and their implications within goal-based framework can be found in Table\ \ref{tab:litRevTable}.
 
 \newpage
 \blandscape
 
-```{r lit-rev-table, results = 'asis'}
+```{r litRevTable, results = 'asis'}
 lit_rev <- read_csv(here::here(table_path, "lit_review.csv"))
 
 lit_rev %>%
