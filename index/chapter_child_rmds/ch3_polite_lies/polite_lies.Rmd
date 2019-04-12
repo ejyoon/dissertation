@@ -308,119 +308,50 @@ png::readPNG(here::here(child_lies_image_path, "trupol_plot.png")) %>%
   grid::grid.raster()
 ```
 
-### Truth-telling
+```{r trupol_brm, echo = F, results = 'asis'}
+# brm_trupol <- brm(data=ms_stat, family=bernoulli,
+#                   answer ~ cond * qkind * speaker * age + (qkind + speaker| subid) + (cond + qkind + speaker | sample), iter=3000, control = list(adapt_delta = 0.99, max_treedepth = 15))
+# 
+# save(brm_trupol, file=here(child_lies_file_path, "brm_trupol.Rds"))
+load(here(child_lies_file_path, "brm_trupol.Rds"))
 
-```{r stat_truth}
-ms_stat <- d %>%
-  filter(qkind == "nice" | qkind == "mean" | qkind == "truth") %>%
-  filter(!is.na(agebin)) %>%
-  filter(cond == "expt") %>%
-  mutate(answer = as.numeric(as.character(answer))) %>%
-  select(sample, trial, age, agebin, speaker, qkind, subid, answer)
+trupol_tab <- as.data.frame(summary(brm_trupol)$fixed) %>%
+  select(Estimate, Est.Error, 'l-95% CI', 'u-95% CI') %>%
+  rename(Mean = Estimate,
+         "SD" = Est.Error,
+         "95% CI-Lower" = 'l-95% CI',
+         "95% CI-Upper" = 'u-95% CI'
+         )
 
-lmer_truth <- glmer(data=filter(ms_stat, qkind == "truth"), family=binomial, answer ~ sample + agebin * speaker + (1 | subid))
+trupol_tab$Predictor <- c("Intercept",
+                      "Experimental condition (Expt)",
+                      "Meanness question (Mean)",
+                      "Kindness question (Kind)",
+                      "Dishonest speaker (Dishonest)",
+                      "Age",
+                      "Expt * Mean",
+                      "Expt * Nice",
+                      "Expt * Dishonest",
+                      "Mean * Dishonest",
+                      "Nice * Dishonest",
+                      "Expt * Age",
+                      "Mean * Age",
+                      "Nice * Age",
+                      "Dishonest * Age",
+                      "Expt * Mean * Dishonest",
+                      "Expt * Nice * Dishonest",
+                      "Expt * Mean * Age",
+                      "Expt * Nice * Age",
+                      "Expt * Dishonest * Age",
+                      "Mean * Dishonest * Age",
+                      "Nice * Dishonest * Age",
+                      "Expt * Mean * Dishonest * Age",
+                      "Expt * Nice * Dishonest * Age"
+                      )
+rownames(trupol_tab) <- NULL
+trupol_tab <- trupol_tab[,c(5,1:4)]
 
-truth.speaker.beta <- round(summary(lmer_truth)$coef[4], 2)
+apa_table(trupol_tab, caption= "Predictor mean estimates with standard deviation and 95% credible interval information for a Bayesian linear mixed-effects model predicting \'\'yes\" responses to questions.")
+
 ```
 
-```{r truthsummarytab, echo = F, results = 'asis'}
-truth.tab <- as.data.frame(summary(lmer_truth)$coef)
-
-truth.tab$Predictor <- c("Intercept",
-                      "8-year-olds",
-                      "Adults",
-                      "Polite speaker",
-                      "8-year-olds * Polite speaker",
-                      "Adults * Polite speaker")
-rownames(truth.tab) <- NULL
-truth.tab <- truth.tab[,c(5,1:3)]
-names(truth.tab)[4] <- c("$z$ value")
-
-print(xtable(truth.tab,
-             align = c("l","l","r","r", "r"),
-             label = "tab:truth_tab",
-             caption = "Predictor estimates with standard errors and significance information for a generalized linear mixed-effects model predicting speaker truth-telling judgments"),
-      include.rownames=FALSE,hline.after=c(0,nrow(truth.tab)),
-      sanitize.text.function=function(x){x},
-      caption.placement = 'bottom', 
-      table.placement = "h",
-      comment = F)
-```
-
-Across all age groups, adults and children correctly judged the honest speaker to be telling the truth, and the dishonest speaker as not telling the truth. A generalized linear mixed-effects model predicting truth-telling judgment based on age and speaker type showed a significant main effect of speaker type ($\beta$ = `r truth.speaker.beta`, $p <.001$). There was no main effect of age, and no interaction between age and speaker type. Thus, even the youngest group of participants we tested were able to correctly reason that the honest speaker was telling the truth, whereas the polite speaker was lying.
-
-### Niceness
-
-```{r stat_nice}
-lmer_nice <- glmer(data=filter(ms_stat, qkind == "nice"), family=binomial, answer ~ sample + agebin * speaker + (1 | subid))
-
-nice.speaker.beta <- round(summary(lmer_nice)$coef[4], 2)
-```
-
-```{r nicesummarytab, echo = F, results = 'asis'}
-nice.tab <- as.data.frame(summary(lmer_nice)$coef)
-
-nice.tab$Predictor <- c("Intercept",
-                      "8-year-olds",
-                      "Adults",
-                      "Polite speaker",
-                      "8-year-olds * Polite speaker",
-                      "Adults * Polite speaker")
-rownames(nice.tab) <- NULL
-nice.tab <- nice.tab[,c(5,1:3)]
-names(nice.tab)[4] <- c("$z$ value")
-
-print(xtable(nice.tab,
-             align = c("l","l","r","r", "r"),
-             label = "tab:nice_tab",
-             caption = "Predictor estimates with standard errors and significance information for a generalized linear mixed-effects model predicting speaker niceness judgments"),
-      include.rownames=FALSE,hline.after=c(0,nrow(nice.tab)),
-      sanitize.text.function=function(x){x},
-      caption.placement = 'bottom', 
-      table.placement = "h",
-      comment = F)
-```
-
-```{r stat_nice_age_cont}
-lmer_nice_age <- glmer(data=filter(ms_stat, qkind == "nice"), family=binomial, answer ~ sample + age * speaker + (1 | subid))
-
-nice.age.speaker.beta <- round(summary(lmer_nice_age)$coef[4], 2)
-```
-
-### Meanness
-
-```{r stat_mean}
-lmer_mean <- glmer(data=filter(ms_stat, qkind == "mean"), family=binomial, answer ~ sample + agebin * speaker + (1 | subid))
-
-mean.speaker.beta <- round(summary(lmer_mean)$coef[4], 2)
-```
-
-```{r meansummarytab, echo = F, results = 'asis'}
-mean.tab <- as.data.frame(summary(lmer_mean)$coef)
-
-mean.tab$Predictor <- c("Intercept",
-                      "8-year-olds",
-                      "Adults",
-                      "Polite speaker",
-                      "8-year-olds * Polite speaker",
-                      "Adults * Polite speaker")
-rownames(mean.tab) <- NULL
-mean.tab <- mean.tab[,c(5,1:3)]
-names(mean.tab)[4] <- c("$z$ value")
-
-print(xtable(mean.tab,
-             align = c("l","l","r","r", "r"),
-             label = "tab:mean_tab",
-             caption = "Predictor estimates with standard errors and significance information for a generalized linear mixed-effects model predicting speaker meanness judgments"),
-      include.rownames=FALSE,hline.after=c(0,nrow(nice.tab)),
-      sanitize.text.function=function(x){x},
-      caption.placement = 'bottom', 
-      table.placement = "h",
-      comment = F)
-```
-
-```{r stat_mean_age_cont}
-lmer_mean_age <- glmer(data=filter(ms_stat, qkind == "mean"), family=binomial, answer ~ sample + age * speaker + (1 | subid))
-
-mean.age.speaker.beta <- round(summary(lmer_mean_age)$coef[4], 2)
-```

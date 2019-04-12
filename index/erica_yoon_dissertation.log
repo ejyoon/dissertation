@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  11 APR 2019 11:58
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  12 APR 2019 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -554,55 +554,69 @@ File: erica_yoon_dissertation_files/figure-latex/figTrupolResultsPlacement-1.pd
 f Graphic file (type QTm)
 
 <use  "erica_yoon_dissertation_files/figure-latex/figTrupolResultsPlacement-1.p
-df" > [52] [53]
+df" > [52] [53] [54]
 Chapter 4.
-[54
+[55
 
-] [55]
+] [56]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/model.png Graphic file (type QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/model.png" > [56] [57] [58]
+ild_rmds/ch4_modeling_polite/files/model.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[57] [58] [59]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png Graphic file (type 
 QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png" > [59] [60]
+ild_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[60] [61]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/screenshot.png Graphic file (type QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/screenshot.png" > [61]
+ild_rmds/ch4_modeling_polite/files/screenshot.png" > [62]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/speaker_production_cor.png Graphic file (type
  QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
 ild_rmds/ch4_modeling_polite/files/speaker_production_cor.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/model_comparisons.png Graphic file (type QTm)
 
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/model_comparisons.png" > [62] [63] [64] [65]
-[66] [67] [68
+ild_rmds/ch4_modeling_polite/files/model_comparisons.png" > [63]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[64] [65] [66] [67] [68] [69
 
 ]
 Appendix A.
-[69
+[70
 
 ]
 File: erica_yoon_dissertation_files/figure-latex/litsem-1.pdf Graphic file (typ
 e QTm)
-<use  "erica_yoon_dissertation_files/figure-latex/litsem-1.pdf" > [70]
-Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
-[71]
+<use  "erica_yoon_dissertation_files/figure-latex/litsem-1.pdf" > [71]
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 [72]
+Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
+[73]
 File: erica_yoon_dissertation_files/figure-latex/utterance-1.pdf Graphic file (
 type QTm)
 <use  "erica_yoon_dissertation_files/figure-latex/utterance-1.pdf" >
@@ -621,34 +635,34 @@ ype QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[73] [74] [75] [76]
+[74] [75] [76] [77]
 Appendix B.
 File: erica_yoon_dissertation_files/figure-latex/figTrupolAppendix-1.pdf Graphi
 c file (type QTm)
 <use  "erica_yoon_dissertation_files/figure-latex/figTrupolAppendix-1.pdf" > [7
-7
+8
 
-] [78] [79
+] [79] [80
 
-] [80] [81]
+] [81] [82]
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
-[82] [83] [84] [85] [86] [87] [88] [89] [90]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3678.
-[91]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3678.
+[83] [84] [85] [86] [87] [88] [89] [90] [91]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3715.
+[92]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3715.
 (./erica_yoon_dissertation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3678.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3678.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3678.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3715.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3715.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3715.
  ) 
 Here is how much of TeX's memory you used:
- 10951 strings out of 493005
- 159577 string characters out of 6134596
- 254161 words of memory out of 5000000
- 14732 multiletter control sequences out of 15000+600000
+ 10952 strings out of 493005
+ 159593 string characters out of 6134596
+ 255365 words of memory out of 5000000
+ 14733 multiletter control sequences out of 15000+600000
  37362 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  36i,13n,40p,752b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on erica_yoon_dissertation.pdf (104 pages).
+Output written on erica_yoon_dissertation.pdf (105 pages).
