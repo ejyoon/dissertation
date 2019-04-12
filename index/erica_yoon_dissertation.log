@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  12 APR 2019 11:27
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  12 APR 2019 11:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -167,8 +167,8 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@thisruleclass=\count107
 \@lastruleclass=\count108
 \@thisrulewidth=\dimen127
-) (./chemarr.sty
-Package: chemarr 2001/06/22 v1.1 Chemical reaction arrows (HO)
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/chemarr.sty
+Package: chemarr 2016/05/16 v1.3 Arrows for chemical reactions (HO)
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -478,27 +478,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [5
 
-] [6
+] (./erica_yoon_dissertation.toc [6
 
-] (./erica_yoon_dissertation.toc [7
-
-] [8])
+] [7])
 \tf@toc=\write3
 \openout3 = `erica_yoon_dissertation.toc'.
 
-[9] (./erica_yoon_dissertation.lot)
+[8] (./erica_yoon_dissertation.lot)
 \tf@lot=\write4
 \openout4 = `erica_yoon_dissertation.lot'.
 
-[10
+[9
 
-] (./erica_yoon_dissertation.lof [11
+] (./erica_yoon_dissertation.lof [10
 
-] [12])
+] [11])
 \tf@lof=\write5
 \openout5 = `erica_yoon_dissertation.lof'.
 
-[13] [1
+[12] [1
 
 
 ]
@@ -563,21 +561,13 @@ File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/model.png Graphic file (type QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/model.png" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[57] [58] [59]
+ild_rmds/ch4_modeling_polite/files/model.png" > [57] [58] [59]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png Graphic file (type 
 QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[60] [61]
+ild_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png" > [60] [61]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/screenshot.png Graphic file (type QTm)
 
@@ -589,19 +579,13 @@ ld_rmds/ch4_modeling_polite/files/speaker_production_cor.png Graphic file (type
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
 ild_rmds/ch4_modeling_polite/files/speaker_production_cor.png" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/model_comparisons.png Graphic file (type QTm)
 
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/model_comparisons.png" > [63]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[64] [65] [66] [67] [68] [69
+ild_rmds/ch4_modeling_polite/files/model_comparisons.png" > [63] [64] [65] [66]
+[67] [68] [69
 
 ]
 Appendix A.
@@ -658,11 +642,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3715.
  ) 
 Here is how much of TeX's memory you used:
  10952 strings out of 493005
- 159593 string characters out of 6134596
- 255365 words of memory out of 5000000
+ 159699 string characters out of 6134596
+ 254369 words of memory out of 5000000
  14733 multiletter control sequences out of 15000+600000
  37362 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  36i,13n,40p,752b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on erica_yoon_dissertation.pdf (105 pages).
+Output written on erica_yoon_dissertation.pdf (104 pages).
