@@ -27,6 +27,9 @@ d1$cond <- as.factor(as.character(d1$cond))
 d1$subid <- as.factor(as.character(d1$subid))
 d1$answer <- as.factor(as.character(d1$answer))
 
+order_orig <- read_csv(here(child_lies_file_path, "trupol_v2_order.csv")) %>%
+  mutate_if(is.numeric, as.character)
+
 d_orig <- d1 %>%
   mutate(cond = fct_recode(cond,
     "expt" = "exp"
@@ -38,8 +41,9 @@ d_orig <- d1 %>%
                             "mean" = "meanness",
                             "nice" = "niceness",
                             "truth" = "truth-telling")) %>%
+  left_join(., order_orig) %>%
   
-  select(subid, site, sample, cond, age, sex, trial, qkind, speaker, answer, age, agebin)
+  select(subid, site, sample, cond, age, sex, order, item, trial, qkind, speaker, answer, age, agebin)
 
 d_raw <- read_csv(here(child_lies_file_path, "trupol_v3_data_reorg.csv"))
 
@@ -92,7 +96,7 @@ d_rep <- left_join(log, d_join1) %>%
     answer == "N" ~ "0",
     TRUE ~ answer
   )) %>% 
-  select(subid, site, sample, cond, age, sex, trial, qkind, speaker, answer, agebin)
+  select(subid, site, sample, cond, age, sex, trial, order, item, qkind, speaker, answer, agebin)
 
 d <- rbind(d_orig, d_rep) %>%
   mutate_if(is.character, as.factor)
@@ -242,10 +246,8 @@ For the original sample, each participant heard two stories from the same condit
 
 For child participants, the experimenter read the storybook with children in a room in a children's museum. 
 They were first introduced to the storybook with simple stories to familiarize them with keywords like "nice," "mean," and "truth" (e.g., "Pam ate five cookies, but Pam told her mom a lie that she didn’t eat any cookie. Was Pam telling the truth?"). 
-Then the experimenter read two (original) or four (replication) stories. 
-While reading each episode, experimenters checked for the participants' comprehension twice by asking whether the speaker liked the product (e.g., "So did Sally like the cookie or did she not like the cookie?") and what the speaker told the listener ("So what did Sally tell Edward again?"). If the participant gave an incorrect answer to these comprehension check questions, the experimenter said "let's think about that one more time," and repeated the story.
-
-For adult participants, we presented the same stories that children heard in an online task.
+Then the experimenter read two (original) or four (replication) stories to each participant. 
+While reading each episode, experimenters checked for the participants' comprehension twice by asking whether the speaker liked the product (e.g., "So did Sally like the cookie or did she not like the cookie?") and what the speaker told the listener ("So what did Sally tell Edward again?"). If the participant gave an incorrect answer to these comprehension check questions, the experimenter said "let's think about that one more time," and repeated the story. For adult participants, we presented the same stories that children heard in an online task (see http://langcog.stanford.edu/expts/EJY/trupol/adult/trupol.html). 
 
 ## Results and Discussion
 
@@ -284,7 +286,7 @@ plot <- d_plot %>%
   ggplot(., aes(x=agebin, y=answer, col=cond, shape=sample)) +
   # geom_jitter(height=.05) +
   geom_smooth() +
-  geom_point(aes(size=.6), position=position_dodge(width=.3), stat = "identity") +
+  geom_point(aes(size=.4), position=position_dodge(width=.3), stat = "identity") +
   geom_linerange(aes(ymin=ci_lower, ymax=ci_upper), position=position_dodge(width=.3), stat = "identity") +
   facet_grid(qkind~speaker) + 
   theme_few() +
@@ -309,10 +311,18 @@ png::readPNG(here::here(child_lies_image_path, "trupol_plot.png")) %>%
 ```
 
 ```{r trupol_brm, echo = F, results = 'asis'}
-# brm_trupol <- brm(data=ms_stat, family=bernoulli,
-#                   answer ~ cond * qkind * speaker * age + (qkind + speaker| subid) + (cond + qkind + speaker | sample), iter=3000, control = list(adapt_delta = 0.99, max_treedepth = 15))
-# 
-# save(brm_trupol, file=here(child_lies_file_path, "brm_trupol.Rds"))
+ms_stat <- d %>%
+  filter(qkind == "nice" | qkind == "mean" | qkind == "truth") %>%
+  filter(!is.na(agebin)) %>%
+  mutate(answer = as.numeric(as.character(answer))) %>%
+  mutate(age = scale(age)) %>%
+  filter(!is.na(age)) %>%
+  select(sample, cond, trial, item, age, agebin, speaker, qkind, subid, answer)
+
+brm_trupol <- brm(data=ms_stat, family=bernoulli,
+                  answer ~ cond * qkind * speaker * age + (qkind + speaker| subid) + (cond + qkind + speaker | item) + (cond + qkind + speaker | sample), iter=3000, control = list(adapt_delta = 0.99, max_treedepth = 15))
+
+save(brm_trupol, file=here(child_lies_file_path, "brm_trupol.Rds"))
 load(here(child_lies_file_path, "brm_trupol.Rds"))
 
 trupol_tab <- as.data.frame(summary(brm_trupol)$fixed) %>%
@@ -354,4 +364,10 @@ trupol_tab <- trupol_tab[,c(5,1:4)]
 apa_table(trupol_tab, caption= "Predictor mean estimates with standard deviation and 95% credible interval information for a Bayesian linear mixed-effects model predicting \'\'yes\" responses to questions.")
 
 ```
+
+For analysis, we used a Bayesian linear mixed-effects model [`brms` package in R; @R-brms] using crossed random effects of participant, item and sample with the maximal random effects structure supported by the design [@gelman2006data; @barr2013random]. Age is plotted in bins, but was analyzed as a continuous variable, scaled and centered, in our statistical model. 
+
+The Bayesian linear mixed model predicting "yes" responses based on participant age, context type (control vs. experimental), speaker type (honest vs. dishonest) and question type (truth-telling vs. niceness vs. meanness) showed ...
+
+
 
