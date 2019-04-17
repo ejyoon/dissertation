@@ -18,11 +18,23 @@ I showed that our model predictions captured important key patterns of human jud
 and that the model fit was superior to its variants with a subset of the three utilities of our model. 
 Overall, the empirical work suggest that the goal-tradeoff framework both explains children's and adults' understanding of polite language well, and is useful for formalization and thus for making precise predictions of polite speech. 
 
-There are important limitations to the current theoretical framework and empirical evidence presented in here. 
-First, (culture).
-Second, (limited scope of context -- speaker status, listener needs, available utterances)
-Third, (utility decomposition -- three would not be all there is. )
+There are limitations to the current theoretical framework and empirical evidence presented in here, that have important implications for future work. 
+First, for the developmental work, Chapters 2 and 3 looked at distinct age groups, 2- to 4-year-olds and 5- to 8-year-olds respectively, making it difficult to tell how the polite speech understanding, especially regarding the tradeoff between informational and social goal, might develop across the entire relevant age span. 
+For example, do 2- to 4-year-olds show even more of preference for prioritizing informational goals over social goals? Or do they not yet have the notion of goal tradeoff at all?
+There were practical concerns that prevented younger children's participation in the study reported in Chapter 3, namely that it would be too difficult for younger children to understand the stories presented in that study (due to memory demand, tracking of second-order beliefs, etc.). 
+Future work should think of possible follow-up task that is more accessible for younger children and can test their understanding of goal tradeoffs. 
 
-We have started to address some of these concerns...
+Second, the scope of contexts of polite speech use we explored thus far is limited. We have not examined other factors that may be integral to polite speech production and understanding, such as speaker-listener status differences (e.g., conversations between a teacher and student, instead of between friends), listener needs (e.g., listener is looking for feedback to enter a competition), and available utterances (e.g., other kinds of indirect speech such as "I don't think this cookie is very tasty").
+Thus, it is an open question whether and how children and adults process these other kinds of relevant information and integrate them into their understanding of polite utterances. 
+
+Also, here we addressed broadly three differentiable goals -- informational, prosocial, and self-presentational -- that speakers may consider, but in real life, there may be other goals that are important, or these goals may also be broken down further. 
+For example, in the current work we supposed that speakers consider self-presentational goals to appear informative or to appear kind, but depending on the context, speakers may care about appearing competent and knowledgeable.
+Indeed, people do account for this kind of presentational goal to determine their action in a social active learning context, where they must choose between maximal information gain (e.g., learn which button makes a machine work) versus presentation of oneself as competent [e.g., that they can make the machine work for sure; @yoon2018balancing].
+Thus, future work should investigate how different desires than ones examined here may play roles in speakers' utterance choices.
+
+Finally, the empirical studies presented here recruited participants in the US only, but there may be great variations in polite speech understanding depending on cultural norms and expectations. 
+For example, 
+Indeed, we have some preliminary evidence that 
+
 
 In sum, ...

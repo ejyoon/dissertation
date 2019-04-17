@@ -249,7 +249,7 @@ They were first introduced to the storybook with simple stories to familiarize t
 Then the experimenter read two (original) or four (replication) stories to each participant. 
 While reading each episode, experimenters checked for the participants' comprehension twice by asking whether the speaker liked the product (e.g., "So did Sally like the cookie or did she not like the cookie?") and what the speaker told the listener ("So what did Sally tell Edward again?"). If the participant gave an incorrect answer to these comprehension check questions, the experimenter said "let's think about that one more time," and repeated the story. For adult participants, we presented the same stories that children heard in an online task (see http://langcog.stanford.edu/expts/EJY/trupol/adult/trupol.html). 
 
-## Results and Discussion
+## Results
 
 ```{r childInfPlot}
 d_plot <- d %>%
@@ -365,9 +365,22 @@ apa_table(trupol_tab, caption= "Predictor mean estimates with standard deviation
 
 ```
 
-For analysis, we used a Bayesian linear mixed-effects model [`brms` package in R; @R-brms] using crossed random effects of participant, item and sample with the maximal random effects structure supported by the design [@gelman2006data; @barr2013random]. Age is plotted in bins, but was analyzed as a continuous variable, scaled and centered, in our statistical model. 
+The results from child and adult participants are plotted in Figure\ \ref{fig:figTrupolResultsPlacement}.
+For statistical analysis, we used a Bayesian linear mixed-effects model [`brms` package in R; @R-brms] using crossed random effects of participant, item and sample with the maximal random effect structure supported by the design [@gelman2006data; @barr2013random]. We ran the statistical model on the child dataset only. Age is plotted in bins in Figure\ \ref{fig:figTrupolResultsPlacement}, but was analyzed as a continuous variable, scaled and centered, in our statistical model. 
 
-The Bayesian linear mixed model predicting "yes" responses based on participant age, context type (control vs. experimental), speaker type (honest vs. dishonest) and question type (truth-telling vs. niceness vs. meanness) showed ...
+The Bayesian linear mixed model predicting "yes" responses based on participant age, context type (control vs. experimental), speaker type (honest vs. dishonest) and question type (truth-telling vs. niceness vs. meanness) showed a positive interaction between experimental condition, dishonest speaker and niceness judgment: Participants judged a dishonest speaker as nicer in the experimental condition, where the speaker had politeness reasons to lie to the listener, compared to the control condition where the speaker had no apparent reasons to lie. 
+Thus, children were able to evaluate the dishonest speaker's intentions differently based on the context.
+
+There was also a positive interaction between participant age, dishonest speaker and niceness judgment, which shows that children judged the dishonest speaker as nice more often with increasing age, a trend that extended to adulthood (Figure\ \ref{fig:figTrupolResultsPlacement}). 
+Why did adults and older children judge the dishonest speaker more favorably compared to younger children? 
+One possible explanation is older children are more proficient at inferring other people’s mental states [@wellman2004], leading them to place more weight on the addressee’s feelings in evaluating a white lie or blunt truth. 
+Another possibility is that younger and older children use different communicative goals; younger children prioritize honesty, whereas older children value politeness more. 
+
+Finally, there was a positive interaction between dishonest speaker and meanness rating, which indicates that a dishonest speaker was rated as mean more often compared to the honest speaker overall. 
+
+## Discussion
+
+
 
 
 
