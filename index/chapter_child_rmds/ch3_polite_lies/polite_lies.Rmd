@@ -323,7 +323,7 @@ png::readPNG(here::here(child_lies_image_path, "trupol_plot.png")) %>%
 #                   answer ~ cond * qkind * speaker * age + (qkind + speaker| subid) + (cond + qkind + speaker | item) + (cond + qkind + speaker | sample), iter=3000, control = list(adapt_delta = 0.99, max_treedepth = 15))
 # 
 # save(brm_trupol, file=here(child_lies_file_path, "brm_trupol.Rds"))
-load(here(child_lies_file_path, "zz2_brm_trupol.Rds"))
+load(here(child_lies_file_path, "brm_trupol.Rds"))
 
 trupol_tab <- as.data.frame(summary(brm_trupol)$fixed) %>%
   select(Estimate, Est.Error, 'l-95% CI', 'u-95% CI') %>%
@@ -335,28 +335,28 @@ trupol_tab <- as.data.frame(summary(brm_trupol)$fixed) %>%
 
 trupol_tab$Predictor <- c("Intercept",
                       "Experimental condition (Expt)",
+                      "Niceness question (Nice)",
                       "Meanness question (Mean)",
-                      "Kindness question (Kind)",
                       "Dishonest speaker (Dishonest)",
                       "Age",
-                      "Expt * Mean",
                       "Expt * Nice",
+                      "Expt * Mean",
                       "Expt * Dishonest",
-                      "Mean * Dishonest",
                       "Nice * Dishonest",
+                      "Mean * Dishonest",
                       "Expt * Age",
-                      "Mean * Age",
                       "Nice * Age",
+                      "Mean * Age",
                       "Dishonest * Age",
-                      "Expt * Mean * Dishonest",
                       "Expt * Nice * Dishonest",
-                      "Expt * Mean * Age",
+                      "Expt * Mean * Dishonest",
                       "Expt * Nice * Age",
+                      "Expt * Mean * Age",
                       "Expt * Dishonest * Age",
-                      "Mean * Dishonest * Age",
                       "Nice * Dishonest * Age",
-                      "Expt * Mean * Dishonest * Age",
-                      "Expt * Nice * Dishonest * Age"
+                      "Mean * Dishonest * Age",
+                      "Expt * Nice * Dishonest * Age",
+                      "Expt * Mean * Dishonest * Age"
                       )
 rownames(trupol_tab) <- NULL
 trupol_tab <- trupol_tab[,c(5,1:4)]
