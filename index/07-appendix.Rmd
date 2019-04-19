@@ -319,8 +319,6 @@ plot.utt <- ggplot(data=ms_utt %>%
   guides(colour=guide_legend(title="utterance type")) +
   scale_linetype_discrete(labels = c("data", "model"))
 
-plot.utt
-
 ggsave("speaker_production_utt_wMod.png", plot = plot.utt, width = 7, height = 5,
        path = here::here(file_path))
 ```
@@ -377,9 +375,7 @@ plot.comp.all <- ms_utt %>%
         legend.position="bottom") +
   guides(color=guide_legend(title=NULL))
 
-plot.comp.all
-
-ggsave("model_comparisons_all.png", plot = plot.comp.all, width = 11, height = 4,
+ggsave("model_comparisons_all.png", plot = plot.comp.all, width = 11, height = 6.5,
        path = here::here(file_path))
 
 ```
@@ -414,9 +410,7 @@ plot.neg <- ms_neg %>%
   facet_grid(.~model) +
   theme(legend.position="bottom")
 
-plot.neg
-
-ggsave("speaker_production_neg_wMod.png", plot = plot.neg, width = 8, height = 4,
+ggsave("speaker_production_neg_wMod.png", plot = plot.neg, width = 10, height = 5,
        path = here::here(file_path))
 ```
 

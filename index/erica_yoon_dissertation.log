@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  19 APR 2019 15:01
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  19 APR 2019 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -650,15 +650,12 @@ Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 [85]
-File: erica_yoon_dissertation_files/figure-latex/utterance-1.pdf Graphic file (
-type QTm)
-<use  "erica_yoon_dissertation_files/figure-latex/utterance-1.pdf" >
+File: erica_yoon_dissertation_files/figure-latex/utterancePlacement-1.pdf Graph
+ic file (type QTm)
+<use  "erica_yoon_dissertation_files/figure-latex/utterancePlacement-1.pdf" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-File: erica_yoon_dissertation_files/figure-latex/comparisonAllPlot-1.pdf Graphi
-c file (type QTm)
-<use  "erica_yoon_dissertation_files/figure-latex/comparisonAllPlot-1.pdf" >
 File: erica_yoon_dissertation_files/figure-latex/comparisonAllPlacement-1.pdf G
 raphic file (type QTm)
 
@@ -667,42 +664,39 @@ raphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-File: erica_yoon_dissertation_files/figure-latex/negation-1.pdf Graphic file (t
-ype QTm)
-<use  "erica_yoon_dissertation_files/figure-latex/negation-1.pdf" > [86]
 File: erica_yoon_dissertation_files/figure-latex/negationPlacement-1.pdf Graphi
 c file (type QTm)
 <use  "erica_yoon_dissertation_files/figure-latex/negationPlacement-1.pdf" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[87] [88] [89
+[86] [87] [88] [89] [90
 
-] [90] [91]
+] [91] [92]
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
-[92] [93] [94] [95] [96] [97] [98] [99] [100]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4120.
-[101]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4120.
+[93] [94] [95] [96] [97] [98] [99] [100] [101]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4118.
+[102]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4118.
 (./erica_yoon_dissertation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4120.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4120.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4118.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4118.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4120.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4118.
  ) 
 Here is how much of TeX's memory you used:
- 10973 strings out of 493005
- 160583 string characters out of 6134596
+ 10969 strings out of 493005
+ 160450 string characters out of 6134596
  251980 words of memory out of 5000000
- 14749 multiletter control sequences out of 15000+600000
+ 14747 multiletter control sequences out of 15000+600000
  37362 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  36i,11n,40p,716b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on erica_yoon_dissertation.pdf (111 pages).
+Output written on erica_yoon_dissertation.pdf (112 pages).
