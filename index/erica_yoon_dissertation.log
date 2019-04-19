@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  19 APR 2019 10:35
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  19 APR 2019 11:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -552,18 +552,18 @@ File: erica_yoon_dissertation_files/figure-latex/figTrupolResultsPlacement-1.pd
 f Graphic file (type QTm)
 
 <use  "erica_yoon_dissertation_files/figure-latex/figTrupolResultsPlacement-1.p
-df" > [53] [54]
+df" >
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 2328--2328
+[53] [54] [55]
+Underfull \hbox (badness 10000) in paragraph at lines 2333--2333
 \TU/lmtt/m/n/8 rating $\OMS/lmsy/m/n/8 ^^X$ \TU/lmtt/m/n/8 age * condition * sp
 eaker + (speaker * condition | subject) + (speaker * condition | item)\TU/lmr/m
 /n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2328--2328
+Underfull \hbox (badness 10000) in paragraph at lines 2333--2333
 \TU/lmtt/m/n/8 question type + (question type + speaker type | participant) + (
 condition + question type + speaker
  []
@@ -572,27 +572,32 @@ File: erica_yoon_dissertation_files/figure-latex/figTrupolLfeelResultsPlacement
 -1.pdf Graphic file (type QTm)
 
 <use  "erica_yoon_dissertation_files/figure-latex/figTrupolLfeelResultsPlacemen
-t-1.pdf" > [55] [56] [57]
-Chapter 4.
-[58
+t-1.pdf" >
+File: erica_yoon_dissertation_files/figure-latex/figTrupolPlayPlacement-1.pdf G
+raphic file (type QTm)
 
-] [59]
+<use  "erica_yoon_dissertation_files/figure-latex/figTrupolPlayPlacement-1.pdf"
+ > [56] [57] [58]
+Chapter 4.
+[59
+
+] [60]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/model.png Graphic file (type QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/model.png" > [60] [61] [62]
+ild_rmds/ch4_modeling_polite/files/model.png" > [61] [62] [63]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png Graphic file (type 
 QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png" > [63] [64]
+ild_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png" > [64] [65]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/screenshot.png Graphic file (type QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/screenshot.png" > [65]
+ild_rmds/ch4_modeling_polite/files/screenshot.png" > [66]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/speaker_production_cor.png Graphic file (type
  QTm)
@@ -604,20 +609,20 @@ ld_rmds/ch4_modeling_polite/files/model_comparisons.png Graphic file (type QTm)
 
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/model_comparisons.png" > [66] [67] [68] [69]
-[70] [71] [72
+ild_rmds/ch4_modeling_polite/files/model_comparisons.png" > [67] [68] [69] [70]
+[71] [72] [73
 
-] [73] [74] [75]
+] [74] [75] [76]
 Appendix A.
-[76
+[77
 
-] [77]
+] [78]
 File: erica_yoon_dissertation_files/figure-latex/figTrupolAppendix-1.pdf Graphi
 c file (type QTm)
 <use  "erica_yoon_dissertation_files/figure-latex/figTrupolAppendix-1.pdf" > [7
-8] [79]
+9] [80]
 Appendix B.
-[80
+[81
 
 ]
 File: erica_yoon_dissertation_files/figure-latex/litsem-1.pdf Graphic file (typ
@@ -628,10 +633,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
-[81] [82]
+[82] [83]
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
-[83]
+[84]
 File: erica_yoon_dissertation_files/figure-latex/utterance-1.pdf Graphic file (
 type QTm)
 <use  "erica_yoon_dissertation_files/figure-latex/utterance-1.pdf" >
@@ -650,27 +655,27 @@ ype QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[84] [85] [86] [87] [88
+[85] [86] [87] [88] [89
 
-] [89] [90]
+] [90] [91]
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
-[91] [92] [93] [94] [95] [96] [97] [98] [99]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4054.
-[100]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4054.
+[92] [93] [94] [95] [96] [97] [98] [99] [100]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4071.
+[101]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4071.
 (./erica_yoon_dissertation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4054.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4054.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4054.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4071.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4071.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4071.
  ) 
 Here is how much of TeX's memory you used:
- 10960 strings out of 493005
- 159979 string characters out of 6134596
- 251610 words of memory out of 5000000
- 14740 multiletter control sequences out of 15000+600000
+ 10963 strings out of 493005
+ 160106 string characters out of 6134596
+ 251697 words of memory out of 5000000
+ 14742 multiletter control sequences out of 15000+600000
  37362 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  36i,11n,40p,716b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on erica_yoon_dissertation.pdf (110 pages).
+Output written on erica_yoon_dissertation.pdf (111 pages).

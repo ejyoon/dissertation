@@ -11,7 +11,8 @@ child_lies_file_path <- "index/chapter_child_rmds/ch3_polite_lies/files"
 ```
 
 ```{r child_inf_data}
-d1 <- read.csv(here(child_lies_file_path, "trupol_data_all.csv"))
+d1 <- read.csv(here(child_lies_file_path, "trupol_data_all.csv")) %>%
+  mutate(order = fct_recode(order, "1" = "1_2", "4" = "3_4"))
 d_age <- read.csv(here(child_lies_file_path, "trupol_v2_subject_log.csv")) %>%
   select(subid, consent, english, age_exact, sex)
 d1 <- left_join(d1, d_age) %>%
@@ -102,7 +103,7 @@ d <- rbind(d_orig, d_rep) %>%
   mutate_if(is.character, as.factor)
 
 d <- d %>%
-  filter(site == "US")
+  filter(site == "US") 
 
 ```
 
@@ -248,7 +249,10 @@ Mary’s friend Edward also wanted to taste the cookie. Edward asked Mary, “Ma
 For the original sample, each participant saw only one of the two conditions (i.e., context was a between-participants variable), whereas for the replication sample, each participant saw both conditions (within-participants).
 
 Each story presented two episodes that each presented a different *speaker type*: one who told a lie and the other who told the truth. After presenting what each speaker decided to say, we presented three *question types*, asking participants to judge (1) whether the speaker told the truth; (2) whether the speaker was nice; and (3) whether the speaker was mean.
-For the original sample, each participant heard two stories from the same condition (either experimental or control); for the replication sample, each participant heard four stories, two from each condition. The order of context conditions, speaker types and question types was counterbalanced across participants. 
+For the original sample, each participant heard two stories from the same condition (either experimental or control); for the replication sample, each participant heard four stories, two from each condition. 
+
+After presenting the two episodes, we asked participants to compare the two speakers and select a better play partner ("Who do you want to play with more, Sally or Mary?") and the reason for their answer.
+The order of context conditions, speaker types and question types was counterbalanced across participants. 
 Training trials and full example stories are provided in Supplementary Materials.
 
 ### Procedure
@@ -256,7 +260,7 @@ Training trials and full example stories are provided in Supplementary Materials
 For child participants, the experimenter read the storybook with children in a room in a children's museum. 
 They were first introduced to the storybook with simple stories to familiarize them with keywords like "nice," "mean," and "truth" (e.g., "Pam ate five cookies, but Pam told her mom a lie that she didn’t eat any cookie. Was Pam telling the truth?"). 
 Then the experimenter read two (original) or four (replication) stories to each participant. 
-While reading each episode, experimenters checked for the participants' comprehension twice by asking whether the speaker liked the product (e.g., "So did Sally like the cookie or did she not like the cookie?") and what the speaker told the listener ("So what did Sally tell Edward again?"). If the participant gave an incorrect answer to these comprehension check questions, the experimenter said "let's think about that one more time," and repeated the story. For adult participants, we presented the same stories that children heard in an online task (see http://langcog.stanford.edu/expts/EJY/trupol/adult/trupol.html). 
+While reading each episode, experimenters checked for the participants' comprehension twice by asking whether the speaker liked the product (e.g., "So did Sally like the cookie or did she not like the cookie?") and what the speaker told the listener ("So what did Sally tell Edward again?"). If the participant gave an incorrect answer to these comprehension check questions, the experimenter said "let's think about that one more time," and repeated the story. For adult participants, we presented the same stories that children heard in an online task (see http://langcog.stanford.edu/expts/EJY/trupol/adult/trupol.html for the online task that adults completed). 
 
 ## Results and Discussion
 
@@ -439,6 +443,75 @@ One possible explanation is older children are more proficient at inferring othe
 Indeed, when asked about how the listener would have felt upon hearing the polite liar's utterance, older children tended to answer that the listener would have felt "happy", "good", or "nice" more often than younger children (Figure\ \ref{fig:figTrupolLfeelResultsPlacement}).
 Another possibility is that younger and older children use different communicative goals; younger children prioritize honesty, whereas older children value politeness more. 
 
+```{r plotPlayPartner}
+d_play <- d %>%
+  filter(qkind == "play") %>%
+  mutate(answer = fct_recode(answer, "1" = "Sally", "1" = "Richard", "1" = "Bobby", "1" = "Nancy", "0" = "Mary", "0" = "Stanley", "0" = "Colin", "0" = "Gabby")) %>%
+  filter(answer == "0" | answer == "1") %>%
+  mutate(answer = as.numeric(as.character(answer))) %>%
+  mutate(cond = fct_recode(cond, 
+                           "no apparent reason \nfor dishonesty" = "cont",
+                           "politeness reasons" = "expt"
+                           ))
+
+plot_play <- d_play %>%
+  ggplot(., aes(x=age, y=answer, color=answer)) +
+  geom_jitter(height=.1) +
+  geom_smooth(span=1.5) +
+  facet_grid(.~cond) +
+  geom_hline(yintercept=0.5, lty=2) +
+  theme_few() +
+  ylab("Play partner preference \n(0=dishonest, 1=honest)") +
+  theme(legend.position = "none")
+  
+ggsave(plot_play, file=here::here(child_lies_image_path, "play_partner.png"), width=5, height=3)
+
+```
+
+```{r figTrupolPlayPlacement, fig.env = "figure*", fig.pos = "t", fig.width=7, fig.height=4, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Children's play partner selection between the honest speaker (1 on the y-axis) and dishonest speaker (0 on the y-axis) across age (x-axis), across the two context conditions (columns).", fig.scap = "Play partner selection in the experiment in Chapter 3."}
+png::readPNG(here::here(child_lies_image_path, "play_partner.png")) %>%
+  grid::grid.raster()
+```
+
+```{r}
+d_play2 <- d %>%
+  filter(agebin != "adult") %>%
+  filter(qkind == "play" | (qkind == "nice" & speaker == "honest")) %>%
+  select(subid, site, sample, cond, trial, age, agebin, qkind, answer) %>%
+  mutate(answer = fct_recode(answer, "1" = "Sally", "1" = "Richard", "1" = "Bobby", "1" = "Nancy", "0" = "Mary", "0" = "Stanley", "0" = "Colin", "0" = "Gabby")) %>%
+  filter(answer == "0" | answer == "1") %>%
+  mutate(answer = as.numeric(as.character(answer))) %>%
+  mutate(cond = fct_recode(cond, 
+                           "no apparent reason \nfor dishonesty" = "cont",
+                           "politeness reasons" = "expt"
+                           )) %>%
+  spread(qkind, answer)
+
+plot_play_nice <- ggplot(data=d_play2,
+       aes(x=nice, y=play, colour = age)) +
+  facet_grid(.~cond) +
+  geom_jitter(height = .05, width=.2) +
+  theme_few() +
+  geom_hline(aes(yintercept=0.5), linetype="dashed") +
+  # geom_smooth(method = "lm", se = FALSE, size=.5) +
+  geom_smooth(method = "lm", se = T, size=.5) +
+  xlab("Response to \"was [the honest speaker] nice?\" \n(0=no, 1=yes)") +
+  ylab("Prefer to play with honest speaker")
+
+ggsave(plot_play_nice, file=here::here(child_lies_image_path, "play_partner_nice.png"), width=5, height=3)
+```
+
+```{r figTrupolPlayNicePlacement, fig.env = "figure*", fig.pos = "t", fig.width=7, fig.height=4, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Children's play partner selection (y-axis) versus their nicess judgment for the honest speaker (x-axis) across age (x-axis), across the two context conditions (columns).", fig.scap = "Play partner selection versus niceness judgment for the honest speaker in the experiment in Chapter 3."}
+png::readPNG(here::here(child_lies_image_path, "play_partner_nice.png")) %>%
+  grid::grid.raster()
+```
+
+When asked to choose the speaker they would like to play with more, however,  children were divided in their answers, though overall they showed a preference for the honest speaker, regardless of the participant age or context condition (Figure\ \ref{fig:figTrupolPlayPlacement}). 
+Thus, even though children judged niceness of honest and dishonest speakers differently depending on the context condition,  
+they did not use the context information in the same way to select their play partner.
+
 In sum, both adults and 5- to 8-year-old children were able to use context information to evaluate speaker intentions and rate their niceness and meanness accordingly. 
-There was also a trend for developmental differences in attribution of niceness and meanness to prosocial liars versus blunt truth-tellers, 
-which may indicate improvement in theory-of-mind abilities or changes in perceived priorities in the tradeoff between information transfer vs. face-saving.
+There was also a trend for developmental differences in attribution of niceness and meanness to prosocial liars versus blunt truth-tellers: Younger children (5-6-year-olds) were more charitable toward blunt truth-tellers in their rating of speaker niceness. 
+It is an open question, however, whether younger children prioritize the social concerns over informational concerns compared to older children and adults, or their lack of Theory-of-Mind abilities prevent them from understanding needs for polite lies. 
+Future work should tease apart these two possibilities by testing a broader set of utterances that reflect more gradient tradeoff decisions between informational and social goals. For example, the speaker could say "I don't think this cookie is very tasty" to be somewhat informative but also somewhat face-saving at the same time.
+

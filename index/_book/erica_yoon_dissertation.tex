@@ -1857,7 +1857,7 @@ marker types as in Experiments 1 and 2, with three age groups including
 
 A mixed-effects logistic regression controlling for the effect of
 sample\footnote{Model structure:
-  \texttt{accuracy\ \textasciitilde{}\ sample\ +\ age\ x\ question\ type\ x\ politeness\ marker\ type\ +\ (1\ \textbar{}\ item)}}
+  \texttt{accuracy\ \textasciitilde{}\ sample\ +\ age\ *\ question\ type\ *\ politeness\ marker\ type\ +\ (1\ \textbar{}\ item)}}
 showed improvement with age (\(\beta\) = 0.19, \(p =\) 0.033) as well as
 better performance for ``can you please'' than ``please'' and ``can
 you'' together (\(\beta\) = 0.42, \(p =\) 0.002), consistent with
@@ -1883,7 +1883,7 @@ linguistic politeness markers sufficient? To see any potential effect of
 experiment on children's performance, we conducted an exploratory
 mixed-effects logistic regression on all three experiments
 together\footnote{Model structure:
-  \texttt{accuracy\ \textasciitilde{}\ sample\ +\ experiment\ +\ age\ x\ question\ type\ x\ politeness\ marker\ type\ +\ (1\ \textbar{}\ item)}}.
+  \texttt{accuracy\ \textasciitilde{}\ sample\ +\ experiment\ +\ age\ *\ question\ type\ *\ politeness\ marker\ type\ +\ (1\ \textbar{}\ item)}}.
 The regression model showed no significant main effect of experiment,
 suggesting that children did not perform more poorly when facial and
 prosodic cues were removed, and they were able to make accurate
@@ -2214,10 +2214,14 @@ the speaker told the truth; (2) whether the speaker was nice; and (3)
 whether the speaker was mean. For the original sample, each participant
 heard two stories from the same condition (either experimental or
 control); for the replication sample, each participant heard four
-stories, two from each condition. The order of context conditions,
-speaker types and question types was counterbalanced across
-participants. Training trials and full example stories are provided in
-Supplementary Materials.
+stories, two from each condition.
+
+After presenting the two episodes, we asked participants to compare the
+two speakers and select a better play partner (``Who do you want to play
+with more, Sally or Mary?'') and the reason for their answer. The order
+of context conditions, speaker types and question types was
+counterbalanced across participants. Training trials and full example
+stories are provided in Supplementary Materials.
 
 \subsection{Procedure}\label{procedure-3}
 
@@ -2236,7 +2240,8 @@ participant gave an incorrect answer to these comprehension check
 questions, the experimenter said ``let's think about that one more
 time,'' and repeated the story. For adult participants, we presented the
 same stories that children heard in an online task (see
-\url{http://langcog.stanford.edu/expts/EJY/trupol/adult/trupol.html}).
+\url{http://langcog.stanford.edu/expts/EJY/trupol/adult/trupol.html} for
+the online task that adults completed).
 
 \section{Results and Discussion}\label{results-and-discussion-3}
 \begin{figure*}[p]
@@ -2364,6 +2369,18 @@ children tended to answer that the listener would have felt ``happy'',
 is that younger and older children use different communicative goals;
 younger children prioritize honesty, whereas older children value
 politeness more.
+\begin{figure*}[t]
+
+{\centering \includegraphics[width=0.9\linewidth]{erica_yoon_dissertation_files/figure-latex/figTrupolPlayPlacement-1} 
+
+}
+
+\caption[Play partner selection in the experiment in Chapter 3.]{Children's play partner selection between the honest speaker (1 on the y-axis) and dishonest speaker (0 on the y-axis) across age (x-axis), across the two context conditions (columns).}\label{fig:figTrupolPlayPlacement}
+\end{figure*}
+When asked to choose the speaker they would like to play with more,
+however, children overall showed a preference for the honest speaker,
+regardless of the participant age or context condition
+(Figure~\ref{fig:figTrupolPlayPlacement}).
 
 In sum, both adults and 5- to 8-year-old children were able to use
 context information to evaluate speaker intentions and rate their
