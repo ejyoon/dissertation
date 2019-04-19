@@ -1,5 +1,5 @@
 ---
-title: "Polite language reflects competing social goals"
+title: "Polite language reflects competing informational and social goals"
 author: 'Erica J. Yoon'
 date: 'May 2019'
 advisor: 'Michael C. Frank'

@@ -111,7 +111,7 @@ In this framework, language use builds on the idea that human social cognition c
 be approximated via reasoning about others as rational agents who act to
 maximize their subjective utility [@baker2009action], a hypothesis which has found support in a wide variety of work with both adults and children [e.g., @jara2016naive; @liu2017ten].
 
-```{r model, fig.cap="Diagram of the model: The polite speaker observes the true state and determines her goal between three utilities (informational, social, and presentational), and produces an utterance."}
+```{r model, fig.cap="Diagram of the model: The polite speaker observes the true state and determines her goal between three utilities (informational, social, and presentational), and produces an utterance.", fig.scap = "Graphical representation of the computational model."}
 knitr::include_graphics(here::here(file_path, "model.png"), dpi = 170)
 ```
 
@@ -208,7 +208,7 @@ possibility that the poem was good, but the avoidance of a more direct utterance
 
 We made a direct, fully pre-registered test of our speaker production model and its performance in comparison to a range of alternative models, by instantiating our running example in an online experiment.
 
-```{r screenshot, fig.pos = "!h", fig.cap="Example of a trial in the speaker production task."}
+```{r screenshot, fig.pos = "!h", fig.cap="Example of a trial in the speaker production task.", fig.scap="Example of a trial in the experimental task in Chapter 4."}
 knitr::include_graphics(here::here(file_path, "screenshot.png"), dpi = 130)
 ```
 
@@ -245,7 +245,7 @@ BF_full_vs_one <- model1bf1/model3bf1
 BF_main_vs_one <- model2bf1/model3bf1
 ```
 
-```{r variance, echo=FALSE, fig.cap="Full distribution of human responses vs. model predictions. Error bars represent 95\\% confidence intervals for the data (vertical) and 95\\% highest density intervals for the model (horizontal)."}
+```{r variance, echo=FALSE, fig.cap="Full distribution of human responses vs. model predictions. Error bars represent 95\\% confidence intervals for the data (vertical) and 95\\% highest density intervals for the model (horizontal).", fig.scap="Comparison between human responses and model predictions."}
 ms_var <- ms_utt %>%
   filter(source == "data" | model == "full") %>%
   select(-model) %>%
@@ -333,7 +333,7 @@ eschewing one of their goals to increase utility along a single
 dimension, participants chose utterances that jointly satisfied their
 conflicting goals by producing indirect speech.
 
-```{r comparison, fig.width=11, fig.height=4, fig.cap="Comparison of predictions for proportion of utterances chosen by pragmatic speaker from possible model variants (left) and human data (rightmost) for average proportion of negation produced among all utterances, given true state of 0 heart (on a scale of 0 to 3) and speaker with both goals to be informative and kind. Gray dotted line indicates chance level at 12.5\\%."}
+```{r comparison, fig.width=11, fig.height=4, fig.cap="Comparison of predictions for proportion of utterances chosen by pragmatic speaker from possible model variants (left) and human data (rightmost) for average proportion of negation produced among all utterances, given true state of 0 heart (on a scale of 0 to 3) and speaker with both goals to be informative and kind. Gray dotted line indicates chance level at 12.5\\%.", fig.scap="Comparison of model variant fits."}
 plot.comp <- ms_utt %>%  
   mutate(model = case_when(
     model == "NA" ~ "human data", 

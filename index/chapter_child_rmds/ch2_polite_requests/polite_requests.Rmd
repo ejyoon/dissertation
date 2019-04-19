@@ -276,7 +276,7 @@ ggsave(p_all, file=here::here(child_req_image_path, "fig_results.png"), width=9,
 \newpage
 \blandscape
 
-```{r figResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Bottom right: Story example. Top, left: Results. Proportion of correct responses to questions comparing between a speaker who used a politeness marker (where blue indicates \"please\", yellow \"can you\", and red \"can you please\") versus a speaker who did not. Data are binned into one-year age groups. Each row represents data from a different Experiment. Columns represent different questions asked. Dashed line represents chance level (i.e., if participant were guessing at random)."}
+```{r figResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Bottom right: Story example. Top, left: Results. Proportion of correct responses to questions comparing between a speaker who used a politeness marker (where blue indicates \"please\", yellow \"can you\", and red \"can you please\") versus a speaker who did not. Data are binned into one-year age groups. Each row represents data from a different Experiment. Columns represent different questions asked. Dashed line represents chance level (i.e., if participant were guessing at random).", fig.scap = "Speaker ratings in Experiments 2.1-2.3"}
 png::readPNG(here::here(child_req_image_path, "fig_results_edit.png")) %>%
   grid::grid.raster()
 ```

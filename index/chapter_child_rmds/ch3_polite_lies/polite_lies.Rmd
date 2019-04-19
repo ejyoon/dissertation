@@ -206,7 +206,7 @@ child_lies_tab %>%
   kable("latex", 
         booktabs = T, 
         caption = "Participant demographic information.",
-        caption.short = "demographics") %>%
+        caption.short = "Participant demographic information") %>%
   kable_styling(latex_options = "scale_down") %>% 
   row_spec(row = 0, bold = TRUE) %>% 
   column_spec(column = 6, width = "2.2cm") %>% 
@@ -305,7 +305,7 @@ plot <- d_plot %>%
 ggsave(plot, file=here::here(child_lies_image_path, "trupol_plot.png"), width=5, height=5)
 ```
 
-```{r figTrupolResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Speaker judgments by different age groups (x-axis) for the honest speaker (left column) and the dishonest speaker (right), in different contexts (colors). Rows represent question types (e.g., Was Sally telling the truth?), and y-axis represents proportion saying \`\`yes\" to the question. Shapes represent original (circles) vs. replication samples (triangles). "}
+```{r figTrupolResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Speaker ratings by different age groups (x-axis) for the honest speaker (left column) and the dishonest speaker (right), in different contexts (colors). Rows represent question types (e.g., Was Sally telling the truth?), and y-axis represents proportion saying \`\`yes\" to the question. Shapes represent original (circles) vs. replication samples (triangles). ", fig.scap = "Speaker ratings for the experiment in Chapter 3."}
 png::readPNG(here::here(child_lies_image_path, "trupol_plot.png")) %>%
   grid::grid.raster()
 ```
@@ -412,7 +412,7 @@ ggsave(plot_Lfeel, file=here::here(child_lies_image_path, "listener_inference.pn
 
 ```
 
-```{r figTrupolLfeelResultsPlacement, fig.env = "figure*", fig.pos = "t", fig.width=7, fig.height=4, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Children's ratings of listener feelings (y-axis) upon hearing the utterance of the honest versus dishonest speaker (columns), across age (x-axis)."}
+```{r figTrupolLfeelResultsPlacement, fig.env = "figure*", fig.pos = "t", fig.width=7, fig.height=4, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Children's judgments for listener feelings (y-axis) upon hearing the utterance of the honest versus dishonest speaker (columns), across age (x-axis).", fig.scap = "Listener feeling judgments in the experiment in Chapter 3."}
 png::readPNG(here::here(child_lies_image_path, "listener_inference.png")) %>%
   grid::grid.raster()
 ```
