@@ -363,6 +363,12 @@ trupol_tab <- trupol_tab[,c(5,1:4)]
 
 apa_table(trupol_tab, caption= "Predictor mean estimates with standard deviation and 95% credible interval information for a Bayesian linear mixed-effects model predicting \'\'yes\" responses to questions.")
 
+# trupol_tab %>% 
+#   kable("latex", booktabs = T, 
+#         caption = "Predictor mean estimates with standard deviation and 95% credible interval information for a Bayesian linear mixed-effects model predicting \'\'yes\" responses to questions.",
+#         caption.short = "Predictor mean estimates with standard deviation and 95% credible interval information for a Bayesian linear mixed-effects model predicting \'\'yes\" responses to questions for the experiment in Chapter 4.") %>% 
+#   row_spec(row = 0, bold = TRUE)
+
 ```
 
 The results from child and adult participants are plotted in Figure\ \ref{fig:figTrupolResultsPlacement}. 

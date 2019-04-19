@@ -111,7 +111,7 @@ In this framework, language use builds on the idea that human social cognition c
 be approximated via reasoning about others as rational agents who act to
 maximize their subjective utility [@baker2009action], a hypothesis which has found support in a wide variety of work with both adults and children [e.g., @jara2016naive; @liu2017ten].
 
-```{r model, fig.cap="Diagram of the model: The polite speaker observes the true state and determines her goal between three utilities (informational, social, and presentational), and produces an utterance.", fig.scap = "Graphical representation of the computational model."}
+```{r model, fig.cap="Diagram of the model: The polite speaker observes the true state and determines her goal between three utilities (informational, social, and presentational), and produces an utterance.", fig.scap = "Graphical representation of the computational model of polite speech production and understanding."}
 knitr::include_graphics(here::here(file_path, "model.png"), dpi = 170)
 ```
 
@@ -185,7 +185,7 @@ over possible states of the world. The set of utterances is \{*terrible*, *bad*,
 implemented this model using the probabilistic programming language
 WebPPL [@dippl] and a demo can be found at \url{http://forestdb.org/models/politeness.html}.
 
-```{r L1inferences, fig.cap="Model behavior. Listener inferences about the true state (e.g., the rating truly deserved by the poem; A) and the speaker's utility weighting ($\\phi_{S_1}$ or how informational vs. social the speaker is, where $\\phi_{S_1}$ = 0 is fully social, and $\\phi_{S_1}$ = 1 is fully informational; B) as a function of the utterance heard (facets). C: Purely self-presentational speaker production behavior as a function of the kind of speaker they wish to present themselves as (facets; relatively more informational, e.g., $\\phi_{S_1}$ = 0.05, vs. social as represented, e.g., $\\phi_{S_1}$ = 0.95)."}
+```{r L1inferences, fig.cap="Model behavior. Listener inferences about the true state (e.g., the rating truly deserved by the poem; A) and the speaker's utility weighting ($\\phi_{S_1}$ or how informational vs. social the speaker is, where $\\phi_{S_1}$ = 0 is fully social, and $\\phi_{S_1}$ = 1 is fully informational; B) as a function of the utterance heard (facets). C: Purely self-presentational speaker production behavior as a function of the kind of speaker they wish to present themselves as (facets; relatively more informational, e.g., $\\phi_{S_1}$ = 0.05, vs. social as represented, e.g., $\\phi_{S_1}$ = 0.95).", fig.scap="Schmatic model predictions."}
 knitr::include_graphics(here::here(file_path, "L1_inferences_wS2pres"), dpi = 170)
 ```
 
@@ -439,7 +439,13 @@ comp_tab <- data.frame("model" = model_list,
   rename("variance \nexplained" = "variance",
          "log BF" = "logBF")
 
-apa_table(comp_tab, caption = "Comparison of variance explained for each model variant and log Bayes Factors quantifying evidence in favor of alternative model in comparison.")
+# apa_table(comp_tab, caption = "Comparison of variance explained for each model variant and log Bayes Factors quantifying evidence in favor of alternative model in comparison.", caption.short = "Comparison of model variants.")
+
+comp_tab %>% 
+  kable("latex", booktabs = T, escape=F,
+        caption = "Comparison of variance explained for each model variant and log Bayes Factors quantifying evidence in favor of alternative model in comparison.",
+        caption.short = "Comparison of model variants using variance explained and log Bayes Factors.") %>% 
+  row_spec(row = 0, bold = TRUE)
 ```
 
 ### Model results
@@ -482,7 +488,14 @@ phi_tab <- d_phi_s %>%
 
 colnames(phi_tab) <- c("model (utilities)", "goal", "$\\phi_{inf}$", "$\\phi_{soc}$", "$\\phi_{pres}$", "$\\phi_{S_1}$")
 
-apa_table(phi_tab, escape=FALSE, caption = "Inferred phi parameters from all model variants with more than one utility.")
+# apa_table(phi_tab, escape=FALSE, caption = "Inferred phi parameters from all model variants with more than one utility.")
+
+phi_tab %>% 
+  kable("latex", booktabs = T, escape=F,
+        caption = "Inferred phi parameters from all model variants with more than one utility.",
+        caption.short = "Inferred phi parameters from model variants.") %>% 
+  row_spec(row = 0, bold = TRUE)
+  # column_spec(column = 1, width = "4cm")
 ```
 
 The utility weights inferred for the three-utility model (Table \@ref(tab:phi))
