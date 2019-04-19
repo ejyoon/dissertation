@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  18 APR 2019 18:45
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  18 APR 2019 19:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -639,13 +639,13 @@ c file (type QTm)
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 [88] [89] [90] [91] [92] [93] [94] [95] [96]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3958.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3957.
 [97]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3958.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3957.
 (./erica_yoon_dissertation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3958.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3958.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3958.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3957.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3957.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3957.
  ) 
 Here is how much of TeX's memory you used:
  10955 strings out of 493005

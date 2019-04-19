@@ -131,10 +131,10 @@ From very early on, children seem to understand both informational and social co
 Around one year of age, children already start to adjust their own informativeness in their communicative action depending on the listener needs [@liszkowski2008], and as they get older they correctly judge a speaker’s truthfulness and preferentially learn from informants who were previously accurate [@corriveau2009]. By 6 years they are able to readily judge whether teachers are being underinformative [@gweon2014].
 Children also understand speakers' goals to be kind, as 3- to 4-year-olds reason that those who say "please" are nicer and more polite, and are likely to be better play partners [@yoon2019].
 
-Even though previous research has suggested that children consider informational and social goals that speakers have, it is unclear how they might integrate these goals together in their reasoning. 
-Do children think of the goals to be informative and to be kind as separate, fixed *rules* to follow, or do they make *inferences* that accounts for both goals that the speaker may consider?
+Even though previous research has suggested that children consider informational and social goals that speakers have, it is unclear how they might reason these goals together. 
+For example, do children think of the goals to be informative and to be kind as separate, fixed *rules* to follow, or do they make *inferences* that accounts for both goals that the speaker may consider?
 One possibility is that children have a rule-based approach to language: 
-They may think about deterministic rules such as "If you want something, then you should say *please*" and "If you see/feel/think *X*, then you should (truthfully) say *X.*"
+They may think about deterministic, separate rules such as "If you want something, then you should say *please*" and "If you see/feel/think *X*, then you should (truthfully) say *X.*"
 Children can use these rules to both produce polite and truthful utterances themselves, and evaluate speakers based on whether they follow these rules or not ("She is nice because she said *please*"; or "She is bad/wrong because she said these cookies are tasty but they are actually salty and yucky.")
 
 Whereas these straightforward rules can make language production and understanding easy and productive, speakers often do not follow these rules deterministically. 
@@ -222,15 +222,15 @@ child_lies_tab %>%
 ```
 ### Participants
 
-We recruited parents and their children at Children's Discovery Museum of San Jose, and adults through Amazon's Mechanical Turk. We recruited two samples: a first, *original* sample and a second, pre-registered *replication* sample. You can see the participant demographic information in Table\ \ref{tab:childInfSample}. 
+We recruited parents and their children at Children's Discovery Museum of San Jose, and adults through Amazon's Mechanical Turk. We recruited two samples: a first, *original* sample and a second, pre-registered *replication* sample. Participant demographic information is shown in Table\ \ref{tab:childInfSample}. 
 
-We included training trials where children and adults were tested on the meanings of important keywords such as "nice", "mean", and "truth." For example, participants were asked: "Nicole gave her friend a gift. Was Nicole nice? Was Nicole mean?" We excluded participants who gave wrong answers on these trials, which led to exclusion of 2 child participants from the original sample. FIXME: adult excluded numbers.
+As part of the task, we included training trials where children and adults were tested on the meanings of important keywords such as "nice", "mean", and "truth." For example, participants were asked: "Nicole gave her friend a gift. Was Nicole nice? Was Nicole mean?" We excluded participants who gave wrong answers on these trials, which led to exclusion of 2 child participants from the original sample.
 
 ### Stimuli and design
 
 We presented stories in which some characters (*speakers*) were asked to give evaluative feedback on something bad that they just experienced (e.g., a yucky cookie that they tasted, or a boring game that they played).
-There were two different *context conditions*: 
-In the *experimental* condition, speakers were asked by listeners to comment on something that the listeners themselves had created, and so the speakers may be compelled to lie and hide the poor quality of the product in order to not hurt the listener's feelings.
+There were two different *context* conditions: 
+In the *experimental* condition, speakers were asked by listeners to comment on something that the listeners themselves had created, which provides the speakers with politeness reasons to lie and hide the poor quality of the product in order to not hurt the listener's feelings.
 For example, one story in the experimental condition read: "Look, this is Edward [the listener]!
 One day, Edward decided to bake some cookies.
 Edward brought his cookie to school and met his friend Mary [the speaker]. Edward said to his friend Mary, “Here, try my cookie!”
@@ -245,8 +245,9 @@ Mary said, “It’s a free cookie, I’ll try it!”
 Mary tasted the cookie,
 and she did not like the cookie at all — she thought the cookie tasted yucky!
 Mary’s friend Edward also wanted to taste the cookie. Edward asked Mary, “Mary, how did you like the cookie?” Mary told Edward, “Edward, the cookie was tasty.”"
-For the original sample, the conditions were between participants (i.e., each participant saw only one of the two conditions), whereas for the replication sample, the conditions were within (i.e., each participant saw both conditions).
-Each story presented two episodes each about a different speaker, one who told a lie and the other who told the truth (*speaker type*). After presenting what each speaker decided to say, we presented three *question types*, asking participants to judge (1) whether the speaker told the truth; (2) whether the speaker was nice; and (3) whether the speaker was mean.
+For the original sample, each participant saw only one of the two conditions (i.e., context was a between-participants variable), whereas for the replication sample, each participant saw both conditions (within-participants).
+
+Each story presented two episodes that each presented a different *speaker type*: one who told a lie and the other who told the truth. After presenting what each speaker decided to say, we presented three *question types*, asking participants to judge (1) whether the speaker told the truth; (2) whether the speaker was nice; and (3) whether the speaker was mean.
 For the original sample, each participant heard two stories from the same condition (either experimental or control); for the replication sample, each participant heard four stories, two from each condition. The order of context conditions, speaker types and question types was counterbalanced across participants.
 
 ### Procedure
