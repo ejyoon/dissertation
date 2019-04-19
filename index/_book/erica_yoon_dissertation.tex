@@ -3255,11 +3255,11 @@ model). Meanings of the words as judged by participants were as one
 would expect (Figure~\ref{fig:litsem}).
 \begin{figure}[!h]
 
-{\centering \includegraphics[width=\textwidth]{erica_yoon_dissertation_files/figure-latex/litsem-1} 
+{\centering \includegraphics[width=\textwidth]{erica_yoon_dissertation_files/figure-latex/litsemPlotPlacement-1} 
 
 }
 
-\caption[Semantic measurement results from the experiment in Chapter 4.]{Semantic measurement results. Proportion of acceptances of utterance types (shown in different colors) combined with target words (shown in different facets) given the true state represented on a scale of hearts. Error bars represent 95\% confidence intervals.}\label{fig:litsem}
+\caption[Semantic measurement results from the experiment in Chapter 4.]{Semantic measurement results. Proportion of acceptances of utterance types (shown in different colors) combined with target words (shown in different facets) given the true state represented on a scale of hearts. Error bars represent 95\% confidence intervals.}\label{fig:litsemPlotPlacement}
 \end{figure}
 \section{Data analysis}\label{data-analysis}
 
@@ -3316,25 +3316,24 @@ Hill, 2006). The full statistics are shown in Table \ref{tab:brmTab}.
 
 \section{Model fitting and inferred
 parameters}\label{model-fitting-and-inferred-parameters}
-\begin{table}[tbp]
-\begin{center}
-\begin{threeparttable}
-\caption{\label{tab:otherParams}Inferred negation cost and speaker optimality parameters for all model variants.}
-\begin{tabular}{lll}
+\begin{table}[t]
+
+\caption[Other inferred parameters for all model variants.]{\label{tab:otherParams}Inferred negation cost and speaker optimality parameters for all model variants.}
+\centering
+\begin{tabular}{lrr}
 \toprule
-Model & \multicolumn{1}{c}{Cost of negation} & \multicolumn{1}{c}{Speaker optimality}\\
+\textbf{Model} & \textbf{Cost of negation} & \textbf{Speaker optimality}\\
 \midrule
-ninformational only & 1.58 & 8.58\\
-ninformational, presentational & 1.89 & 2.93\\
-ninformational, social & 1.11 & 3.07\\
-ninformational, social, presentational & 2.64 & 4.47\\
+informational only & 1.58 & 8.58\\
+informational, presentational & 1.89 & 2.93\\
+informational, social & 1.11 & 3.07\\
+informational, social, presentational & 2.64 & 4.47\\
 presentational only & 2.58 & 9.58\\
+\addlinespace
 social only & 1.73 & 7.23\\
 social, presentational & 2.49 & 5.29\\
 \bottomrule
 \end{tabular}
-\end{threeparttable}
-\end{center}
 \end{table}
 Other than speaker goal mixture weights explained in the main text
 (shown in Table \ref{tab:phi}), the full model has two global
@@ -3369,21 +3368,23 @@ are available at \url{https://github.com/ejyoon/polite_speaker}.
 
 \caption[Full comparison between experimental results and model predictions.]{Experimental results (solid lines) and fitted predictions from the full model (dashed lines) for speaker production. Proportion of utterances chosen (utterance type – direct vs. indirect – in different colors and words shown on x-axis) given the true states (columns) and speaker goals (rows). Error bars represent 95\% confidence intervals for the data and 95\% highest density intervals for the model. Black dotted line represents the chance level.}\label{fig:utterance}
 \end{figure}
+\begin{center}\includegraphics[width=0.9\linewidth]{erica_yoon_dissertation_files/figure-latex/comparisonAllPlot-1} \end{center}
 \begin{figure}[!h]
 
-{\centering \includegraphics[width=\textwidth]{erica_yoon_dissertation_files/figure-latex/comparisonAll-1} 
+{\centering \includegraphics[width=\textwidth]{erica_yoon_dissertation_files/figure-latex/comparisonAllPlacement-1} 
 
 }
 
-\caption[Full comparison of model variants for all experimental conditions.]{Comparison of predictions for proportion of utterances chosen by pragmatic speaker from possible model variants (left) and human data (rightmost) for average proportion of negation produced among all utterances, given true state of 0 heart and speaker with a goal to be informative (top), kind (middle), or both (bottom). Gray dotted line indicates chance level at 12.5\%.}\label{fig:comparisonAll}
+\caption[Full comparison of model variants for all experimental conditions.]{Comparison of predictions for proportion of utterances chosen by pragmatic speaker from possible model variants (left) and human data (rightmost) for average proportion of negation produced among all utterances, given true state of 0 heart and speaker with a goal to be informative (top), kind (middle), or both (bottom). Gray dotted line indicates chance level at 12.5\%.}\label{fig:comparisonAllPlacement}
 \end{figure}
+\begin{center}\includegraphics[width=0.9\linewidth]{erica_yoon_dissertation_files/figure-latex/negation-1} \end{center}
 \begin{figure}[!h]
 
-{\centering \includegraphics[width=\textwidth]{erica_yoon_dissertation_files/figure-latex/negation-1} 
+{\centering \includegraphics[width=\textwidth]{erica_yoon_dissertation_files/figure-latex/negationPlacement-1} 
 
 }
 
-\caption[Comparison of experimental results and model predictions for expected proportion of negation.]{Experimental results (left) and fitted model predictions (right) for average proportion of negation produced among all utterances, given true states (x-axis) and goals (colors).}\label{fig:negation}
+\caption[Comparison of experimental results and model predictions for expected proportion of negation.]{Experimental results (left) and fitted model predictions (right) for average proportion of negation produced among all utterances, given true states (x-axis) and goals (colors).}\label{fig:negationPlacement}
 \end{figure}
 \chapter*{References}\label{references}
 \addcontentsline{toc}{chapter}{References}
