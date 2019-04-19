@@ -222,7 +222,7 @@ child_lies_tab %>%
 ```
 ### Participants
 
-We recruited parents and their children at Children's Discovery Museum of San Jose, and adults through Amazon's Mechanical Turk. We recruited two samples: a first, *original* sample and a second, pre-registered *replication* sample. Participant demographic information is shown in Table\ \ref{tab:childInfSample}. 
+We recruited parents and their children at Children's Discovery Museum of San Jose, and adults through Amazon's Mechanical Turk. We recruited two samples: a first, *original* sample and a second, pre-registered *replication* sample^[see https://osf.io/u4v7y/register/5771ca429ad5a1020de2872e for pre-registered method, hypotheses and analysis plans.]. Participant demographic information is shown in Table\ \ref{tab:childInfSample}. 
 
 As part of the task, we included training trials where children and adults were tested on the meanings of important keywords such as "nice", "mean", and "truth." For example, participants were asked: "Nicole gave her friend a gift. Was Nicole nice? Was Nicole mean?" We excluded participants who gave wrong answers on these trials, which led to exclusion of 2 child participants from the original sample.
 
@@ -248,7 +248,8 @@ Mary’s friend Edward also wanted to taste the cookie. Edward asked Mary, “Ma
 For the original sample, each participant saw only one of the two conditions (i.e., context was a between-participants variable), whereas for the replication sample, each participant saw both conditions (within-participants).
 
 Each story presented two episodes that each presented a different *speaker type*: one who told a lie and the other who told the truth. After presenting what each speaker decided to say, we presented three *question types*, asking participants to judge (1) whether the speaker told the truth; (2) whether the speaker was nice; and (3) whether the speaker was mean.
-For the original sample, each participant heard two stories from the same condition (either experimental or control); for the replication sample, each participant heard four stories, two from each condition. The order of context conditions, speaker types and question types was counterbalanced across participants.
+For the original sample, each participant heard two stories from the same condition (either experimental or control); for the replication sample, each participant heard four stories, two from each condition. The order of context conditions, speaker types and question types was counterbalanced across participants. 
+Training trials and full example stories are provided in Supplementary Materials.
 
 ### Procedure
 
@@ -391,7 +392,8 @@ Younger children (5-6-year-olds) also differentiated between the two conditions 
 
 We conducted statistical analysis to verify these observations. We used a Bayesian linear mixed-effects model [`brms` package in R; @R-brms] using crossed random effects of participant, item and sample with the maximal random effect structure supported by the design [@gelman2006data; @barr2013random]. We ran the statistical model on the child dataset only. Age is plotted in bins in Figure\ \ref{fig:figTrupolResultsPlacement}, but was analyzed as a continuous variable, scaled and centered, in our statistical model. 
 
-The Bayesian linear mixed model predicting "yes" responses based on participant age, context type (control vs. experimental), speaker type (honest vs. dishonest) and question type (truth-telling vs. niceness vs. meanness) showed a positive interaction between experimental condition, dishonest speaker and niceness judgment: Participants judged a dishonest speaker as nicer in the experimental condition, where the speaker had politeness reasons to lie to the listener, compared to the control condition where the speaker had no apparent reasons to lie. 
+The Bayesian linear mixed model^[This model had a few adjustments to the pre-registered model structure: whereas we pre-registered \texttt{brm(niceness rating $\sim$ age * condition * speaker + (speaker * condition | subject) + (speaker * condition | item)}, we ran a more appropriate and inclusive model that contained question type as a main effect and a random effect of item, and corrected crossed random effects structure: \texttt{brm(answer ~ $\sim$ * condition * speaker type  * question type + (question type + speaker type | participant) + (condition + question type + speaker type | item) + (condition + question type + speaker type | sample)}..
+] predicting "yes" responses based on participant age, context type (control vs. experimental), speaker type (honest vs. dishonest) and question type (truth-telling vs. niceness vs. meanness) showed a positive interaction between experimental condition, dishonest speaker and niceness judgment: Participants judged a dishonest speaker as nicer in the experimental condition, where the speaker had politeness reasons to lie to the listener, compared to the control condition where the speaker had no apparent reasons to lie. 
 Thus, children were indeed able to evaluate the dishonest speaker's intentions differently based on the context. 
 There also was a positive interaction between dishonest speaker and meanness rating, which indicates that a dishonest speaker was rated as mean more often compared to the honest speaker overall regardless of the condition. 
 

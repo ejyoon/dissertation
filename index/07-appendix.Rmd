@@ -12,9 +12,128 @@ knitr::opts_chunk$set(echo = F, cache = T, warning=F, message=F,
                       fig.align = 'center', fig.pos = 't')
 ```
 
-# Supplementary materials for Chapter 2
 
-In this appendix, we present FIXME.
+# Supplementary materials for Chapter 3
+
+## Stimuli
+
+### Training trial
+
+Nicole gave her friend a gift. Was Nicole nice? Was Nicole mean?
+
+James hit his friend.
+Was James nice? Was James mean?
+
+Kyle broke his mom’s vase, and he told his mom the truth that he broke it. Was Kyle telling the truth?
+
+Pam ate five cookies, but Pam told her mom a lie that she didn’t eat any cookie. Was Pam telling the truth?
+
+### Example test story (experimental condition)
+
+Look, this is Edward!
+One day, Edward decided to bake some cookies.
+Edward brought his cookie to school and met his friend Sally. Edward said to his friend Sally, “Here, try my cookie!”
+Sally tasted the cookie,
+and she did not like the cookie at all — she thought the cookie tasted yucky!
+So did Sally like the cookie or did she not like the cookie?
+
+Edward asked Sally, “Sally, how did you like my cookie?” Sally told Edward, “Edward, your cookie was tasty.”
+So what did Sally tell Edward again?
+
+Let’s think about the story again.
+Sally thought the cookie was yucky.
+And Sally told Edward that the cookie was yucky.
+Was Sally nice? Was Sally mean? Was Sally telling the truth?
+
+Look, this is Edward again!
+One day, Edward decided to bake some cookies.
+Edward brought his cookie to school and met his friend Mary. Edward said to his friend Mary, “Here, try my cookie!”
+Mary tasted the cookie,
+and she did not like the cookie at all — she thought the cookie tasted yucky!
+So did Mary like the cookie or did she not like the cookie?
+
+Edward asked Mary, “Mary, how did you like my cookie?” Mary told Edward, “Edward, your cookie was tasty.”
+So what did Mary tell Edward again?
+
+Let’s think about the story again.
+Mary thought the cookie was yucky.
+And Mary told Edward that the cookie was tasty.
+Was Mary nice? Was Mary mean? Was Mary telling the truth?
+
+Remember Sally and Mary from our story? Look, here they are.
+Remember, Sally thought the cookie was yucky and told Edward that the cookie was yucky. 
+Mary thought the cookie was yucky and told Edward that the cookie was tasty.
+Who do you want to play with more, Sally or Mary? Why?
+
+### Example test story (control condition)
+
+Look, this is Sally!
+One day, Sally saw a free cookie.
+Sally said, “It’s a free cookie, I’ll try it!”
+Sally tasted the cookie,
+and she did not like the cookie at all — she thought the cookie tasted yucky!
+So did Sally like the cookie or did she not like the cookie?
+
+Sally’s friend Edward also wanted to taste the cookie. Edward asked Mary, “Sally, how did you like the cookie?” 
+Sally told Edward, “Edward, the cookie was yucky.”
+So what did Sally tell Edward again?
+
+Let’s think about the story again.
+Sally thought the cookie was yucky.
+And Sally told Edward that the cookie was yucky
+Was Sally nice? Was Sally mean? Was Sally telling the truth?
+
+Look, this is Mary!
+One day, Mary saw a free cookie.
+Mary said, “It’s a free cookie, I’ll try it!”
+Mary tasted the cookie,
+and she did not like the cookie at all — she thought the cookie tasted yucky!
+So did Mary like the cookie or did she not like the cookie?
+
+Mary’s friend Edward also wanted to taste the cookie. Edward asked Mary, “Mary, how did you like the cookie?” 
+Mary told Edward, “Edward, the cookie was tasty.”
+So what did Mary tell Edward again?
+
+Let’s think about the story again.
+Mary thought the cookie was yucky.
+And Mary told Edward that the cookie was tasty.
+Was Mary nice? Was Mary mean? Was Mary telling the truth?
+
+Remember Sally and Mary from our story? Look, here they are.
+Remember, Sally thought the cookie was yucky and told Edward that the cookie was yucky. 
+Mary thought the cookie was yucky and told Edward that the cookie was tasty.
+Who do you want to play with more, Sally or Mary? Why?
+
+## Supplemental figure
+
+```{r}
+trupol_appendix <- d_plot %>%
+  ggplot(., aes(x=age, y=answer, col=cond)) +
+  geom_jitter(height=.05, width=.05) +
+  geom_smooth(span=2) +
+  facet_grid(qkind~speaker) + 
+  theme_few() +
+  theme(legend.position = "bottom", legend.title = element_blank()) +
+  geom_hline(aes(yintercept=0.5), linetype="dashed") +
+  scale_colour_ptol() + 
+  # scale_alpha_manual(values=c(0,1)) +
+  # ggtitle("Expt 1: Judgments for honest vs. polite speaker") +
+  ylab("Proportion \"yes [the speaker was _____]\"") +
+  xlab("Age") +
+  ylim(-0.1,1.1) +
+  scale_y_continuous(breaks=seq(0,1,.5)) +
+  guides(size=FALSE)
+
+ggsave(trupol_appendix, file=here::here(child_lies_image_path, "trupol_plot_appendix.png"), width=5, height=5)
+```
+
+```{r figTrupolAppendix, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Speaker judgments by participants of different age (x-axis) for the honest speaker (left column) and the dishonest speaker (right), in different contexts (colors). Rows represent question types (e.g., Was Sally telling the truth?), and y-axis represents proportion saying \`\`yes\" to the question. Each point represents a participant response in a trial.", fig.scap="Speaker ratings for the experiment in Chapter 4 with age as a continuous variable."}
+png::readPNG(here::here(child_lies_image_path, "trupol_plot_appendix.png")) %>%
+  grid::grid.raster()
+```
+
+
+# Supplementary materials for Chapter 4
 
 ## Model details
 
@@ -270,31 +389,3 @@ ggsave("speaker_production_neg_wMod.png", plot = plot.neg, width = 7, height = 3
        path = here::here(file_path))
 ```
 
-
-# Supplementary materials for Chapter 3
-
-```{r}
-trupol_appendix <- d_plot %>%
-  ggplot(., aes(x=age, y=answer, col=cond)) +
-  geom_jitter(height=.05, width=.05) +
-  geom_smooth(span=2) +
-  facet_grid(qkind~speaker) + 
-  theme_few() +
-  theme(legend.position = "bottom", legend.title = element_blank()) +
-  geom_hline(aes(yintercept=0.5), linetype="dashed") +
-  scale_colour_ptol() + 
-  # scale_alpha_manual(values=c(0,1)) +
-  # ggtitle("Expt 1: Judgments for honest vs. polite speaker") +
-  ylab("Proportion \"yes [the speaker was _____]\"") +
-  xlab("Age") +
-  ylim(-0.1,1.1) +
-  scale_y_continuous(breaks=seq(0,1,.5)) +
-  guides(size=FALSE)
-
-ggsave(trupol_appendix, file=here::here(child_lies_image_path, "trupol_plot_appendix.png"), width=5, height=5)
-```
-
-```{r figTrupolAppendix, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Speaker judgments by participants of different age (x-axis) for the honest speaker (left column) and the dishonest speaker (right), in different contexts (colors). Rows represent question types (e.g., Was Sally telling the truth?), and y-axis represents proportion saying \`\`yes\" to the question. Each point represents a participant response in a trial.", fig.scap="Speaker ratings for the experiment in Chapter 4 with age as a continuous variable."}
-png::readPNG(here::here(child_lies_image_path, "trupol_plot_appendix.png")) %>%
-  grid::grid.raster()
-```
