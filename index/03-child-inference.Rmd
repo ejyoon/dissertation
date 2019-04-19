@@ -4,7 +4,7 @@
 
 In the last Chapter, I reported on empirical evidence that children are sensitive to speakers' goals to be prosocial and kind.
 In this Chapter I examine whether older children are capable of a more sophisticated reasoning about the tradeoff between speakers' prosocial and informational goals, using a case study of prosocial lies (versus blunt truths). 
-We show that 5- to 8-year-old children understand that the same lie (e.g., "your cookie was tasty") should be judged differently depending on the speaker's goals, whether the speaker meant to be kind or simply misleading without any reason. 
+We show that adults and 5- to 8-year-old children reason about goal tradeoffs based on context at hand, and understand that the same lie (e.g., "your cookie was tasty") should be judged differently depending on the speaker's goals, whether the speaker meant to be kind or simply misleading without any apparent reason. 
 
 ```{r child = 'chapter_child_rmds/ch3_polite_lies/polite_lies.Rmd'}
 ```
