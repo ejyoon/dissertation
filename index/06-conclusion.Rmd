@@ -2,20 +2,20 @@
 
 In this dissertation, I proposed a framework to unify existing theories to understand polite language as reflecting a tradeoff between different goals that speakers may consider. 
 Critically, language does not only reflect speakers' informational concerns to convey accurate information informatively, 
-but also non-informational social concerns, such as following social norms and maintaining interactants' positive self-image (*face*).
+but also non-informational social concerns, such as following social norms and maintaining listeners' and speakers' own positive self-image (*face*).
 In Chapter 1, I summarized previous approaches to polite language and argued that a goal-based framework can integrate different components that are important to explaining how polite speech emerges and is understood. 
 Then I explained how existing empirical data with adults and children that can be explained through this goal-based framework.
 
-In Chapters that followed, I presented evidence from my own empirical studies that demostrated children and adults' understanding of polite speech as reflecting a tradeoff between informational and social goals. 
+In Chapters that followed, I presented evidence from our own empirical studies that demostrated children and adults' understanding of polite speech as reflecting a tradeoff between informational and social goals. 
 Chapter 2 examined 2- to 4-year-old children's understanding of social goals behind language use, through the case study of polite requests with simple politeness markers such as "please," and "can you~". By 3 years, children were able to judge that speakers making polite requests were being more polite, and by 4 years children were able to reason that those speakers were also likely to be better play partners and to gain compliance to their requests. 
 
 Chapter 3 examined older children's and adults' understanding of the tradeoff between social goals and informational goals, using the case study of white lies (versus blunt truths). By 6 years, children seem capable of using context information to reason about speaker goals and make judgments about whether the speaker was being nice or mean, and evaluate liars more positively given potential face threat to the listener than given no apparent face threat. 
 We saw a developmental trend, where older children, like adults, rated polite liars more positively whereas younger participants tended to be divided. 
 This age difference may be due to a discrepancy in goal priorities: Younger children may prioritize truth-telling, which can be a simple rule to follow (e.g., "Don't lie, always tell the truth") but as they get older, they might learn to consider other people's feelings and address the informational-social tradeoff more.
 
-Finally, in Chapter 4, we look at adults' understanding of polite language in more detail, by examining the case study of utterance prediction in a situation of potential face threat (e.g., speakers being asked to give feedback and answer "How was my poem?"), 
+Finally, Chapter 4 examined adults' understanding of polite language in more detail, by looking at utterance prediction in a situation of potential face threat (e.g., speakers being asked to give feedback and answer "How was my poem?"), 
 and proposed a model to formalize the notions of speaker goals as utilities that the speaker wants to maximize. 
-I showed that our model predictions captured important key patterns of human judgments,
+We showed that our model predictions captured important key patterns of human judgments,
 and that the model fit was superior to its variants with a subset of the three utilities of our model. 
 Overall, the empirical work suggest that the goal-tradeoff framework both explains children's and adults' understanding of polite language well, and is useful for formalization and thus for making precise predictions of polite speech. 
 

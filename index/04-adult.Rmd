@@ -3,8 +3,8 @@
 \chaptermark{Modeling polite speech} 
 
 Language is a remarkably efficient tool for transmitting information. Yet human speakers make statements that are inefficient, imprecise, or even contrary to their own beliefs, all in the service of being polite. What rational machinery underlies polite language use? 
-In this Chapter, I present evidence that adults think of polite speech as emerging from the competition of three communicative goals: to convey information, to be kind, and to present oneself in a good light. 
-We formalized this goal tradeoff using a probabilistic model of utterance production, which predicts human utterance choices in socially-sensitive situations with high quantitative accuracy, and I show that our full model is superior to its variants with subsets of the three goals. 
+In this Chapter, we present evidence that adults think of polite speech as emerging from competing communicative goals: to convey information, to be kind, and to present oneself in a good light. 
+We formalized this goal tradeoff using a probabilistic model of utterance production, which predicts human utterance choices in socially-sensitive situations with high quantitative accuracy, and we show that our full model is superior to its variants with subsets of the three goals. 
 
 ```{r child = 'chapter_child_rmds/ch4_modeling_polite/modeling_polite.Rmd'}
 ```

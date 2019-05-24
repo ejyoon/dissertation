@@ -185,7 +185,7 @@ over possible states of the world. The set of utterances is \{*terrible*, *bad*,
 implemented this model using the probabilistic programming language
 WebPPL [@dippl] and a demo can be found at \url{http://forestdb.org/models/politeness.html}.
 
-```{r L1inferences, fig.cap="Model behavior. Listener inferences about the true state (e.g., the rating truly deserved by the poem; A) and the speaker's utility weighting ($\\phi_{S_1}$ or how informational vs. social the speaker is, where $\\phi_{S_1}$ = 0 is fully social, and $\\phi_{S_1}$ = 1 is fully informational; B) as a function of the utterance heard (facets). C: Purely self-presentational speaker production behavior as a function of the kind of speaker they wish to present themselves as (facets; relatively more informational, e.g., $\\phi_{S_1}$ = 0.05, vs. social as represented, e.g., $\\phi_{S_1}$ = 0.95).", fig.scap="Schmatic model predictions."}
+```{r L1inferences, fig.cap="Model behavior. Listener inferences about the true state (e.g., the rating truly deserved by the poem; A) and the speaker's utility weighting ($\\phi_{S_1}$ or how informational vs. social the speaker is, where $\\phi_{S_1}$ = 0 is fully social, and $\\phi_{S_1}$ = 1 is fully informational; B) as a function of the utterance heard (facets). C: Purely self-presentational speaker production behavior as a function of the kind of speaker they wish to present themselves as (facets; relatively more informational, e.g., $\\phi_{S_1}$ = 0.05, vs. social as represented, e.g., $\\phi_{S_1}$ = 0.95).", fig.scap="Schematic predictions of the computational model."}
 knitr::include_graphics(here::here(file_path, "L1_inferences_wS2pres"), dpi = 170)
 ```
 
@@ -245,7 +245,7 @@ BF_full_vs_one <- model1bf1/model3bf1
 BF_main_vs_one <- model2bf1/model3bf1
 ```
 
-```{r variance, echo=FALSE, fig.cap="Full distribution of human responses vs. model predictions. Error bars represent 95\\% confidence intervals for the data (vertical) and 95\\% highest density intervals for the model (horizontal).", fig.scap="Comparison between human responses and model predictions."}
+```{r variance, echo=FALSE, fig.cap="Full distribution of human responses vs. model predictions. Error bars represent 95\\% confidence intervals for the data (vertical) and 95\\% highest density intervals for the model (horizontal).", fig.scap="Comparison between model predictions and human responses from Experiment in Chapter 4."}
 ms_var <- ms_utt %>%
   filter(source == "data" | model == "full") %>%
   select(-model) %>%
@@ -333,19 +333,19 @@ eschewing one of their goals to increase utility along a single
 dimension, participants chose utterances that jointly satisfied their
 conflicting goals by producing indirect speech.
 
-```{r comparison, fig.width=11, fig.height=4, fig.cap="Comparison of predictions for proportion of utterances chosen by pragmatic speaker from possible model variants (left) and human data (rightmost) for average proportion of negation produced among all utterances, given true state of 0 heart (on a scale of 0 to 3) and speaker with both goals to be informative and kind. Gray dotted line indicates chance level at 12.5\\%.", fig.scap="Comparison of model variant fits."}
+```{r comparison, fig.width=11, fig.height=4, fig.cap="Comparison of predictions for proportion of utterances chosen by pragmatic speaker from possible model variants (left) and human data (rightmost) for average proportion of negation produced among all utterances, given true state of 0 heart (on a scale of 0 to 3) and speaker with both goals to be informative and kind. Gray dotted line indicates chance level at 12.5\\%.", fig.scap="Comparison of computational model variant fits."}
 plot.comp <- ms_utt %>%  
   mutate(model = case_when(
     model == "NA" ~ "human data", 
     model == "inf" ~ "model: \ninformational \nonly", 
-    model == "soc" ~ "model: \nsocial only", 
+    model == "soc" ~ "model: \nprosocial only", 
     model == "pres" ~ "model: \npresentational \nonly", 
     model == "inf_pres" ~ "model: \ninformational, \npresentational", 
-    model == "inf_soc" ~ "model: \ninformational, \nsocial", 
-    model == "soc_pres" ~ "model: \nsocial, \npresentational", 
-    model == "full" ~ "model: \ninformational, \nsocial, \npresentational" 
+    model == "inf_soc" ~ "model: \ninformational, \nprosocial", 
+    model == "soc_pres" ~ "model: \nprosocial, \npresentational", 
+    model == "full" ~ "model: \ninformational, \nprosocial, \npresentational" 
   ),
-  model = fct_relevel(model, "model: \ninformational \nonly", "model: \nsocial only", "model: \npresentational \nonly", "model: \nsocial, \npresentational", "model: \ninformational, \nsocial", "model: \ninformational, \npresentational", "model: \ninformational, \nsocial, \npresentational")) %>%
+  model = fct_relevel(model, "model: \ninformational \nonly", "model: \nprosocial only", "model: \npresentational \nonly", "model: \nprosocial, \npresentational", "model: \ninformational, \nprosocial", "model: \ninformational, \npresentational", "model: \ninformational, \nprosocial, \npresentational")) %>%
   mutate(positivity = fct_recode(positivity,
                                  "it was ~" = "yes",
                                  "it wasn't ~" = "not",
@@ -359,7 +359,7 @@ plot.comp <- ms_utt %>%
            # group = interaction(positive, source), linetype = forcats::fct_rev(positive),
            group = positivity,
            colour = positivity)) +
-  geom_hline(yintercept=.125, lty=2, color="gray") +
+  # geom_hline(yintercept=.125, lty=2, color="gray") +
   geom_line()+
   facet_grid(.~model) +
   xlab("utterance") +

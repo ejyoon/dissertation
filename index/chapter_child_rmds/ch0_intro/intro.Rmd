@@ -15,11 +15,11 @@ In fact, it is difficult to imagine human speech that efficiently conveys only t
 Intuitively, politeness is one prominent characteristic that differentiates human speech from stereotyped robotic communication, which may try to follow rules to say “please” or “thank you” yet still lack genuine politeness.
 
 Although language users use polite speech on a daily basis, explaining why we use polite speech or how we understand it is not as straightforward as it first seems.
-While very simple polite utterances can be produced from straightforward rules (e.g., say “sorry” when you did something bad to someone), 
+While simple polite utterances could be produced from straightforward rules (e.g., say “sorry” when you did something bad to someone), 
 When speakers want to tell the listener to “close the window,” they often use a more roundabout way and say “can you please close the window?”
 When people see that their interactant is wearing a new outfit that they think is hideous, they might still say “Your dress looks gorgeous!”
-As such, polite utterances often seem to misrepresent their intended message or conceal the truth,
-which shows that polite speech violates a critical principle of cooperative communication: exchanging information efficiently and accurately [@grice1975].
+As such, polite utterances often misrepresent their intended message or conceal the truth,
+which means that polite speech violates a critical principle of cooperative communication: exchanging information efficiently and accurately [@grice1975].
 
 If politeness only gets in the way of effective information transfer, why be polite?
 Clearly, there are social concerns, and most linguistic theories assume utterance choices are motivated by these concerns, couched as either polite maxims [@leech1983], social norms [@ide1989], or aspects of a speaker and/or listener’s identity, known as *face* [@brown1987; @goffman1967]. 
@@ -29,7 +29,7 @@ In this thesis, my goal is to offer an integrative theoretical framework that ai
 
 For example, imagine that Alice and Bob are having a conversation and Bob asks for Alice's feedback on his cookies that he baked ("How did you like my cookies?") and Alice thinks the cookies tasted bad and salty (Figure\ \ref{fig:schematic-overview}, top panel). Alice's utterance would differ depending on her goals: whether she wants to prioritize informational goal or telling the truth to Bob; social goal or making Bob feel happy; or presentational goal or presenting Alice herself in a good light that she is kind (predictions of this specific scenario will be explained in detail in Chapter 4).
 
-The contents of this dissertation will be as follows, as shown in Figure\ \ref{fig:figTrupolLfeelResultsPlacement}:
+The contents of this dissertation will be as follows, as shown in Figure\ \ref{fig:schematic-overview}:
 In Chapter 1 (top panel of Figure\ \ref{fig:schematic-overview}) I present an integrative goal-based framework that aims to explain polite speech based on the idea that it reflects a tradeoff between competing social goals that speakers have. Then using this framework, I will explain existing empirical studies on understanding and production of polite speech in adults and children. 
 Chapters 2-4 describe a set of computational and empirical studies of children and adult's understanding of polite language (bottom panels of Figure\ \ref{fig:schematic-overview}) . 
 In Chapters 2 and 3, I present two sets of empirical studies looking at the development of polite language understanding: 

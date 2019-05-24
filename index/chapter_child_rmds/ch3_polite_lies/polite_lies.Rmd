@@ -109,10 +109,10 @@ d <- d %>%
 
 ## Introduction
 
-Imagine your friend bakes some cookies for you, but the cookies are hard and salty and simply taste terrible. If your friend asks how you like the cookies, must you admit, “these cookies taste terrible,” or is it acceptable to say: “They are delicious!”? The latter is misleading but gives the listener what she might want to hear—-in other words, it would be polite.
+Imagine your friend bakes some cookies for you, but the cookies are hard and salty and taste simply terrible. If your friend asks how you like the cookies, must you admit, “these cookies taste terrible,” or is it acceptable to say: “They are delicious”? The latter is misleading but gives the listener what she might want to hear—-in other words, it would be polite.
 
 Politeness violates a critical principle of cooperative communication: exchanging information efficiently and accurately [@grice1975]. If information transfer was the only currency in communication, a cooperative speaker would find polite utterances undesirable because they are potentially misleading. People are polite, however, and speakers do produce polite utterances. 
-Adults and children spontaneously produce requests in polite forms [@clark1980; @axia1985]. Speakers exhibit politeness strategies even while arguing, preventing unnecessary offense to their interactants [@holtgraves1997]. 
+Adults spontaneously produce requests in polite forms [@clark1980], and exhibit politeness strategies even while arguing, preventing unnecessary offense to their interactants [@holtgraves1997]. 
 Listeners even attribute ambiguous speech to a polite desire to hide a truth that could hurt another’s self-image [e.g. @bonnefon2009]. 
 In fact, it is difficult to imagine human speech that efficiently conveys only the truth. 
 Intuitively, politeness is one prominent characteristic that differentiates human speech from stereotyped robotic communication, which may try to follow rules to say “please” or “thank you” yet still
@@ -138,13 +138,13 @@ One possibility is that children have a rule-based approach to language:
 They may think about deterministic, separate rules such as "If you want something, then you should say *please*" and "If you see/feel/think *X*, then you should (truthfully) say *X.*"
 Children can use these rules to both produce polite and truthful utterances themselves, and evaluate speakers based on whether they follow these rules or not ("She is nice because she said *please*"; or "She is bad/wrong because she said these cookies are tasty but they are actually salty and yucky.")
 
-Whereas these straightforward rules can make language production and understanding easy and productive, speakers often do not follow these rules deterministically. 
+While these rules can make language production and understanding easy and straightforward, speakers often do not follow these rules deterministically. 
 For example, people sometimes tell the truth ("Those herbs are poisonous, you shoudn't eat them") but at other times they tell lies to be kind ("This is a very delicious salad that you prepared!").
 Indeed, caregivers contradict their own teachings as they demand children to tell the truth in some contexts ("Who broke the vase? Be honest."), but reproach them for telling the truth in other contexts (Child: "This [meal that Grandma cooked] is yucky" Father:"Don't say that, you should be nice!").
 Thus, language users ultimately need to learn that language reflects not only simple deterministic rules to follow, but also more nuanced tradeoffs between different goals that speakers might have depending on the situation. 
 
 Do adults and children go beyond simple rules and engage in an *inference*-based reasoning to think about how speech reflects goal tradeoffs? 
-Here we look at the case study of prosocial lies (versus blunt truths) to examine whether children understand the tradeoff between speakers' informational goals and prosocial goals. 
+Here we look at a case study of prosocial lies (versus blunt truths) to examine whether children understand the tradeoff between speakers' informational goals and prosocial goals. 
 For example, if Alice asked Bob for feedback on her performance that was poor in quality (e.g., cookies she baked that were salty or a presentation she gave that was unintelligible), Bob would be in a bind: 
 On one hand, he would want to be informative and convey accurate information, which would lead him to say "[Your cookies] were terrible." 
 On the other hand, he would also want to be prosocial and kind, and make Alice feel happy and respected, by saying "[Your cookies] were delicious."
@@ -168,21 +168,21 @@ In the current study, we ask whether children are able to reason about polite li
 
 ```{r childInfSample, results = 'asis'}
 child_lies_tab1 <- d %>% 
-  group_by(cond, sample, agebin, subid) %>%
+  group_by(sample, cond, agebin, subid) %>%
   summarise(n=n()) %>%
-  group_by(cond, sample, agebin) %>%
+  group_by(sample, cond, agebin) %>%
   summarise(n=n()) %>%
   mutate(n = as.character(round(n)))
 
 child_lies_tab2 <- d %>% 
-  distinct(cond, sample, agebin, age, subid) %>%
-  group_by(cond, sample, agebin) %>%
+  distinct(sample, cond, agebin, age, subid) %>%
+  group_by(sample, cond, agebin) %>%
   summarise(mean=round(mean(age),2), sd=round(sd(age, na.rm=T), 2))
 
 child_lies_tab3 <- d %>%
-  group_by(cond, sample, agebin, sex, subid) %>%
+  group_by(sample, cond, agebin, sex, subid) %>%
   summarise(n=n()) %>%
-  group_by(cond, sample, agebin, sex) %>%
+  group_by(sample, cond, agebin, sex) %>%
   summarise(n=n()) %>%
   filter(sex == "F") %>%
   select(-sex) %>%
@@ -203,18 +203,24 @@ child_lies_tab <- left_join(child_lies_tab1, child_lies_tab3) %>%
   rename(Condition = cond) %>%
   rename(Sample = sample) %>%
   rename('Age group' = agebin) %>%
-  rename('Mean age (years)' = mean, "SD age (years)" = sd)
+  rename('Mean age (years)' = mean, "SD age (years)" = sd) %>%
+  filter(Sample != "replication" | Condition !=	"Experimental (politeness reasons)") %>%
+  mutate(Condition = as.character(Condition)) %>%
+  mutate(Condition = case_when(
+    Sample == "replication" ~ "Both control and experimental",
+    TRUE ~ Condition
+  )) %>%
+  replace(is.na(.), "")
 
 
 # apa_table(child_lies_tab, caption = "Participant demographic information.", align = c(rep("l", 6)) %>%
 #    column_spec(column = 5, width = "3cm")
    
 child_lies_tab %>% 
-  replace(is.na(.), "") %>%
   kable("latex", 
         booktabs = T, 
         caption = "Participant demographic information.",
-        caption.short = "Participant demographic information") %>%
+        caption.short = "Participant demographic information for Chapter 3.") %>%
   kable_styling(latex_options = "scale_down") %>% 
   row_spec(row = 0, bold = TRUE) %>% 
   column_spec(column = 6, width = "2.2cm") %>% 
@@ -396,9 +402,9 @@ Adults showed the clearest discrepancies in speaker ratings by condition and ten
 Older children (7-8-year-olds) show similar patterns but with smaller rating differences between the two conditions. 
 Younger children (5-6-year-olds) also differentiated between the two conditions but not as much as older children and adults did, and younger children generally tended to rate the honest speaker more favorably than the dishonest speaker across both conditions.
 
-We conducted statistical analysis to verify these observations. We used a Bayesian linear mixed-effects model [`brms` package in R; @R-brms] using crossed random effects of participant, item and sample with the maximal random effect structure supported by the design [@gelman2006data; @barr2013random]. We ran the statistical model on the child dataset only. Age is plotted in bins in Figure\ \ref{fig:figTrupolResultsPlacement}, but was analyzed as a continuous variable, scaled and centered, in our statistical model. 
+We conducted statistical analysis to verify these qualitative observations. We used a Bayesian linear mixed-effects model [`brms` package in R; @R-brms] using crossed random effects of participant, item and sample with the maximal random effect structure supported by the design [@gelman2006data; @barr2013random]. We ran the statistical model on the child dataset only. Age is plotted in bins in Figure\ \ref{fig:figTrupolResultsPlacement}, but was analyzed as a continuous variable, scaled and centered, in our statistical model. 
 
-The Bayesian linear mixed model^[This model had a few adjustments to the pre-registered model structure: whereas we pre-registered \texttt{brm(niceness rating $\sim$ age * condition * speaker + (speaker * condition | subject) + (speaker * condition | item)}, we ran a more appropriate and inclusive model that contained question type as a main effect and a random effect of item, and corrected crossed random effects structure: \texttt{brm(answer ~ $\sim$ * condition * speaker type  * question type + (question type + speaker type | participant) + (condition + question type + speaker type | item) + (condition + question type + speaker type | sample)}..
+The Bayesian linear mixed model^[This model incorporated a few changes from the pre-registered model structure: whereas we pre-registered \texttt{brm(niceness rating $\sim$ age * condition * speaker + (speaker * condition | subject) + (speaker * condition | item)}, we ran a more appropriate and inclusive model that contained question type as a main effect and a random effect of item, and corrected crossed random effects structure: \texttt{brm(answer ~ $\sim$ * condition * speaker type  * question type + (question type + speaker type | participant) + (condition + question type + speaker type | item) + (condition + question type + speaker type | sample)}..
 ] predicting "yes" responses based on participant age, context type (control vs. experimental), speaker type (honest vs. dishonest) and question type (truth-telling vs. niceness vs. meanness) showed a positive interaction between experimental condition, dishonest speaker and niceness judgment: Participants judged a dishonest speaker as nicer in the experimental condition, where the speaker had politeness reasons to lie to the listener, compared to the control condition where the speaker had no apparent reasons to lie. 
 Thus, children were indeed able to evaluate the dishonest speaker's intentions differently based on the context. 
 There also was a positive interaction between dishonest speaker and meanness rating, which indicates that a dishonest speaker was rated as mean more often compared to the honest speaker overall regardless of the condition. 

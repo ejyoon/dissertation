@@ -276,7 +276,7 @@ ggsave(p_all, file=here::here(child_req_image_path, "fig_results.png"), width=9,
 \newpage
 \blandscape
 
-```{r figResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Bottom right: Story example. Top, left: Results. Proportion of correct responses to questions comparing between a speaker who used a politeness marker (where blue indicates \"please\", yellow \"can you\", and red \"can you please\") versus a speaker who did not. Data are binned into one-year age groups. Each row represents data from a different Experiment. Columns represent different questions asked. Dashed line represents chance level (i.e., if participant were guessing at random).", fig.scap = "Speaker ratings in Experiments 2.1-2.3"}
+```{r figResultsPlacement, fig.env = "figure*", fig.pos = "p", fig.width=7, fig.height=5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Bottom right: Story example. Top, left: Results. Proportion of correct responses to questions comparing between a speaker who used a politeness marker (where blue indicates \"please\", yellow \"can you\", and red \"can you please\") versus a speaker who did not. Data are binned into one-year age groups. Each row represents data from a different Experiment. Columns represent different questions asked. Dashed line represents chance level (i.e., if participant were guessing at random).", fig.scap = "Speaker ratings for Experiments 2.1-2.3"}
 png::readPNG(here::here(child_req_image_path, "fig_results_edit.png")) %>%
   grid::grid.raster()
 ```
@@ -433,7 +433,7 @@ Another concern is that the experimenter was aware of the manipulations (i.e., t
 
 In Experiment 1, we saw initial evidence that children can use some combinations of linguistic, prosodic, and facial cues to politeness. In Experiment 2, we examined whether children can make similar judgments using linguistic and prosodic cues only, without facial expressions. For this, we conducted a preregistered experiment where we used pre-recorded voiceovers to present speaker utterances, so that (1) we could look at children's judgments based on linguistic markers and prosodic cues only, and (2) we could remove the role of the experimenter in presentation of these utterances. 
 
-### Methods
+### Methods^[See pre-registered method, hypotheses and analysis plans  at https://osf.io/qkn8m/register/5771ca429ad5a1020de2872e.]
 
 #### Participants
 
@@ -489,7 +489,7 @@ In sum, across Experiments 1 and 2, we saw that
 children tend to make accurate judgments about speakers given their use of politeness markers, especially "can you please," together with prosodic cues, 
 and children get better with age in their use of politeness cues to respond to questions about speaker attributes and social implications.
 
-## Experiment 3
+## Experiment 3^[See pre-registered method, hypotheses and analysis plans  at https://osf.io/rjsx5/register/5771ca429ad5a1020de2872e.]
 
 We conducted a third, pre-registered experiment to see whether children are able to evaluate speakers based on linguistic markers only, without any other supporting cues such as prosodic cues or facial expressions.  
 
