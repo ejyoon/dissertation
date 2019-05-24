@@ -25,7 +25,17 @@ abstract: |
 # like below, use a command like that for the abstract above.  Note that a tab is 
 # needed on the line after the |.
 acknowledgements: |
-  FIXME
+  This work is not my own, and rather it is work of many people without whom this entire journey would not have been possible. 
+  
+  First I would like to thank my advisor Mike Frank -- he is the most wise, thoughtful and caring adviser that I could have ever hoped to have. I’m so fortunate to have had a mentor with such patience and trust that he showed for me more than the trust I had for myself, and if I were to ever be a mentor to someone, I hope I show the same kind of trust to my mentee that Mike shared with me for the last six years.
+  
+  I also had the privilege of working with incredible committee members who are so wise, insightful and generous. Ellen Markman, Noah Goodman, and Hyo Gweon have inspired me and encouraged me for every little progress I made, for which I am grateful.
+  
+  I’ve also had the privilege of collaborating and being friends with wonderful people in Language and Cognition Lab and the Developmental area in the Psychology Department.
+
+  
+
+ 
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl
