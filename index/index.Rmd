@@ -25,17 +25,29 @@ abstract: |
 # like below, use a command like that for the abstract above.  Note that a tab is 
 # needed on the line after the |.
 acknowledgements: |
-  This work is not my own, and rather it is work of many people without whom this entire journey would not have been possible. 
+  This work was only possible thanks to many people, without whom I would not have been able to complete this journey. 
   
-  First I would like to thank my advisor Mike Frank -- he is the most wise, thoughtful and caring adviser that I could have ever hoped to have. I’m so fortunate to have had a mentor with such patience and trust that he showed for me more than the trust I had for myself, and if I were to ever be a mentor to someone, I hope I show the same kind of trust to my mentee that Mike shared with me for the last six years.
+  First, I would like to thank my adviser Mike Frank -- he is the most wise, thoughtful and caring adviser that I could have hoped to have. I’m so fortunate to have had a mentor who showed me more patience and trust than I had for myself. If I were to ever be a mentor to someone, I hope I show the same kind of trust to my mentee that Mike shared with me for the last six years.
   
-  I also had the privilege of working with incredible committee members who are so wise, insightful and generous. Ellen Markman, Noah Goodman, and Hyo Gweon have inspired me and encouraged me for every little progress I made, for which I am grateful.
+  I also had the privilege of working with incredible committee members who are so insightful and generous. Ellen Markman, Noah Goodman, and Hyo Gweon have inspired me and encouraged me for every little progress I made, for which I am grateful.
   
-  I’ve also had the privilege of collaborating and being friends with wonderful people in Language and Cognition Lab and the Developmental area in the Psychology Department.
+  I’ve also had the privilege of collaborating and being friends with wonderful people in Language and Cognition Lab and the Developmental area in the Psychology Department. Not only was every single person an amazing source of intellectual inspiration, but also very kind, friendly and helpful in every way. I’m so grateful for all the time I spent with both of these groups.
+  Special thanks to my three cohort-mates and also closest friends in grad school: Michael Henry Tessler, Kara Weisman, and Kyle MacDonald. I could not have asked for better cohort-mates, area-mates, and office-mates, and I’m really going to miss the time that we shared at Stanford.
+  
+  I also had incredible support from recruitment sites where I collected children’s data. I’m so grateful that I was able to work with teachers and staff from Bing nursery school, especially Jennifer, Chia-wa and Beth who were always so eager to go through my studies with me and give valuable feedback for all the years I’ve worked with them. I also want to thank staff and parents at Children’s Discovery Museum in San Jose, where I collected a lot of data from 5- to 8-year-olds. I would also like to thank Kim Scott at MIT, for developing an amazing online platform Lookit for recruiting parents and their children online, and for helping me tremendously from beginning to end to set up my study.
+  
+  I'm thankful to have been able to work with 15 research assistants over the last six years, each of whom contributed to every stage of the research process. Special thanks to Charles Wu, Stephanie Hsiang, Raci Lynch, India Robinson and Leah LeVine, who I’ve worked with most closely over the last few years, and I’m really grateful for their contribution to the research, as well as for the relationships that I was able to build with each of them.
+  
+  Outside of the academic scene, there were amazing friends that supported me and prayed for me. My friends in KBSK (Korean Bible Study and Koinonia) are as close to me as my own family, and all the Friday bible study sessions and the meetings and conversations that I’ve had with everyone were so invigorating and mentally and spiritually fulfilling. I especially want to thank Pastor Jaeho and his wife Seungyeun, who so faithfully and patiently guided me all these years. Also, I want to thank my best friend Hyuna, for always being there and having my back. 
+  
+  I’m so thankful to my dad, mom, and my brother Jason. Their love and support gave me courage to  try everything that I want to try, and led me where I am now. 
+  
+  I am thankful to have two very special men in my life: my husband Kyuho and my son Somyung. Somyung gives me such great joy every day, and it gets better and better, and it’s through him that every knowledge I have about development really comes to life. 
+  I'm eternally grateful to my husband Kyuho. Without his love and support and guidance, none of this work would have been possible. Thank you for always being there for me, for being the best husband that I could ever wish for. 
+  
+  Lastly, above all, I would like thank my Father God, who has shown me His love through everyone I’ve met, and has guided me in every single step I have take taken in this journey.
 
-  
 
- 
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl

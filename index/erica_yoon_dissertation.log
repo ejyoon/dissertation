@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  24 MAY 2019 15:20
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  25 MAY 2019 00:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,9 +480,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3] [4
 
 
-] [5] [6
+] [5
 
-] (./erica_yoon_dissertation.toc [7
+] [6] (./erica_yoon_dissertation.toc [7
 
 ] [8])
 \tf@toc=\write3
@@ -510,7 +510,7 @@ ld_rmds/ch0_intro/figs/schematic_overview.jpg Graphic file (type QTm)
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
 ild_rmds/ch0_intro/figs/schematic_overview.jpg" >
 
-LaTeX Warning: Float too large for page by 1.39409pt on input line 292.
+LaTeX Warning: Float too large for page by 1.39409pt on input line 341.
 
 [2] [3] [4]
 Chapter 1.
@@ -518,9 +518,9 @@ Chapter 1.
 
 ] [6] [7]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 417.
+(Font)              <8> on input line 466.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 417.
+(Font)              <6> on input line 466.
 [8] [9] [10] [11] [12] [13] [14] [15
 
 
@@ -531,11 +531,11 @@ Missing character: There is no ↵ in font [lmroman10-regular]:mapping=tex-text;
 [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]
 Chapter 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 1493.
+(Font)              <24.88> on input line 1542.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 1493.
+(Font)              <20.74> on input line 1542.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 1493.
+(Font)              <17.28> on input line 1542.
 [33
 
 ] [34] [35] [36] [37] [38]
@@ -548,18 +548,18 @@ hic file (type QTm)
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 1809.
+(Font)              <12> on input line 1858.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1809--1809
+Underfull \hbox (badness 10000) in paragraph at lines 1858--1858
 [][][]\TU/lmr/m/n/8 See pre-registered method, hypotheses and analysis plans at
  $[][][][][] [] [] [] [][][] [] [][] [] [][][][][] [] [][][][][][][][] []
  []
 
 [41] [42]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 1873.
+(Font)              <14.4> on input line 1922.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1873--1873
+Underfull \hbox (badness 10000) in paragraph at lines 1922--1922
 [][][]\TU/lmr/m/n/8 See pre-registered method, hypotheses and analysis plans at
  $[][][][][] [] [] [] [][][] [] [][] [] [][][][][] [] [][][][][][][][] []
  []
@@ -577,13 +577,13 @@ df" > [53] [54]
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 2405--2405
+Underfull \hbox (badness 10000) in paragraph at lines 2454--2454
 \TU/lmtt/m/n/8 brm(niceness rating $\OMS/lmsy/m/n/8 ^^X$ \TU/lmtt/m/n/8 age * c
 ondition * speaker + (speaker * condition | subject) + (speaker *
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2405--2405
+Underfull \hbox (badness 10000) in paragraph at lines 2454--2454
 \TU/lmtt/m/n/8 * speaker type * question type + (question type + speaker type |
  participant) + (condition + question
  []
@@ -651,7 +651,7 @@ Appendix B.
 
 ]
 
-LaTeX Warning: Reference `fig:litsem' on page 83 undefined on input line 3324.
+LaTeX Warning: Reference `fig:litsem' on page 83 undefined on input line 3413.
 
 File: erica_yoon_dissertation_files/figure-latex/litsemPlotPlacement-1.pdf Grap
 hic file (type QTm)
@@ -692,19 +692,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 [93] [94] [95] [96] [97] [98] [99] [100] [101]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4187.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4282.
 [102]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4187.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4282.
 (./erica_yoon_dissertation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4187.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4187.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4282.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4282.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4187.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4282.
  ) 
 Here is how much of TeX's memory you used:
  10984 strings out of 493005

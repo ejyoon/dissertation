@@ -1,9 +1,9 @@
-We use polite speech on a daily basis. 
-We produce not only simple words of apology ("sorry") or gratitude ("thanks"), but also more complex polite utterances (“these cookies could use a bit of salt” or "your dress is gorgeous!").
+We use polite speech every day. 
+We produce simple words of apology ("sorry") or gratitude ("thanks"), and more complex polite utterances (“these cookies could use a bit of salt” or "your dress is gorgeous!").
 Why do people speak politely? 
-This thesis proposes a goal-based framework to explain polite speech, that polite speech arises from competing informational and social concerns
-such as the speaker’s desire to transfer information in the most truthful and informative manner possible (“informational goal”), and to abide by social norms and expectations and/or maintain the interactants’ *face* or public self-image (“prosocial goal”) and/or present herself as a particular kind of individual (e.g., kind, helpful person; “self-presentational goal”). 
-In Chapter 1, I provide an overview of this theoretical framework that aims to unify previous accounts of polite speech, and then I describe existing empirical data on comprehension and production of polite speech in adults and children. 
+This thesis proposes a goal-based framework to polite speech: that polite speech arises from competing informational and social concerns
+such as the speaker’s desire to convey information most informatively (“informational goal”), and to be kind and respectful to the interactants (“prosocial goal”) and/or present the speaker herself as a particular kind of individual (“self-presentational goal”). 
+In Chapter 1, I provide an overview of this framework that aims to unify previous theoretical accounts of polite speech, and then I describe existing empirical data on comprehension and production of polite speech in adults and children. 
 Then I present our own empirical studies investigating adults' and children's understanding of polite language.
 First, I present two sets of empirical studies looking at the development of polite language understanding in children: a study examining 2- to 4-year-old children’s judgments for polite requests (Chapter 2), followed by a study probing 5- to 8-year-old children’s judgments for polite lies versus blunt truths (Chapter 3). 
 Results from these studies show that children are sensitive to speakers' social concerns behind language use, and that they consider tradeoffs between those goals based on the context at hand.
