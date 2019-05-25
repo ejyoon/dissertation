@@ -2,7 +2,7 @@ We use polite speech every day.
 We produce simple words of apology ("sorry") or gratitude ("thanks"), and more complex polite utterances (“these cookies could use a bit of salt” or "your dress is gorgeous!").
 Why do people speak politely? 
 This thesis proposes a goal-based framework to polite speech: that polite speech arises from competing informational and social concerns
-such as the speaker’s desire to convey information most informatively (“informational goal”), and to be kind and respectful to the interactants (“prosocial goal”) and/or present the speaker herself as a particular kind of individual (“self-presentational goal”). 
+such as the speaker’s desire to convey information most informatively (“informational goal”), and to be kind and respectful to the interactants (“prosocial goal”) and/or present the speaker herself as a particular kind of individual (“presentational goal”). 
 In Chapter 1, I provide an overview of this framework that aims to unify previous theoretical accounts of polite speech, and then I describe existing empirical data on comprehension and production of polite speech in adults and children. 
 Then I present our own empirical studies investigating adults' and children's understanding of polite language.
 First, I present two sets of empirical studies looking at the development of polite language understanding in children: a study examining 2- to 4-year-old children’s judgments for polite requests (Chapter 2), followed by a study probing 5- to 8-year-old children’s judgments for polite lies versus blunt truths (Chapter 3). 

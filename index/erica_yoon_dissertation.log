@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  25 MAY 2019 00:48
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  25 MAY 2019 01:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -531,11 +531,11 @@ Missing character: There is no ↵ in font [lmroman10-regular]:mapping=tex-text;
 [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]
 Chapter 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 1542.
+(Font)              <24.88> on input line 1543.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 1542.
+(Font)              <20.74> on input line 1543.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 1542.
+(Font)              <17.28> on input line 1543.
 [33
 
 ] [34] [35] [36] [37] [38]
@@ -548,18 +548,18 @@ hic file (type QTm)
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 1858.
+(Font)              <12> on input line 1859.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1858--1858
+Underfull \hbox (badness 10000) in paragraph at lines 1859--1859
 [][][]\TU/lmr/m/n/8 See pre-registered method, hypotheses and analysis plans at
  $[][][][][] [] [] [] [][][] [] [][] [] [][][][][] [] [][][][][][][][] []
  []
 
 [41] [42]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 1922.
+(Font)              <14.4> on input line 1923.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1922--1922
+Underfull \hbox (badness 10000) in paragraph at lines 1923--1923
 [][][]\TU/lmr/m/n/8 See pre-registered method, hypotheses and analysis plans at
  $[][][][][] [] [] [] [][][] [] [][] [] [][][][][] [] [][][][][][][][] []
  []
@@ -577,13 +577,13 @@ df" > [53] [54]
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 2454--2454
+Underfull \hbox (badness 10000) in paragraph at lines 2455--2455
 \TU/lmtt/m/n/8 brm(niceness rating $\OMS/lmsy/m/n/8 ^^X$ \TU/lmtt/m/n/8 age * c
 ondition * speaker + (speaker * condition | subject) + (speaker *
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2454--2454
+Underfull \hbox (badness 10000) in paragraph at lines 2455--2455
 \TU/lmtt/m/n/8 * speaker type * question type + (question type + speaker type |
  participant) + (condition + question
  []
@@ -611,13 +611,21 @@ File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/model.png Graphic file (type QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/model.png" > [62] [63] [64]
+ild_rmds/ch4_modeling_polite/files/model.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[62] [63] [64]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png Graphic file (type 
 QTm)
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png" > [65] [66]
+ild_rmds/ch4_modeling_polite/files/L1_inferences_wS2pres.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[65] [66]
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/screenshot.png Graphic file (type QTm)
 
@@ -629,13 +637,19 @@ ld_rmds/ch4_modeling_polite/files/speaker_production_cor.png Graphic file (type
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
 ild_rmds/ch4_modeling_polite/files/speaker_production_cor.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: /Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_chi
 ld_rmds/ch4_modeling_polite/files/model_comparisons.png Graphic file (type QTm)
 
 
 <use  "/Users/ejyoon/Documents/Documents/Research/dissertation/index/chapter_ch
-ild_rmds/ch4_modeling_polite/files/model_comparisons.png" > [68] [69] [70] [71]
-[72] [73] [74
+ild_rmds/ch4_modeling_polite/files/model_comparisons.png" > [68]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[69] [70] [71] [72] [73] [74
 
 ] [75] [76] [77]
 Appendix A.
@@ -651,7 +665,7 @@ Appendix B.
 
 ]
 
-LaTeX Warning: Reference `fig:litsem' on page 83 undefined on input line 3413.
+LaTeX Warning: Reference `fig:litsem' on page 83 undefined on input line 3414.
 
 File: erica_yoon_dissertation_files/figure-latex/litsemPlotPlacement-1.pdf Grap
 hic file (type QTm)
@@ -692,24 +706,24 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 [93] [94] [95] [96] [97] [98] [99] [100] [101]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4282.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4283.
 [102]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4282.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4283.
 (./erica_yoon_dissertation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4282.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4282.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4283.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4283.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4282.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4283.
  ) 
 Here is how much of TeX's memory you used:
  10984 strings out of 493005
  160664 string characters out of 6134596
- 252092 words of memory out of 5000000
+ 253092 words of memory out of 5000000
  14761 multiletter control sequences out of 15000+600000
  45608 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
